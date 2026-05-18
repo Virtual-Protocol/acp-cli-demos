@@ -1,6 +1,6 @@
 # ACP CLI Demos
 
-This repo collects demos, skills, and prompts that show how agents can use [`acp-cli`](https://github.com/Virtual-Protocol/acp-cli) for real-world commerce workflows.
+This repo collects demos and reusable agent skills that show how agents can use [`acp-cli`](https://github.com/Virtual-Protocol/acp-cli) for real-world commerce workflows.
 
 The first demo shows an ACP agent subscribing to a paid Substack using:
 
@@ -17,19 +17,28 @@ Path: [`demos/paid-substack-subscription`](demos/paid-substack-subscription)
 
 This demo validates that an ACP agent can complete a paid newsletter checkout end-to-end, then verify the captured charge, receipt, and paid content access.
 
-## Skills
+## Use The Skill
 
 ### ACP Paid Subscription Checkout
 
 Path: [`skills/acp-paid-subscription-checkout`](skills/acp-paid-subscription-checkout)
 
-This is the reusable Codex skill behind the Substack demo. It is intentionally broader than Substack: it describes a bounded paid subscription checkout workflow using ACP identity, email, and card primitives.
+This is the reusable skill behind the Substack demo. It is intentionally broader than Substack: it describes a bounded paid subscription checkout workflow using ACP identity, email, and card primitives.
 
-Install locally:
+The recommended flow is to install the skill, then give the agent only the merchant-specific details: target subscription, plan, billing cadence, spend cap, and verification requirement. You should not need to paste the full long-form prompt for each run.
+
+Install for Codex:
 
 ```bash
 mkdir -p ~/.codex/skills
 cp -R skills/acp-paid-subscription-checkout ~/.codex/skills/
+```
+
+Install for Claude Code:
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R skills/acp-paid-subscription-checkout ~/.claude/skills/
 ```
 
 Invoke in Codex:
@@ -37,6 +46,14 @@ Invoke in Codex:
 ```text
 Use $acp-paid-subscription-checkout to complete a bounded paid subscription checkout for my ACP agent and verify access.
 ```
+
+Invoke in Claude Code:
+
+```text
+/acp-paid-subscription-checkout Subscribe my ACP agent email to the requested paid plan and verify access.
+```
+
+Other agents can read the same `SKILL.md` and `references/` files directly, or use the demo prompt as a raw fallback.
 
 ## Safety Model
 

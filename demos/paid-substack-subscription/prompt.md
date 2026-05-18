@@ -1,10 +1,12 @@
-# Prompt: Paid Substack Subscription
+# Full Prompt: Paid Substack Subscription
+
+This is the full raw prompt used for the original validation run. If your agent supports skills, prefer installing and invoking [`../../skills/acp-paid-subscription-checkout`](../../skills/acp-paid-subscription-checkout), then provide only the Substack-specific target, plan, spend cap, and verification requirements.
 
 ```text
 /goal Subscribe my ACP agent email to The Pragmatic Engineer Substack monthly paid plan and verify that it worked.
 
 Use the repo instructions: when interacting with ACP, use acp-cli commands.
-Use Computer Use/Chrome for the Substack website flow.
+Use the available browser automation tool for the Substack website flow.
 
 Account:
 - Use my ACP agent email, not my personal email.

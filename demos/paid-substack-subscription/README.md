@@ -4,6 +4,27 @@ This demo shows an ACP agent subscribing to a paid Substack plan using its own a
 
 The first validation run used The Pragmatic Engineer Substack. The checkout was completed with an ACP agent email, a bounded ACP agent card, browser automation, and `acp-cli` verification.
 
+## Recommended Usage
+
+From the repo root, install the reusable skill first:
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R skills/acp-paid-subscription-checkout ~/.codex/skills/
+```
+
+Then give the agent a short task-specific request:
+
+```text
+Use $acp-paid-subscription-checkout.
+
+Subscribe my ACP agent email to The Pragmatic Engineer Substack individual monthly paid plan and verify that it worked.
+
+Use a $20 USD maximum checkout cap. Do not choose annual, group, gift, app, recommendation, wallet-save, Link-save, or public-note options. Stop if the email is not my ACP agent email, the plan is not individual monthly, or the total is over $20 USD.
+```
+
+For Claude Code, install the same skill under `~/.claude/skills/` and invoke `/acp-paid-subscription-checkout` with the same task details.
+
 ## What This Demonstrates
 
 - The agent determines its own email identity with `acp email whoami`.
@@ -17,9 +38,9 @@ The first validation run used The Pragmatic Engineer Substack. The checkout was 
 
 ## Files
 
-- [`prompt.md`](prompt.md) - reusable prompt for the Substack demo
+- [`../../skills/acp-paid-subscription-checkout`](../../skills/acp-paid-subscription-checkout) - reusable skill and recommended entrypoint
+- [`prompt.md`](prompt.md) - full raw prompt used for the original validation run; useful as a reference or fallback when a skill system is not available
 - [`result-redacted.md`](result-redacted.md) - redacted validation result from the first successful run
-- [`../../skills/acp-paid-subscription-checkout`](../../skills/acp-paid-subscription-checkout) - reusable skill
 
 ## Safety Notes
 

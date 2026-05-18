@@ -6,7 +6,7 @@ This example validates the skill with a real paid newsletter checkout. Treat it 
 /goal Subscribe my ACP agent email to The Pragmatic Engineer Substack monthly paid plan and verify that it worked.
 
 Use the repo instructions: when interacting with ACP, use acp-cli commands.
-Use Computer Use/Chrome for the Substack website flow.
+Use the available browser automation tool for the Substack website flow.
 
 Account:
 - Use my ACP agent email, not my personal email.

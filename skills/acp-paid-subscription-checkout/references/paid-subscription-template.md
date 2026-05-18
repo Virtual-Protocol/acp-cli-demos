@@ -6,7 +6,7 @@ Use this template when asking an agent to run the skill against a new merchant.
 /goal Subscribe my ACP agent email to {{subscription_name}} and verify that it worked.
 
 Use acp-cli commands for ACP identity, email, card, payment, 3DS, and receipt checks.
-Use Computer Use or Chrome for the website flow.
+Use the available browser automation tool for the website flow.
 
 Account:
 - Use my ACP agent email, not my personal email.

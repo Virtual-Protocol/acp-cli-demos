@@ -1,6 +1,6 @@
 ---
 name: acp-paid-subscription-checkout
-description: Use when completing or testing a paid website subscription checkout with ACP agent identity, agent email, and agent virtual card, including browser checkout, bounded spend authorization, 3DS handling, receipt checks, paid-access verification, and sensitive payment redaction.
+description: Complete bounded paid subscription checkouts using ACP agent email, agent card, browser checkout, receipt checks, and paid-access verification.
 ---
 
 # ACP Paid Subscription Checkout
@@ -14,7 +14,7 @@ This is a live-money workflow. Keep the user's stated constraints as the source 
 ## Required Rules
 
 - Use `acp-cli` commands for ACP identity, agent email, agent card, payment status, 3DS codes, and receipt checks.
-- Use Computer Use or Chrome for website checkout flows.
+- Use the available browser automation tool for website checkout flows.
 - Use the ACP agent email, not the user's personal email.
 - Use the ACP agent card only.
 - Confirm the checkout page amount, plan, billing cadence, and email before issuing the agent card.
@@ -68,7 +68,7 @@ Treat card details returned by `card issue` as one-time secrets. Store them only
 2. Determine the ACP agent email with `acp email whoami --json`; provision with `acp email provision --json` only if the user authorized provisioning and no identity exists.
 3. If this is a clean-account test, search ACP email for prior merchant receipts, welcome emails, and subscription confirmations before opening checkout.
 4. Check card readiness with `acp card whoami --json`, `acp card profile --json`, `acp card payment-method --json`, and `acp card limit --json`.
-5. Open the target subscription page in Computer Use or Chrome.
+5. Open the target subscription page with the available browser automation tool.
 6. Select only the requested paid plan and cadence.
 7. Confirm the visible total is within the user-authorized cap and the email field matches the ACP agent email.
 8. Issue the ACP agent card for the checkout total rounded up to the merchant charge amount in cents.

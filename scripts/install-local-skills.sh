@@ -63,7 +63,6 @@ esac
 skills=(
   "acp-builder-setup"
   "acp-paid-subscription-checkout"
-  "acp-paid-subscription-checkout-handoff"
 )
 
 install_skill() {

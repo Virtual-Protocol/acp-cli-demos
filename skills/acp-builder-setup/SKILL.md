@@ -29,14 +29,13 @@ Install these local-execution skills for Codex CLI/Desktop and Claude Code:
 
 - `acp-builder-setup`
 - `acp-paid-subscription-checkout`
-- `acp-paid-subscription-checkout-handoff`
 
 Install these Claude Desktop upload packages:
 
 - `packages/claude-desktop/acp-builder-setup.zip`
-- `packages/claude-desktop/acp-paid-subscription-checkout-handoff.zip`
+- `packages/claude-desktop/acp-paid-subscription-checkout.zip`
 
-Do not upload the live `acp-paid-subscription-checkout` skill to Claude Desktop unless the user has a separate local-tool bridge. That skill assumes local command execution, browser automation, and live payment controls.
+In Claude Desktop, the combined checkout skill must use handoff or evidence-review mode unless the user has a separate local-tool bridge. Live checkout execution assumes local command execution, browser automation, and live payment controls.
 
 ## Model Routing
 

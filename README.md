@@ -16,8 +16,7 @@ The first skill demonstrates an ACP agent subscribing to a paid Substack using:
 Shared skill sources:
 
 - [`skills/acp-builder-setup`](skills/acp-builder-setup) - setup and model-routing guidance for Codex, Claude Code, and Claude Desktop.
-- [`skills/acp-paid-subscription-checkout`](skills/acp-paid-subscription-checkout) - live local checkout execution for Codex CLI/Desktop local threads and Claude Code.
-- [`skills/acp-paid-subscription-checkout-handoff`](skills/acp-paid-subscription-checkout-handoff) - desktop-safe handoff and evidence review.
+- [`skills/acp-paid-subscription-checkout`](skills/acp-paid-subscription-checkout) - paid checkout execution, desktop-safe handoff, and redacted evidence review.
 
 Contribution layout guidance: [`skills/README.md`](skills/README.md)
 
@@ -57,7 +56,7 @@ Path: [`skills/acp-paid-subscription-checkout`](skills/acp-paid-subscription-che
 
 This is the reusable skill behind the Substack demo. It is intentionally broader than Substack: it describes a bounded paid subscription checkout workflow using ACP identity, email, and card primitives.
 
-The recommended flow is to install the skill, then give the agent only the merchant-specific details: target subscription, plan, billing cadence, spend cap, and verification requirement. You should not need to paste the full long-form prompt for each run.
+The skill chooses live execution, handoff, or evidence-review mode based on the environment. The recommended flow is to install the skill, then give the agent only the merchant-specific details: target subscription, plan, billing cadence, spend cap, and verification requirement. You should not need to paste the full long-form prompt for each run.
 
 Install for Codex:
 
@@ -92,6 +91,8 @@ Invoke in Claude Code:
 ```
 
 Other agents can read the same `SKILL.md` and `references/` files directly, or use the demo prompt as a raw fallback.
+
+For Claude Desktop or chat-only surfaces, upload the Claude Desktop ZIP package and use the same skill to prepare a safe handoff prompt or review redacted evidence. The skill must not issue cards, retrieve OTPs, or click paid checkout buttons unless local tools are available.
 
 ## Safety Model
 

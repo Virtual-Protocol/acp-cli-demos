@@ -51,6 +51,6 @@ ccr code
 Upload these ZIPs from Claude settings:
 
 - `packages/claude-desktop/acp-builder-setup.zip`
-- `packages/claude-desktop/acp-paid-subscription-checkout-handoff.zip`
+- `packages/claude-desktop/acp-paid-subscription-checkout.zip`
 
 After upload, enable each skill in Claude's Skills settings.

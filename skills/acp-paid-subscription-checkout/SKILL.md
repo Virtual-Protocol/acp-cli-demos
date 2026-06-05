@@ -1,15 +1,29 @@
 ---
 name: acp-paid-subscription-checkout
-description: Complete bounded paid subscription checkouts using ACP agent email, agent card, browser checkout, receipt checks, and paid-access verification.
+description: Complete, hand off, or review bounded paid subscription checkouts using ACP agent email, agent card, browser checkout, receipt checks, and paid-access verification. Use live mode only when local acp-cli, browser automation, and card tools are available; use handoff or evidence-review mode on desktop or chat-only surfaces.
 ---
 
 # ACP Paid Subscription Checkout
 
 ## Overview
 
-Use this skill to complete a paid subscription checkout for an ACP agent when the user has provided a target subscription, plan, amount cap, and explicit authorization conditions.
+Use this skill for bounded ACP paid subscription checkout workflows. It supports three modes:
 
-This is a live-money workflow. Keep the user's stated constraints as the source of truth and stop immediately when the checkout no longer matches those constraints.
+- **Live execution**: complete the checkout with local `acp-cli`, browser automation, ACP agent email, ACP agent card, receipt checks, and paid-access verification.
+- **Handoff**: prepare a safe ready-to-run prompt for a local execution agent when this surface cannot run local tools.
+- **Evidence review**: review redacted logs, receipts, card status, and screenshots after another agent ran the checkout.
+
+This is a live-money workflow in live execution mode. Keep the user's stated constraints as the source of truth and stop immediately when the checkout no longer matches those constraints.
+
+## Mode Selection
+
+Before acting, choose exactly one mode:
+
+1. Use **live execution mode** only if local command execution, `acp-cli`, browser automation, and ACP card/email tools are available.
+2. Use **handoff mode** on Claude Desktop, chat-only surfaces, or any environment that cannot safely run local `acp-cli`, browser automation, and card tools.
+3. Use **evidence review mode** when the user provides redacted receipts, logs, card status, email evidence, or screenshots and asks whether a checkout succeeded.
+
+In handoff or evidence review mode, do not issue cards, enter payment details, retrieve OTPs, click paid checkout buttons, or ask the user to paste sensitive secrets.
 
 ## Required Rules
 
@@ -21,6 +35,8 @@ This is a live-money workflow. Keep the user's stated constraints as the source 
 - Do not issue a card or click the final paid checkout button unless the user has explicitly authorized that amount and plan.
 - Never print the full PAN, CVV, magic links, OTPs, or sensitive payment details in the final answer.
 - Skip optional app prompts, recommendation screens, extra subscriptions, gifts, group plans, wallet saves, Link saves, and public support-note prompts unless the user explicitly requested them.
+
+These required rules apply to live execution mode. In handoff mode, include these same constraints in the handoff prompt instead of executing them.
 
 ## Stop Conditions
 
@@ -79,9 +95,29 @@ Treat card details returned by `card issue` as one-time secrets. Store them only
 13. Check the card request status with `acp card list --json` and `acp card get --request-id <id> --json`; capture the charged amount and status.
 14. Search the ACP agent email inbox for the receipt and summarize receipt details.
 
+## Handoff Workflow
+
+Use handoff mode when local execution is unavailable.
+
+1. Identify the target subscription, checkout URL, plan, billing cadence, currency, maximum amount, and ACP agent email requirement.
+2. Ask for missing authorization details before drafting a live-run handoff.
+3. Produce a ready-to-run prompt for a local execution agent using this same skill.
+4. Tell the user to run the prompt in Codex CLI/Desktop local thread or Claude Code with the skill installed.
+
+For the reusable handoff template, read `references/handoff-template.md`.
+
+## Evidence Review Workflow
+
+Use evidence review mode when the user provides redacted proof from a checkout run.
+
+1. Compare the merchant, plan, billing cadence, amount, currency, and email against the authorization.
+2. Require at least one payment proof source, such as ACP card status, merchant receipt, invoice, or paid-access evidence.
+3. Treat screenshots alone as insufficient proof of success.
+4. Return pass, fail, or uncertain status with the exact missing evidence.
+
 ## Final Answer
 
-State:
+In live execution mode, state:
 
 - Whether the subscription succeeded.
 - Amount authorized and amount captured.
@@ -92,8 +128,11 @@ State:
 
 Do not include full card number, CVV, magic links, OTPs, or sensitive payment details.
 
+In handoff mode, return a ready-to-run handoff prompt. In evidence review mode, return pass/fail/uncertain status and the missing proof, if any.
+
 ## References
 
 - For a reusable prompt template, read `references/paid-subscription-template.md`.
+- For a handoff prompt template, read `references/handoff-template.md`.
 - For a concrete Substack validation example, read `examples/substack/pragmatic-engineer.md`.
 - For the original Substack prompt and redacted result, read `examples/substack/prompt.md` and `examples/substack/result-redacted.md`.

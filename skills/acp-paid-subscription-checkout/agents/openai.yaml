@@ -1,6 +1,6 @@
 interface:
   display_name: "ACP Paid Checkout"
-  short_description: "ACP agent card subscription checkout"
-  default_prompt: "Use $acp-paid-subscription-checkout to complete a bounded paid subscription checkout for my ACP agent and verify access."
+  short_description: "ACP paid checkout execution or handoff"
+  default_prompt: "Use $acp-paid-subscription-checkout to complete, hand off, or review a bounded paid subscription checkout for my ACP agent."
 policy:
   allow_implicit_invocation: true

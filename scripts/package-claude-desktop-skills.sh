@@ -9,7 +9,7 @@ rm -f "$out_dir"/*.zip
 
 skills=(
   "acp-builder-setup"
-  "acp-paid-subscription-checkout-handoff"
+  "acp-paid-subscription-checkout"
 )
 
 for skill in "${skills[@]}"; do

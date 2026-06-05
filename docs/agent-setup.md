@@ -14,8 +14,7 @@ Each contributed skill should be self-contained under `skills/<skill-name>/`. Pu
 Shared skill sources:
 
 - [`skills/acp-builder-setup`](../skills/acp-builder-setup) - setup and routing guidance for Codex, Claude Code, and Claude Desktop.
-- [`skills/acp-paid-subscription-checkout`](../skills/acp-paid-subscription-checkout) - live local checkout execution for Codex CLI/Desktop local threads and Claude Code.
-- [`skills/acp-paid-subscription-checkout-handoff`](../skills/acp-paid-subscription-checkout-handoff) - desktop-safe handoff and evidence review for Claude Desktop or chat-only surfaces.
+- [`skills/acp-paid-subscription-checkout`](../skills/acp-paid-subscription-checkout) - live local checkout execution, desktop-safe handoff, and redacted evidence review.
 
 Public GitHub references are listed in [`docs/skill-packages.md`](skill-packages.md).
 
@@ -49,12 +48,12 @@ Keep shared utilities in `utilities/` so setup docs, skills, and examples evolve
 | Codex CLI | Yes, via explicit install or symlink to `~/.agents/skills` | Yes, via `utilities/model-routing/codex-virtuals-proxy` and `~/.codex/config.toml` | Supported |
 | Codex Desktop app | Yes, Codex app loads the same Codex skill system | Yes, Codex app uses the same local agent configuration layers as CLI/IDE | Supported for local threads when the proxy is running |
 | Claude Code terminal | Yes, via explicit install or symlink to `~/.claude/skills` | Yes, via `utilities/model-routing/claude-virtuals-router` and `ccr code` | Supported |
-| Claude Desktop app | Yes, for uploadable ZIP packages in `packages/claude-desktop`; not from `~/.claude/skills` | Not via `claude-code-router`; Desktop does not use `ccr code` | Supported for setup/handoff skills only |
+| Claude Desktop app | Yes, for uploadable ZIP packages in `packages/claude-desktop`; not from `~/.claude/skills` | Not via `claude-code-router`; Desktop does not use `ccr code` | Supported for setup, handoff, and evidence review |
 
 ### Claude Desktop Notes
 
 Claude Desktop has its own skills surface through Claude settings. Upload the zipped packages in [`packages/claude-desktop`](../packages/claude-desktop) for account-level use. This is separate from Claude Code's local filesystem skills.
 
-The live ACP checkout skill assumes local command execution, `acp-cli`, browser automation, and live payment controls, so it should stay a Claude Code or Codex workflow unless those capabilities are exposed to Desktop through a dedicated MCP server or Desktop extension. Use `acp-paid-subscription-checkout-handoff` in Claude Desktop to prepare a safe handoff prompt or review redacted evidence.
+The combined ACP checkout skill selects handoff or evidence-review mode in Claude Desktop. It must not issue cards, retrieve OTPs, enter payment details, or click paid checkout buttons unless those local capabilities are available through a dedicated MCP server or Desktop extension. Run live checkout execution in Codex CLI/Desktop local thread or Claude Code.
 
 `claude-code-router` is a Claude Code terminal integration. It starts Claude Code with local environment overrides and a local `/v1/messages` router. Claude Desktop will not automatically inherit that router config.

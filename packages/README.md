@@ -7,7 +7,7 @@ This directory contains packaged skills for surfaces that require uploadable art
 Claude Desktop custom skills are uploaded as ZIP files from Claude settings. Use:
 
 - [`claude-desktop/acp-builder-setup.zip`](claude-desktop/acp-builder-setup.zip)
-- [`claude-desktop/acp-paid-subscription-checkout-handoff.zip`](claude-desktop/acp-paid-subscription-checkout-handoff.zip)
+- [`claude-desktop/acp-paid-subscription-checkout.zip`](claude-desktop/acp-paid-subscription-checkout.zip)
 
 Regenerate packages after editing skill source:
 

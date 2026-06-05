@@ -1,6 +1,0 @@
-interface:
-  display_name: "ACP Checkout Handoff"
-  short_description: "Prepare safe ACP paid-checkout handoffs"
-  default_prompt: "Use $acp-paid-subscription-checkout-handoff to prepare a safe handoff prompt for a bounded ACP paid subscription checkout."
-policy:
-  allow_implicit_invocation: true

@@ -17,7 +17,7 @@ Create the router config:
 
 ```bash
 mkdir -p "$HOME/.claude-code-router"
-cp utilities/claude-virtuals-router/config.example.json \
+cp utilities/model-routing/claude-virtuals-router/config.example.json \
   "$HOME/.claude-code-router/config.json"
 ```
 

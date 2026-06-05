@@ -1,6 +1,6 @@
-# Paid Substack Subscription Demo
+# Paid Substack Subscription Example
 
-This demo shows an ACP agent subscribing to a paid Substack plan using its own agent email and agent virtual card.
+This example shows an ACP agent subscribing to a paid Substack plan using its own agent email and agent virtual card.
 
 The first validation run used The Pragmatic Engineer Substack. The checkout was completed with an ACP agent email, a bounded ACP agent card, browser automation, and `acp-cli` verification.
 
@@ -38,7 +38,8 @@ For Claude Code, install the same skill under `~/.claude/skills/` and invoke `/a
 
 ## Files
 
-- [`../../skills/acp-paid-subscription-checkout`](../../skills/acp-paid-subscription-checkout) - reusable skill and recommended entrypoint
+- [`../..`](../..) - reusable skill and recommended entrypoint
+- [`pragmatic-engineer.md`](pragmatic-engineer.md) - concrete validation prompt and receipt search references
 - [`prompt.md`](prompt.md) - full raw prompt used for the original validation run; useful as a reference or fallback when a skill system is not available
 - [`result-redacted.md`](result-redacted.md) - redacted validation result from the first successful run
 

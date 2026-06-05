@@ -4,14 +4,14 @@ Local Responses API adapter for using Virtuals Chat Completions models from Code
 
 Codex custom providers call `/v1/responses`. The Virtuals community endpoint currently exposes `/v1/chat/completions`. This utility runs a local server that translates Codex Responses requests to Virtuals Chat Completions requests, then translates the result back to a Responses-shaped payload.
 
-For full Codex and Claude setup guidance, see [`../../docs/agent-setup.md`](../../docs/agent-setup.md).
+For full Codex and Claude setup guidance, see [`../../../docs/agent-setup.md`](../../../docs/agent-setup.md).
 
 ## Run
 
 Requires Node.js 22 or newer.
 
 ```bash
-cd utilities/codex-virtuals-proxy
+cd utilities/model-routing/codex-virtuals-proxy
 cp .env.example .env
 VIRTUALS_API_KEY=... npm start
 ```

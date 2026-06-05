@@ -95,4 +95,5 @@ Do not include full card number, CVV, magic links, OTPs, or sensitive payment de
 ## References
 
 - For a reusable prompt template, read `references/paid-subscription-template.md`.
-- For a concrete Substack validation example, read `references/substack-pragmatic-engineer-example.md`.
+- For a concrete Substack validation example, read `examples/substack/pragmatic-engineer.md`.
+- For the original Substack prompt and redacted result, read `examples/substack/prompt.md` and `examples/substack/result-redacted.md`.

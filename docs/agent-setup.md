@@ -9,6 +9,8 @@ Keep shared skills under `skills/` in this repo. Agent-specific setup should ins
 - Codex reads reusable skills from `~/.codex/skills/`.
 - Claude Code reads reusable skills from `~/.claude/skills/`.
 
+Each contributed skill should be self-contained under `skills/<skill-name>/`. Put its `SKILL.md`, metadata, references, and validation examples in that folder instead of splitting one skill across separate top-level demo directories.
+
 Shared skill sources:
 
 - [`skills/acp-builder-setup`](../skills/acp-builder-setup) - setup and routing guidance for Codex, Claude Code, and Claude Desktop.
@@ -47,18 +49,18 @@ done
 
 Codex and Claude Code need different local routing surfaces when using Virtuals-hosted models:
 
-- Codex custom providers call `/v1/responses`; use [`utilities/codex-virtuals-proxy`](../utilities/codex-virtuals-proxy).
-- Claude Code calls Anthropic-compatible `/v1/messages`; use [`utilities/claude-virtuals-router`](../utilities/claude-virtuals-router) with `claude-code-router`.
+- Codex custom providers call `/v1/responses`; use [`utilities/model-routing/codex-virtuals-proxy`](../utilities/model-routing/codex-virtuals-proxy).
+- Claude Code calls Anthropic-compatible `/v1/messages`; use [`utilities/model-routing/claude-virtuals-router`](../utilities/model-routing/claude-virtuals-router) with `claude-code-router`.
 
-Keep these utilities in this repo so setup docs, skills, and demos evolve together.
+Keep shared utilities in `utilities/` so setup docs, skills, and examples evolve together.
 
 ## Desktop Support Matrix
 
 | Surface | Skills from this repo | Virtuals routing utility | Status |
 | --- | --- | --- | --- |
-| Codex CLI | Yes, via `~/.codex/skills` or repo `.agents/skills` | Yes, via `utilities/codex-virtuals-proxy` and `~/.codex/config.toml` | Supported |
+| Codex CLI | Yes, via `~/.codex/skills` or repo `.agents/skills` | Yes, via `utilities/model-routing/codex-virtuals-proxy` and `~/.codex/config.toml` | Supported |
 | Codex Desktop app | Yes, Codex app loads the same Codex skill system | Yes, Codex app uses the same local agent configuration layers as CLI/IDE | Supported for local threads when the proxy is running |
-| Claude Code terminal | Yes, via `~/.claude/skills` or project `.claude/skills` | Yes, via `utilities/claude-virtuals-router` and `ccr code` | Supported |
+| Claude Code terminal | Yes, via `~/.claude/skills` or project `.claude/skills` | Yes, via `utilities/model-routing/claude-virtuals-router` and `ccr code` | Supported |
 | Claude Desktop app | Yes, for uploadable ZIP packages in `packages/claude-desktop`; not from `~/.claude/skills` | Not via `claude-code-router`; Desktop does not use `ccr code` | Supported for setup/handoff skills only |
 
 ### Claude Desktop Notes

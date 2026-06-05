@@ -28,7 +28,7 @@ done
 ## Codex Virtuals Proxy
 
 ```bash
-cd utilities/codex-virtuals-proxy
+cd utilities/model-routing/codex-virtuals-proxy
 cp .env.example .env
 VIRTUALS_API_KEY=... npm start
 ```
@@ -52,7 +52,7 @@ npm install -g @anthropic-ai/claude-code
 npm install -g @musistudio/claude-code-router
 
 mkdir -p "$HOME/.claude-code-router"
-cp utilities/claude-virtuals-router/config.example.json \
+cp utilities/model-routing/claude-virtuals-router/config.example.json \
   "$HOME/.claude-code-router/config.json"
 
 export VIRTUALS_API_KEY=...

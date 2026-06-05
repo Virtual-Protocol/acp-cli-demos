@@ -40,8 +40,8 @@ Do not upload the live `acp-paid-subscription-checkout` skill to Claude Desktop 
 
 Codex and Claude Code need different local routing utilities:
 
-- Codex: run `utilities/codex-virtuals-proxy`, then point `~/.codex/config.toml` at `http://127.0.0.1:8787/v1`.
-- Claude Code: use `utilities/claude-virtuals-router/config.example.json` with `claude-code-router`.
+- Codex: run `utilities/model-routing/codex-virtuals-proxy`, then point `~/.codex/config.toml` at `http://127.0.0.1:8787/v1`.
+- Claude Code: use `utilities/model-routing/claude-virtuals-router/config.example.json` with `claude-code-router`.
 - Claude Desktop: do not claim the local router works. Desktop does not inherit `ccr code` or Codex proxy settings.
 
 ## Environment Checks

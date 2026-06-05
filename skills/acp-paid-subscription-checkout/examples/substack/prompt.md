@@ -1,6 +1,6 @@
 # Full Prompt: Paid Substack Subscription
 
-This is the full raw prompt used for the original validation run. If your agent supports skills, prefer installing and invoking [`../../skills/acp-paid-subscription-checkout`](../../skills/acp-paid-subscription-checkout), then provide only the Substack-specific target, plan, spend cap, and verification requirements.
+This is the full raw prompt used for the original validation run. If your agent supports skills, prefer installing and invoking [`../..`](../..), then provide only the Substack-specific target, plan, spend cap, and verification requirements.
 
 ```text
 /goal Subscribe my ACP agent email to The Pragmatic Engineer Substack monthly paid plan and verify that it worked.

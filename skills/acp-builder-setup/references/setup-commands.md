@@ -3,26 +3,13 @@
 ## Symlink Skills For Local Development
 
 ```bash
-repo="$HOME/code/virtuals_protocol/acp-cli-demos"
-
-mkdir -p "$HOME/.codex/skills" "$HOME/.claude/skills"
-
-for skill in acp-builder-setup acp-paid-subscription-checkout acp-paid-subscription-checkout-handoff; do
-  ln -sfn "$repo/skills/$skill" "$HOME/.codex/skills/$skill"
-  ln -sfn "$repo/skills/$skill" "$HOME/.claude/skills/$skill"
-done
+scripts/install-local-skills.sh --mode symlink --target both
 ```
 
 ## Copy Skills For One-Off Installs
 
 ```bash
-mkdir -p "$HOME/.codex/skills" "$HOME/.claude/skills"
-
-for skill in acp-builder-setup acp-paid-subscription-checkout acp-paid-subscription-checkout-handoff; do
-  rm -rf "$HOME/.codex/skills/$skill" "$HOME/.claude/skills/$skill"
-  cp -R "skills/$skill" "$HOME/.codex/skills/$skill"
-  cp -R "skills/$skill" "$HOME/.claude/skills/$skill"
-done
+scripts/install-local-skills.sh --mode copy --target both
 ```
 
 ## Codex Virtuals Proxy

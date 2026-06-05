@@ -11,7 +11,7 @@ Use this skill when helping a builder prepare Codex or Claude for ACP demos, ski
 
 First identify the target surface:
 
-- **Codex CLI or Codex Desktop local thread**: can use local files, `acp-cli`, and `~/.codex/config.toml`.
+- **Codex CLI or Codex Desktop local thread**: can use local files, `acp-cli`, `~/.agents/skills`, and `~/.codex/config.toml`.
 - **Claude Code terminal**: can use local files, `acp-cli`, `~/.claude/skills`, and `claude-code-router`.
 - **Claude Desktop app**: uses uploaded Skills from Claude settings. It does not automatically read `~/.claude/skills` or `claude-code-router`.
 
@@ -22,6 +22,8 @@ If the target surface is unclear, ask which tool they are setting up before chan
 Use this repo as the source of truth. Prefer symlinks for local development and copies for one-off installs.
 
 For exact commands, read `references/setup-commands.md`.
+
+Do not assume repo-scoped `.agents/skills` or `.claude/skills` folders exist. This repo keeps canonical skills directly under `skills/`, then installs or links them into each local runtime.
 
 Install these local-execution skills for Codex CLI/Desktop and Claude Code:
 

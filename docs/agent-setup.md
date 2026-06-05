@@ -6,7 +6,7 @@ Use this repo as the canonical source for reusable ACP agent skills and local ag
 
 Keep shared skills under `skills/` in this repo. Agent-specific setup should install or link those skills into each agent runtime:
 
-- Codex reads reusable skills from `~/.codex/skills/`.
+- Codex reads reusable user skills from `~/.agents/skills/`.
 - Claude Code reads reusable skills from `~/.claude/skills/`.
 
 Each contributed skill should be self-contained under `skills/<skill-name>/`. Put its `SKILL.md`, metadata, references, and validation examples in that folder instead of splitting one skill across separate top-level demo directories.
@@ -19,30 +19,18 @@ Shared skill sources:
 
 Public GitHub references are listed in [`docs/skill-packages.md`](skill-packages.md).
 
-This repo also checks in project-scope skill links under `.agents/skills` for Codex and `.claude/skills` for Claude Code. When a builder opens this repo in those tools, the skills are discoverable from the project without a user-level install.
+This repo does not check in project-scope `.agents/skills` or `.claude/skills` aliases. The canonical source is `skills/`; builders install or symlink the skills they want into their local agent runtime.
 
 For active development, prefer symlinks so local skill edits are picked up by both tools:
 
 ```bash
-repo="$HOME/code/virtuals_protocol/acp-cli-demos"
-
-mkdir -p "$HOME/.codex/skills" "$HOME/.claude/skills"
-
-for skill in acp-builder-setup acp-paid-subscription-checkout acp-paid-subscription-checkout-handoff; do
-  ln -sfn "$repo/skills/$skill" "$HOME/.codex/skills/$skill"
-  ln -sfn "$repo/skills/$skill" "$HOME/.claude/skills/$skill"
-done
+scripts/install-local-skills.sh --mode symlink --target both
 ```
 
 For one-off local installs, copying is fine:
 
 ```bash
-mkdir -p "$HOME/.codex/skills" "$HOME/.claude/skills"
-for skill in acp-builder-setup acp-paid-subscription-checkout acp-paid-subscription-checkout-handoff; do
-  rm -rf "$HOME/.codex/skills/$skill" "$HOME/.claude/skills/$skill"
-  cp -R "skills/$skill" "$HOME/.codex/skills/$skill"
-  cp -R "skills/$skill" "$HOME/.claude/skills/$skill"
-done
+scripts/install-local-skills.sh --mode copy --target both
 ```
 
 ## Model Routing Utilities
@@ -58,9 +46,9 @@ Keep shared utilities in `utilities/` so setup docs, skills, and examples evolve
 
 | Surface | Skills from this repo | Virtuals routing utility | Status |
 | --- | --- | --- | --- |
-| Codex CLI | Yes, via `~/.codex/skills` or repo `.agents/skills` | Yes, via `utilities/model-routing/codex-virtuals-proxy` and `~/.codex/config.toml` | Supported |
+| Codex CLI | Yes, via explicit install or symlink to `~/.agents/skills` | Yes, via `utilities/model-routing/codex-virtuals-proxy` and `~/.codex/config.toml` | Supported |
 | Codex Desktop app | Yes, Codex app loads the same Codex skill system | Yes, Codex app uses the same local agent configuration layers as CLI/IDE | Supported for local threads when the proxy is running |
-| Claude Code terminal | Yes, via `~/.claude/skills` or project `.claude/skills` | Yes, via `utilities/model-routing/claude-virtuals-router` and `ccr code` | Supported |
+| Claude Code terminal | Yes, via explicit install or symlink to `~/.claude/skills` | Yes, via `utilities/model-routing/claude-virtuals-router` and `ccr code` | Supported |
 | Claude Desktop app | Yes, for uploadable ZIP packages in `packages/claude-desktop`; not from `~/.claude/skills` | Not via `claude-code-router`; Desktop does not use `ccr code` | Supported for setup/handoff skills only |
 
 ### Claude Desktop Notes

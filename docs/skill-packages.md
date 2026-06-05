@@ -12,6 +12,8 @@ Use source skill folders for Codex CLI, Codex Desktop local threads, and Claude 
 
 Each skill folder is the contribution boundary. A skill-specific example should live inside that skill, for example [`skills/acp-paid-subscription-checkout/examples/substack`](https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-paid-subscription-checkout/examples/substack).
 
+Install source skills explicitly with [`scripts/install-local-skills.sh`](https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/scripts/install-local-skills.sh). The repo does not duplicate skills under hidden `.agents/skills` or `.claude/skills` project folders.
+
 ## Claude Desktop ZIPs
 
 Use uploadable ZIP packages for Claude Desktop or Claude web Skills:

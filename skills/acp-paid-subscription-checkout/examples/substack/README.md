@@ -9,8 +9,8 @@ The first validation run used The Pragmatic Engineer Substack. The checkout was 
 From the repo root, install the reusable skill first:
 
 ```bash
-mkdir -p ~/.codex/skills
-cp -R skills/acp-paid-subscription-checkout ~/.codex/skills/
+mkdir -p ~/.agents/skills
+cp -R skills/acp-paid-subscription-checkout ~/.agents/skills/
 ```
 
 Then give the agent a short task-specific request:

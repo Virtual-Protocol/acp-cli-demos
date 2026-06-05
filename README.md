@@ -62,8 +62,8 @@ The recommended flow is to install the skill, then give the agent only the merch
 Install for Codex:
 
 ```bash
-mkdir -p ~/.codex/skills
-cp -R skills/acp-paid-subscription-checkout ~/.codex/skills/
+mkdir -p ~/.agents/skills
+cp -R skills/acp-paid-subscription-checkout ~/.agents/skills/
 ```
 
 Install for Claude Code:
@@ -71,6 +71,12 @@ Install for Claude Code:
 ```bash
 mkdir -p ~/.claude/skills
 cp -R skills/acp-paid-subscription-checkout ~/.claude/skills/
+```
+
+For all local-execution skills, use the installer helper:
+
+```bash
+scripts/install-local-skills.sh --mode symlink --target both
 ```
 
 Invoke in Codex:

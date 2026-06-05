@@ -1,0 +1,29 @@
+{
+  "PORT": 3456,
+  "HOST": "127.0.0.1",
+  "LOG": false,
+  "API_TIMEOUT_MS": 600000,
+  "Providers": [
+    {
+      "name": "virtuals",
+      "api_base_url": "https://compute.virtuals.io/v1/chat/completions",
+      "api_key": "$VIRTUALS_API_KEY",
+      "models": [
+        "openai-gpt-55",
+        "openai-gpt-55-pro",
+        "openai-gpt-54-mini",
+        "claude-opus-4-7-fast",
+        "claude-opus-4-8"
+      ],
+      "transformer": {
+        "use": ["anthropic"]
+      }
+    }
+  ],
+  "Router": {
+    "default": "virtuals,claude-opus-4-7-fast",
+    "background": "virtuals,claude-opus-4-7-fast",
+    "think": "virtuals,claude-opus-4-8",
+    "longContext": "virtuals,claude-opus-4-8"
+  }
+}

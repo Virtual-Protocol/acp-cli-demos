@@ -17,6 +17,32 @@ Path: [`demos/paid-substack-subscription`](demos/paid-substack-subscription)
 
 This demo validates that an ACP agent can complete a paid newsletter checkout end-to-end, then verify the captured charge, receipt, and paid content access.
 
+## Utilities
+
+Agent setup guide: [`docs/agent-setup.md`](docs/agent-setup.md)
+
+GitHub skill references: [`docs/skill-packages.md`](docs/skill-packages.md)
+
+Packaged skills: [`packages/`](packages)
+
+Shared skill sources:
+
+- [`skills/acp-builder-setup`](skills/acp-builder-setup)
+- [`skills/acp-paid-subscription-checkout`](skills/acp-paid-subscription-checkout)
+- [`skills/acp-paid-subscription-checkout-handoff`](skills/acp-paid-subscription-checkout-handoff)
+
+### Codex Virtuals Proxy
+
+Path: [`utilities/codex-virtuals-proxy`](utilities/codex-virtuals-proxy)
+
+This local helper lets Codex use Virtuals-hosted models by translating Codex Responses API calls to the Virtuals Chat Completions endpoint.
+
+### Claude Virtuals Router
+
+Path: [`utilities/claude-virtuals-router`](utilities/claude-virtuals-router)
+
+This setup example lets Claude Code use Virtuals-hosted models through `claude-code-router`.
+
 ## Use The Skill
 
 ### ACP Paid Subscription Checkout

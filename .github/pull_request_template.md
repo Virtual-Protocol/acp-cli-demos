@@ -6,8 +6,8 @@
 - Project title:
 - Builder name and URL:
 - EconomyOS primitives used:
-- Public proof: <!-- screenshot, hosted video, live page, interactive demo, public PR, redacted report, or X video -->
-- Optional soul.md: <!-- public/redacted URL and summary, or "none" -->
+- Public proof: <!-- X video is highly recommended; screenshot, hosted video, live page, interactive demo, public PR, or redacted report also works -->
+- Optional soul.md: <!-- prefer showcase/<project-slug>/soul.md with public/redacted URL and summary, or "none" -->
 
 ## Project package
 

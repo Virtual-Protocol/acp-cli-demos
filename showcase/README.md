@@ -47,9 +47,10 @@ Every manifest needs:
 - `artifacts`, including proof and redacted reports for live workflows
 - exactly three `feedbackPrompts`
 
-Public proof does not have to be an X video. Use any inspectable artifact that
-shows the project or workflow ran: screenshot, hosted video, animated demo, live
-page, interactive demo, public PR, demo repo, or redacted result report.
+An X video is highly recommended when possible because it is visual and easy to
+share, but it is not required. Use any inspectable artifact that shows the
+project or workflow ran: screenshot, hosted video, animated demo, live page,
+interactive demo, public PR, demo repo, or redacted result report.
 
 Optional visibility control:
 
@@ -60,7 +61,9 @@ Optional visibility control:
 Optional agent context:
 
 - `soul.md` can be included when the builder intentionally wants to publish
-  public agent context. Redact private instructions, credentials, account data,
+  public agent context. Prefer committing the text as
+  `showcase/<project-slug>/soul.md`; use a `soul/` folder only for multi-agent
+  or multi-file context. Redact private instructions, credentials, account data,
   wallet material, and operational secrets before linking it from
   `showcase.json` as `soul.href` with a short `soul.summary`.
 

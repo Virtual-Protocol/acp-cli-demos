@@ -44,6 +44,9 @@ jobs:
           test -f "$tmp_home/.claude/skills/acp-paid-subscription-checkout/SKILL.md"
           rm -rf "$tmp_home"
 
+      - name: Validate Showcase manifests
+        run: node scripts/validate-showcase.mjs
+
       - name: Validate routing utilities
         run: |
           node --check utilities/model-routing/codex-virtuals-proxy/server.mjs

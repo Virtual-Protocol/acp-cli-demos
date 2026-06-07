@@ -9,7 +9,7 @@ Use source skill folders for Codex CLI, Codex Desktop local threads, and Claude 
 - [`skills/acp-builder-setup`](https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-builder-setup) - setup and model-routing guidance.
 - [`skills/acp-paid-subscription-checkout`](https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-paid-subscription-checkout) - live local ACP checkout execution, desktop-safe handoff, and redacted evidence review.
 
-Each skill folder is the contribution boundary. A skill-specific example should live inside that skill, for example [`skills/acp-paid-subscription-checkout/examples/substack`](https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-paid-subscription-checkout/examples/substack).
+Each shared skill folder is a reusable runtime boundary. A skill-specific example should live inside that skill, for example [`skills/acp-paid-subscription-checkout/examples/substack`](https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-paid-subscription-checkout/examples/substack). Project-specific Showcase skills can instead live inside `showcase/<project-slug>/skills/<skill-name>/`.
 
 Install source skills explicitly with [`scripts/install-local-skills.sh`](https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/scripts/install-local-skills.sh). The repo does not duplicate skills under hidden `.agents/skills` or `.claude/skills` project folders.
 

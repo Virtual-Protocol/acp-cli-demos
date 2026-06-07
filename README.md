@@ -2,7 +2,7 @@
 
 This repo collects reusable agent skills and utilities that show how agents can use [`acp-cli`](https://github.com/Virtual-Protocol/acp-cli) for real-world commerce workflows.
 
-The repo is organized around self-contained skill folders. Each contributed skill should live under `skills/<skill-name>/` with its own `SKILL.md`, references, examples, and any metadata needed by agent runtimes.
+The repo is organized around Showcase project packages and shared skill folders. A Showcase contribution should live under `showcase/<project-slug>/` with its `showcase.json`, proof links, and project-specific skills. Shared runtime skills that are reused across projects still live under `skills/<skill-name>/`.
 
 The first skill demonstrates an ACP agent subscribing to a paid Substack using:
 
@@ -19,6 +19,25 @@ Shared skill sources:
 - [`skills/acp-paid-subscription-checkout`](skills/acp-paid-subscription-checkout) - paid checkout execution, desktop-safe handoff, and redacted evidence review.
 
 Contribution layout guidance: [`skills/README.md`](skills/README.md)
+
+## Showcase Publishing
+
+Project submissions use the default PR template in this repo. Add the demo
+package, proof, reusable skill, and card-ready manifest under
+[`showcase/<project-slug>`](showcase).
+
+After a Showcase PR is approved and merged to `main`, changes under
+`showcase/**` dispatch the EconomyOS docs sync. The docs workflow
+regenerates the Showcase page data from the accepted manifest.
+
+Automation requirement: configure `SHOWCASE_SYNC_TOKEN` in this repo with
+permission to dispatch workflows in `Virtual-Protocol/whitepaper-economyOS`.
+
+Validate manifests before requesting review:
+
+```bash
+node scripts/validate-showcase.mjs
+```
 
 ### Paid Substack Subscription Example
 

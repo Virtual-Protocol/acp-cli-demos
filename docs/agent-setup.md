@@ -9,7 +9,7 @@ Keep shared skills under `skills/` in this repo. Agent-specific setup should ins
 - Codex reads reusable user skills from `~/.agents/skills/`.
 - Claude Code reads reusable skills from `~/.claude/skills/`.
 
-Each contributed skill should be self-contained under `skills/<skill-name>/`. Put its `SKILL.md`, metadata, references, and validation examples in that folder instead of splitting one skill across separate top-level demo directories.
+Shared contributed skills should be self-contained under `skills/<skill-name>/`. Project-specific Showcase skills can live with their project package under `showcase/<project-slug>/skills/<skill-name>/`.
 
 Shared skill sources:
 

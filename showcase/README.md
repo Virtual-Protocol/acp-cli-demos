@@ -47,11 +47,22 @@ Every manifest needs:
 - `artifacts`, including proof and redacted reports for live workflows
 - exactly three `feedbackPrompts`
 
+Public proof does not have to be an X video. Use any inspectable artifact that
+shows the project or workflow ran: screenshot, hosted video, animated demo, live
+page, interactive demo, public PR, demo repo, or redacted result report.
+
 Optional visibility control:
 
 - `hidden: true` keeps the package valid in this repo but prevents the EconomyOS
   docs sync from publishing the card. Remove it in a later PR when the showcase
   should go live.
+
+Optional agent context:
+
+- `soul.md` can be included when the builder intentionally wants to publish
+  public agent context. Redact private instructions, credentials, account data,
+  wallet material, and operational secrets before linking it from
+  `showcase.json` as `soul.href` with a short `soul.summary`.
 
 Run this before requesting review:
 

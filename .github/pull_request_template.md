@@ -6,7 +6,8 @@
 - Project title:
 - Builder name and URL:
 - EconomyOS primitives used:
-- Public proof:
+- Public proof: <!-- screenshot, hosted video, live page, interactive demo, public PR, redacted report, or X video -->
+- Optional soul.md: <!-- public/redacted URL and summary, or "none" -->
 
 ## Project package
 
@@ -18,6 +19,7 @@
 - [ ] Linked all public artifacts from the manifest
 - [ ] Included exactly three feedback prompts
 - [ ] Set `hidden: true` only if this package should merge without publishing its public Showcase card yet
+- [ ] Linked `soul.md` only if the builder intentionally wants to publish public, redacted agent context
 
 ## Skill standard
 
@@ -33,6 +35,7 @@
 - [ ] No card numbers, CVVs, OTPs, magic links, API keys, access tokens, private prompts, wallet material, or private account records are published
 - [ ] Live workflow evidence is redacted
 - [ ] Public/private boundaries are explained
+- [ ] Optional `soul.md` does not include private instructions, credentials, account data, wallet material, or operational secrets
 
 ## Publish path
 

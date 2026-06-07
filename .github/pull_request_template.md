@@ -17,6 +17,7 @@
 - [ ] Set `skills[].sourcePath` in `showcase.json` for any skill committed in this repo
 - [ ] Linked all public artifacts from the manifest
 - [ ] Included exactly three feedback prompts
+- [ ] Set `hidden: true` only if this package should merge without publishing its public Showcase card yet
 
 ## Skill standard
 

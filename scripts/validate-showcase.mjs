@@ -72,6 +72,10 @@ function collectManifestFiles() {
 function validateProject(project, file) {
   if (!isObject(project)) fail(`${file} must contain a JSON object`)
 
+  if (project.hidden !== undefined && typeof project.hidden !== 'boolean') {
+    fail(`${file}: hidden must be a boolean`)
+  }
+
   for (const key of ['slug', 'title', 'tagline', 'description', 'status', 'topic']) {
     requireString(project, key)
   }

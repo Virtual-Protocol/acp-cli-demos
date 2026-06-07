@@ -47,6 +47,12 @@ Every manifest needs:
 - `artifacts`, including proof and redacted reports for live workflows
 - exactly three `feedbackPrompts`
 
+Optional visibility control:
+
+- `hidden: true` keeps the package valid in this repo but prevents the EconomyOS
+  docs sync from publishing the card. Remove it in a later PR when the showcase
+  should go live.
+
 Run this before requesting review:
 
 ```bash

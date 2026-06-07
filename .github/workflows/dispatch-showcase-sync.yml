@@ -17,6 +17,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check docs sync token
+        shell: bash
+        env:
+          SHOWCASE_SYNC_TOKEN: ${{ secrets.SHOWCASE_SYNC_TOKEN }}
+        run: |
+          if [[ -z "$SHOWCASE_SYNC_TOKEN" ]]; then
+            echo "::error title=Missing SHOWCASE_SYNC_TOKEN::Set the SHOWCASE_SYNC_TOKEN repository secret in Virtual-Protocol/acp-cli-demos. It must be a GitHub token that can create repository_dispatch events in Virtual-Protocol/whitepaper-economyOS."
+            exit 1
+          fi
+
       - name: Trigger EconomyOS docs showcase sync
         uses: peter-evans/repository-dispatch@v3
         with:

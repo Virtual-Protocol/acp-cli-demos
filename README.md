@@ -30,8 +30,11 @@ After a Showcase PR is approved and merged to `main`, changes under
 `showcase/**` dispatch the EconomyOS docs sync. The docs workflow
 regenerates the Showcase page data from the accepted manifest.
 
-Automation requirement: configure `SHOWCASE_SYNC_TOKEN` in this repo with
-permission to dispatch workflows in `Virtual-Protocol/whitepaper-economyOS`.
+Automation requirement: configure `SHOWCASE_SYNC_TOKEN` in this repo with a
+GitHub token that can create `repository_dispatch` events in
+`Virtual-Protocol/whitepaper-economyOS`. If the secret is missing, the dispatch
+workflow cannot authenticate and GitHub Actions will fail before the docs sync
+starts.
 
 Validate manifests before requesting review:
 

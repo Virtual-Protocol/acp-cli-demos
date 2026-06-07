@@ -1,9 +1,8 @@
 # Test Showcase Contribution
 
-This hidden package is a reference contribution for testing the EconomyOS
-Showcase submission flow. It is intentionally marked `hidden: true` in
-`showcase.json`, so the docs sync validates the package but does not publish it
-as a public Showcase card.
+This package is a reference contribution for testing the EconomyOS Showcase
+submission flow. It is visible by default, so the docs sync validates the
+package and publishes it as a public Showcase card.
 
 Use this folder to verify the expected contribution shape:
 

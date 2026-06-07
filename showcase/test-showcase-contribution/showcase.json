@@ -1,10 +1,9 @@
 {
   "slug": "test-showcase-contribution",
-  "hidden": true,
   "title": "Test Showcase Contribution",
-  "tagline": "A hidden reference package that exercises the EconomyOS Showcase contribution shape.",
+  "tagline": "A reference package that exercises the EconomyOS Showcase contribution shape.",
   "description": "This package demonstrates how a builder can submit card metadata, proof links, optional soul.md context, and a project-specific reusable skill in one acp-cli-demos PR.",
-  "status": "hidden test",
+  "status": "visible test",
   "topic": "skills",
   "topics": ["skills", "identity"],
   "builder": {
@@ -19,7 +18,7 @@
   },
   "primitives": ["email", "card"],
   "visual": {
-    "kind": "hidden proof package",
+    "kind": "proof package",
     "eyebrow": "reference package",
     "title": "showcase contribution"
   },
@@ -28,7 +27,7 @@
       "name": "showcase-test-contribution",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/test-showcase-contribution/skills/showcase-test-contribution",
       "sourcePath": "showcase/test-showcase-contribution/skills/showcase-test-contribution",
-      "summary": "Reference workflow for assembling and validating a hidden EconomyOS Showcase test package.",
+      "summary": "Reference workflow for assembling and validating an EconomyOS Showcase test package.",
       "install": "cp -R showcase/test-showcase-contribution/skills/showcase-test-contribution ~/.agents/skills/\ncp -R showcase/test-showcase-contribution/skills/showcase-test-contribution ~/.claude/skills/"
     }
   ],
@@ -51,7 +50,7 @@
   ],
   "soul": {
     "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/test-showcase-contribution/soul.md",
-    "summary": "Optional public context for the hidden test agent, including role, boundaries, and proof preferences."
+    "summary": "Optional public context for the test agent, including role, boundaries, and proof preferences."
   },
   "feedbackPrompts": [
     "Does the package make the contribution flow clear?",

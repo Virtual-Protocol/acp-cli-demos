@@ -23,7 +23,8 @@ the docs site.
 
 The publish step requires the `SHOWCASE_SYNC_TOKEN` repository secret to be set
 in `acp-cli-demos`. It should be a GitHub token that can create a repository
-dispatch event in `Virtual-Protocol/whitepaper-economyOS`.
+dispatch event in `Virtual-Protocol/whitepaper-economyOS`. Without this secret,
+the dispatch action receives no auth token and fails before the docs sync starts.
 
 ## Required Shape
 

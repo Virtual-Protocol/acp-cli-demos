@@ -1,0 +1,67 @@
+{
+  "slug": "acp-sec",
+  "title": "ACP-SEC",
+  "tagline": "Security scanning & Trust Score for ACP agents",
+  "description": "ACP-SEC scans an agent contract — your own or a counterparty's — before you delegate authority or commit to a job. It produces a Trust Score (0-100, graded A to F) across six dimensions: contract security, authority scope, identity, hooks, ERC-8183/ACP compliance, and on-chain behavior. The identity and compliance dimensions include ERC-8004 and ERC-8183 conformance checks.",
+  "status": "live",
+  "topic": "skills",
+  "topics": [
+    "security",
+    "audit",
+    "trust-score",
+    "erc-8183",
+    "erc-8004"
+  ],
+  "builder": {
+    "name": "acpsec",
+    "url": "https://x.com/acpsecagent"
+  },
+  "links": {
+    "repo": "https://github.com/acpsec/acp-sec",
+    "feedback": "https://github.com/acpsec/acp-sec/issues",
+    "share": "https://x.com/acpsecagent"
+  },
+  "primitives": [
+    "acp"
+  ],
+  "visual": {
+    "kind": "security scan report",
+    "eyebrow": "base + acp + erc-8004/8183",
+    "title": "trust score for acp agents"
+  },
+  "skills": [
+    {
+      "name": "acp-sec-scan",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-sec/skills/acp-sec-scan",
+      "sourcePath": "showcase/acp-sec/skills/acp-sec-scan",
+      "summary": "Run an acp-sec Trust Score scan on an on-chain ACP agent contract and interpret the score, subscores, top findings, and Unrated dimensions — standalone via CLI or as the executor behind the acp-sec ACP Provider.",
+      "install": "cp -R showcase/acp-sec/skills/acp-sec-scan ~/.agents/skills/\ncp -R showcase/acp-sec/skills/acp-sec-scan ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "SentryAgent baseline Trust Score (80 / B, Base Sepolia)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sec/examples/sentryagent-baseline-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "ACP-SEC package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sec/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "acp-sec-scan skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-sec/skills/acp-sec-scan",
+      "kind": "skill"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sec/soul.md",
+    "summary": "Public acp-sec agent context: what it scans, its A-F grade scale, its read-only and secret-handling boundaries, and its proof-over-claims review preference."
+  },
+  "feedbackPrompts": [
+    "Are the six Trust Score dimensions the right ones for deciding whether to transact with an ACP agent?",
+    "Is conservative Unrated-by-default scoring (missing data lowers confidence rather than passing) the right call?",
+    "What additional proof would make a Trust Score trustworthy enough to gate real authority delegation?"
+  ]
+}

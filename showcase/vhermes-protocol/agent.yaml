@@ -1,0 +1,43 @@
+name: VHermes Protocol
+version: "1.0"
+runtime: telegram + acp
+chain: base
+builder: vhermes-builder
+builder_name: VHermes Protocol builder
+
+token:
+  name: VHermes Protocol
+  symbol: VHERMES
+  chain: base
+  url: https://app.virtuals.io
+
+agent:
+  id: vhermes-protocol-bot
+  url: https://app.virtuals.io
+  status: active
+  receptor: telegram
+
+commands:
+  - /start
+  - /help
+  - /agents
+  - /status
+  - /fund
+  - /run_task
+  - /workflow
+  - /discover
+  - /research
+
+channels:
+  - telegram
+
+social:
+  telegram: https://t.me/VHermes_protocol_bot
+  github: https://github.com/Virtual-Protocol
+
+files:
+  - showcase/vhermes-protocol/README.md
+  - showcase/vhermes-protocol/showcase.json
+  - showcase/vhermes-protocol/agent.yaml
+  - showcase/vhermes-protocol/soul.md
+  - showcase/vhermes-protocol/skills/vhermes-protocol-showcase/SKILL.md

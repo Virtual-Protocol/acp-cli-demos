@@ -1,0 +1,59 @@
+{
+  "slug": "vhermes-protocol",
+  "title": "VHermes Protocol",
+  "tagline": "A Telegram-native agent interface for Virtuals Protocol, turning any chat into an on-chain agent receiver.",
+  "description": "VHermes Protocol exposes an ACP-enabled agent through Telegram so users can interact with Virtuals agents through natural chat commands. The project packages a reusable Telegram bot workflow, public command surface, agent loop, and channel/event observer as a demo manifest.",
+  "status": "active public showcase",
+  "topic": "agents",
+  "topics": ["agents", "telegram", "virtuals", "acp", "user-interface"],
+  "builder": {
+    "name": "Virtuos Protocol builder",
+    "url": "https://t.me/VHermes_protocol_bot"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/vhermes-protocol",
+    "share": "https://t.me/VHermes_protocol_bot",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback:%20VHermes%20Protocol&body=Which%20feedback%20prompt%20fits?%0A%0A-__%0A-__%0A-__%0A%0ANotes:%0A"
+  },
+  "primitives": ["acp", "wallet", "token"],
+  "visual": {
+    "kind": "telegram agent surface",
+    "eyebrow": "telegram + virtuals + acp",
+    "title": "chat-native agent interface"
+  },
+  "skills": [
+    {
+      "name": "vhermes-protocol-showcase",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/vhermes-protocol/skills/vhermes-protocol-showcase",
+      "sourcePath": "showcase/vhermes-protocol/skills/vhermes-protocol-showcase",
+      "summary": "Reusable workflow for packaging and reviewing a VHermes-style Telegram agent wrapper around a Virtuals ACP agent, including bot manifest, command surface, and chat-loop notes.",
+      "install": "cp -R showcase/vhermes-protocol/skills/vhermes-protocol-showcase ~/.agents/skills/\ncp -R showcase/vhermes-protocol/skills/vhermes-protocol-showcase ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "VHermes package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vhermes-protocol/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Public agent manifest",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vhermes-protocol/agent.yaml",
+      "kind": "manifest"
+    },
+    {
+      "label": "Project-specific skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/vhermes-protocol/skills/vhermes-protocol-showcase",
+      "kind": "skill"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vhermes-protocol/soul.md",
+    "summary": "Public/redacted VHermes agent context, chat surface design, and deployer notes."
+  },
+  "feedbackPrompts": [
+    "Which VHermes command would improve discoverability the most for new Virtuals users?",
+    "How should the Telegram surface represent wallet balances and ACP job status without exposing sensitive operational state?",
+    "What proof artifact would make the chat-native interface story strongest to external reviewers?"
+  ]
+}

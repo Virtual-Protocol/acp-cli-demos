@@ -49,6 +49,8 @@ This example validates that an ACP agent can complete a paid newsletter checkout
 
 Agent setup guide: [`docs/agent-setup.md`](docs/agent-setup.md)
 
+Model selection and configuration: [`docs/model-config.md`](docs/model-config.md)
+
 GitHub skill references: [`docs/skill-packages.md`](docs/skill-packages.md)
 
 Packaged skills: [`packages/`](packages)

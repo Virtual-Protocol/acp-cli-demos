@@ -34,6 +34,8 @@ scripts/install-local-skills.sh --mode copy --target both
 
 ## Model Routing Utilities
 
+To discover available model IDs and choose which model each agent uses, see [`docs/model-config.md`](model-config.md).
+
 Codex and Claude Code need different local routing surfaces when using Virtuals-hosted models:
 
 - Codex custom providers call `/v1/responses`; use [`utilities/model-routing/codex-virtuals-proxy`](../utilities/model-routing/codex-virtuals-proxy).

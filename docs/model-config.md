@@ -93,10 +93,51 @@ must agree:
 - The four `Router` keys let you route cheaper/faster models to background and
   default work while reserving a stronger model for `think` and `longContext`.
 
-Use the helper rather than hand-editing:
+> **Note:** the router remaps every request to the model in the matching
+> `Router` route, regardless of the model id sent in the request. A request that
+> names `claude-opus-4-8` but matches the `default` route is served by
+> `default`'s model, not the requested one. To run a specific model you must set
+> it on the route that request will hit. Most interactive Claude Code use hits
+> the `default` route.
+
+### Set the model on a route
+
+There are two ways. Either edits the same file —
+`~/.claude-code-router/config.json`.
+
+**Option A — helper flags (preferred).** Run from the repo root. The helper
+writes the routes and keeps `models[]` in sync:
 
 ```bash
-scripts/configure-claude-virtuals.mjs virtuals   # activate Virtuals provider + routes
+# --model sets the default AND background routes
+# --think-model sets the think AND longContext routes
+# --models is the provider allowlist (every routed model must be listed here)
+scripts/configure-claude-virtuals.mjs virtuals \
+  --model claude-opus-4-8 \
+  --think-model claude-opus-4-8 \
+  --models claude-opus-4-8,claude-opus-4-7-fast
+```
+
+**Option B — hand-edit.** Open `~/.claude-code-router/config.json` and change
+the value of the route you want under `Router`. The value format is
+`"<provider-name>,<model-id>"`. To make every interactive request use
+`claude-opus-4-8`:
+
+```jsonc
+"Router": {
+  "default":     "virtuals,claude-opus-4-8",   // <- interactive requests hit this
+  "background":  "virtuals,claude-opus-4-7-fast",
+  "think":       "virtuals,claude-opus-4-8",
+  "longContext": "virtuals,claude-opus-4-8"
+}
+```
+
+Whichever route you edit, the model id must also be present in
+`Providers[].models[]`.
+
+### Other helper commands
+
+```bash
 scripts/configure-claude-virtuals.mjs check      # validate the active config
 scripts/configure-claude-virtuals.mjs restore    # back to previous provider/routes
 scripts/configure-claude-virtuals.mjs default    # remove Virtuals routes

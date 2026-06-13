@@ -33,6 +33,9 @@ After editing `~/.claude-code-router/config.json`, restart the router:
 ccr restart
 ```
 
+To choose which model each route uses (and discover available model ids), see
+[`docs/model-config.md`](../../../docs/model-config.md).
+
 Restore the previous router provider and route values after the demo:
 
 ```bash

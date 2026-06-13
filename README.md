@@ -69,6 +69,8 @@ Path: [`utilities/model-routing/claude-virtuals-router`](utilities/model-routing
 
 This setup example lets Claude Code use Virtuals-hosted models through `claude-code-router`.
 
+Use `scripts/configure-claude-virtuals.mjs virtuals` from the repo root to activate the Claude Code Router provider, `scripts/configure-claude-virtuals.mjs restore` to switch back to the previous router provider/routes, or `scripts/configure-claude-virtuals.mjs default` to remove the Virtuals routes when no restore state exists. Restart `claude-code-router` after changing the config.
+
 ## Use The Skill
 
 ### ACP Paid Subscription Checkout

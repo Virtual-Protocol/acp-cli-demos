@@ -57,6 +57,30 @@ If no restore state exists, switch back to built-in Codex routing:
 scripts/configure-codex-virtuals.mjs default
 ```
 
+For Claude Code, use the router config helper instead of hand-editing `~/.claude-code-router/config.json`:
+
+```bash
+scripts/configure-claude-virtuals.mjs virtuals
+```
+
+It records the previous `claude-code-router` provider and route values and can restore them after the demo:
+
+```bash
+scripts/configure-claude-virtuals.mjs restore
+```
+
+If no restore state exists, remove the Virtuals provider and Virtuals routes:
+
+```bash
+scripts/configure-claude-virtuals.mjs default
+```
+
+Validate the active router config before starting Claude Code:
+
+```bash
+scripts/configure-claude-virtuals.mjs check
+```
+
 Keep shared utilities in `utilities/` so setup docs, skills, and examples evolve together.
 
 ## Desktop Support Matrix

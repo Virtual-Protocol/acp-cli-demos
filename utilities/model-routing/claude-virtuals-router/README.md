@@ -13,24 +13,37 @@ npm install -g @anthropic-ai/claude-code
 npm install -g @musistudio/claude-code-router
 ```
 
-Create the router config:
+Create or update the router config from the repo root:
 
 ```bash
-mkdir -p "$HOME/.claude-code-router"
-cp utilities/model-routing/claude-virtuals-router/config.example.json \
-  "$HOME/.claude-code-router/config.json"
+scripts/configure-claude-virtuals.mjs virtuals
 ```
 
 Set your key in the shell that starts the router:
 
 ```bash
 export VIRTUALS_API_KEY=...
+scripts/configure-claude-virtuals.mjs check
 ccr code
 ```
 
 After editing `~/.claude-code-router/config.json`, restart the router:
 
 ```bash
+ccr restart
+```
+
+Restore the previous router provider and route values after the demo:
+
+```bash
+scripts/configure-claude-virtuals.mjs restore
+ccr restart
+```
+
+If no restore state exists, remove the Virtuals provider and Virtuals routes:
+
+```bash
+scripts/configure-claude-virtuals.mjs default
 ccr restart
 ```
 
@@ -44,4 +57,13 @@ https://compute.virtuals.io/v1/chat/completions
 
 It uses the `anthropic` transformer because Claude Code sends Anthropic-style `/v1/messages` requests, while Virtuals accepts OpenAI-style Chat Completions requests.
 
-The default routes use Claude-family Virtuals models because `claude-code-router` forwards token cap parameters and some Virtuals OpenAI-family models reject those parameters. If you add a transformer that drops token caps, you can route Claude Code to `openai-gpt-55` instead.
+It also uses the `cleancache` transformer. Claude Code adds Anthropic prompt-cache metadata such as `cache_control` to real `ccr code` requests. Direct local router curls can work without that metadata, while `ccr code` can fail with:
+
+```text
+Error from provider(virtuals,claude-opus-4-8: 400):
+{"message":"Failed to perform chat completion: Bad Request"}
+```
+
+In that case, check that the provider transformer chain includes both `anthropic` and `cleancache`, then restart `ccr`.
+
+The default routes use Claude-family Virtuals models because `claude-code-router` forwards large token cap parameters and some Virtuals OpenAI-family models reject those parameters. If you add a transformer that drops token caps, you can route Claude Code to `openai-gpt-55` instead.

@@ -39,6 +39,24 @@ Codex and Claude Code need different local routing surfaces when using Virtuals-
 - Codex custom providers call `/v1/responses`; use [`utilities/model-routing/codex-virtuals-proxy`](../utilities/model-routing/codex-virtuals-proxy).
 - Claude Code calls Anthropic-compatible `/v1/messages`; use [`utilities/model-routing/claude-virtuals-router`](../utilities/model-routing/claude-virtuals-router) with `claude-code-router`.
 
+For Codex, use the config helper instead of hand-editing `~/.codex/config.toml`:
+
+```bash
+scripts/configure-codex-virtuals.mjs virtuals
+```
+
+It records the previous active Codex model/provider and can restore it after the demo:
+
+```bash
+scripts/configure-codex-virtuals.mjs restore
+```
+
+If no restore state exists, switch back to built-in Codex routing:
+
+```bash
+scripts/configure-codex-virtuals.mjs default
+```
+
 Keep shared utilities in `utilities/` so setup docs, skills, and examples evolve together.
 
 ## Desktop Support Matrix

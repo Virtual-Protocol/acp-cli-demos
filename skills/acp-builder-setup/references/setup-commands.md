@@ -17,10 +17,17 @@ scripts/install-local-skills.sh --mode copy --target both
 ```bash
 cd utilities/model-routing/codex-virtuals-proxy
 cp .env.example .env
-VIRTUALS_API_KEY=... npm start
+# edit .env and set VIRTUALS_API_KEY
+npm start
 ```
 
-Add to `~/.codex/config.toml`:
+In another terminal from the repo root, activate Codex routing through the local proxy:
+
+```bash
+scripts/configure-codex-virtuals.mjs virtuals
+```
+
+This updates `~/.codex/config.toml` to use:
 
 ```toml
 model = "openai-gpt-55"
@@ -30,6 +37,18 @@ model_provider = "virtuals_proxy"
 name = "Virtuals via local Responses proxy"
 base_url = "http://127.0.0.1:8787/v1"
 wire_api = "responses"
+```
+
+Restore the previous Codex model/provider after the demo:
+
+```bash
+scripts/configure-codex-virtuals.mjs restore
+```
+
+If no restore state exists, switch back to built-in Codex routing:
+
+```bash
+scripts/configure-codex-virtuals.mjs default
 ```
 
 ## Claude Code Virtuals Router

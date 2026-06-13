@@ -13,14 +13,21 @@ Requires Node.js 22 or newer.
 ```bash
 cd utilities/model-routing/codex-virtuals-proxy
 cp .env.example .env
-VIRTUALS_API_KEY=... npm start
+# edit .env and set VIRTUALS_API_KEY
+npm start
 ```
 
 The proxy listens at `http://127.0.0.1:8787/v1` by default.
 
 ## Codex Config
 
-Add this to `~/.codex/config.toml`:
+From the repo root, activate Codex routing through this proxy:
+
+```bash
+scripts/configure-codex-virtuals.mjs virtuals
+```
+
+The script records the previous active Codex model/provider, then updates `~/.codex/config.toml` to use:
 
 ```toml
 model = "openai-gpt-55"
@@ -32,7 +39,19 @@ base_url = "http://127.0.0.1:8787/v1"
 wire_api = "responses"
 ```
 
-If you set `VIRTUALS_PROXY_API_KEY`, also add `env_key = "VIRTUALS_PROXY_API_KEY"` to the provider block and export the same value in the shell that starts Codex.
+Restore the previous Codex model/provider after the demo:
+
+```bash
+scripts/configure-codex-virtuals.mjs restore
+```
+
+If no restore state exists, switch back to built-in Codex routing:
+
+```bash
+scripts/configure-codex-virtuals.mjs default
+```
+
+If you set `VIRTUALS_PROXY_API_KEY`, run `scripts/configure-codex-virtuals.mjs virtuals --env-key VIRTUALS_PROXY_API_KEY` and export the same value in the shell that starts Codex.
 
 ## Environment
 

@@ -61,6 +61,8 @@ Path: [`utilities/model-routing/codex-virtuals-proxy`](utilities/model-routing/c
 
 This local helper lets Codex use Virtuals-hosted models by translating Codex Responses API calls to the Virtuals Chat Completions endpoint.
 
+Use `scripts/configure-codex-virtuals.mjs virtuals` from the repo root to activate the Codex provider block, `scripts/configure-codex-virtuals.mjs restore` to switch back to the previous Codex model/provider, or `scripts/configure-codex-virtuals.mjs default` to switch back to built-in Codex routing when no restore state exists.
+
 ### Claude Virtuals Router
 
 Path: [`utilities/model-routing/claude-virtuals-router`](utilities/model-routing/claude-virtuals-router)

@@ -178,7 +178,7 @@ function configureConfig() {
   const originalConfig = readConfig();
   const next = clone(originalConfig);
 
-  writeStateIfMissing(originalText, originalConfig);
+  captureRestoreState(originalText, originalConfig);
   next.Providers = upsertProvider(next.Providers, providerConfig());
   next.Router = {
     ...(next.Router && typeof next.Router === "object" ? next.Router : {}),
@@ -311,9 +311,13 @@ function route(model) {
   return `${options.provider},${model}`;
 }
 
-function writeStateIfMissing(originalText, originalConfig) {
-  if (existsSync(statePath)) return;
-
+function captureRestoreState(originalText, originalConfig) {
+  // Snapshot the config exactly as it is on disk right now, overwriting any
+  // previous snapshot. `restore` then always returns to the state immediately
+  // before the most recent activation. Capturing only once (the old behavior)
+  // left the snapshot stale whenever the config was edited between activations,
+  // so restore silently reverted those edits away. The genuine pre-Virtuals
+  // baseline is preserved separately in `.before-virtuals.bak`.
   const provider = findProvider(originalConfig.Providers, options.provider);
   const router = originalConfig.Router && typeof originalConfig.Router === "object" ? originalConfig.Router : {};
   const state = {

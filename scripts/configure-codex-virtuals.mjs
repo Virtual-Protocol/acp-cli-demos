@@ -162,7 +162,7 @@ function configureConfig() {
   const model = codexModelId(options.model);
 
   if (!options.addProviderOnly) {
-    writeStateIfMissing(original);
+    captureRestoreState(original);
     next = setTopLevelKey(next, "model", model);
     next = setTopLevelKey(next, "model_provider", options.provider);
   }
@@ -249,9 +249,13 @@ function switchToDefaultCodex() {
   console.log(`Switched Codex back to built-in provider routing with model ${options.defaultModel}.`);
 }
 
-function writeStateIfMissing(text) {
-  if (existsSync(statePath)) return;
-
+function captureRestoreState(text) {
+  // Snapshot the config exactly as it is on disk right now, overwriting any
+  // previous snapshot. `restore` then always returns to the state immediately
+  // before the most recent activation. Capturing only once (the old behavior)
+  // left the snapshot stale whenever the config was edited between activations,
+  // so restore silently reverted those edits away. The genuine pre-Virtuals
+  // baseline is preserved separately in `.before-virtuals.bak`.
   const provider = options.provider;
   const state = {
     createdAt: new Date().toISOString(),

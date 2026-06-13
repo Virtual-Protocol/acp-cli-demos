@@ -41,7 +41,7 @@ In Claude Desktop, the combined checkout skill must use handoff or evidence-revi
 
 Codex and Claude Code need different local routing utilities:
 
-- Codex: run `utilities/model-routing/codex-virtuals-proxy`, then use `scripts/configure-codex-virtuals.mjs virtuals` from the repo root to point `~/.codex/config.toml` at `http://127.0.0.1:8787/v1`.
+- Codex: run `utilities/model-routing/codex-virtuals-proxy`, then use `scripts/configure-codex-virtuals.mjs virtuals` from the repo root to point `~/.codex/config.toml` at `http://127.0.0.1:8787/v1`. Codex config must use a Codex-supported model id such as `gpt-5.5`; the local proxy maps that to the upstream Virtuals model id.
 - Claude Code: use `scripts/configure-claude-virtuals.mjs virtuals` from the repo root to point `~/.claude-code-router/config.json` at Virtuals through `claude-code-router`.
 - Claude Desktop: do not claim the local router works. Desktop does not inherit `ccr code` or Codex proxy settings.
 

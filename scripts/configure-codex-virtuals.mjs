@@ -4,9 +4,13 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node
 import { dirname, join, resolve } from "node:path";
 
 const DEFAULT_PROVIDER = "virtuals_proxy";
-const DEFAULT_MODEL = "openai-gpt-55";
+const DEFAULT_MODEL = "gpt-5.5";
 const DEFAULT_CODEX_MODEL = "gpt-5.5";
 const DEFAULT_BASE_URL = "http://127.0.0.1:8787/v1";
+const LEGACY_VIRTUALS_MODEL_TO_CODEX_MODEL = new Map([
+  ["openai-gpt-55", "gpt-5.5"],
+  ["openai-gpt-54-mini", "gpt-5.4-mini"],
+]);
 
 const options = parseArgs(process.argv.slice(2));
 const configPath = expandPath(options.config || "~/.codex/config.toml");
@@ -38,7 +42,7 @@ Commands:
 
 Options:
   --config PATH          Codex config path (default: ~/.codex/config.toml)
-  --model MODEL          Virtuals model id (default: ${DEFAULT_MODEL})
+  --model MODEL          Codex model id (default: ${DEFAULT_MODEL})
   --default-model MODEL  Built-in Codex model for default mode (default: ${DEFAULT_CODEX_MODEL})
   --provider NAME        Codex provider name (default: ${DEFAULT_PROVIDER})
   --base-url URL         Local proxy base URL (default: ${DEFAULT_BASE_URL})
@@ -155,10 +159,11 @@ function writeConfig(next) {
 function configureConfig() {
   const original = readConfig();
   let next = original;
+  const model = codexModelId(options.model);
 
   if (!options.addProviderOnly) {
     writeStateIfMissing(original);
-    next = setTopLevelKey(next, "model", options.model);
+    next = setTopLevelKey(next, "model", model);
     next = setTopLevelKey(next, "model_provider", options.provider);
   }
 
@@ -172,10 +177,19 @@ function configureConfig() {
   writeConfig(next);
   console.log(`Updated ${configPath}`);
   if (!options.addProviderOnly) {
-    console.log(`Active model: ${options.model}`);
+    if (model !== options.model) {
+      console.log(
+        `Normalized model ${options.model} to Codex-compatible ${model}. The local proxy maps it upstream.`,
+      );
+    }
+    console.log(`Active model: ${model}`);
     console.log(`Active provider: ${options.provider}`);
     console.log(`Restore with: scripts/configure-codex-virtuals.mjs restore`);
   }
+}
+
+function codexModelId(model) {
+  return LEGACY_VIRTUALS_MODEL_TO_CODEX_MODEL.get(model) || model;
 }
 
 function restoreConfig() {

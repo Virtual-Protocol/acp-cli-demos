@@ -30,7 +30,7 @@ scripts/configure-codex-virtuals.mjs virtuals
 The script records the previous active Codex model/provider, then updates `~/.codex/config.toml` to use:
 
 ```toml
-model = "openai-gpt-55"
+model = "gpt-5.5"
 model_provider = "virtuals_proxy"
 
 [model_providers.virtuals_proxy]
@@ -38,6 +38,8 @@ name = "Virtuals via local Responses proxy"
 base_url = "http://127.0.0.1:8787/v1"
 wire_api = "responses"
 ```
+
+Codex validates the configured model id against Codex-supported model names when you sign in with a ChatGPT account. Keep the config model as `gpt-5.5`; this proxy maps it to Virtuals' upstream `openai-gpt-55` model before forwarding the request.
 
 Restore the previous Codex model/provider after the demo:
 

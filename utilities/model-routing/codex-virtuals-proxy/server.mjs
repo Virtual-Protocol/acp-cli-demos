@@ -15,6 +15,10 @@ const VIRTUALS_API_KEY = process.env.VIRTUALS_API_KEY;
 const LOCAL_API_KEY = process.env.VIRTUALS_PROXY_API_KEY;
 const DEBUG = process.env.VIRTUALS_PROXY_DEBUG === "1";
 const FORWARD_MAX_TOKENS = process.env.VIRTUALS_PROXY_FORWARD_MAX_TOKENS === "1";
+const MODEL_ALIASES = new Map([
+  ["gpt-5.5", "openai-gpt-55"],
+  ["gpt-5.4-mini", "openai-gpt-54-mini"],
+]);
 
 if (!VIRTUALS_API_KEY) {
   console.error("VIRTUALS_API_KEY is required.");
@@ -227,7 +231,7 @@ function responsesRequestToChat(request) {
   }
 
   const body = {
-    model: request.model,
+    model: upstreamModel(request.model),
     messages,
     stream: Boolean(request.stream),
   };
@@ -245,6 +249,10 @@ function responsesRequestToChat(request) {
   }
 
   return body;
+}
+
+function upstreamModel(model) {
+  return MODEL_ALIASES.get(model) || model;
 }
 
 function usageFromChat(chat) {
@@ -311,6 +319,9 @@ function chatResponseToResponses(chat, requestedModel) {
   const choice = chat.choices?.[0] || {};
   const message = choice.message || {};
   const output = chatMessageToOutput(message);
+  const responseModel = MODEL_ALIASES.has(requestedModel)
+    ? requestedModel
+    : chat.model || requestedModel;
 
   return {
     id: `resp_${randomUUID().replaceAll("-", "")}`,
@@ -322,7 +333,7 @@ function chatResponseToResponses(chat, requestedModel) {
     incomplete_details: null,
     instructions: null,
     max_output_tokens: null,
-    model: chat.model || requestedModel,
+    model: responseModel,
     output,
     output_text: output
       .flatMap((item) => item.content || [])
@@ -604,6 +615,7 @@ async function forwardResponses(req, res) {
     return;
   }
 
+  const requestedModel = responsesRequest.model;
   const chatRequest = responsesRequestToChat(responsesRequest);
   logDebug("responses request", JSON.stringify(responsesRequest, null, 2));
   logDebug("chat request", JSON.stringify(chatRequest, null, 2));
@@ -628,12 +640,12 @@ async function forwardResponses(req, res) {
   }
 
   if (chatRequest.stream) {
-    await handleStreamingResponse(res, upstream, chatRequest.model);
+    await handleStreamingResponse(res, upstream, requestedModel);
     return;
   }
 
   const chatResponse = await upstream.json();
-  sendJson(res, 200, chatResponseToResponses(chatResponse, chatRequest.model));
+  sendJson(res, 200, chatResponseToResponses(chatResponse, requestedModel));
 }
 
 async function forwardModels(req, res) {

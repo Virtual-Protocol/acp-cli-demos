@@ -162,17 +162,26 @@ function configureConfig() {
   const model = codexModelId(options.model);
 
   if (!options.addProviderOnly) {
-    captureRestoreState(original);
     next = setTopLevelKey(next, "model", model);
     next = setTopLevelKey(next, "model_provider", options.provider);
   }
 
   next = upsertProviderBlock(next, options.provider, providerBlock());
+
+  // Detect the no-op before capturing the restore snapshot. Capturing first
+  // would overwrite the existing snapshot with the current (already-Virtuals)
+  // config, destroying the path back to the user's pre-Virtuals config even
+  // though this run changes nothing. The existing restore point is kept.
   if (next === original) {
-    console.log(`Codex config already routes through ${options.provider}.`);
+    console.log(
+      `Codex config already routes through ${options.provider} — no changes made. Existing restore point kept.`,
+    );
     return;
   }
 
+  if (!options.addProviderOnly) {
+    captureRestoreState(original);
+  }
   writeBackupIfMissing(original);
   writeConfig(next);
   console.log(`Updated ${configPath}`);
@@ -193,9 +202,18 @@ function codexModelId(model) {
 }
 
 function restoreConfig() {
+  // Precedence: the per-activation state snapshot is the most precise restore
+  // point, so prefer it. When it is missing (e.g. consumed by a prior restore,
+  // or destroyed by an older buggy build), fall back to the pristine
+  // `.before-virtuals.bak` baseline so there is still a path home. Only error
+  // toward `default` when neither exists.
   if (!existsSync(statePath)) {
+    if (existsSync(backupPath)) {
+      restoreFromBackup();
+      return;
+    }
     fail(
-      `No Virtuals state file found at ${statePath}. Use "scripts/configure-codex-virtuals.mjs default" to switch back to built-in Codex routing.`,
+      `No Virtuals state file found at ${statePath} and no baseline at ${backupPath}. Use "scripts/configure-codex-virtuals.mjs default" to switch back to built-in Codex routing.`,
     );
   }
 
@@ -231,6 +249,17 @@ function restoreConfig() {
   console.log(`Restored Codex config from ${statePath}`);
 }
 
+function restoreFromBackup() {
+  // The baseline is the verbatim pre-Virtuals config text. Write it straight
+  // back rather than reconstructing from a parsed snapshot. Keep the baseline
+  // file: it is the only frozen copy of the original config, and a later
+  // restore/recovery may still need it.
+  const baselineText = readFileSync(backupPath, "utf8");
+  writeConfig(baselineText);
+  console.log(`No restore snapshot found; restored Codex config from baseline ${backupPath}`);
+  console.log(`Kept baseline ${backupPath} for future recovery.`);
+}
+
 function switchToDefaultCodex() {
   const original = readConfig();
   let next = original;
@@ -251,11 +280,11 @@ function switchToDefaultCodex() {
 
 function captureRestoreState(text) {
   // Snapshot the config exactly as it is on disk right now, overwriting any
-  // previous snapshot. `restore` then always returns to the state immediately
-  // before the most recent activation. Capturing only once (the old behavior)
-  // left the snapshot stale whenever the config was edited between activations,
-  // so restore silently reverted those edits away. The genuine pre-Virtuals
-  // baseline is preserved separately in `.before-virtuals.bak`.
+  // previous snapshot, so `restore` returns to the state immediately before the
+  // most recent activation. The caller gates this on a real change (see the
+  // no-op check in configureConfig), so a repeat run never clobbers a good
+  // snapshot. The pre-Virtuals baseline is preserved separately in
+  // `.before-virtuals.bak`.
   const provider = options.provider;
   const state = {
     createdAt: new Date().toISOString(),

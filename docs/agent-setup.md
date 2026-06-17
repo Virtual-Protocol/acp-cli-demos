@@ -85,6 +85,20 @@ scripts/configure-claude-virtuals.mjs check
 
 Keep shared utilities in `utilities/` so setup docs, skills, and examples evolve together.
 
+### Recovering Your Original Config
+
+`restore` reverts to the config from just before the most recent activation; if that snapshot is gone, it automatically falls back to a one-time baseline the first activation saved next to your config:
+
+- Claude Code: `~/.claude-code-router/config.json.before-virtuals.bak`
+- Codex: `~/.codex/config.toml.before-virtuals.bak`
+
+You normally never touch these. If you can't run `restore`, or you want the exact frozen original back, copy the baseline in by hand:
+
+```bash
+cp ~/.claude-code-router/config.json.before-virtuals.bak ~/.claude-code-router/config.json && ccr restart
+# Codex: cp ~/.codex/config.toml.before-virtuals.bak ~/.codex/config.toml, then start a fresh thread
+```
+
 ## Desktop Support Matrix
 
 | Surface | Skills from this repo | Virtuals routing utility | Status |

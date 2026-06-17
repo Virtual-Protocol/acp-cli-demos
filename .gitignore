@@ -3,3 +3,7 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Background proxy state managed by the Makefile codex-* targets
+.proxy.pid
+.proxy.log

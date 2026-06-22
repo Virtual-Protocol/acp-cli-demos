@@ -14,6 +14,46 @@ repo_root=$(cd "$(dirname "$0")/.." && pwd)
 proxy_dir="$repo_root/utilities/model-routing/codex-virtuals-proxy"
 pid_file="$proxy_dir/.proxy.pid"
 log_file="$proxy_dir/.proxy.log"
+
+trim() {
+  local value="$1"
+  value="${value#"${value%%[![:space:]]*}"}"
+  value="${value%"${value##*[![:space:]]}"}"
+  printf '%s' "$value"
+}
+
+load_dotenv() {
+  local env_file="$1"
+  local line key value
+
+  [ -f "$env_file" ] || return 0
+
+  while IFS= read -r line || [ -n "$line" ]; do
+    line=$(trim "$line")
+    [ -n "$line" ] || continue
+    case "$line" in
+      \#*) continue ;;
+      *=*) ;;
+      *) continue ;;
+    esac
+
+    key=$(trim "${line%%=*}")
+    value=$(trim "${line#*=}")
+    [[ "$key" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]] || continue
+
+    if { [[ "$value" == \"*\" ]] && [[ "$value" == *\" ]]; } ||
+      { [[ "$value" == \'* ]] && [[ "$value" == *\' ]]; }; then
+      value="${value:1:${#value}-2}"
+    fi
+
+    if [ -z "${!key+x}" ]; then
+      export "$key=$value"
+    fi
+  done <"$env_file"
+}
+
+load_dotenv "$proxy_dir/.env"
+
 # Defaults mirror server.mjs (the source of truth); keep them in sync.
 host="${VIRTUALS_PROXY_HOST:-127.0.0.1}"
 port="${VIRTUALS_PROXY_PORT:-8787}"

@@ -10,10 +10,12 @@ const DEFAULT_MODELS = [
   "openai-gpt-55",
   "openai-gpt-55-pro",
   "openai-gpt-54-mini",
+  "claude-sonnet-4-6",
   "claude-opus-4-7-fast",
   "claude-opus-4-8",
+  "glm-5-2",
 ];
-const DEFAULT_MODEL = "claude-opus-4-7-fast";
+const DEFAULT_MODEL = "claude-sonnet-4-6";
 const DEFAULT_THINK_MODEL = "claude-opus-4-8";
 const ROUTER_KEYS = ["default", "background", "think", "longContext"];
 

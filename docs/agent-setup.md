@@ -44,6 +44,11 @@ your own account**. It is fully reversible.
 > account. The lifecycle below is just: turn **on → use → off**, with a **recover**
 > path if anything goes wrong.
 
+**New here?** For the step-by-step first-time runbook — prerequisites, the
+commands in order — follow [`skills/acp-builder-setup/references/setup-commands.md`](../skills/acp-builder-setup/references/setup-commands.md).
+This section explains how routing works and is the reference for recovery and
+advanced use.
+
 To discover available model IDs and choose which model each agent uses, see [`docs/model-config.md`](model-config.md).
 
 The simple path is the `make` lifecycle (run `make help` for all targets). It

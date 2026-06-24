@@ -58,8 +58,7 @@ Optional perk: point the agent at Virtuals-hosted models so inference is billed 
 **Virtuals credits instead of the user's own account**. Skip this entirely on
 Claude Desktop — it can't use `ccr` or the proxy.
 
-The exact commands and the lifecycle diagrams live elsewhere — do not restate them
-here:
+The exact commands and the lifecycle diagrams live here:
 
 - [`references/setup-commands.md`](references/setup-commands.md) — copy-paste commands (bundled with this skill).
 - [`docs/agent-setup.md`](../../docs/agent-setup.md) — human walkthrough with diagrams, the three moving parts (config switcher / proxy / agent runtime), and recovery.

@@ -49,6 +49,13 @@ commands in order — follow [`skills/acp-builder-setup/references/setup-command
 This section explains how routing works and is the reference for recovery and
 advanced use.
 
+**What `VIRTUALS_API_KEY` is for.** It authenticates you to Virtuals' compute
+endpoint (`https://compute.virtuals.io/v1`) — the service that runs the models and
+draws down your credits. The router (Claude Code) and the local proxy (Codex)
+don't validate it themselves; they just carry it on each upstream request. It is
+read from your shell, not baked into any config file. Get one from
+[app.virtuals.io](https://app.virtuals.io/).
+
 To discover available model IDs and choose which model each agent uses, see [`docs/model-config.md`](model-config.md).
 
 The simple path is the `make` lifecycle (run `make help` for all targets). It

@@ -27,14 +27,14 @@ account. Fully reversible.
 
 ### Prerequisites
 
-1. **Set your Virtuals API key in the shell** (the `make` targets and the proxy
-   inherit it from here):
+1. **Get a Virtuals API key** from [app.virtuals.io](https://app.virtuals.io/).
+2. **Set it in your shell** (the `make` targets and the proxy inherit it from here):
 
    ```bash
    export VIRTUALS_API_KEY=...
    ```
 
-2. **Install the tooling for your agent:**
+3. **Install the tooling for your agent:**
 
    ```bash
    # Claude Code

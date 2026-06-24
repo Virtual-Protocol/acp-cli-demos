@@ -5,25 +5,38 @@ description: Set up ACP builder workflows for Codex, Claude Code, and Claude Des
 
 # ACP Builder Setup
 
-Use this skill when helping a builder prepare Codex or Claude for ACP demos, skills, and Virtuals-hosted model routing.
+Use this skill to help a builder get ready to run ACP demos and skills. There are
+two separate jobs, and they have very different stakes:
+
+1. **Install the ACP skill** — required. Just copies files into the agent
+   runtime. Safe.
+2. **Route through Virtuals for free credits** — optional. Edits the user's
+   global agent config. Fully reversible, but get the user's OK first.
+
+Do flow 1 for everyone. Only do flow 2 if the user wants to use Virtuals' free
+inference credits instead of their own Anthropic/OpenAI account.
 
 ## Surface Selection
 
-First identify the target surface:
+First identify the target surface — it decides which commands apply:
 
 - **Codex CLI or Codex Desktop local thread**: can use local files, `acp-cli`, `~/.agents/skills`, and `~/.codex/config.toml`.
 - **Claude Code terminal**: can use local files, `acp-cli`, `~/.claude/skills`, and `claude-code-router`.
-- **Claude Desktop app**: uses uploaded Skills from Claude settings. It does not automatically read `~/.claude/skills` or `claude-code-router`.
+- **Claude Desktop app**: uses uploaded Skills from Claude settings. It does **not** read `~/.claude/skills` or `claude-code-router`, so flow 2 (routing) does not apply — use the ZIP upload path instead.
 
 If the target surface is unclear, ask which tool they are setting up before changing files.
 
-## Skill Installation
+## 1. Install the ACP skill (required)
 
-Use this repo as the source of truth. Prefer symlinks for local development and copies for one-off installs.
+This installs the demo skills into the runtime. It only copies or links files —
+no global config is touched.
 
-For exact commands, read `references/setup-commands.md`.
+Use this repo as the source of truth. Prefer symlinks for local development and
+copies for one-off installs. For exact commands, read `references/setup-commands.md`.
 
-Do not assume repo-scoped `.agents/skills` or `.claude/skills` folders exist. This repo keeps canonical skills directly under `skills/`, then installs or links them into each local runtime.
+Do not assume repo-scoped `.agents/skills` or `.claude/skills` folders exist.
+This repo keeps canonical skills directly under `skills/`, then installs or links
+them into each local runtime.
 
 Install these local-execution skills for Codex CLI/Desktop and Claude Code:
 
@@ -35,36 +48,40 @@ Install these Claude Desktop upload packages:
 - `packages/claude-desktop/acp-builder-setup.zip`
 - `packages/claude-desktop/acp-paid-subscription-checkout.zip`
 
-In Claude Desktop, the combined checkout skill must use handoff or evidence-review mode unless the user has a separate local-tool bridge. Live checkout execution assumes local command execution, browser automation, and live payment controls.
+In Claude Desktop, the combined checkout skill must use handoff or evidence-review
+mode unless the user has a separate local-tool bridge. Live checkout execution
+assumes local command execution, browser automation, and live payment controls.
 
-## Model Routing
+## 2. (Optional) Route through Virtuals for free credits
 
-Codex and Claude Code need different local routing utilities:
+Optional perk: point the agent at Virtuals-hosted models so inference is billed to
+**Virtuals credits instead of the user's own account**. Skip this entirely on
+Claude Desktop — it can't use `ccr` or the proxy.
 
-- Codex: run `utilities/model-routing/codex-virtuals-proxy`, then use `scripts/configure-codex-virtuals.mjs virtuals` from the repo root to point `~/.codex/config.toml` at `http://127.0.0.1:8787/v1`. Codex config must use a Codex-supported model id such as `gpt-5.5`; the local proxy maps that to the upstream Virtuals model id.
-- Claude Code: use `scripts/configure-claude-virtuals.mjs virtuals` from the repo root to point `~/.claude-code-router/config.json` at Virtuals through `claude-code-router`.
-- Claude Desktop: do not claim the local router works. Desktop does not inherit `ccr code` or Codex proxy settings.
+The exact commands and the lifecycle diagrams live elsewhere — do not restate them
+here:
 
-### Codex Config Switching
+- [`references/setup-commands.md`](references/setup-commands.md) — copy-paste commands (bundled with this skill).
+- [`docs/agent-setup.md`](../../docs/agent-setup.md) — human walkthrough with diagrams, the three moving parts (config switcher / proxy / agent runtime), and recovery.
 
-Use the helper instead of manually editing `~/.codex/config.toml`:
+Your job is to run that lifecycle **safely**. Three behaviors:
 
-- Switch Codex to the Virtuals proxy: `scripts/configure-codex-virtuals.mjs virtuals`
-- Switch back to the exact previous Codex model/provider: `scripts/configure-codex-virtuals.mjs restore`
-- If no restore state exists, switch back to built-in Codex routing: `scripts/configure-codex-virtuals.mjs default`
+**Explain the mental model first.** Routing ON → the agent spends Virtuals
+credits, not the user's Anthropic/OpenAI account (even though it still looks like
+"their" Claude/Codex). Routing OFF → back on their own account. Fully reversible.
 
-After switching config, start a fresh Codex CLI or Codex Desktop local thread so it picks up the updated provider. Do not stop a proxy that an active Codex thread is still using.
+**Confirm before mutating config.** The lifecycle is `make claude-on` / `make
+claude-off` (Claude Code) and `make codex-on` / `make codex-off` (Codex), run from
+the repo root with `VIRTUALS_API_KEY` set. These edit the user's global config
+(`~/.claude-code-router/config.json`, `~/.codex/config.toml`), so treat them like
+provisioning: recommend the exact command for the detected surface, say it's
+reversible, and wait for explicit authorization. `make claude-check` is read-only
+— run it freely.
 
-### Claude Code Config Switching
-
-Use the helper instead of manually editing `~/.claude-code-router/config.json`:
-
-- Switch Claude Code Router to Virtuals: `scripts/configure-claude-virtuals.mjs virtuals`
-- Check the active router config: `scripts/configure-claude-virtuals.mjs check`
-- Switch back to the previous Claude Code Router provider/routes: `scripts/configure-claude-virtuals.mjs restore`
-- If no restore state exists, remove Virtuals provider/routes: `scripts/configure-claude-virtuals.mjs default`
-
-After switching config, restart the router with `ccr restart` before launching `ccr code`. The Virtuals provider must include the `cleancache` transformer because Claude Code adds Anthropic prompt-cache metadata that Virtuals Chat Completions can reject.
+**Always offer teardown.** Whenever routing is on (or you just turned it on), tell
+the user the one command back to their own account: `make claude-off` or `make
+codex-off`. If teardown fails, point them at the "Recover" section of
+[`docs/agent-setup.md`](../../docs/agent-setup.md).
 
 ## Environment Checks
 
@@ -81,5 +98,5 @@ End with:
 
 - Which surface was configured.
 - Which skills were installed or packaged.
-- Which router, if any, was configured.
+- Whether Virtuals routing was left **ON** (using Virtuals credits) or **OFF** (on the user's own account), and the command to turn it off (`make claude-off` / `make codex-off`).
 - Any manual action still needed, especially Claude Desktop ZIP upload or skill toggles.

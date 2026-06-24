@@ -57,6 +57,21 @@ Packaged skills: [`packages/`](packages)
 
 Utility layout guidance: [`utilities/README.md`](utilities/README.md)
 
+### Virtuals Routing Lifecycle (optional)
+
+Routing your agent through Virtuals lets it use free Virtuals credits instead of
+your own account, and is fully reversible. The simple path is the `make`
+lifecycle — run `make help` for the full list:
+
+```bash
+make claude-on   # use it: ccr code   # make claude-off  → back to your account
+make codex-on    # use it: codex      # make codex-off   → back to your account
+```
+
+See [`docs/agent-setup.md`](docs/agent-setup.md) for the on → use → off → recover
+walkthrough with diagrams. The `Codex Virtuals Proxy` and `Claude Virtuals
+Router` sections below cover the underlying scripts.
+
 ### Codex Virtuals Proxy
 
 Path: [`utilities/model-routing/codex-virtuals-proxy`](utilities/model-routing/codex-virtuals-proxy)

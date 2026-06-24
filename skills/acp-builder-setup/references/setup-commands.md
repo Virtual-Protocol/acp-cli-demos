@@ -115,7 +115,7 @@ If a `restore` cannot run, see "Recovering Your Original Config" in
 
 Claude Desktop cannot use `ccr`/the proxy. Upload these ZIPs from Claude settings instead:
 
-- `packages/claude-desktop/acp-builder-setup.zip`
-- `packages/claude-desktop/acp-paid-subscription-checkout.zip`
+- [`packages/claude-desktop/acp-builder-setup.zip`](../../../packages/claude-desktop/acp-builder-setup.zip)
+- [`packages/claude-desktop/acp-paid-subscription-checkout.zip`](../../../packages/claude-desktop/acp-paid-subscription-checkout.zip)
 
 After upload, enable each skill in Claude's Skills settings.

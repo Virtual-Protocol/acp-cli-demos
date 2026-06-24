@@ -32,7 +32,7 @@ This installs the demo skills into the runtime. It only copies or links files â€
 no global config is touched.
 
 Use this repo as the source of truth. Prefer symlinks for local development and
-copies for one-off installs. For exact commands, read `references/setup-commands.md`.
+copies for one-off installs. For exact commands, read [`references/setup-commands.md`](references/setup-commands.md).
 
 Do not assume repo-scoped `.agents/skills` or `.claude/skills` folders exist.
 This repo keeps canonical skills directly under `skills/`, then installs or links
@@ -45,8 +45,8 @@ Install these local-execution skills for Codex CLI/Desktop and Claude Code:
 
 Install these Claude Desktop upload packages:
 
-- `packages/claude-desktop/acp-builder-setup.zip`
-- `packages/claude-desktop/acp-paid-subscription-checkout.zip`
+- [`packages/claude-desktop/acp-builder-setup.zip`](../../packages/claude-desktop/acp-builder-setup.zip)
+- [`packages/claude-desktop/acp-paid-subscription-checkout.zip`](../../packages/claude-desktop/acp-paid-subscription-checkout.zip)
 
 In Claude Desktop, the combined checkout skill must use handoff or evidence-review
 mode unless the user has a separate local-tool bridge. Live checkout execution

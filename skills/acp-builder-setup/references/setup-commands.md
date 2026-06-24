@@ -108,7 +108,7 @@ scripts/configure-claude-virtuals.mjs restore && ccr restart   # previous provid
 scripts/configure-claude-virtuals.mjs default && ccr restart   # remove Virtuals routes
 ```
 
-If a `restore` cannot run, see "Recovering Your Original Config" in
+If a `restore` cannot run, see the "Recover" section of
 [`docs/agent-setup.md`](../../../docs/agent-setup.md).
 
 ## Claude Desktop Upload

@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+// Validates showcase manifests against the shape documented in
+// showcase/README.md. MAINTAINERS: if you add, remove, or change a rule here,
+// update the "Field Reference" table and the "Maintainers" section in
+// showcase/README.md in the same PR so the docs stay the source of truth.
+
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'

@@ -1,0 +1,43 @@
+{
+  "slug": "virtuals-playground",
+  "title": "Virtuals Playground",
+  "tagline": "A live, browser-based playground to chat with, compare, and batch-test Virtuals EconomyOS models — no setup required.",
+  "description": "Virtuals Playground is an open-source developer tool that lets builders interact with every Virtuals EconomyOS Compute API model from a single browser tab. It ships four views: an interactive Chat playground, a side-by-side Model Compare panel, a Batch Test runner that fires a single prompt at all loaded models in parallel, and a Models explorer with metadata. Every chat session auto-generates ready-to-run Python, cURL, and JavaScript code snippets. The UI is fully responsive — desktop and mobile — and requires only a Virtuals API key to start.",
+  "status": "live",
+  "topic": "developer-tools",
+  "topics": ["developer-tools", "playground", "compute", "api-explorer"],
+  "builder": {
+    "name": "Satyam Singhal",
+    "url": "https://github.com/satyamsinghal"
+  },
+  "links": {
+    "repo": "https://github.com/satyamsinghal/virtuals-playground",
+    "demo": "https://virtuals-playground.vercel.app",
+    "share": "https://virtuals-playground.vercel.app",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Virtuals%20Playground&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20I%20want%20a%20feature%20added%0A-%20The%20code%20snippets%20are%20useful%0A-%20I%20want%20to%20reuse%20this%20for%20my%20own%20project%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["acp"],
+  "visual": {
+    "kind": "live page",
+    "eyebrow": "browser · virtuals compute api",
+    "title": "chat, compare & batch test models"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "Live playground",
+      "href": "https://virtuals-playground.vercel.app",
+      "kind": "demo"
+    },
+    {
+      "label": "Source code",
+      "href": "https://github.com/satyamsinghal/virtuals-playground",
+      "kind": "proof"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which Virtuals model gave you the most interesting response?",
+    "What feature would make this playground more useful for your workflow?",
+    "Would you embed this in your own docs or onboarding flow?"
+  ]
+}

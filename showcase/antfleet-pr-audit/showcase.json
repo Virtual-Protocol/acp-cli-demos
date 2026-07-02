@@ -27,7 +27,8 @@
   "visual": {
     "kind": "two-model consensus deliverable",
     "eyebrow": "base + acp + two-model consensus",
-    "title": "consensus PR review with receipts"
+    "title": "consensus PR review with receipts",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/antfleet-pr-audit/assets/hero-card.png"
   },
   "skills": [
     {

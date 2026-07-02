@@ -29,7 +29,8 @@
   "visual": {
     "kind": "multi-track bounty hunter offering",
     "eyebrow": "base + acp + seven bounty platforms",
-    "title": "HIGH-confidence-only submissions with platform receipts"
+    "title": "HIGH-confidence-only submissions with platform receipts",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/sting-bounty-hunter/assets/hero-card.png"
   },
   "skills": [
     {

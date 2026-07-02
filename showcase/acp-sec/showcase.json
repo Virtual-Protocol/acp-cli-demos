@@ -27,7 +27,8 @@
   "visual": {
     "kind": "security scan report",
     "eyebrow": "base + acp + erc-8004/8183",
-    "title": "trust score for acp agents"
+    "title": "trust score for acp agents",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/acp-sec/assets/hero-card.png"
   },
   "skills": [
     {

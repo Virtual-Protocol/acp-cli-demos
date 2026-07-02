@@ -1,0 +1,72 @@
+{
+  "slug": "opencap-gateway",
+  "title": "OpenCAP Gateway",
+  "tagline": "Turns staked CAPU into a daily allowance of AI inference across every major model through one OpenAI-compatible gateway, routing over Virtuals Compute, OpenRouter, Surplus, Venice, and OpeNCAP",
+  "description": "OpenCAP Gateway is a unified, OpenAI-compatible LLM gateway (https://gw.capminal.ai) funded by the Mint & Stake CAPU model instead of a subscription. Lock CAP into sCAP, mint or buy CAPU, then stake it to earn $1/day of Inference Credit per staked CAPU, renewed at 00:00 UTC. One OPENCAP_API_KEY routes requests across multiple gateway providers: Virtuals Compute, OpenRouter, Surplus, Venice, and OpenCAP's own OpeNCAP infra. Virtuals Compute is an integrated gateway provider, and inference capacity from the Virtuals program is used to run OpenCAP Gateway inference. This showcase packages the model explainer, the multi-provider routing story, quick-start client configs (Terminal, OpenClaw, Hermes, OpenCode), and the USDC top-up fallback.",
+  "status": "live",
+  "topic": "infra",
+  "topics": ["compute", "inference", "gateway", "staking", "virtuals", "llm"],
+  "builder": {
+    "name": "AndreaPN | 404AI Labs",
+    "url": "https://www.404ai.io/"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/opencap-gateway",
+    "demo": "https://capminal.ai",
+    "share": "https://x.com/AndreaPN/status/2072571388410638627",
+    "video": "https://x.com/AndreaPN/status/2072571388410638627",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20OpenCAP%20Gateway&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20mint-and-stake%20path%20to%20daily%20inference%20credit%20is%20clear%0A-%20The%20multi-provider%20routing%20needs%20more%20detail%0A-%20I%20want%20a%20client%20setup%20guide%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["wallet", "token"],
+  "visual": {
+    "kind": "x demo video",
+    "eyebrow": "base + virtuals compute + opencap gateway",
+    "title": "mint & stake CAPU → daily inference credit",
+    "videoUrl": "https://dackielabs-resources.s3.ap-southeast-1.amazonaws.com/video/VirtualsShowcase.mp4",
+    "posterUrl": "https://raw.githubusercontent.com/Capminal/capminal-gitbook/main/.gitbook/assets/opencap_dashboard.png",
+    "videoLabel": "Watch the demo on X"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "X demo video — Virtuals showcase",
+      "href": "https://x.com/AndreaPN/status/2072571388410638627",
+      "kind": "video"
+    },
+    {
+      "label": "OpenCAP Gateway package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/opencap-gateway/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Capminal — OpenCAP Gateway home",
+      "href": "https://capminal.ai",
+      "kind": "demo"
+    },
+    {
+      "label": "Mint CAPU — the mint & stake model",
+      "href": "https://github.com/Capminal/capminal-gitbook/blob/main/capminal/product-features/mint-capu.md",
+      "kind": "docs"
+    },
+    {
+      "label": "OpenCAP Gateway docs — one key, every model",
+      "href": "https://github.com/Capminal/capminal-gitbook/blob/main/capminal/opencap/gateway.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Gateway dashboard screenshot",
+      "href": "https://raw.githubusercontent.com/Capminal/capminal-gitbook/main/.gitbook/assets/opencap_dashboard.png",
+      "kind": "proof"
+    },
+    {
+      "label": "Supported models screenshot",
+      "href": "https://raw.githubusercontent.com/Capminal/capminal-gitbook/main/.gitbook/assets/opencap_models.png",
+      "kind": "proof"
+    }
+  ],
+  "feedbackPrompts": [
+    "Is the mint-and-stake path to daily inference credit clear?",
+    "Which model provider should the gateway prioritise next?",
+    "What client setup guide would make adoption easier?"
+  ]
+}

@@ -33,7 +33,7 @@ as a starting point.
 
 The publish step requires the `SHOWCASE_SYNC_TOKEN` repository secret to be set
 in `acp-cli-demos`. It should be a GitHub token that can create a repository
-dispatch event in `Virtual-Protocol/whitepaper-economyOS`.
+dispatch event in the EconomyOS docs repo.
 
 ## Field Reference
 
@@ -210,8 +210,8 @@ actually running. After your PR merges to `main`:
 1. In `acp-cli-demos` → **Actions**, confirm the **Dispatch Showcase Sync** run
    on your merge commit is green. A red run (usually a missing or expired
    `SHOWCASE_SYNC_TOKEN`) means the card will **not** appear.
-2. The regenerated card data lands in `Virtual-Protocol/whitepaper-economyOS`.
-   Check the Showcase page there once its docs build completes.
+2. The regenerated card data lands in the EconomyOS docs repo. Check the
+   Showcase page once its docs build completes.
 
 You cannot preview the rendered card before merge, so validate, confirm every
 URL returns `200`, and double-check copy against
@@ -261,8 +261,8 @@ The manifest schema is enforced by
 [`scripts/validate-showcase.mjs`](../scripts/validate-showcase.mjs), and the
 publish is driven by
 [`.github/workflows/dispatch-showcase-sync.yml`](../.github/workflows/dispatch-showcase-sync.yml)
-(which dispatches to `sync-showcase-projects.mjs` in
-`Virtual-Protocol/whitepaper-economyOS`).
+(which dispatches a repository event to the EconomyOS docs repo, where a sync
+script regenerates the Showcase dataset).
 
 **If you change any of these, update this doc in the same PR so it stays the
 source of truth:**

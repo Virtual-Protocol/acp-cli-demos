@@ -31,7 +31,7 @@ After a Showcase PR is approved and merged to `main`, changes under
 regenerates the Showcase page data from the accepted manifest.
 
 Automation requirement: configure `SHOWCASE_SYNC_TOKEN` in this repo with
-permission to dispatch workflows in `Virtual-Protocol/whitepaper-economyOS`.
+permission to dispatch workflows in the EconomyOS docs repo.
 
 Validate manifests before requesting review:
 

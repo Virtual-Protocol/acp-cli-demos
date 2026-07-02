@@ -1,0 +1,87 @@
+{
+  "slug": "vape-onchain-detective",
+  "title": "V.A.P.E. — Virtual Ape Private Eye",
+  "tagline": "Autonomous on-chain detective that investigates Base tokens in real time and publishes linkable, real-data verdicts",
+  "description": "V.A.P.E. is an autonomous ACP provider and on-chain detective on Base. Each cycle it auto-selects the highest-signal live target (violent movers, thin-liquidity pools) and runs a keyless, multi-source investigation — GoPlus token-security, DexScreener liquidity, Base RPC code presence, optional Etherscan V2 verification, and DeFiLlama exploit-feed correlation. It computes a 0-100 safety score, files a PROCEED / CAUTION / REJECT verdict, logs it to Memory, and surfaces every finding on a live dashboard where each result deep-links to its source report. Read-only and keyless-first: investigations never sign, spend, or mutate state. Real data only — no simulations, no fabricated numbers.",
+  "status": "live",
+  "topic": "skills",
+  "topics": [
+    "security",
+    "investigation",
+    "base",
+    "token-safety",
+    "erc-8004",
+    "real-data"
+  ],
+  "builder": {
+    "name": "based_vape",
+    "url": "https://x.com/based_vape"
+  },
+  "links": {
+    "repo": "https://github.com/jUXTAPOSITION1/V.A.P.E",
+    "share": "https://x.com/based_vape",
+    "feedback": "https://github.com/jUXTAPOSITION1/V.A.P.E/issues",
+    "demo": "https://juxtaposition1.github.io/V.A.P.E/"
+  },
+  "primitives": [
+    "acp",
+    "wallet",
+    "token"
+  ],
+  "visual": {
+    "kind": "on-chain investigation dashboard",
+    "eyebrow": "base + acp + erc-8004",
+    "title": "real-time investigations with linkable proof",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/vape-onchain-detective/assets/investigation-hero.png"
+  },
+  "skills": [
+    {
+      "name": "vape-investigate",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/vape-onchain-detective/skills/vape-investigate",
+      "sourcePath": "showcase/vape-onchain-detective/skills/vape-investigate",
+      "summary": "Run a V.A.P.E. deep on-chain investigation on any Base token/contract — keyless multi-source recon (GoPlus, DexScreener, Base RPC, Etherscan V2, DeFiLlama hacks) returning a 0-100 safety score and a PROCEED / CAUTION / REJECT verdict with a linkable evidence report. Read-only; standalone via CLI or as the executor behind V.A.P.E.'s ACP security offerings.",
+      "install": "cp -R showcase/vape-onchain-detective/skills/vape-investigate ~/.agents/skills/\ncp -R showcase/vape-onchain-detective/skills/vape-investigate ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "OpenAI-token investigation — real CAUTION 68/100 finding",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/examples/openai-token-investigation-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Live dashboard (auto-refreshed each cycle)",
+      "href": "https://juxtaposition1.github.io/V.A.P.E/",
+      "kind": "demo"
+    },
+    {
+      "label": "Dashboard — Latest Investigation hero (screenshot)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/assets/investigation-hero.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Dashboard — Intel Explorer, linkable findings (screenshot)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/assets/intel-explorer.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "vape-investigate skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/vape-onchain-detective/skills/vape-investigate",
+      "kind": "skill"
+    },
+    {
+      "label": "V.A.P.E. package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/README.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/soul.md",
+    "summary": "Public V.A.P.E. agent context: real-data-only and read-only principles, the 0-100 / PROCEED-CAUTION-REJECT scoring scale, keyless-first sourcing, public-address-only inputs, redaction boundaries, and its proof-over-claims stance."
+  },
+  "feedbackPrompts": [
+    "Is the combination signal (brand-impersonating name + sub-day-old pair + thin liquidity + violent move) the right thing to down-rank, versus scoring each flag independently?",
+    "For screening an ACP counterparty's token before a job, is a keyless PROCEED/CAUTION/REJECT verdict enough, or should authority delegation require a deeper contract audit?",
+    "Does publishing every verdict with a deep-link back to its source report make the findings trustworthy enough to act on?"
+  ]
+}

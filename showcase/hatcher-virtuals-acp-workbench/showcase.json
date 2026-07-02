@@ -1,0 +1,83 @@
+{
+  "slug": "hatcher-virtuals-acp-workbench",
+  "title": "Hatcher Virtuals ACP Workbench",
+  "tagline": "A Hatcher-managed agent workbench for Virtuals Compute, ACP provider matching, review-first job drafts, and HatcherLabs service packaging.",
+  "description": "Hatcher Virtuals ACP Workbench shows a Hatcher-managed agent using Virtuals from its control layer: selecting Virtuals as an inference provider, enabling Virtuals access, setting budget controls, searching ACP providers, preparing a reviewed ACP job draft, and packaging HatcherLabs services for the same agent economy. The workflow is intentionally review-first: Hatcher surfaces provider, offering, budget, and command-plan context before an operator approves any funded ACP action.",
+  "status": "active showcase",
+  "topic": "agents",
+  "topics": [
+    "agents",
+    "hatcher",
+    "virtuals",
+    "acp",
+    "compute",
+    "marketplace"
+  ],
+  "builder": {
+    "name": "Hatcher Labs",
+    "url": "https://hatcher.host"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/hatcher-virtuals-acp-workbench",
+    "demo": "https://youtu.be/DvtjysrHfzs",
+    "video": "https://youtu.be/DvtjysrHfzs",
+    "share": "https://youtu.be/DvtjysrHfzs",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Hatcher%20Virtuals%20ACP%20Workbench&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20Hatcher%20managed%20ACP%20flow%20is%20clear%0A-%20The%20review-first%20job%20draft%20needs%20more%20proof%0A-%20The%20HatcherLabs%20service%20packaging%20needs%20more%20detail%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "wallet",
+    "acp"
+  ],
+  "visual": {
+    "kind": "youtube demo video",
+    "eyebrow": "hatcher + virtuals + acp",
+    "title": "managed acp workbench",
+    "posterUrl": "https://img.youtube.com/vi/DvtjysrHfzs/maxresdefault.jpg",
+    "videoLabel": "Watch the Hatcher Virtuals ACP Workbench demo on YouTube"
+  },
+  "skills": [
+    {
+      "name": "hatcher-virtuals-acp-workbench",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/hatcher-virtuals-acp-workbench/skills/hatcher-virtuals-acp-workbench",
+      "sourcePath": "showcase/hatcher-virtuals-acp-workbench/skills/hatcher-virtuals-acp-workbench",
+      "summary": "Reusable operator workflow for running a Hatcher-managed Virtuals ACP session: choose Virtuals Compute, enable access, match providers, prepare review-first job drafts, and package HatcherLabs services safely.",
+      "install": "cp -R showcase/hatcher-virtuals-acp-workbench/skills/hatcher-virtuals-acp-workbench ~/.agents/skills/\ncp -R showcase/hatcher-virtuals-acp-workbench/skills/hatcher-virtuals-acp-workbench ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Hatcher Virtuals ACP Workbench demo video",
+      "href": "https://youtu.be/DvtjysrHfzs",
+      "kind": "video"
+    },
+    {
+      "label": "Showcase package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hatcher-virtuals-acp-workbench/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Reusable workbench skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/hatcher-virtuals-acp-workbench/skills/hatcher-virtuals-acp-workbench",
+      "kind": "skill"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hatcher-virtuals-acp-workbench/examples/prompt.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Redacted result report",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hatcher-virtuals-acp-workbench/examples/result-redacted.md",
+      "kind": "proof"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hatcher-virtuals-acp-workbench/soul.md",
+    "summary": "Public/redacted HatcherLabs agent context, user approval boundaries, and ACP workbench operating rules."
+  },
+  "feedbackPrompts": [
+    "Does the demo make the managed ACP provider matching flow clear?",
+    "Which HatcherLabs service should become the first fully live ACP offering?",
+    "What additional proof would make review-first ACP job drafting easier to trust?"
+  ]
+}

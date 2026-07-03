@@ -1,0 +1,5167 @@
+{
+  "signal": "liquidation-gravity",
+  "source": "Athena AI (api.0xathena.ai)",
+  "delivered_at": "2026-07-03T11:48:05.506Z",
+  "disclaimer": "Informational only — not financial advice.",
+  "data": {
+    "generated_at": "2026-07-03T11:30:10Z",
+    "interval": "12h/24h/3d",
+    "deep_interval": "30d>7d",
+    "count": 48,
+    "available": 48,
+    "signals": [
+      {
+        "token": "XPL",
+        "spot": 0.10286,
+        "gravity": -0.8836,
+        "label": "STRONG DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 0.101828,
+        "target_distance_pct": -1,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.869938504124874,
+            "per_tf": {
+              "12h": -0.8123,
+              "24h": -0.8977,
+              "3d": -0.9511
+            },
+            "z_cross": 4.486703617462366,
+            "up_mass": 375925.9242605283,
+            "down_mass": 6837111.156336563,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.07982552066354424,
+            "distance_pct": -22.41,
+            "side": "below",
+            "mass_usd": 276959468,
+            "width_pct": 2.62,
+            "buckets": 9,
+            "dominance_ratio": 6.18
+          },
+          "top_pockets": [
+            {
+              "price": 0.07982552066354424,
+              "distance_pct": -22.41,
+              "side": "below",
+              "mass_usd": 276959468,
+              "width_pct": 2.62,
+              "buckets": 9
+            },
+            {
+              "price": 0.07409490892908263,
+              "distance_pct": -27.98,
+              "side": "below",
+              "mass_usd": 275028423,
+              "width_pct": 2.62,
+              "buckets": 9
+            },
+            {
+              "price": 0.0881189589118954,
+              "distance_pct": -14.35,
+              "side": "below",
+              "mass_usd": 194441054,
+              "width_pct": 5.24,
+              "buckets": 17
+            },
+            {
+              "price": 0.09309975730654209,
+              "distance_pct": -9.51,
+              "side": "below",
+              "mass_usd": 136632353,
+              "width_pct": 2.62,
+              "buckets": 9
+            },
+            {
+              "price": 0.0772201258166407,
+              "distance_pct": -24.94,
+              "side": "below",
+              "mass_usd": 108507811,
+              "width_pct": 0.66,
+              "buckets": 3
+            },
+            {
+              "price": 0.08250257059056067,
+              "distance_pct": -19.81,
+              "side": "below",
+              "mass_usd": 94711438,
+              "width_pct": 1.64,
+              "buckets": 6
+            }
+          ],
+          "reach_pct": 43.14,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.8096,
+          "up_mass": 168882673,
+          "down_mass": 1605258362,
+          "overhang_ratio": 9.51,
+          "side": "below",
+          "center_price": 0.07894842861889503,
+          "center_distance_pct": -23.26
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "aligned_down",
+          "note": "Near pull DOWN confirmed by a deep book 9.51x heavier below, led by a pocket at -22.41%."
+        },
+        "notes": []
+      },
+      {
+        "token": "TIA",
+        "spot": 0.3933,
+        "gravity": -0.8171,
+        "label": "STRONG DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 0.3875,
+        "target_distance_pct": -1.47,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.7175591742904547,
+            "per_tf": {
+              "12h": -0.4788,
+              "24h": -0.8927,
+              "3d": -0.9484
+            },
+            "z_cross": 4.061821245119208,
+            "up_mass": 1447867.462760345,
+            "down_mass": 20497066.082524918,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.36382642958285605,
+            "distance_pct": -7.49,
+            "side": "below",
+            "mass_usd": 268212740,
+            "width_pct": 9.73,
+            "buckets": 45,
+            "dominance_ratio": 3.56
+          },
+          "top_pockets": [
+            {
+              "price": 0.36382642958285605,
+              "distance_pct": -7.49,
+              "side": "below",
+              "mass_usd": 268212740,
+              "width_pct": 9.73,
+              "buckets": 45
+            },
+            {
+              "price": 0.31708968725272973,
+              "distance_pct": -19.38,
+              "side": "below",
+              "mass_usd": 143156146,
+              "width_pct": 3.54,
+              "buckets": 17
+            },
+            {
+              "price": 0.41596622265696664,
+              "distance_pct": 5.76,
+              "side": "above",
+              "mass_usd": 138434594,
+              "width_pct": 3.1,
+              "buckets": 11
+            },
+            {
+              "price": 0.33072920378780374,
+              "distance_pct": -15.91,
+              "side": "below",
+              "mass_usd": 133511057,
+              "width_pct": 3.76,
+              "buckets": 18
+            },
+            {
+              "price": 0.40577068607220734,
+              "distance_pct": 3.17,
+              "side": "above",
+              "mass_usd": 72084438,
+              "width_pct": 1.99,
+              "buckets": 10
+            },
+            {
+              "price": 0.298397014581682,
+              "distance_pct": -24.13,
+              "side": "below",
+              "mass_usd": 57237257,
+              "width_pct": 1.55,
+              "buckets": 8
+            }
+          ],
+          "reach_pct": 30.8,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.5536,
+          "up_mass": 215430604,
+          "down_mass": 749678287,
+          "overhang_ratio": 3.48,
+          "side": "below",
+          "center_price": 0.33215397924865536,
+          "center_distance_pct": -15.55
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "aligned_down",
+          "note": "Near pull DOWN confirmed by a deep book 3.48x heavier below, led by a pocket at -7.49%."
+        },
+        "notes": []
+      },
+      {
+        "token": "HYPE",
+        "spot": 69.072,
+        "gravity": -0.8081,
+        "label": "STRONG DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 68.1265,
+        "target_distance_pct": -1.37,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.7010148369505141,
+            "per_tf": {
+              "12h": -0.477,
+              "24h": -0.8612,
+              "3d": -0.9248
+            },
+            "z_cross": 4.973946971540247,
+            "up_mass": 73503451.46314746,
+            "down_mass": 778631358.6081793,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 64.857225168951,
+            "distance_pct": -6.09,
+            "side": "below",
+            "mass_usd": 8859737953,
+            "width_pct": 8.36,
+            "buckets": 41,
+            "dominance_ratio": 3.31
+          },
+          "top_pockets": [
+            {
+              "price": 64.857225168951,
+              "distance_pct": -6.09,
+              "side": "below",
+              "mass_usd": 8859737953,
+              "width_pct": 8.36,
+              "buckets": 41
+            },
+            {
+              "price": 59.330988287681095,
+              "distance_pct": -14.09,
+              "side": "below",
+              "mass_usd": 5881623065,
+              "width_pct": 5.44,
+              "buckets": 27
+            },
+            {
+              "price": 71.53692417782753,
+              "distance_pct": 3.58,
+              "side": "above",
+              "mass_usd": 5246303147,
+              "width_pct": 2.72,
+              "buckets": 14
+            },
+            {
+              "price": 77.93690054807728,
+              "distance_pct": 12.85,
+              "side": "above",
+              "mass_usd": 4583340153,
+              "width_pct": 2.93,
+              "buckets": 12
+            },
+            {
+              "price": 73.32051396051821,
+              "distance_pct": 6.16,
+              "side": "above",
+              "mass_usd": 3758556250,
+              "width_pct": 1.88,
+              "buckets": 10
+            },
+            {
+              "price": 56.52283568361693,
+              "distance_pct": -18.16,
+              "side": "below",
+              "mass_usd": 2150841496,
+              "width_pct": 1.25,
+              "buckets": 7
+            }
+          ],
+          "reach_pct": 26.15,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.1539,
+          "up_mass": 17578492957,
+          "down_mass": 23973940482,
+          "overhang_ratio": 1.36,
+          "side": "below",
+          "center_price": 59.58990697542111,
+          "center_distance_pct": -13.72
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "aligned_down",
+          "note": "Near pull DOWN confirmed by a deep book 1.36x heavier below, led by a pocket at -6.09%."
+        },
+        "notes": []
+      },
+      {
+        "token": "ZEC",
+        "spot": 460.26,
+        "gravity": -0.7197,
+        "label": "STRONG DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 450.49,
+        "target_distance_pct": -2.12,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.5669101125062079,
+            "per_tf": {
+              "12h": -0.6545,
+              "24h": -0.8025,
+              "3d": 0.0424
+            },
+            "z_cross": 3.5219973213887434,
+            "up_mass": 27431140.4957169,
+            "down_mass": 84395595.01828235,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 409.2286583782444,
+            "distance_pct": -11.09,
+            "side": "below",
+            "mass_usd": 10625468240,
+            "width_pct": 15.86,
+            "buckets": 36,
+            "dominance_ratio": 6.18
+          },
+          "top_pockets": [
+            {
+              "price": 409.2286583782444,
+              "distance_pct": -11.09,
+              "side": "below",
+              "mass_usd": 10625468240,
+              "width_pct": 15.86,
+              "buckets": 36
+            },
+            {
+              "price": 644.551045512376,
+              "distance_pct": 40.04,
+              "side": "above",
+              "mass_usd": 4150756061,
+              "width_pct": 2.72,
+              "buckets": 7
+            },
+            {
+              "price": 483.6028265257548,
+              "distance_pct": 5.07,
+              "side": "above",
+              "mass_usd": 3421237499,
+              "width_pct": 4.98,
+              "buckets": 12
+            },
+            {
+              "price": 556.5764284199323,
+              "distance_pct": 20.93,
+              "side": "above",
+              "mass_usd": 2187234811,
+              "width_pct": 0.91,
+              "buckets": 3
+            },
+            {
+              "price": 521.9037859912605,
+              "distance_pct": 13.4,
+              "side": "above",
+              "mass_usd": 1991449073,
+              "width_pct": 2.27,
+              "buckets": 6
+            },
+            {
+              "price": 656.3518144041915,
+              "distance_pct": 42.61,
+              "side": "above",
+              "mass_usd": 1371171296,
+              "width_pct": 0.45,
+              "buckets": 2
+            }
+          ],
+          "reach_pct": 43.6,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.2231,
+          "up_mass": 20805621569,
+          "down_mass": 13216400820,
+          "overhang_ratio": 1.57,
+          "side": "above",
+          "center_price": 570.5285198273381,
+          "center_distance_pct": 23.96
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "below",
+          "deep_side": "above",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull DOWN into an opposing deep book 1.57x heavier ABOVE (though the biggest single pocket sits at -11.09%, the other way) — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull DOWN into an opposing deep book 1.57x heavier ABOVE (though the biggest single pocket sits at -11.09%, the other way) — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "PENGU",
+        "spot": 0.006795,
+        "gravity": -0.7099,
+        "label": "STRONG DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 0.0066091,
+        "target_distance_pct": -2.74,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.5544262142202578,
+            "per_tf": {
+              "12h": -0.4145,
+              "24h": -0.586,
+              "3d": -0.814
+            },
+            "z_cross": 5.3183366374976035,
+            "up_mass": 3484675.1028011325,
+            "down_mass": 14687155.764056254,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.0070691171724429624,
+            "distance_pct": 4.03,
+            "side": "above",
+            "mass_usd": 345395807,
+            "width_pct": 4.56,
+            "buckets": 26,
+            "dominance_ratio": 2.65
+          },
+          "top_pockets": [
+            {
+              "price": 0.0070691171724429624,
+              "distance_pct": 4.03,
+              "side": "above",
+              "mass_usd": 345395807,
+              "width_pct": 4.56,
+              "buckets": 26
+            },
+            {
+              "price": 0.006453033741126981,
+              "distance_pct": -5.03,
+              "side": "below",
+              "mass_usd": 339833316,
+              "width_pct": 6.2,
+              "buckets": 35
+            },
+            {
+              "price": 0.007469766672614425,
+              "distance_pct": 9.93,
+              "side": "above",
+              "mass_usd": 271999655,
+              "width_pct": 4.74,
+              "buckets": 22
+            },
+            {
+              "price": 0.0061217860958765954,
+              "distance_pct": -9.91,
+              "side": "below",
+              "mass_usd": 102294747,
+              "width_pct": 0.73,
+              "buckets": 5
+            },
+            {
+              "price": 0.005976767112239722,
+              "distance_pct": -12.04,
+              "side": "below",
+              "mass_usd": 58887142,
+              "width_pct": 0.18,
+              "buckets": 2
+            },
+            {
+              "price": 0.0060318595991376775,
+              "distance_pct": -11.23,
+              "side": "below",
+              "mass_usd": 41301684,
+              "width_pct": 0.18,
+              "buckets": 2
+            }
+          ],
+          "reach_pct": 19.64,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.0136,
+          "up_mass": 652503521,
+          "down_mass": 670514185,
+          "overhang_ratio": 1.03,
+          "side": "balanced",
+          "center_price": null,
+          "center_distance_pct": null
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "above",
+          "deep_side": "balanced",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near short, deep balanced)."
+        },
+        "notes": []
+      },
+      {
+        "token": "TRX",
+        "spot": 0.32007,
+        "gravity": 0.6573,
+        "label": "STRONG UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.323295,
+        "target_distance_pct": 1.01,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.4925267875903598,
+            "per_tf": {
+              "12h": 0.4911,
+              "24h": 0.5298,
+              "3d": 0.4304
+            },
+            "z_cross": 3.7054342449242257,
+            "up_mass": 224492132.61377147,
+            "down_mass": 80001955.59579085,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.33735629367931214,
+            "distance_pct": 5.4,
+            "side": "above",
+            "mass_usd": 6236938747,
+            "width_pct": 6.58,
+            "buckets": 59,
+            "dominance_ratio": 5.43
+          },
+          "top_pockets": [
+            {
+              "price": 0.33735629367931214,
+              "distance_pct": 5.4,
+              "side": "above",
+              "mass_usd": 6236938747,
+              "width_pct": 6.58,
+              "buckets": 59
+            },
+            {
+              "price": 0.30909625741628177,
+              "distance_pct": -3.43,
+              "side": "below",
+              "mass_usd": 1940388556,
+              "width_pct": 2.79,
+              "buckets": 26
+            },
+            {
+              "price": 0.30198826317018485,
+              "distance_pct": -5.65,
+              "side": "below",
+              "mass_usd": 354077980,
+              "width_pct": 0.67,
+              "buckets": 7
+            },
+            {
+              "price": 0.34889150039668304,
+              "distance_pct": 9,
+              "side": "above",
+              "mass_usd": 264536361,
+              "width_pct": 0.56,
+              "buckets": 4
+            },
+            {
+              "price": 0.3549053343164509,
+              "distance_pct": 10.88,
+              "side": "above",
+              "mass_usd": 146577456,
+              "width_pct": 0.45,
+              "buckets": 4
+            }
+          ],
+          "reach_pct": 11.07,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.4808,
+          "up_mass": 6665883046,
+          "down_mass": 2337355627,
+          "overhang_ratio": 2.85,
+          "side": "above",
+          "center_price": 0.3382284539301963,
+          "center_distance_pct": 5.67
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 2.85x heavier above, led by a pocket at +5.4%."
+        },
+        "notes": []
+      },
+      {
+        "token": "WLFI",
+        "spot": 0.05732,
+        "gravity": -0.6161,
+        "label": "STRONG DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 0.05655,
+        "target_distance_pct": -1.34,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.4492187535170523,
+            "per_tf": {
+              "12h": -0.4006,
+              "24h": -0.3929,
+              "3d": -0.6572
+            },
+            "z_cross": 4.587708455739539,
+            "up_mass": 20872152.64399622,
+            "down_mass": 68219422.17877328,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.053302718074703985,
+            "distance_pct": -7.01,
+            "side": "below",
+            "mass_usd": 775612761,
+            "width_pct": 3.21,
+            "buckets": 20,
+            "dominance_ratio": 2.71
+          },
+          "top_pockets": [
+            {
+              "price": 0.053302718074703985,
+              "distance_pct": -7.01,
+              "side": "below",
+              "mass_usd": 775612761,
+              "width_pct": 3.21,
+              "buckets": 20
+            },
+            {
+              "price": 0.05561873714714001,
+              "distance_pct": -2.97,
+              "side": "below",
+              "mass_usd": 429093564,
+              "width_pct": 2.23,
+              "buckets": 17
+            },
+            {
+              "price": 0.060261738513707634,
+              "distance_pct": 5.13,
+              "side": "above",
+              "mass_usd": 394595609,
+              "width_pct": 5.3,
+              "buckets": 39
+            },
+            {
+              "price": 0.06437695622197709,
+              "distance_pct": 12.31,
+              "side": "above",
+              "mass_usd": 368194113,
+              "width_pct": 3.49,
+              "buckets": 18
+            },
+            {
+              "price": 0.06229110853968694,
+              "distance_pct": 8.67,
+              "side": "above",
+              "mass_usd": 78335017,
+              "width_pct": 0.84,
+              "buckets": 7
+            },
+            {
+              "price": 0.06333302361733938,
+              "distance_pct": 10.49,
+              "side": "above",
+              "mass_usd": 32094601,
+              "width_pct": 0.14,
+              "buckets": 2
+            }
+          ],
+          "reach_pct": 14.31,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.1323,
+          "up_mass": 969110549,
+          "down_mass": 1264614572,
+          "overhang_ratio": 1.3,
+          "side": "below",
+          "center_price": 0.05414077418061572,
+          "center_distance_pct": -5.55
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "aligned_down",
+          "note": "Near pull DOWN confirmed by a deep book 1.3x heavier below, led by a pocket at -7.01%."
+        },
+        "notes": []
+      },
+      {
+        "token": "XRP",
+        "spot": 1.1086,
+        "gravity": -0.6017,
+        "label": "STRONG DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 1.08271,
+        "target_distance_pct": -2.34,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.4348650150161998,
+            "per_tf": {
+              "12h": -0.4722,
+              "24h": -0.276,
+              "3d": -0.6288
+            },
+            "z_cross": 5.514390553009309,
+            "up_mass": 275773439.46593326,
+            "down_mass": 706739472.3231511,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 1.2006895706072973,
+            "distance_pct": 8.29,
+            "side": "above",
+            "mass_usd": 31077118106,
+            "width_pct": 11.84,
+            "buckets": 69,
+            "dominance_ratio": 4.14
+          },
+          "top_pockets": [
+            {
+              "price": 1.2006895706072973,
+              "distance_pct": 8.29,
+              "side": "above",
+              "mass_usd": 31077118106,
+              "width_pct": 11.84,
+              "buckets": 69
+            },
+            {
+              "price": 1.2917718965128755,
+              "distance_pct": 16.5,
+              "side": "above",
+              "mass_usd": 8332402824,
+              "width_pct": 4.53,
+              "buckets": 26
+            },
+            {
+              "price": 1.0792521779647755,
+              "distance_pct": -2.66,
+              "side": "below",
+              "mass_usd": 2862016076,
+              "width_pct": 0.87,
+              "buckets": 6
+            },
+            {
+              "price": 1.0467300963869897,
+              "distance_pct": -5.6,
+              "side": "below",
+              "mass_usd": 2723419999,
+              "width_pct": 0.7,
+              "buckets": 5
+            },
+            {
+              "price": 1.063051023469117,
+              "distance_pct": -4.13,
+              "side": "below",
+              "mass_usd": 2343433689,
+              "width_pct": 1.57,
+              "buckets": 10
+            },
+            {
+              "price": 1.019906507102877,
+              "distance_pct": -8.02,
+              "side": "below",
+              "mass_usd": 1247618017,
+              "width_pct": 0.87,
+              "buckets": 6
+            }
+          ],
+          "reach_pct": 20.68,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.5443,
+          "up_mass": 40190580783,
+          "down_mass": 11860966048,
+          "overhang_ratio": 3.39,
+          "side": "above",
+          "center_price": 1.2220589600082234,
+          "center_distance_pct": 10.21
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull DOWN into an opposing deep book 3.39x heavier ABOVE, led by a pocket at +8.29% — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull DOWN into an opposing deep book 3.39x heavier ABOVE, led by a pocket at +8.29% — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "WIF",
+        "spot": 0.1764,
+        "gravity": 0.5648,
+        "label": "STRONG UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.17854,
+        "target_distance_pct": 1.21,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.3998730887116294,
+            "per_tf": {
+              "12h": 0.4283,
+              "24h": 0.5715,
+              "3d": 0.0355
+            },
+            "z_cross": 4.68936891360751,
+            "up_mass": 18121386.41604756,
+            "down_mass": 9922559.220801037,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.163975765836366,
+            "distance_pct": -7.04,
+            "side": "below",
+            "mass_usd": 225135397,
+            "width_pct": 7.34,
+            "buckets": 38,
+            "dominance_ratio": 3.66
+          },
+          "top_pockets": [
+            {
+              "price": 0.163975765836366,
+              "distance_pct": -7.04,
+              "side": "below",
+              "mass_usd": 225135397,
+              "width_pct": 7.34,
+              "buckets": 38
+            },
+            {
+              "price": 0.15343242841834856,
+              "distance_pct": -13.02,
+              "side": "below",
+              "mass_usd": 150458903,
+              "width_pct": 4.17,
+              "buckets": 22
+            },
+            {
+              "price": 0.19773791501675766,
+              "distance_pct": 12.1,
+              "side": "above",
+              "mass_usd": 71867272,
+              "width_pct": 1.98,
+              "buckets": 8
+            },
+            {
+              "price": 0.18497159016248427,
+              "distance_pct": 4.86,
+              "side": "above",
+              "mass_usd": 62446508,
+              "width_pct": 0.6,
+              "buckets": 4
+            },
+            {
+              "price": 0.18173963420499184,
+              "distance_pct": 3.03,
+              "side": "above",
+              "mass_usd": 59713825,
+              "width_pct": 0.4,
+              "buckets": 3
+            },
+            {
+              "price": 0.14410581490437258,
+              "distance_pct": -18.31,
+              "side": "below",
+              "mass_usd": 29684208,
+              "width_pct": 0.79,
+              "buckets": 5
+            }
+          ],
+          "reach_pct": 24.43,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.2913,
+          "up_mass": 296304897,
+          "down_mass": 539929687,
+          "overhang_ratio": 1.82,
+          "side": "below",
+          "center_price": 0.15639445864731072,
+          "center_distance_pct": -11.34
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull UP into an opposing deep book 1.82x heavier BELOW, led by a pocket at -7.04% — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull UP into an opposing deep book 1.82x heavier BELOW, led by a pocket at -7.04% — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "VVV",
+        "spot": 13.892,
+        "gravity": 0.5579,
+        "label": "STRONG UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 14.0548,
+        "target_distance_pct": 1.17,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.3936202219883789,
+            "per_tf": {
+              "12h": 0.338,
+              "24h": 0.6098,
+              "3d": 0.1404
+            },
+            "z_cross": 5.197278304275923,
+            "up_mass": 15270935.458971165,
+            "down_mass": 7440206.9998698905,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 17.95682758623593,
+            "distance_pct": 29.26,
+            "side": "above",
+            "mass_usd": 941218501,
+            "width_pct": 11.36,
+            "buckets": 31,
+            "dominance_ratio": 8.47
+          },
+          "top_pockets": [
+            {
+              "price": 17.95682758623593,
+              "distance_pct": 29.26,
+              "side": "above",
+              "mass_usd": 941218501,
+              "width_pct": 11.36,
+              "buckets": 31
+            },
+            {
+              "price": 15.64116926285365,
+              "distance_pct": 12.59,
+              "side": "above",
+              "mass_usd": 741459163,
+              "width_pct": 20.45,
+              "buckets": 55
+            },
+            {
+              "price": 21.892477310879666,
+              "distance_pct": 57.59,
+              "side": "above",
+              "mass_usd": 287925637,
+              "width_pct": 2.27,
+              "buckets": 7
+            },
+            {
+              "price": 19.310582942004423,
+              "distance_pct": 39.01,
+              "side": "above",
+              "mass_usd": 231017853,
+              "width_pct": 3.03,
+              "buckets": 9
+            },
+            {
+              "price": 12.59115338873106,
+              "distance_pct": -9.36,
+              "side": "below",
+              "mass_usd": 221623387,
+              "width_pct": 5.3,
+              "buckets": 15
+            },
+            {
+              "price": 22.26053861015942,
+              "distance_pct": 60.24,
+              "side": "above",
+              "mass_usd": 179493390,
+              "width_pct": 1.51,
+              "buckets": 5
+            }
+          ],
+          "reach_pct": 71.55,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.7361,
+          "up_mass": 2975640871,
+          "down_mass": 452225885,
+          "overhang_ratio": 6.58,
+          "side": "above",
+          "center_price": 18.6371331167577,
+          "center_distance_pct": 34.16
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 6.58x heavier above, led by a pocket at +29.26%."
+        },
+        "notes": []
+      },
+      {
+        "token": "ICP",
+        "spot": 2.232,
+        "gravity": 0.5375,
+        "label": "STRONG UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 2.2626,
+        "target_distance_pct": 1.37,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.3754134679344391,
+            "per_tf": {
+              "12h": 0.4802,
+              "24h": 0.379,
+              "3d": 0.1333
+            },
+            "z_cross": 4.148475473411923,
+            "up_mass": 25709925.946971126,
+            "down_mass": 14464222.390962437,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 2.348387596329027,
+            "distance_pct": 5.21,
+            "side": "above",
+            "mass_usd": 384629847,
+            "width_pct": 6.9,
+            "buckets": 24,
+            "dominance_ratio": 3.59
+          },
+          "top_pockets": [
+            {
+              "price": 2.348387596329027,
+              "distance_pct": 5.21,
+              "side": "above",
+              "mass_usd": 384629847,
+              "width_pct": 6.9,
+              "buckets": 24
+            },
+            {
+              "price": 2.508521277219344,
+              "distance_pct": 12.39,
+              "side": "above",
+              "mass_usd": 312093409,
+              "width_pct": 5.1,
+              "buckets": 18
+            },
+            {
+              "price": 2.631901992571954,
+              "distance_pct": 17.92,
+              "side": "above",
+              "mass_usd": 155283714,
+              "width_pct": 3,
+              "buckets": 11
+            },
+            {
+              "price": 2.154039000331761,
+              "distance_pct": -3.49,
+              "side": "below",
+              "mass_usd": 148992485,
+              "width_pct": 3,
+              "buckets": 11
+            },
+            {
+              "price": 2.9696,
+              "distance_pct": 33.05,
+              "side": "above",
+              "mass_usd": 63918234,
+              "width_pct": 0,
+              "buckets": 1
+            },
+            {
+              "price": 3.2463858170752906,
+              "distance_pct": 45.45,
+              "side": "above",
+              "mass_usd": 59895684,
+              "width_pct": 0.3,
+              "buckets": 2
+            }
+          ],
+          "reach_pct": 48.06,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.6949,
+          "up_mass": 1351161919,
+          "down_mass": 243227754,
+          "overhang_ratio": 5.56,
+          "side": "above",
+          "center_price": 2.672426398357242,
+          "center_distance_pct": 19.73
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 5.56x heavier above, led by a pocket at +5.21%."
+        },
+        "notes": []
+      },
+      {
+        "token": "AAVE",
+        "spot": 86.85,
+        "gravity": 0.5211,
+        "label": "STRONG UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 88.57,
+        "target_distance_pct": 1.98,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.3611931249354201,
+            "per_tf": {
+              "12h": 0.4407,
+              "24h": 0.2004,
+              "3d": 0.4636
+            },
+            "z_cross": 4.0820237680989955,
+            "up_mass": 187131833.0977111,
+            "down_mass": 84077262.76300544,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 68.57286032913655,
+            "distance_pct": -21.04,
+            "side": "below",
+            "mass_usd": 2020212031,
+            "width_pct": 15.56,
+            "buckets": 60,
+            "dominance_ratio": 12.63
+          },
+          "top_pockets": [
+            {
+              "price": 68.57286032913655,
+              "distance_pct": -21.04,
+              "side": "below",
+              "mass_usd": 2020212031,
+              "width_pct": 15.56,
+              "buckets": 60
+            },
+            {
+              "price": 78.00512383532933,
+              "distance_pct": -10.17,
+              "side": "below",
+              "mass_usd": 489645473,
+              "width_pct": 3.43,
+              "buckets": 14
+            },
+            {
+              "price": 59.15529820533169,
+              "distance_pct": -31.88,
+              "side": "below",
+              "mass_usd": 247206481,
+              "width_pct": 2.64,
+              "buckets": 11
+            },
+            {
+              "price": 99.77912059392554,
+              "distance_pct": 14.9,
+              "side": "above",
+              "mass_usd": 150294361,
+              "width_pct": 1.58,
+              "buckets": 6
+            },
+            {
+              "price": 80.2699465141601,
+              "distance_pct": -7.57,
+              "side": "below",
+              "mass_usd": 114652964,
+              "width_pct": 1.05,
+              "buckets": 5
+            },
+            {
+              "price": 97.61019772201654,
+              "distance_pct": 12.4,
+              "side": "above",
+              "mass_usd": 109753026,
+              "width_pct": 1.32,
+              "buckets": 6
+            }
+          ],
+          "reach_pct": 33.35,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.6799,
+          "up_mass": 603659494,
+          "down_mass": 3167848109,
+          "overhang_ratio": 5.25,
+          "side": "below",
+          "center_price": 70.59359424034216,
+          "center_distance_pct": -18.71
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull UP into an opposing deep book 5.25x heavier BELOW, led by a pocket at -21.04% — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull UP into an opposing deep book 5.25x heavier BELOW, led by a pocket at -21.04% — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "SUI",
+        "spot": 0.7501,
+        "gravity": 0.4949,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.75822,
+        "target_distance_pct": 1.08,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.33908946930079686,
+            "per_tf": {
+              "12h": 0.4201,
+              "24h": 0.4629,
+              "3d": -0.0599
+            },
+            "z_cross": 5.746582234894874,
+            "up_mass": 120905915.0958738,
+            "down_mass": 71831899.78828251,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.8447795248475015,
+            "distance_pct": 12.59,
+            "side": "above",
+            "mass_usd": 1769698681,
+            "width_pct": 4.11,
+            "buckets": 15,
+            "dominance_ratio": 2.03
+          },
+          "top_pockets": [
+            {
+              "price": 0.8447795248475015,
+              "distance_pct": 12.59,
+              "side": "above",
+              "mass_usd": 1769698681,
+              "width_pct": 4.11,
+              "buckets": 15
+            },
+            {
+              "price": 0.7227053915883696,
+              "distance_pct": -3.68,
+              "side": "below",
+              "mass_usd": 1260762771,
+              "width_pct": 3.93,
+              "buckets": 23
+            },
+            {
+              "price": 0.7770125630315237,
+              "distance_pct": 3.56,
+              "side": "above",
+              "mass_usd": 1134470648,
+              "width_pct": 2.68,
+              "buckets": 16
+            },
+            {
+              "price": 0.793104511089332,
+              "distance_pct": 5.7,
+              "side": "above",
+              "mass_usd": 440442082,
+              "width_pct": 1.25,
+              "buckets": 8
+            },
+            {
+              "price": 0.6996249428120351,
+              "distance_pct": -6.75,
+              "side": "below",
+              "mass_usd": 320715697,
+              "width_pct": 0.89,
+              "buckets": 6
+            },
+            {
+              "price": 0.6662705476927084,
+              "distance_pct": -11.2,
+              "side": "below",
+              "mass_usd": 317241246,
+              "width_pct": 1.25,
+              "buckets": 8
+            }
+          ],
+          "reach_pct": 16.37,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.1895,
+          "up_mass": 4058218171,
+          "down_mass": 2765021793,
+          "overhang_ratio": 1.47,
+          "side": "above",
+          "center_price": 0.8191564240134781,
+          "center_distance_pct": 9.18
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 1.47x heavier above, led by a pocket at +12.59%."
+        },
+        "notes": []
+      },
+      {
+        "token": "DASH",
+        "spot": 36.07,
+        "gravity": -0.4832,
+        "label": "MILD DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 35.396,
+        "target_distance_pct": -1.87,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.3294684098666507,
+            "per_tf": {
+              "12h": 0.1388,
+              "24h": -0.687,
+              "3d": -0.7574
+            },
+            "z_cross": 3.206511378991238,
+            "up_mass": 4429590.05292316,
+            "down_mass": 16256670.272474864,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 40.835275380842965,
+            "distance_pct": 13.21,
+            "side": "above",
+            "mass_usd": 371042103,
+            "width_pct": 3.77,
+            "buckets": 18,
+            "dominance_ratio": 3.22
+          },
+          "top_pockets": [
+            {
+              "price": 40.835275380842965,
+              "distance_pct": 13.21,
+              "side": "above",
+              "mass_usd": 371042103,
+              "width_pct": 3.77,
+              "buckets": 18
+            },
+            {
+              "price": 34.27510447838433,
+              "distance_pct": -4.98,
+              "side": "below",
+              "mass_usd": 247593644,
+              "width_pct": 5.09,
+              "buckets": 28
+            },
+            {
+              "price": 38.39484014686151,
+              "distance_pct": 6.45,
+              "side": "above",
+              "mass_usd": 124524926,
+              "width_pct": 1.7,
+              "buckets": 10
+            },
+            {
+              "price": 37.40235847537354,
+              "distance_pct": 3.69,
+              "side": "above",
+              "mass_usd": 110285266,
+              "width_pct": 2.64,
+              "buckets": 15
+            },
+            {
+              "price": 39.06482662523412,
+              "distance_pct": 8.3,
+              "side": "above",
+              "mass_usd": 109033763,
+              "width_pct": 1.51,
+              "buckets": 9
+            },
+            {
+              "price": 32.89285963469914,
+              "distance_pct": -8.81,
+              "side": "below",
+              "mass_usd": 58078629,
+              "width_pct": 1.32,
+              "buckets": 8
+            }
+          ],
+          "reach_pct": 19.43,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.1902,
+          "up_mass": 779593373,
+          "down_mass": 530439300,
+          "overhang_ratio": 1.47,
+          "side": "above",
+          "center_price": 39.58763893543573,
+          "center_distance_pct": 9.75
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull DOWN into an opposing deep book 1.47x heavier ABOVE, led by a pocket at +13.21% — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull DOWN into an opposing deep book 1.47x heavier ABOVE, led by a pocket at +13.21% — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "SOL",
+        "spot": 81.38,
+        "gravity": -0.4781,
+        "label": "MILD DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 79.706,
+        "target_distance_pct": -2.06,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.3253166958174212,
+            "per_tf": {
+              "12h": -0.195,
+              "24h": -0.4001,
+              "3d": -0.4876
+            },
+            "z_cross": 6.194977674945753,
+            "up_mass": 1995942376.3859515,
+            "down_mass": 4631035984.154836,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 67.73987977993812,
+            "distance_pct": -16.75,
+            "side": "below",
+            "mass_usd": 64974807072,
+            "width_pct": 12.39,
+            "buckets": 72,
+            "dominance_ratio": 10.46
+          },
+          "top_pockets": [
+            {
+              "price": 67.73987977993812,
+              "distance_pct": -16.75,
+              "side": "below",
+              "mass_usd": 64974807072,
+              "width_pct": 12.39,
+              "buckets": 72
+            },
+            {
+              "price": 76.6899855884688,
+              "distance_pct": -5.75,
+              "side": "below",
+              "mass_usd": 48109373903,
+              "width_pct": 6.46,
+              "buckets": 38
+            },
+            {
+              "price": 62.23716406095027,
+              "distance_pct": -23.51,
+              "side": "below",
+              "mass_usd": 8590553168,
+              "width_pct": 1.57,
+              "buckets": 10
+            },
+            {
+              "price": 61.144887575911255,
+              "distance_pct": -24.86,
+              "side": "below",
+              "mass_usd": 8390909429,
+              "width_pct": 1.4,
+              "buckets": 7
+            },
+            {
+              "price": 59.61831314486729,
+              "distance_pct": -26.73,
+              "side": "below",
+              "mass_usd": 8017110920,
+              "width_pct": 2.27,
+              "buckets": 9
+            },
+            {
+              "price": 79.724,
+              "distance_pct": -2.02,
+              "side": "below",
+              "mass_usd": 1245054506,
+              "width_pct": 0,
+              "buckets": 1
+            }
+          ],
+          "reach_pct": 28.37,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.995,
+          "up_mass": 348161940,
+          "down_mass": 140076979933,
+          "overhang_ratio": 402.33,
+          "side": "below",
+          "center_price": 69.7437190702999,
+          "center_distance_pct": -14.29
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "aligned_down",
+          "note": "Near pull DOWN confirmed by a deep book 402.33x heavier below, led by a pocket at -16.75%."
+        },
+        "notes": []
+      },
+      {
+        "token": "FIL",
+        "spot": 0.789,
+        "gravity": 0.4752,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.7992,
+        "target_distance_pct": 1.29,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.3229893828983191,
+            "per_tf": {
+              "12h": 0.4447,
+              "24h": 0.3321,
+              "3d": 0.0334
+            },
+            "z_cross": 3.2556009598765216,
+            "up_mass": 64877572.9140014,
+            "down_mass": 37799947.26200984,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.7461487003681176,
+            "distance_pct": -5.43,
+            "side": "below",
+            "mass_usd": 975180251,
+            "width_pct": 6.26,
+            "buckets": 27,
+            "dominance_ratio": 3.46
+          },
+          "top_pockets": [
+            {
+              "price": 0.7461487003681176,
+              "distance_pct": -5.43,
+              "side": "below",
+              "mass_usd": 975180251,
+              "width_pct": 6.26,
+              "buckets": 27
+            },
+            {
+              "price": 0.8269209740321439,
+              "distance_pct": 4.81,
+              "side": "above",
+              "mass_usd": 864295905,
+              "width_pct": 4.82,
+              "buckets": 21
+            },
+            {
+              "price": 0.7003792740344793,
+              "distance_pct": -11.23,
+              "side": "below",
+              "mass_usd": 789135073,
+              "width_pct": 5.78,
+              "buckets": 24
+            },
+            {
+              "price": 1.0077849506780847,
+              "distance_pct": 27.73,
+              "side": "above",
+              "mass_usd": 148916618,
+              "width_pct": 0.24,
+              "buckets": 2
+            },
+            {
+              "price": 0.8491328109600903,
+              "distance_pct": 7.62,
+              "side": "above",
+              "mass_usd": 133664621,
+              "width_pct": 0.72,
+              "buckets": 4
+            },
+            {
+              "price": 0.891,
+              "distance_pct": 12.93,
+              "side": "above",
+              "mass_usd": 73171348,
+              "width_pct": 0,
+              "buckets": 1
+            }
+          ],
+          "reach_pct": 30.27,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.0755,
+          "up_mass": 1518027849,
+          "down_mass": 1765847040,
+          "overhang_ratio": 1.16,
+          "side": "below",
+          "center_price": 0.725669425917617,
+          "center_distance_pct": -8.03
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull UP into an opposing deep book 1.16x heavier BELOW, led by a pocket at -5.43% — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull UP into an opposing deep book 1.16x heavier BELOW, led by a pocket at -5.43% — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "ETH",
+        "spot": 1742.57,
+        "gravity": -0.4373,
+        "label": "MILD DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 1718.844,
+        "target_distance_pct": -1.36,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.2930396474068313,
+            "per_tf": {
+              "12h": -0.3428,
+              "24h": -0.2012,
+              "3d": -0.3418
+            },
+            "z_cross": 4.509362173987621,
+            "up_mass": 4229550633.182392,
+            "down_mass": 7155357119.398263,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 1634.3503516681599,
+            "distance_pct": -6.21,
+            "side": "below",
+            "mass_usd": 222371151133,
+            "width_pct": 7.72,
+            "buckets": 44,
+            "dominance_ratio": 2.56
+          },
+          "top_pockets": [
+            {
+              "price": 1634.3503516681599,
+              "distance_pct": -6.21,
+              "side": "below",
+              "mass_usd": 222371151133,
+              "width_pct": 7.72,
+              "buckets": 44
+            },
+            {
+              "price": 1905.0261202520041,
+              "distance_pct": 9.32,
+              "side": "above",
+              "mass_usd": 139859245778,
+              "width_pct": 1.97,
+              "buckets": 11
+            },
+            {
+              "price": 1963.8193049866989,
+              "distance_pct": 12.7,
+              "side": "above",
+              "mass_usd": 125196522190,
+              "width_pct": 3.77,
+              "buckets": 15
+            },
+            {
+              "price": 1812.2555712063638,
+              "distance_pct": 4,
+              "side": "above",
+              "mass_usd": 57080177648,
+              "width_pct": 1.44,
+              "buckets": 9
+            },
+            {
+              "price": 1551.9838479870918,
+              "distance_pct": -10.94,
+              "side": "below",
+              "mass_usd": 49635192653,
+              "width_pct": 1.26,
+              "buckets": 8
+            },
+            {
+              "price": 1856.9152762789417,
+              "distance_pct": 6.56,
+              "side": "above",
+              "mass_usd": 37197306445,
+              "width_pct": 0.54,
+              "buckets": 4
+            }
+          ],
+          "reach_pct": 17.98,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.1651,
+          "up_mass": 459022069960,
+          "down_mass": 328949692099,
+          "overhang_ratio": 1.4,
+          "side": "above",
+          "center_price": 1899.417287218023,
+          "center_distance_pct": 9
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "below",
+          "deep_side": "above",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull DOWN into an opposing deep book 1.4x heavier ABOVE (though the biggest single pocket sits at -6.21%, the other way) — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull DOWN into an opposing deep book 1.4x heavier ABOVE (though the biggest single pocket sits at -6.21%, the other way) — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "LDO",
+        "spot": 0.2643,
+        "gravity": 0.4315,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.267,
+        "target_distance_pct": 1.02,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.2885946050661685,
+            "per_tf": {
+              "12h": 0.3023,
+              "24h": 0.5694,
+              "3d": -0.2336
+            },
+            "z_cross": 3.830113773376682,
+            "up_mass": 13611247.645722391,
+            "down_mass": 8240472.25571063,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.31882832792796817,
+            "distance_pct": 20.63,
+            "side": "above",
+            "mass_usd": 155622898,
+            "width_pct": 3.45,
+            "buckets": 11,
+            "dominance_ratio": 2.54
+          },
+          "top_pockets": [
+            {
+              "price": 0.31882832792796817,
+              "distance_pct": 20.63,
+              "side": "above",
+              "mass_usd": 155622898,
+              "width_pct": 3.45,
+              "buckets": 11
+            },
+            {
+              "price": 0.2518883947057193,
+              "distance_pct": -4.7,
+              "side": "below",
+              "mass_usd": 145105144,
+              "width_pct": 4.96,
+              "buckets": 24
+            },
+            {
+              "price": 0.28931434583599597,
+              "distance_pct": 9.46,
+              "side": "above",
+              "mass_usd": 111528173,
+              "width_pct": 2.8,
+              "buckets": 14
+            },
+            {
+              "price": 0.27451944855442717,
+              "distance_pct": 3.87,
+              "side": "above",
+              "mass_usd": 89659859,
+              "width_pct": 3.67,
+              "buckets": 18
+            },
+            {
+              "price": 0.3105508403244669,
+              "distance_pct": 17.5,
+              "side": "above",
+              "mass_usd": 84355589,
+              "width_pct": 1.08,
+              "buckets": 4
+            },
+            {
+              "price": 0.29635930505746805,
+              "distance_pct": 12.13,
+              "side": "above",
+              "mass_usd": 49429400,
+              "width_pct": 1.08,
+              "buckets": 6
+            }
+          ],
+          "reach_pct": 26.77,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.4992,
+          "up_mass": 639866639,
+          "down_mass": 213758118,
+          "overhang_ratio": 2.99,
+          "side": "above",
+          "center_price": 0.3003945815166462,
+          "center_distance_pct": 13.66
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 2.99x heavier above, led by a pocket at +20.63%."
+        },
+        "notes": []
+      },
+      {
+        "token": "DOGE",
+        "spot": 0.07573,
+        "gravity": 0.4301,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.076744,
+        "target_distance_pct": 1.34,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.28751311294950116,
+            "per_tf": {
+              "12h": 0.3201,
+              "24h": 0.4885,
+              "3d": -0.1375
+            },
+            "z_cross": 5.693555336246682,
+            "up_mass": 378649787.84461164,
+            "down_mass": 236173570.37519008,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.09183566608753753,
+            "distance_pct": 21.27,
+            "side": "above",
+            "mass_usd": 7698087491,
+            "width_pct": 4.96,
+            "buckets": 22,
+            "dominance_ratio": 12.19
+          },
+          "top_pockets": [
+            {
+              "price": 0.09183566608753753,
+              "distance_pct": 21.27,
+              "side": "above",
+              "mass_usd": 7698087491,
+              "width_pct": 4.96,
+              "buckets": 22
+            },
+            {
+              "price": 0.08053246071263911,
+              "distance_pct": 6.34,
+              "side": "above",
+              "mass_usd": 4356713901,
+              "width_pct": 4.49,
+              "buckets": 20
+            },
+            {
+              "price": 0.08676905940771872,
+              "distance_pct": 14.58,
+              "side": "above",
+              "mass_usd": 3913384680,
+              "width_pct": 5.44,
+              "buckets": 24
+            },
+            {
+              "price": 0.09590812271153731,
+              "distance_pct": 26.64,
+              "side": "above",
+              "mass_usd": 3119825464,
+              "width_pct": 2.13,
+              "buckets": 8
+            },
+            {
+              "price": 0.09788842099879594,
+              "distance_pct": 29.26,
+              "side": "above",
+              "mass_usd": 2684129642,
+              "width_pct": 1.89,
+              "buckets": 7
+            },
+            {
+              "price": 0.09401644295117641,
+              "distance_pct": 24.15,
+              "side": "above",
+              "mass_usd": 1326197100,
+              "width_pct": 0.24,
+              "buckets": 2
+            }
+          ],
+          "reach_pct": 35.61,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.931,
+          "up_mass": 28208444574,
+          "down_mass": 1008638901,
+          "overhang_ratio": 27.97,
+          "side": "above",
+          "center_price": 0.08986125084786645,
+          "center_distance_pct": 18.66
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 27.97x heavier above, led by a pocket at +21.27%."
+        },
+        "notes": []
+      },
+      {
+        "token": "BTC",
+        "spot": 61972,
+        "gravity": -0.4195,
+        "label": "MILD DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 60741.18,
+        "target_distance_pct": -1.99,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.2793968127065206,
+            "per_tf": {
+              "12h": -0.2789,
+              "24h": -0.1102,
+              "3d": -0.5767
+            },
+            "z_cross": 6.2973563697362405,
+            "up_mass": 20106217994.494366,
+            "down_mass": 36492805020.4768,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 69763.19208356715,
+            "distance_pct": 12.58,
+            "side": "above",
+            "mass_usd": 299023754213,
+            "width_pct": 2.92,
+            "buckets": 20,
+            "dominance_ratio": 1.61
+          },
+          "top_pockets": [
+            {
+              "price": 69763.19208356715,
+              "distance_pct": 12.58,
+              "side": "above",
+              "mass_usd": 299023754213,
+              "width_pct": 2.92,
+              "buckets": 20
+            },
+            {
+              "price": 68357.9806835558,
+              "distance_pct": 10.31,
+              "side": "above",
+              "mass_usd": 173386274043,
+              "width_pct": 0.88,
+              "buckets": 7
+            },
+            {
+              "price": 67671.58267905086,
+              "distance_pct": 9.21,
+              "side": "above",
+              "mass_usd": 157669187038,
+              "width_pct": 0.73,
+              "buckets": 6
+            },
+            {
+              "price": 60390.76137362075,
+              "distance_pct": -2.54,
+              "side": "below",
+              "mass_usd": 89669628586,
+              "width_pct": 0.88,
+              "buckets": 7
+            },
+            {
+              "price": 65493.47070148277,
+              "distance_pct": 5.69,
+              "side": "above",
+              "mass_usd": 61002176544,
+              "width_pct": 1.02,
+              "buckets": 8
+            },
+            {
+              "price": 63473.8087319323,
+              "distance_pct": 2.43,
+              "side": "above",
+              "mass_usd": 55201894601,
+              "width_pct": 0.88,
+              "buckets": 7
+            }
+          ],
+          "reach_pct": 16.47,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.5764,
+          "up_mass": 995230970223,
+          "down_mass": 267459561125,
+          "overhang_ratio": 3.72,
+          "side": "above",
+          "center_price": 67746.0742123045,
+          "center_distance_pct": 9.33
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull DOWN into an opposing deep book 3.72x heavier ABOVE, led by a pocket at +12.58% — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull DOWN into an opposing deep book 3.72x heavier ABOVE, led by a pocket at +12.58% — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "XLM",
+        "spot": 0.20078,
+        "gravity": 0.4114,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.203356,
+        "target_distance_pct": 1.28,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.2733104328520632,
+            "per_tf": {
+              "12h": 0.2459,
+              "24h": 0.2717,
+              "3d": 0.3379
+            },
+            "z_cross": 5.1554522189987475,
+            "up_mass": 145095398.5169722,
+            "down_mass": 78510774.24891491,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.18123573525496567,
+            "distance_pct": -9.74,
+            "side": "below",
+            "mass_usd": 857261005,
+            "width_pct": 3.39,
+            "buckets": 15,
+            "dominance_ratio": 1.94
+          },
+          "top_pockets": [
+            {
+              "price": 0.18123573525496567,
+              "distance_pct": -9.74,
+              "side": "below",
+              "mass_usd": 857261005,
+              "width_pct": 3.39,
+              "buckets": 15
+            },
+            {
+              "price": 0.19129186913268068,
+              "distance_pct": -4.73,
+              "side": "below",
+              "mass_usd": 788589733,
+              "width_pct": 5.08,
+              "buckets": 22
+            },
+            {
+              "price": 0.25385253744765124,
+              "distance_pct": 26.43,
+              "side": "above",
+              "mass_usd": 649557006,
+              "width_pct": 3.15,
+              "buckets": 10
+            },
+            {
+              "price": 0.21986153796048818,
+              "distance_pct": 9.5,
+              "side": "above",
+              "mass_usd": 645376072,
+              "width_pct": 2.18,
+              "buckets": 10
+            },
+            {
+              "price": 0.21478953412214938,
+              "distance_pct": 6.97,
+              "side": "above",
+              "mass_usd": 324180070,
+              "width_pct": 1.21,
+              "buckets": 6
+            },
+            {
+              "price": 0.2106078552707775,
+              "distance_pct": 4.89,
+              "side": "above",
+              "mass_usd": 288580054,
+              "width_pct": 1.21,
+              "buckets": 6
+            }
+          ],
+          "reach_pct": 28.36,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.2874,
+          "up_mass": 3561134010,
+          "down_mass": 1971168790,
+          "overhang_ratio": 1.81,
+          "side": "above",
+          "center_price": 0.22928395761122794,
+          "center_distance_pct": 14.19
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "below",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 1.81x heavier above (though the biggest single pocket sits at -9.74%, the other way)."
+        },
+        "notes": []
+      },
+      {
+        "token": "APT",
+        "spot": 0.6223,
+        "gravity": 0.4035,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.62875,
+        "target_distance_pct": 1.04,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.2673944011899715,
+            "per_tf": {
+              "12h": 0.372,
+              "24h": 0.4497,
+              "3d": -0.287
+            },
+            "z_cross": 3.786417767129958,
+            "up_mass": 21949367.46990633,
+            "down_mass": 14604811.47668245,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.6953961555125752,
+            "distance_pct": 11.75,
+            "side": "above",
+            "mass_usd": 280376702,
+            "width_pct": 3.9,
+            "buckets": 13,
+            "dominance_ratio": 2.45
+          },
+          "top_pockets": [
+            {
+              "price": 0.6953961555125752,
+              "distance_pct": 11.75,
+              "side": "above",
+              "mass_usd": 280376702,
+              "width_pct": 3.9,
+              "buckets": 13
+            },
+            {
+              "price": 0.65432788432127,
+              "distance_pct": 5.15,
+              "side": "above",
+              "mass_usd": 191424056,
+              "width_pct": 6.49,
+              "buckets": 21
+            },
+            {
+              "price": 0.7248814469547054,
+              "distance_pct": 16.48,
+              "side": "above",
+              "mass_usd": 150161344,
+              "width_pct": 3.57,
+              "buckets": 12
+            },
+            {
+              "price": 0.602876731383882,
+              "distance_pct": -3.12,
+              "side": "below",
+              "mass_usd": 95388811,
+              "width_pct": 2.6,
+              "buckets": 9
+            },
+            {
+              "price": 0.8896473472135956,
+              "distance_pct": 42.96,
+              "side": "above",
+              "mass_usd": 64861289,
+              "width_pct": 0.97,
+              "buckets": 3
+            },
+            {
+              "price": 0.81954,
+              "distance_pct": 31.7,
+              "side": "above",
+              "mass_usd": 63786227,
+              "width_pct": 0,
+              "buckets": 1
+            }
+          ],
+          "reach_pct": 52.79,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.7928,
+          "up_mass": 1447932575,
+          "down_mass": 167310375,
+          "overhang_ratio": 8.65,
+          "side": "above",
+          "center_price": 0.7793278821835888,
+          "center_distance_pct": 25.23
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 8.65x heavier above, led by a pocket at +11.75%."
+        },
+        "notes": []
+      },
+      {
+        "token": "AVAX",
+        "spot": 6.889,
+        "gravity": 0.3982,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 6.9638,
+        "target_distance_pct": 1.09,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.2634202145066936,
+            "per_tf": {
+              "12h": 0.4126,
+              "24h": 0.212,
+              "3d": 0.0177
+            },
+            "z_cross": 5.033662804914823,
+            "up_mass": 98236233.37538762,
+            "down_mass": 74115362.29679969,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 6.424955043878298,
+            "distance_pct": -6.75,
+            "side": "below",
+            "mass_usd": 1321020452,
+            "width_pct": 8.89,
+            "buckets": 36,
+            "dominance_ratio": 2.58
+          },
+          "top_pockets": [
+            {
+              "price": 6.424955043878298,
+              "distance_pct": -6.75,
+              "side": "below",
+              "mass_usd": 1321020452,
+              "width_pct": 8.89,
+              "buckets": 36
+            },
+            {
+              "price": 8.556497235371976,
+              "distance_pct": 24.19,
+              "side": "above",
+              "mass_usd": 1252610008,
+              "width_pct": 5.08,
+              "buckets": 16
+            },
+            {
+              "price": 7.145776401358956,
+              "distance_pct": 3.71,
+              "side": "above",
+              "mass_usd": 1100441822,
+              "width_pct": 3.3,
+              "buckets": 14
+            },
+            {
+              "price": 7.946587161564981,
+              "distance_pct": 15.34,
+              "side": "above",
+              "mass_usd": 314718508,
+              "width_pct": 0.76,
+              "buckets": 4
+            },
+            {
+              "price": 5.614504950128582,
+              "distance_pct": -18.51,
+              "side": "below",
+              "mass_usd": 287867522,
+              "width_pct": 0.76,
+              "buckets": 4
+            },
+            {
+              "price": 7.716372492457164,
+              "distance_pct": 11.99,
+              "side": "above",
+              "mass_usd": 233294450,
+              "width_pct": 1.52,
+              "buckets": 6
+            }
+          ],
+          "reach_pct": 27.84,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.2584,
+          "up_mass": 3897788204,
+          "down_mass": 2296838286,
+          "overhang_ratio": 1.7,
+          "side": "above",
+          "center_price": 7.874212908651461,
+          "center_distance_pct": 14.28
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "below",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 1.7x heavier above (though the biggest single pocket sits at -6.75%, the other way)."
+        },
+        "notes": []
+      },
+      {
+        "token": "BNB",
+        "spot": 567.32,
+        "gravity": 0.3873,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 574.598,
+        "target_distance_pct": 1.28,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.2553918374750518,
+            "per_tf": {
+              "12h": 0.403,
+              "24h": 0.4095,
+              "3d": -0.3465
+            },
+            "z_cross": 4.510933429251203,
+            "up_mass": 474713515.55807865,
+            "down_mass": 499153936.4683318,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 612.6398293361358,
+            "distance_pct": 7.99,
+            "side": "above",
+            "mass_usd": 13989700376,
+            "width_pct": 9.79,
+            "buckets": 57,
+            "dominance_ratio": 3.34
+          },
+          "top_pockets": [
+            {
+              "price": 612.6398293361358,
+              "distance_pct": 7.99,
+              "side": "above",
+              "mass_usd": 13989700376,
+              "width_pct": 9.79,
+              "buckets": 57
+            },
+            {
+              "price": 641.1222548990764,
+              "distance_pct": 13.01,
+              "side": "above",
+              "mass_usd": 2948538214,
+              "width_pct": 1.22,
+              "buckets": 8
+            },
+            {
+              "price": 658.9452234400617,
+              "distance_pct": 16.15,
+              "side": "above",
+              "mass_usd": 2315192276,
+              "width_pct": 1.92,
+              "buckets": 8
+            },
+            {
+              "price": 649.6051854912972,
+              "distance_pct": 14.5,
+              "side": "above",
+              "mass_usd": 1704067709,
+              "width_pct": 0.52,
+              "buckets": 4
+            },
+            {
+              "price": 675.9450218758759,
+              "distance_pct": 19.15,
+              "side": "above",
+              "mass_usd": 1185634750,
+              "width_pct": 1.05,
+              "buckets": 3
+            },
+            {
+              "price": 689.2469824970691,
+              "distance_pct": 21.49,
+              "side": "above",
+              "mass_usd": 1061952744,
+              "width_pct": 1.22,
+              "buckets": 4
+            }
+          ],
+          "reach_pct": 23.98,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.7597,
+          "up_mass": 24167344907,
+          "down_mass": 3300355136,
+          "overhang_ratio": 7.32,
+          "side": "above",
+          "center_price": 631.5662420855512,
+          "center_distance_pct": 11.32
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 7.32x heavier above, led by a pocket at +7.99%."
+        },
+        "notes": []
+      },
+      {
+        "token": "OP",
+        "spot": 0.103,
+        "gravity": -0.3829,
+        "label": "MILD DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 0.10151,
+        "target_distance_pct": -1.45,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.2521583754720662,
+            "per_tf": {
+              "12h": 0.3542,
+              "24h": -0.6714,
+              "3d": -0.8827
+            },
+            "z_cross": 4.308516403293971,
+            "up_mass": 2646502.7778053745,
+            "down_mass": 12511256.92898706,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.11055636048311439,
+            "distance_pct": 7.34,
+            "side": "above",
+            "mass_usd": 492334909,
+            "width_pct": 10.85,
+            "buckets": 43,
+            "dominance_ratio": 4
+          },
+          "top_pockets": [
+            {
+              "price": 0.11055636048311439,
+              "distance_pct": 7.34,
+              "side": "above",
+              "mass_usd": 492334909,
+              "width_pct": 10.85,
+              "buckets": 43
+            },
+            {
+              "price": 0.09163351752178649,
+              "distance_pct": -11.04,
+              "side": "below",
+              "mass_usd": 224121325,
+              "width_pct": 5.3,
+              "buckets": 21
+            },
+            {
+              "price": 0.09772312174206296,
+              "distance_pct": -5.12,
+              "side": "below",
+              "mass_usd": 203460493,
+              "width_pct": 5.81,
+              "buckets": 24
+            },
+            {
+              "price": 0.13214,
+              "distance_pct": 28.29,
+              "side": "above",
+              "mass_usd": 42196568,
+              "width_pct": 0,
+              "buckets": 1
+            },
+            {
+              "price": 0.13052751081545613,
+              "distance_pct": 26.73,
+              "side": "above",
+              "mass_usd": 33361316,
+              "width_pct": 0.25,
+              "buckets": 2
+            },
+            {
+              "price": 0.12642,
+              "distance_pct": 22.74,
+              "side": "above",
+              "mass_usd": 28488242,
+              "width_pct": 0,
+              "buckets": 1
+            }
+          ],
+          "reach_pct": 30.56,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.2139,
+          "up_mass": 673525499,
+          "down_mass": 436166858,
+          "overhang_ratio": 1.54,
+          "side": "above",
+          "center_price": 0.11578606555219917,
+          "center_distance_pct": 12.41
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull DOWN into an opposing deep book 1.54x heavier ABOVE, led by a pocket at +7.34% — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull DOWN into an opposing deep book 1.54x heavier ABOVE, led by a pocket at +7.34% — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "DOT",
+        "spot": 0.867,
+        "gravity": 0.3807,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.8806,
+        "target_distance_pct": 1.57,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.2505543345986309,
+            "per_tf": {
+              "12h": 0.1967,
+              "24h": 0.5719,
+              "3d": -0.1907
+            },
+            "z_cross": 4.306941752281127,
+            "up_mass": 68500031.8473652,
+            "down_mass": 43699774.00824834,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.9916120943794711,
+            "distance_pct": 14.24,
+            "side": "above",
+            "mass_usd": 848045363,
+            "width_pct": 6.29,
+            "buckets": 27,
+            "dominance_ratio": 5.12
+          },
+          "top_pockets": [
+            {
+              "price": 0.9916120943794711,
+              "distance_pct": 14.24,
+              "side": "above",
+              "mass_usd": 848045363,
+              "width_pct": 6.29,
+              "buckets": 27
+            },
+            {
+              "price": 0.9282192275720986,
+              "distance_pct": 6.94,
+              "side": "above",
+              "mass_usd": 705737117,
+              "width_pct": 5.56,
+              "buckets": 24
+            },
+            {
+              "price": 1.05123233907139,
+              "distance_pct": 21.11,
+              "side": "above",
+              "mass_usd": 497021360,
+              "width_pct": 4.6,
+              "buckets": 19
+            },
+            {
+              "price": 1.1425056555216337,
+              "distance_pct": 31.63,
+              "side": "above",
+              "mass_usd": 193927854,
+              "width_pct": 1.69,
+              "buckets": 6
+            },
+            {
+              "price": 1.0794867444595324,
+              "distance_pct": 24.36,
+              "side": "above",
+              "mass_usd": 181326262,
+              "width_pct": 1.21,
+              "buckets": 6
+            },
+            {
+              "price": 0.8954928780630799,
+              "distance_pct": 3.17,
+              "side": "above",
+              "mass_usd": 140383246,
+              "width_pct": 1.45,
+              "buckets": 7
+            }
+          ],
+          "reach_pct": 36.52,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.8595,
+          "up_mass": 3152482555,
+          "down_mass": 238242454,
+          "overhang_ratio": 13.23,
+          "side": "above",
+          "center_price": 1.0184313765109887,
+          "center_distance_pct": 17.33
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 13.23x heavier above, led by a pocket at +14.24%."
+        },
+        "notes": []
+      },
+      {
+        "token": "MON",
+        "spot": 0.02054,
+        "gravity": 0.3774,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.02081,
+        "target_distance_pct": 1.31,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.2481100812862428,
+            "per_tf": {
+              "12h": -0.0654,
+              "24h": 0.4693,
+              "3d": 0.5664
+            },
+            "z_cross": 3.9266871133951184,
+            "up_mass": 13747983.765021909,
+            "down_mass": 5010867.835257454,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.022203136917482852,
+            "distance_pct": 8.1,
+            "side": "above",
+            "mass_usd": 174183578,
+            "width_pct": 11.58,
+            "buckets": 62,
+            "dominance_ratio": 2.99
+          },
+          "top_pockets": [
+            {
+              "price": 0.022203136917482852,
+              "distance_pct": 8.1,
+              "side": "above",
+              "mass_usd": 174183578,
+              "width_pct": 11.58,
+              "buckets": 62
+            },
+            {
+              "price": 0.019702953395837653,
+              "distance_pct": -4.08,
+              "side": "below",
+              "mass_usd": 60755618,
+              "width_pct": 4.94,
+              "buckets": 27
+            },
+            {
+              "price": 0.024061157033876335,
+              "distance_pct": 17.14,
+              "side": "above",
+              "mass_usd": 23329656,
+              "width_pct": 0.95,
+              "buckets": 6
+            },
+            {
+              "price": 0.02368583956284365,
+              "distance_pct": 15.32,
+              "side": "above",
+              "mass_usd": 18313256,
+              "width_pct": 1.33,
+              "buckets": 7
+            },
+            {
+              "price": 0.0181993983502135,
+              "distance_pct": -11.4,
+              "side": "below",
+              "mass_usd": 11985380,
+              "width_pct": 2.09,
+              "buckets": 12
+            },
+            {
+              "price": 0.01859743153528165,
+              "distance_pct": -9.46,
+              "side": "below",
+              "mass_usd": 7754845,
+              "width_pct": 1.33,
+              "buckets": 8
+            }
+          ],
+          "reach_pct": 19.78,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.4188,
+          "up_mass": 220342926,
+          "down_mass": 90260835,
+          "overhang_ratio": 2.44,
+          "side": "above",
+          "center_price": 0.022567621618982948,
+          "center_distance_pct": 9.87
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 2.44x heavier above, led by a pocket at +8.1%."
+        },
+        "notes": []
+      },
+      {
+        "token": "LINK",
+        "spot": 7.852,
+        "gravity": 0.3769,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 7.9425,
+        "target_distance_pct": 1.15,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.24776515405934227,
+            "per_tf": {
+              "12h": 0.2529,
+              "24h": 0.378,
+              "3d": 0.0084
+            },
+            "z_cross": 4.420646072473008,
+            "up_mass": 111115420.80456994,
+            "down_mass": 65831965.53643966,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 8.714194714958008,
+            "distance_pct": 10.98,
+            "side": "above",
+            "mass_usd": 1828440499,
+            "width_pct": 4.64,
+            "buckets": 22,
+            "dominance_ratio": 2.89
+          },
+          "top_pockets": [
+            {
+              "price": 8.714194714958008,
+              "distance_pct": 10.98,
+              "side": "above",
+              "mass_usd": 1828440499,
+              "width_pct": 4.64,
+              "buckets": 22
+            },
+            {
+              "price": 8.210457729885688,
+              "distance_pct": 4.57,
+              "side": "above",
+              "mass_usd": 823708395,
+              "width_pct": 2.32,
+              "buckets": 15
+            },
+            {
+              "price": 7.629979810357081,
+              "distance_pct": -2.83,
+              "side": "below",
+              "mass_usd": 488415709,
+              "width_pct": 1.49,
+              "buckets": 10
+            },
+            {
+              "price": 8.493019785280497,
+              "distance_pct": 8.16,
+              "side": "above",
+              "mass_usd": 347353668,
+              "width_pct": 0.66,
+              "buckets": 5
+            },
+            {
+              "price": 9.004879832792597,
+              "distance_pct": 14.68,
+              "side": "above",
+              "mass_usd": 301941040,
+              "width_pct": 0.17,
+              "buckets": 2
+            },
+            {
+              "price": 7.388784342745102,
+              "distance_pct": -5.9,
+              "side": "below",
+              "mass_usd": 231201018,
+              "width_pct": 0.5,
+              "buckets": 4
+            }
+          ],
+          "reach_pct": 17.09,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.3071,
+          "up_mass": 3987967148,
+          "down_mass": 2113947287,
+          "overhang_ratio": 1.89,
+          "side": "above",
+          "center_price": 8.565312616883556,
+          "center_distance_pct": 9.08
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 1.89x heavier above, led by a pocket at +10.98%."
+        },
+        "notes": []
+      },
+      {
+        "token": "ARB",
+        "spot": 0.07934,
+        "gravity": 0.3726,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.080612,
+        "target_distance_pct": 1.6,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.24467785044924625,
+            "per_tf": {
+              "12h": 0.0524,
+              "24h": 0.4858,
+              "3d": 0.2553
+            },
+            "z_cross": 4.681864878407751,
+            "up_mass": 30428493.07070537,
+            "down_mass": 15508974.191866294,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.08933275769011441,
+            "distance_pct": 12.59,
+            "side": "above",
+            "mass_usd": 483204794,
+            "width_pct": 11.18,
+            "buckets": 50,
+            "dominance_ratio": 2.93
+          },
+          "top_pockets": [
+            {
+              "price": 0.08933275769011441,
+              "distance_pct": 12.59,
+              "side": "above",
+              "mass_usd": 483204794,
+              "width_pct": 11.18,
+              "buckets": 50
+            },
+            {
+              "price": 0.0747469290732752,
+              "distance_pct": -5.79,
+              "side": "below",
+              "mass_usd": 161741662,
+              "width_pct": 4.39,
+              "buckets": 21
+            },
+            {
+              "price": 0.08227309574394363,
+              "distance_pct": 3.7,
+              "side": "above",
+              "mass_usd": 150485078,
+              "width_pct": 3.51,
+              "buckets": 17
+            },
+            {
+              "price": 0.095832,
+              "distance_pct": 20.79,
+              "side": "above",
+              "mass_usd": 44020639,
+              "width_pct": 0,
+              "buckets": 1
+            },
+            {
+              "price": 0.07731007538572622,
+              "distance_pct": -2.56,
+              "side": "below",
+              "mass_usd": 32751769,
+              "width_pct": 1.1,
+              "buckets": 6
+            },
+            {
+              "price": 0.07155550800734484,
+              "distance_pct": -9.81,
+              "side": "below",
+              "mass_usd": 24116319,
+              "width_pct": 0.88,
+              "buckets": 5
+            }
+          ],
+          "reach_pct": 26.05,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.4899,
+          "up_mass": 787511624,
+          "down_mass": 269596302,
+          "overhang_ratio": 2.92,
+          "side": "above",
+          "center_price": 0.08916041087420769,
+          "center_distance_pct": 12.38
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 2.92x heavier above, led by a pocket at +12.59%."
+        },
+        "notes": []
+      },
+      {
+        "token": "HBAR",
+        "spot": 0.07175,
+        "gravity": 0.3723,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.072682,
+        "target_distance_pct": 1.3,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.24445742861102107,
+            "per_tf": {
+              "12h": 0.3139,
+              "24h": 0.4429,
+              "3d": -0.2591
+            },
+            "z_cross": 4.887664161587408,
+            "up_mass": 34293490.67904137,
+            "down_mass": 28823040.942537054,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.09067247756582392,
+            "distance_pct": 26.37,
+            "side": "above",
+            "mass_usd": 1417900819,
+            "width_pct": 6.58,
+            "buckets": 28,
+            "dominance_ratio": 41.02
+          },
+          "top_pockets": [
+            {
+              "price": 0.09067247756582392,
+              "distance_pct": 26.37,
+              "side": "above",
+              "mass_usd": 1417900819,
+              "width_pct": 6.58,
+              "buckets": 28
+            },
+            {
+              "price": 0.08241923142808903,
+              "distance_pct": 14.87,
+              "side": "above",
+              "mass_usd": 751103672,
+              "width_pct": 5.78,
+              "buckets": 30
+            },
+            {
+              "price": 0.07568748545252961,
+              "distance_pct": 5.49,
+              "side": "above",
+              "mass_usd": 597770543,
+              "width_pct": 4.38,
+              "buckets": 23
+            },
+            {
+              "price": 0.08785575296536378,
+              "distance_pct": 22.45,
+              "side": "above",
+              "mass_usd": 221928006,
+              "width_pct": 0.6,
+              "buckets": 4
+            },
+            {
+              "price": 0.08537152659898353,
+              "distance_pct": 18.98,
+              "side": "above",
+              "mass_usd": 212168644,
+              "width_pct": 1.2,
+              "buckets": 7
+            },
+            {
+              "price": 0.0885640783619639,
+              "distance_pct": 23.43,
+              "side": "above",
+              "mass_usd": 131760866,
+              "width_pct": 0.2,
+              "buckets": 2
+            }
+          ],
+          "reach_pct": 30.56,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.9714,
+          "up_mass": 3755964372,
+          "down_mass": 54552326,
+          "overhang_ratio": 68.85,
+          "side": "above",
+          "center_price": 0.0850505070030992,
+          "center_distance_pct": 18.54
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 68.85x heavier above, led by a pocket at +26.37%."
+        },
+        "notes": []
+      },
+      {
+        "token": "ENA",
+        "spot": 0.0776,
+        "gravity": 0.3631,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.078437,
+        "target_distance_pct": 1.08,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.23776522875098854,
+            "per_tf": {
+              "12h": 0.3587,
+              "24h": 0.2576,
+              "3d": -0.0689
+            },
+            "z_cross": 4.638661923360609,
+            "up_mass": 56955185.86048861,
+            "down_mass": 43457508.01908776,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.09877715325175664,
+            "distance_pct": 27.29,
+            "side": "above",
+            "mass_usd": 1083202917,
+            "width_pct": 7.63,
+            "buckets": 23,
+            "dominance_ratio": 5.54
+          },
+          "top_pockets": [
+            {
+              "price": 0.09877715325175664,
+              "distance_pct": 27.29,
+              "side": "above",
+              "mass_usd": 1083202917,
+              "width_pct": 7.63,
+              "buckets": 23
+            },
+            {
+              "price": 0.08395930766974981,
+              "distance_pct": 8.19,
+              "side": "above",
+              "mass_usd": 732314533,
+              "width_pct": 7.28,
+              "buckets": 22
+            },
+            {
+              "price": 0.09233623359685318,
+              "distance_pct": 18.99,
+              "side": "above",
+              "mass_usd": 386458130,
+              "width_pct": 4.85,
+              "buckets": 15
+            },
+            {
+              "price": 0.0743549908950883,
+              "distance_pct": -4.18,
+              "side": "below",
+              "mass_usd": 349981494,
+              "width_pct": 3.12,
+              "buckets": 10
+            },
+            {
+              "price": 0.08845082197906004,
+              "distance_pct": 13.98,
+              "side": "above",
+              "mass_usd": 289154495,
+              "width_pct": 3.12,
+              "buckets": 10
+            },
+            {
+              "price": 0.10686799999999999,
+              "distance_pct": 37.72,
+              "side": "above",
+              "mass_usd": 98801514,
+              "width_pct": 0,
+              "buckets": 1
+            }
+          ],
+          "reach_pct": 53.66,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.6599,
+          "up_mass": 2939429554,
+          "down_mass": 602163072,
+          "overhang_ratio": 4.88,
+          "side": "above",
+          "center_price": 0.09339877037566,
+          "center_distance_pct": 20.36
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 4.88x heavier above, led by a pocket at +27.29%."
+        },
+        "notes": []
+      },
+      {
+        "token": "ADA",
+        "spot": 0.1687,
+        "gravity": -0.3355,
+        "label": "MILD DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 0.167,
+        "target_distance_pct": -1.01,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.2181058074703195,
+            "per_tf": {
+              "12h": 0.3442,
+              "24h": -0.6788,
+              "3d": -0.6771
+            },
+            "z_cross": 4.3972679465231925,
+            "up_mass": 35004030.30514787,
+            "down_mass": 118087181.91013782,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.15467395833204933,
+            "distance_pct": -8.31,
+            "side": "below",
+            "mass_usd": 2580561496,
+            "width_pct": 6.26,
+            "buckets": 23,
+            "dominance_ratio": 2.84
+          },
+          "top_pockets": [
+            {
+              "price": 0.15467395833204933,
+              "distance_pct": -8.31,
+              "side": "below",
+              "mass_usd": 2580561496,
+              "width_pct": 6.26,
+              "buckets": 23
+            },
+            {
+              "price": 0.1800890800646924,
+              "distance_pct": 6.75,
+              "side": "above",
+              "mass_usd": 2518308119,
+              "width_pct": 6.83,
+              "buckets": 25
+            },
+            {
+              "price": 0.22256774689347675,
+              "distance_pct": 31.93,
+              "side": "above",
+              "mass_usd": 1944761911,
+              "width_pct": 4.84,
+              "buckets": 14
+            },
+            {
+              "price": 0.1926995337640745,
+              "distance_pct": 14.23,
+              "side": "above",
+              "mass_usd": 1490532897,
+              "width_pct": 1.42,
+              "buckets": 6
+            },
+            {
+              "price": 0.1967322407963922,
+              "distance_pct": 16.62,
+              "side": "above",
+              "mass_usd": 755228700,
+              "width_pct": 1.42,
+              "buckets": 6
+            },
+            {
+              "price": 0.16384023219530586,
+              "distance_pct": -2.88,
+              "side": "below",
+              "mass_usd": 627181540,
+              "width_pct": 1.99,
+              "buckets": 8
+            }
+          ],
+          "reach_pct": 37.44,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.3881,
+          "up_mass": 9039784431,
+          "down_mass": 3984486733,
+          "overhang_ratio": 2.27,
+          "side": "above",
+          "center_price": 0.1978514057263875,
+          "center_distance_pct": 17.28
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "below",
+          "deep_side": "above",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull DOWN into an opposing deep book 2.27x heavier ABOVE (though the biggest single pocket sits at -8.31%, the other way) — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull DOWN into an opposing deep book 2.27x heavier ABOVE (though the biggest single pocket sits at -8.31%, the other way) — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "ATOM",
+        "spot": 1.59,
+        "gravity": 0.3334,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 1.6104,
+        "target_distance_pct": 1.28,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.21668950282199245,
+            "per_tf": {
+              "12h": 0.2771,
+              "24h": 0.3202,
+              "3d": -0.1003
+            },
+            "z_cross": 7.06100657450723,
+            "up_mass": 18625508.854977127,
+            "down_mass": 14627109.850079434,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 1.8757442212184479,
+            "distance_pct": 17.97,
+            "side": "above",
+            "mass_usd": 396083372,
+            "width_pct": 10.35,
+            "buckets": 48,
+            "dominance_ratio": 4.34
+          },
+          "top_pockets": [
+            {
+              "price": 1.8757442212184479,
+              "distance_pct": 17.97,
+              "side": "above",
+              "mass_usd": 396083372,
+              "width_pct": 10.35,
+              "buckets": 48
+            },
+            {
+              "price": 2.0527475230803924,
+              "distance_pct": 29.1,
+              "side": "above",
+              "mass_usd": 313784781,
+              "width_pct": 4.18,
+              "buckets": 20
+            },
+            {
+              "price": 1.7107825312452316,
+              "distance_pct": 7.6,
+              "side": "above",
+              "mass_usd": 182732123,
+              "width_pct": 4.4,
+              "buckets": 21
+            },
+            {
+              "price": 1.6451588681612548,
+              "distance_pct": 3.47,
+              "side": "above",
+              "mass_usd": 115378712,
+              "width_pct": 3.08,
+              "buckets": 15
+            },
+            {
+              "price": 1.764935307495907,
+              "distance_pct": 11,
+              "side": "above",
+              "mass_usd": 44059902,
+              "width_pct": 1.32,
+              "buckets": 7
+            },
+            {
+              "price": 1.5447823288380116,
+              "distance_pct": -2.84,
+              "side": "below",
+              "mass_usd": 35451253,
+              "width_pct": 1.54,
+              "buckets": 8
+            }
+          ],
+          "reach_pct": 32.08,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.8921,
+          "up_mass": 1140612637,
+          "down_mass": 65030594,
+          "overhang_ratio": 17.54,
+          "side": "above",
+          "center_price": 1.8779269815373163,
+          "center_distance_pct": 18.11
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 17.54x heavier above, led by a pocket at +17.97%."
+        },
+        "notes": []
+      },
+      {
+        "token": "XMR",
+        "spot": 320.39,
+        "gravity": 0.3244,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 323.93,
+        "target_distance_pct": 1.1,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.21037911082231336,
+            "per_tf": {
+              "12h": 0.4587,
+              "24h": 0.4086,
+              "3d": -0.6953
+            },
+            "z_cross": 4.50435302152508,
+            "up_mass": 27460913.577095505,
+            "down_mass": 47848274.153693676,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 298.9595491204932,
+            "distance_pct": -6.69,
+            "side": "below",
+            "mass_usd": 1014983223,
+            "width_pct": 8.09,
+            "buckets": 33,
+            "dominance_ratio": 4.19
+          },
+          "top_pockets": [
+            {
+              "price": 298.9595491204932,
+              "distance_pct": -6.69,
+              "side": "below",
+              "mass_usd": 1014983223,
+              "width_pct": 8.09,
+              "buckets": 33
+            },
+            {
+              "price": 333.20600046482934,
+              "distance_pct": 4,
+              "side": "above",
+              "mass_usd": 419864854,
+              "width_pct": 3.54,
+              "buckets": 15
+            },
+            {
+              "price": 357.4351040992632,
+              "distance_pct": 11.56,
+              "side": "above",
+              "mass_usd": 323116400,
+              "width_pct": 3.29,
+              "buckets": 14
+            },
+            {
+              "price": 349.1461226849569,
+              "distance_pct": 8.98,
+              "side": "above",
+              "mass_usd": 178637246,
+              "width_pct": 1.26,
+              "buckets": 6
+            },
+            {
+              "price": 342.437513879027,
+              "distance_pct": 6.88,
+              "side": "above",
+              "mass_usd": 169457159,
+              "width_pct": 1.26,
+              "buckets": 6
+            },
+            {
+              "price": 391.1920683593978,
+              "distance_pct": 22.1,
+              "side": "above",
+              "mass_usd": 139380318,
+              "width_pct": 1.77,
+              "buckets": 6
+            }
+          ],
+          "reach_pct": 36.1,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.2759,
+          "up_mass": 1891302450,
+          "down_mass": 1073359476,
+          "overhang_ratio": 1.76,
+          "side": "above",
+          "center_price": 365.7850327100295,
+          "center_distance_pct": 14.17
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "below",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 1.76x heavier above (though the biggest single pocket sits at -6.69%, the other way)."
+        },
+        "notes": []
+      },
+      {
+        "token": "NEAR",
+        "spot": 1.993,
+        "gravity": 0.2956,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 2.021,
+        "target_distance_pct": 1.4,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.19042061764102772,
+            "per_tf": {
+              "12h": 0.3091,
+              "24h": 0.2424,
+              "3d": -0.1674
+            },
+            "z_cross": 4.787701661004803,
+            "up_mass": 62461554.16506126,
+            "down_mass": 48463097.62852383,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 2.098266219166565,
+            "distance_pct": 5.23,
+            "side": "above",
+            "mass_usd": 1201140485,
+            "width_pct": 5.94,
+            "buckets": 17,
+            "dominance_ratio": 1.54
+          },
+          "top_pockets": [
+            {
+              "price": 2.098266219166565,
+              "distance_pct": 5.23,
+              "side": "above",
+              "mass_usd": 1201140485,
+              "width_pct": 5.94,
+              "buckets": 17
+            },
+            {
+              "price": 1.9246752179351239,
+              "distance_pct": -3.48,
+              "side": "below",
+              "mass_usd": 1043056074,
+              "width_pct": 3.34,
+              "buckets": 10
+            },
+            {
+              "price": 1.7981005092685238,
+              "distance_pct": -9.82,
+              "side": "below",
+              "mass_usd": 903184967,
+              "width_pct": 2.97,
+              "buckets": 9
+            },
+            {
+              "price": 2.315285995142206,
+              "distance_pct": 16.11,
+              "side": "above",
+              "mass_usd": 866730296,
+              "width_pct": 4.45,
+              "buckets": 13
+            },
+            {
+              "price": 2.9595439913217034,
+              "distance_pct": 48.42,
+              "side": "above",
+              "mass_usd": 731343864,
+              "width_pct": 1.11,
+              "buckets": 3
+            },
+            {
+              "price": 2.896617230609505,
+              "distance_pct": 45.27,
+              "side": "above",
+              "mass_usd": 721272489,
+              "width_pct": 0.37,
+              "buckets": 2
+            }
+          ],
+          "reach_pct": 59.14,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.4751,
+          "up_mass": 6937468094,
+          "down_mass": 2468630620,
+          "overhang_ratio": 2.81,
+          "side": "above",
+          "center_price": 2.5526220629339296,
+          "center_distance_pct": 28.02
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 2.81x heavier above, led by a pocket at +5.23%."
+        },
+        "notes": []
+      },
+      {
+        "token": "TAO",
+        "spot": 215.67,
+        "gravity": 0.2918,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 218.666,
+        "target_distance_pct": 1.39,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.18786485945473716,
+            "per_tf": {
+              "12h": 0.3882,
+              "24h": 0.3731,
+              "3d": -0.5871
+            },
+            "z_cross": 4.2480285399524025,
+            "up_mass": 41486000.90898626,
+            "down_mass": 46793277.42964524,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 238.3346875615011,
+            "distance_pct": 10.5,
+            "side": "above",
+            "mass_usd": 1484008131,
+            "width_pct": 5.42,
+            "buckets": 20,
+            "dominance_ratio": 2.81
+          },
+          "top_pockets": [
+            {
+              "price": 238.3346875615011,
+              "distance_pct": 10.5,
+              "side": "above",
+              "mass_usd": 1484008131,
+              "width_pct": 5.42,
+              "buckets": 20
+            },
+            {
+              "price": 204.59184018997328,
+              "distance_pct": -5.15,
+              "side": "below",
+              "mass_usd": 819370884,
+              "width_pct": 6.27,
+              "buckets": 23
+            },
+            {
+              "price": 224.3389369916955,
+              "distance_pct": 4.01,
+              "side": "above",
+              "mass_usd": 774941372,
+              "width_pct": 3.99,
+              "buckets": 15
+            },
+            {
+              "price": 270.79927631110314,
+              "distance_pct": 25.55,
+              "side": "above",
+              "mass_usd": 392054449,
+              "width_pct": 1.14,
+              "buckets": 5
+            },
+            {
+              "price": 188.19106328900625,
+              "distance_pct": -12.75,
+              "side": "below",
+              "mass_usd": 326985867,
+              "width_pct": 0.86,
+              "buckets": 4
+            },
+            {
+              "price": 295.51739968559633,
+              "distance_pct": 37.01,
+              "side": "above",
+              "mass_usd": 277104111,
+              "width_pct": 1.43,
+              "buckets": 4
+            }
+          ],
+          "reach_pct": 37.53,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.531,
+          "up_mass": 5028311720,
+          "down_mass": 1540215843,
+          "overhang_ratio": 3.26,
+          "side": "above",
+          "center_price": 252.31152257690184,
+          "center_distance_pct": 16.98
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "aligned_up",
+          "note": "Near pull UP confirmed by a deep book 3.26x heavier above, led by a pocket at +10.5%."
+        },
+        "notes": []
+      },
+      {
+        "token": "ONDO",
+        "spot": 0.3314,
+        "gravity": -0.234,
+        "label": "MILD DOWN PULL",
+        "side": "SHORT",
+        "conviction": 1,
+        "target_price": 0.32548,
+        "target_distance_pct": -1.79,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.14903238654850862,
+            "per_tf": {
+              "12h": -0.1204,
+              "24h": -0.0252,
+              "3d": -0.43
+            },
+            "z_cross": 4.019878314366052,
+            "up_mass": 44403577.65820685,
+            "down_mass": 65972503.90864671,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.356032029119887,
+            "distance_pct": 7.4,
+            "side": "above",
+            "mass_usd": 1291877117,
+            "width_pct": 10.52,
+            "buckets": 43,
+            "dominance_ratio": 4.87
+          },
+          "top_pockets": [
+            {
+              "price": 0.356032029119887,
+              "distance_pct": 7.4,
+              "side": "above",
+              "mass_usd": 1291877117,
+              "width_pct": 10.52,
+              "buckets": 43
+            },
+            {
+              "price": 0.3923951772242193,
+              "distance_pct": 18.37,
+              "side": "above",
+              "mass_usd": 802664854,
+              "width_pct": 3.76,
+              "buckets": 16
+            },
+            {
+              "price": 0.433292123596526,
+              "distance_pct": 30.71,
+              "side": "above",
+              "mass_usd": 298876027,
+              "width_pct": 0.75,
+              "buckets": 3
+            },
+            {
+              "price": 0.38374889304977877,
+              "distance_pct": 15.76,
+              "side": "above",
+              "mass_usd": 227142439,
+              "width_pct": 0.75,
+              "buckets": 4
+            },
+            {
+              "price": 0.40239861113742464,
+              "distance_pct": 21.39,
+              "side": "above",
+              "mass_usd": 210435380,
+              "width_pct": 1,
+              "buckets": 5
+            },
+            {
+              "price": 0.378426642076466,
+              "distance_pct": 14.16,
+              "side": "above",
+              "mass_usd": 174252124,
+              "width_pct": 1.75,
+              "buckets": 8
+            }
+          ],
+          "reach_pct": 33.47,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.7483,
+          "up_mass": 3358596825,
+          "down_mass": 483528647,
+          "overhang_ratio": 6.95,
+          "side": "above",
+          "center_price": 0.38512332960090273,
+          "center_distance_pct": 16.18
+        },
+        "alignment": {
+          "near_side": "SHORT",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull DOWN into an opposing deep book 6.95x heavier ABOVE, led by a pocket at +7.4% — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull DOWN into an opposing deep book 6.95x heavier ABOVE, led by a pocket at +7.4% — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "AERO",
+        "spot": 0.5135,
+        "gravity": 0.203,
+        "label": "MILD UP PULL",
+        "side": "LONG",
+        "conviction": 1,
+        "target_price": 0.52012,
+        "target_distance_pct": 1.29,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.12864305127307474,
+            "per_tf": {
+              "12h": 0.1371,
+              "24h": 0.2636,
+              "3d": -0.1265
+            },
+            "z_cross": 4.235677607075355,
+            "up_mass": 14501944.372779269,
+            "down_mass": 11118921.767054176,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.4083217737422247,
+            "distance_pct": -20.47,
+            "side": "below",
+            "mass_usd": 277319898,
+            "width_pct": 7.78,
+            "buckets": 27,
+            "dominance_ratio": 12.56
+          },
+          "top_pockets": [
+            {
+              "price": 0.4083217737422247,
+              "distance_pct": -20.47,
+              "side": "below",
+              "mass_usd": 277319898,
+              "width_pct": 7.78,
+              "buckets": 27
+            },
+            {
+              "price": 0.34142157804608997,
+              "distance_pct": -33.5,
+              "side": "below",
+              "mass_usd": 243863003,
+              "width_pct": 11.82,
+              "buckets": 42
+            },
+            {
+              "price": 0.48407905380142174,
+              "distance_pct": -5.71,
+              "side": "below",
+              "mass_usd": 51289975,
+              "width_pct": 3.75,
+              "buckets": 14
+            },
+            {
+              "price": 0.4447617160328056,
+              "distance_pct": -13.37,
+              "side": "below",
+              "mass_usd": 43072831,
+              "width_pct": 1.15,
+              "buckets": 5
+            },
+            {
+              "price": 0.38000436282862526,
+              "distance_pct": -25.98,
+              "side": "below",
+              "mass_usd": 38844115,
+              "width_pct": 1.44,
+              "buckets": 6
+            },
+            {
+              "price": 0.435548681095651,
+              "distance_pct": -15.16,
+              "side": "below",
+              "mass_usd": 27119223,
+              "width_pct": 1.15,
+              "buckets": 5
+            }
+          ],
+          "reach_pct": 42.49,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.8236,
+          "up_mass": 77501941,
+          "down_mass": 801039674,
+          "overhang_ratio": 10.34,
+          "side": "below",
+          "center_price": 0.3985849079215477,
+          "center_distance_pct": -22.36
+        },
+        "alignment": {
+          "near_side": "LONG",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "near_vs_deep_conflict",
+          "note": "Near pull UP into an opposing deep book 10.34x heavier BELOW, led by a pocket at -20.47% — treat the near signal with caution."
+        },
+        "notes": [
+          "Near pull UP into an opposing deep book 10.34x heavier BELOW, led by a pocket at -20.47% — treat the near signal with caution."
+        ]
+      },
+      {
+        "token": "VIRTUAL",
+        "spot": 0.5709,
+        "gravity": 0.1517,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 0.57815,
+        "target_distance_pct": 1.27,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.09556318300345966,
+            "per_tf": {
+              "12h": 0.4644,
+              "24h": -0.2624,
+              "3d": -0.108
+            },
+            "z_cross": 3.2745127430247307,
+            "up_mass": 10064352.345723668,
+            "down_mass": 13033380.081887957,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.6227311308972255,
+            "distance_pct": 9.08,
+            "side": "above",
+            "mass_usd": 244105696,
+            "width_pct": 5.54,
+            "buckets": 21,
+            "dominance_ratio": 2.01
+          },
+          "top_pockets": [
+            {
+              "price": 0.6227311308972255,
+              "distance_pct": 9.08,
+              "side": "above",
+              "mass_usd": 244105696,
+              "width_pct": 5.54,
+              "buckets": 21
+            },
+            {
+              "price": 0.651507274017539,
+              "distance_pct": 14.12,
+              "side": "above",
+              "mass_usd": 222715569,
+              "width_pct": 4.15,
+              "buckets": 16
+            },
+            {
+              "price": 0.6787341435289244,
+              "distance_pct": 18.89,
+              "side": "above",
+              "mass_usd": 203435780,
+              "width_pct": 1.66,
+              "buckets": 7
+            },
+            {
+              "price": 0.7705392315923191,
+              "distance_pct": 34.97,
+              "side": "above",
+              "mass_usd": 161466607,
+              "width_pct": 2.77,
+              "buckets": 9
+            },
+            {
+              "price": 0.592465405087979,
+              "distance_pct": 3.78,
+              "side": "above",
+              "mass_usd": 138690554,
+              "width_pct": 3.32,
+              "buckets": 13
+            },
+            {
+              "price": 0.5224882015458476,
+              "distance_pct": -8.48,
+              "side": "below",
+              "mass_usd": 84986646,
+              "width_pct": 2.49,
+              "buckets": 10
+            }
+          ],
+          "reach_pct": 37.95,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.6458,
+          "up_mass": 1237932523,
+          "down_mass": 266384891,
+          "overhang_ratio": 4.65,
+          "side": "above",
+          "center_price": 0.6751738819657553,
+          "center_distance_pct": 18.26
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep above)."
+        },
+        "notes": []
+      },
+      {
+        "token": "CC",
+        "spot": 0.13929,
+        "gravity": -0.1445,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 0.135796,
+        "target_distance_pct": -2.51,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.0909432284984209,
+            "per_tf": {
+              "12h": -0.2597,
+              "24h": 0.1335,
+              "3d": -0.104
+            },
+            "z_cross": 5.336212444268712,
+            "up_mass": 7385452.984850295,
+            "down_mass": 7738358.867900996,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.17273932279532786,
+            "distance_pct": 24.01,
+            "side": "above",
+            "mass_usd": 242886983,
+            "width_pct": 4.65,
+            "buckets": 24,
+            "dominance_ratio": 8.59
+          },
+          "top_pockets": [
+            {
+              "price": 0.17273932279532786,
+              "distance_pct": 24.01,
+              "side": "above",
+              "mass_usd": 242886983,
+              "width_pct": 4.65,
+              "buckets": 24
+            },
+            {
+              "price": 0.15744310646404974,
+              "distance_pct": 13.03,
+              "side": "above",
+              "mass_usd": 216835182,
+              "width_pct": 6.32,
+              "buckets": 35
+            },
+            {
+              "price": 0.1468821544555171,
+              "distance_pct": 5.45,
+              "side": "above",
+              "mass_usd": 129234325,
+              "width_pct": 5.02,
+              "buckets": 28
+            },
+            {
+              "price": 0.16765912400317534,
+              "distance_pct": 20.37,
+              "side": "above",
+              "mass_usd": 65962598,
+              "width_pct": 2.98,
+              "buckets": 17
+            },
+            {
+              "price": 0.15142291862329,
+              "distance_pct": 8.71,
+              "side": "above",
+              "mass_usd": 51824748,
+              "width_pct": 1.3,
+              "buckets": 8
+            },
+            {
+              "price": 0.1626655464526045,
+              "distance_pct": 16.78,
+              "side": "above",
+              "mass_usd": 13528580,
+              "width_pct": 0.56,
+              "buckets": 4
+            }
+          ],
+          "reach_pct": 26.73,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.9657,
+          "up_mass": 736488502,
+          "down_mass": 12846522,
+          "overhang_ratio": 57.33,
+          "side": "above",
+          "center_price": 0.1611977736620008,
+          "center_distance_pct": 15.73
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep above)."
+        },
+        "notes": []
+      },
+      {
+        "token": "UNI",
+        "spot": 3.216,
+        "gravity": -0.1328,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 3.1396,
+        "target_distance_pct": -2.38,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.08348965290805016,
+            "per_tf": {
+              "12h": -0.0152,
+              "24h": -0.1177,
+              "3d": -0.1773
+            },
+            "z_cross": 3.8436313858045015,
+            "up_mass": 71840840.61989775,
+            "down_mass": 88917816.33297768,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 2.4394241050043592,
+            "distance_pct": -24.15,
+            "side": "below",
+            "mass_usd": 410533385,
+            "width_pct": 2.24,
+            "buckets": 10,
+            "dominance_ratio": 1.97
+          },
+          "top_pockets": [
+            {
+              "price": 2.4394241050043592,
+              "distance_pct": -24.15,
+              "side": "below",
+              "mass_usd": 410533385,
+              "width_pct": 2.24,
+              "buckets": 10
+            },
+            {
+              "price": 2.925739018040364,
+              "distance_pct": -9.03,
+              "side": "below",
+              "mass_usd": 342675585,
+              "width_pct": 3.23,
+              "buckets": 14
+            },
+            {
+              "price": 2.715798379163734,
+              "distance_pct": -15.55,
+              "side": "below",
+              "mass_usd": 249516507,
+              "width_pct": 2.24,
+              "buckets": 10
+            },
+            {
+              "price": 3.0489546110080776,
+              "distance_pct": -5.19,
+              "side": "below",
+              "mass_usd": 231556607,
+              "width_pct": 1.74,
+              "buckets": 8
+            },
+            {
+              "price": 3.7396206658749858,
+              "distance_pct": 16.28,
+              "side": "above",
+              "mass_usd": 193555043,
+              "width_pct": 1.24,
+              "buckets": 4
+            },
+            {
+              "price": 2.573875660503028,
+              "distance_pct": -19.97,
+              "side": "below",
+              "mass_usd": 193151179,
+              "width_pct": 1.74,
+              "buckets": 8
+            }
+          ],
+          "reach_pct": 30.19,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": -0.6009,
+          "up_mass": 605584999,
+          "down_mass": 2429139936,
+          "overhang_ratio": 4.01,
+          "side": "below",
+          "center_price": 2.7215038704162353,
+          "center_distance_pct": -15.38
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "below",
+          "deep_side": "below",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep below)."
+        },
+        "notes": []
+      },
+      {
+        "token": "INJ",
+        "spot": 4.865,
+        "gravity": -0.1086,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 4.793,
+        "target_distance_pct": -1.48,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.06811703661105337,
+            "per_tf": {
+              "12h": 0.4486,
+              "24h": -0.5362,
+              "3d": -0.4117
+            },
+            "z_cross": 4.325672939102747,
+            "up_mass": 12343404.226914492,
+            "down_mass": 26308315.321123198,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 5.236563064832578,
+            "distance_pct": 7.62,
+            "side": "above",
+            "mass_usd": 756990479,
+            "width_pct": 12.23,
+            "buckets": 35,
+            "dominance_ratio": 5.2
+          },
+          "top_pockets": [
+            {
+              "price": 5.236563064832578,
+              "distance_pct": 7.62,
+              "side": "above",
+              "mass_usd": 756990479,
+              "width_pct": 12.23,
+              "buckets": 35
+            },
+            {
+              "price": 7.05618995268184,
+              "distance_pct": 45.01,
+              "side": "above",
+              "mass_usd": 249999660,
+              "width_pct": 2.16,
+              "buckets": 5
+            },
+            {
+              "price": 6.142483199634456,
+              "distance_pct": 26.23,
+              "side": "above",
+              "mass_usd": 232429088,
+              "width_pct": 1.44,
+              "buckets": 4
+            },
+            {
+              "price": 5.645814529761401,
+              "distance_pct": 16.03,
+              "side": "above",
+              "mass_usd": 92686060,
+              "width_pct": 1.44,
+              "buckets": 5
+            },
+            {
+              "price": 7.198153145338322,
+              "distance_pct": 47.93,
+              "side": "above",
+              "mass_usd": 91009663,
+              "width_pct": 0.72,
+              "buckets": 2
+            },
+            {
+              "price": 5.8345992230030275,
+              "distance_pct": 19.91,
+              "side": "above",
+              "mass_usd": 87980894,
+              "width_pct": 3.24,
+              "buckets": 9
+            }
+          ],
+          "reach_pct": 52.97,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.7705,
+          "up_mass": 2002904587,
+          "down_mass": 259594494,
+          "overhang_ratio": 7.72,
+          "side": "above",
+          "center_price": 5.996784820825075,
+          "center_distance_pct": 23.24
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep above)."
+        },
+        "notes": []
+      },
+      {
+        "token": "WLD",
+        "spot": 0.4226,
+        "gravity": -0.1041,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 0.41592,
+        "target_distance_pct": -1.58,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.06530326346167346,
+            "per_tf": {
+              "12h": -0.0078,
+              "24h": -0.1542,
+              "3d": -0.0391
+            },
+            "z_cross": 6.046797447582743,
+            "up_mass": 87567080.38920417,
+            "down_mass": 99185071.78614554,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.5060033951728121,
+            "distance_pct": 19.74,
+            "side": "above",
+            "mass_usd": 2653896450,
+            "width_pct": 16.7,
+            "buckets": 37,
+            "dominance_ratio": 8.5
+          },
+          "top_pockets": [
+            {
+              "price": 0.5060033951728121,
+              "distance_pct": 19.74,
+              "side": "above",
+              "mass_usd": 2653896450,
+              "width_pct": 16.7,
+              "buckets": 37
+            },
+            {
+              "price": 0.4493085502974167,
+              "distance_pct": 6.32,
+              "side": "above",
+              "mass_usd": 1165007302,
+              "width_pct": 7.88,
+              "buckets": 18
+            },
+            {
+              "price": 0.5582605315928028,
+              "distance_pct": 32.1,
+              "side": "above",
+              "mass_usd": 692221002,
+              "width_pct": 2.78,
+              "buckets": 7
+            },
+            {
+              "price": 0.5885652571670471,
+              "distance_pct": 39.27,
+              "side": "above",
+              "mass_usd": 568531539,
+              "width_pct": 4.17,
+              "buckets": 10
+            },
+            {
+              "price": 0.383418542813134,
+              "distance_pct": -9.27,
+              "side": "below",
+              "mass_usd": 474040501,
+              "width_pct": 1.39,
+              "buckets": 4
+            },
+            {
+              "price": 0.6568121854813024,
+              "distance_pct": 55.42,
+              "side": "above",
+              "mass_usd": 408648503,
+              "width_pct": 2.32,
+              "buckets": 6
+            }
+          ],
+          "reach_pct": 74.5,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.6864,
+          "up_mass": 8177757430,
+          "down_mass": 1520940528,
+          "overhang_ratio": 5.38,
+          "side": "above",
+          "center_price": 0.5603854086563919,
+          "center_distance_pct": 32.6
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep above)."
+        },
+        "notes": []
+      },
+      {
+        "token": "CRV",
+        "spot": 0.2066,
+        "gravity": -0.1015,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 0.20322,
+        "target_distance_pct": -1.64,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.0636761206708521,
+            "per_tf": {
+              "12h": -0.1096,
+              "24h": -0.0666,
+              "3d": 0.0447
+            },
+            "z_cross": 5.195253235711467,
+            "up_mass": 9136809.743862066,
+            "down_mass": 9854860.678042553,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.1957536502232034,
+            "distance_pct": -5.25,
+            "side": "below",
+            "mass_usd": 236406375,
+            "width_pct": 6.12,
+            "buckets": 24,
+            "dominance_ratio": 2.2
+          },
+          "top_pockets": [
+            {
+              "price": 0.1957536502232034,
+              "distance_pct": -5.25,
+              "side": "below",
+              "mass_usd": 236406375,
+              "width_pct": 6.12,
+              "buckets": 24
+            },
+            {
+              "price": 0.21946740624924121,
+              "distance_pct": 6.23,
+              "side": "above",
+              "mass_usd": 180162476,
+              "width_pct": 4.79,
+              "buckets": 19
+            },
+            {
+              "price": 0.25327115058925453,
+              "distance_pct": 22.59,
+              "side": "above",
+              "mass_usd": 122315455,
+              "width_pct": 1.33,
+              "buckets": 6
+            },
+            {
+              "price": 0.23194429214178872,
+              "distance_pct": 12.27,
+              "side": "above",
+              "mass_usd": 90403818,
+              "width_pct": 2.93,
+              "buckets": 12
+            },
+            {
+              "price": 0.18658176223592585,
+              "distance_pct": -9.69,
+              "side": "below",
+              "mass_usd": 65165792,
+              "width_pct": 1.6,
+              "buckets": 7
+            },
+            {
+              "price": 0.17769455048048596,
+              "distance_pct": -13.99,
+              "side": "below",
+              "mass_usd": 59634908,
+              "width_pct": 1.86,
+              "buckets": 8
+            }
+          ],
+          "reach_pct": 31.03,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.2288,
+          "up_mass": 710201153,
+          "down_mass": 445704636,
+          "overhang_ratio": 1.59,
+          "side": "above",
+          "center_price": 0.23836075523165942,
+          "center_distance_pct": 15.37
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "below",
+          "deep_side": "above",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep above)."
+        },
+        "notes": []
+      },
+      {
+        "token": "TRUMP",
+        "spot": 1.757,
+        "gravity": -0.0442,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 1.7385,
+        "target_distance_pct": -1.05,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.02766388870920203,
+            "per_tf": {
+              "12h": 0.1472,
+              "24h": -0.1941,
+              "3d": -0.1299
+            },
+            "z_cross": 6.282230541684519,
+            "up_mass": 33126835.859029084,
+            "down_mass": 42098305.9922096,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 1.5798329374792814,
+            "distance_pct": -10.08,
+            "side": "below",
+            "mass_usd": 395107036,
+            "width_pct": 3.48,
+            "buckets": 13,
+            "dominance_ratio": 1.44
+          },
+          "top_pockets": [
+            {
+              "price": 1.5798329374792814,
+              "distance_pct": -10.08,
+              "side": "below",
+              "mass_usd": 395107036,
+              "width_pct": 3.48,
+              "buckets": 13
+            },
+            {
+              "price": 2.3422964212959574,
+              "distance_pct": 33.31,
+              "side": "above",
+              "mass_usd": 313729777,
+              "width_pct": 1.16,
+              "buckets": 3
+            },
+            {
+              "price": 2.049601293287535,
+              "distance_pct": 16.65,
+              "side": "above",
+              "mass_usd": 281643188,
+              "width_pct": 1.16,
+              "buckets": 5
+            },
+            {
+              "price": 1.9733913181059024,
+              "distance_pct": 12.32,
+              "side": "above",
+              "mass_usd": 233951370,
+              "width_pct": 1.45,
+              "buckets": 6
+            },
+            {
+              "price": 2.095168396449921,
+              "distance_pct": 19.25,
+              "side": "above",
+              "mass_usd": 214520152,
+              "width_pct": 1.16,
+              "buckets": 5
+            },
+            {
+              "price": 1.509102023801318,
+              "distance_pct": -14.11,
+              "side": "below",
+              "mass_usd": 175772105,
+              "width_pct": 1.74,
+              "buckets": 7
+            }
+          ],
+          "reach_pct": 37.15,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.4048,
+          "up_mass": 2515299250,
+          "down_mass": 1065733442,
+          "overhang_ratio": 2.36,
+          "side": "above",
+          "center_price": 2.1032901825533865,
+          "center_distance_pct": 19.71
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "below",
+          "deep_side": "above",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep above)."
+        },
+        "notes": []
+      },
+      {
+        "token": "LTC",
+        "spot": 43.54,
+        "gravity": -0.0235,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 42.819,
+        "target_distance_pct": -1.66,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.01469535104684377,
+            "per_tf": {
+              "12h": 0.03,
+              "24h": -0.0462,
+              "3d": -0.06
+            },
+            "z_cross": 4.932957328960395,
+            "up_mass": 136513357.93018663,
+            "down_mass": 148853850.84730536,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 46.58187040077628,
+            "distance_pct": 7.01,
+            "side": "above",
+            "mass_usd": 2348696939,
+            "width_pct": 8.77,
+            "buckets": 54,
+            "dominance_ratio": 4.07
+          },
+          "top_pockets": [
+            {
+              "price": 46.58187040077628,
+              "distance_pct": 7.01,
+              "side": "above",
+              "mass_usd": 2348696939,
+              "width_pct": 8.77,
+              "buckets": 54
+            },
+            {
+              "price": 40.99344377211996,
+              "distance_pct": -5.83,
+              "side": "below",
+              "mass_usd": 1418182483,
+              "width_pct": 7.28,
+              "buckets": 45
+            },
+            {
+              "price": 49.21941257206512,
+              "distance_pct": 13.07,
+              "side": "above",
+              "mass_usd": 674599917,
+              "width_pct": 4.47,
+              "buckets": 19
+            },
+            {
+              "price": 39.09705537141626,
+              "distance_pct": -10.18,
+              "side": "below",
+              "mass_usd": 82008838,
+              "width_pct": 0.66,
+              "buckets": 5
+            },
+            {
+              "price": 51.282,
+              "distance_pct": 17.81,
+              "side": "above",
+              "mass_usd": 27611789,
+              "width_pct": 0,
+              "buckets": 1
+            },
+            {
+              "price": 38.251376701258344,
+              "distance_pct": -12.13,
+              "side": "below",
+              "mass_usd": 27322519,
+              "width_pct": 0.33,
+              "buckets": 3
+            }
+          ],
+          "reach_pct": 17.81,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.3265,
+          "up_mass": 3051205546,
+          "down_mass": 1549010130,
+          "overhang_ratio": 1.97,
+          "side": "above",
+          "center_price": 47.207716057459145,
+          "center_distance_pct": 8.45
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep above)."
+        },
+        "notes": []
+      },
+      {
+        "token": "BCH",
+        "spot": 225.85,
+        "gravity": -0.0203,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 222.436,
+        "target_distance_pct": -1.51,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": -0.012666183523485364,
+            "per_tf": {
+              "12h": 0.3002,
+              "24h": -0.0971,
+              "3d": -0.5689
+            },
+            "z_cross": 3.8570127090603026,
+            "up_mass": 40581500.05645691,
+            "down_mass": 54911367.43236448,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 257.10685427077897,
+            "distance_pct": 13.84,
+            "side": "above",
+            "mass_usd": 1355488316,
+            "width_pct": 1.34,
+            "buckets": 4,
+            "dominance_ratio": 4.22
+          },
+          "top_pockets": [
+            {
+              "price": 257.10685427077897,
+              "distance_pct": 13.84,
+              "side": "above",
+              "mass_usd": 1355488316,
+              "width_pct": 1.34,
+              "buckets": 4
+            },
+            {
+              "price": 290.6887227606854,
+              "distance_pct": 28.71,
+              "side": "above",
+              "mass_usd": 512926140,
+              "width_pct": 0.81,
+              "buckets": 3
+            },
+            {
+              "price": 262.6409655624141,
+              "distance_pct": 16.3,
+              "side": "above",
+              "mass_usd": 454830723,
+              "width_pct": 0.27,
+              "buckets": 2
+            },
+            {
+              "price": 236.33466255305012,
+              "distance_pct": 4.65,
+              "side": "above",
+              "mass_usd": 429003970,
+              "width_pct": 1.34,
+              "buckets": 6
+            },
+            {
+              "price": 232.04339100926103,
+              "distance_pct": 2.75,
+              "side": "above",
+              "mass_usd": 418229279,
+              "width_pct": 1.08,
+              "buckets": 5
+            },
+            {
+              "price": 259.249,
+              "distance_pct": 14.79,
+              "side": "above",
+              "mass_usd": 349323013,
+              "width_pct": 0,
+              "buckets": 1
+            }
+          ],
+          "reach_pct": 31.46,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.4746,
+          "up_mass": 5565422804,
+          "down_mass": 1982739809,
+          "overhang_ratio": 2.81,
+          "side": "above",
+          "center_price": 263.18008938177763,
+          "center_distance_pct": 16.53
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep above)."
+        },
+        "notes": []
+      },
+      {
+        "token": "POL",
+        "spot": 0.07369,
+        "gravity": 0.002,
+        "label": "NEUTRAL / PIN",
+        "side": "NEUTRAL",
+        "conviction": 1,
+        "target_price": 0.07499,
+        "target_distance_pct": 1.76,
+        "dominant_source": "liquidations",
+        "components": {
+          "liquidation": {
+            "g_liq": 0.0012279878494260293,
+            "per_tf": {
+              "12h": 0.2263,
+              "24h": -0.0058,
+              "3d": -0.4929
+            },
+            "z_cross": 4.599556843980572,
+            "up_mass": 9000364.904950168,
+            "down_mass": 12251494.775509296,
+            "source": "heatmap"
+          }
+        },
+        "deep_overhang": {
+          "available": true,
+          "dominant": {
+            "price": 0.07832325369845346,
+            "distance_pct": 6.29,
+            "side": "above",
+            "mass_usd": 184465209,
+            "width_pct": 7.47,
+            "buckets": 33,
+            "dominance_ratio": 2.56
+          },
+          "top_pockets": [
+            {
+              "price": 0.07832325369845346,
+              "distance_pct": 6.29,
+              "side": "above",
+              "mass_usd": 184465209,
+              "width_pct": 7.47,
+              "buckets": 33
+            },
+            {
+              "price": 0.09701830083663675,
+              "distance_pct": 31.66,
+              "side": "above",
+              "mass_usd": 176339427,
+              "width_pct": 3.73,
+              "buckets": 15
+            },
+            {
+              "price": 0.08299067376853965,
+              "distance_pct": 12.62,
+              "side": "above",
+              "mass_usd": 160863754,
+              "width_pct": 5.6,
+              "buckets": 25
+            },
+            {
+              "price": 0.07119878976683143,
+              "distance_pct": -3.38,
+              "side": "below",
+              "mass_usd": 101032422,
+              "width_pct": 2.57,
+              "buckets": 12
+            },
+            {
+              "price": 0.09405788230348365,
+              "distance_pct": 27.64,
+              "side": "above",
+              "mass_usd": 67069748,
+              "width_pct": 0.93,
+              "buckets": 3
+            },
+            {
+              "price": 0.08855391931714011,
+              "distance_pct": 20.17,
+              "side": "above",
+              "mass_usd": 64211788,
+              "width_pct": 0.47,
+              "buckets": 3
+            }
+          ],
+          "reach_pct": 33.93,
+          "source": "heatmap_30d"
+        },
+        "deep_skew": {
+          "available": true,
+          "score": 0.6387,
+          "up_mass": 774854953,
+          "down_mass": 170817044,
+          "overhang_ratio": 4.54,
+          "side": "above",
+          "center_price": 0.08756575888814812,
+          "center_distance_pct": 18.83
+        },
+        "alignment": {
+          "near_side": "NEUTRAL",
+          "overhang_side": "above",
+          "deep_side": "above",
+          "state": "mixed",
+          "note": "Near and deep lenses not strongly aligned (near neutral, deep above)."
+        },
+        "notes": []
+      }
+    ]
+  }
+}

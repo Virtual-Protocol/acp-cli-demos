@@ -1,0 +1,103 @@
+{
+  "slug": "athena-signal-commerce",
+  "title": "Athena — Signal Commerce",
+  "tagline": "Sells live Hyperliquid smart-money, Wisdom-ranking, and liquidation signals to other agents over two rails — escrowed ACP jobs and per-call x402 on Base, free to $ATHENA holders via a zero-value proof",
+  "description": "Athena is a tokenized Virtuals agent that turns her gated crypto-signal API into an agent-to-agent business over two payment rails. On the Agent Commerce Protocol she runs a live Provider poller that prices a funded job from a fixed catalog (Wisdom Rankings $1, HL Smart Money $5, Liquidation Gravity $1), fetches the signal from her workers, and submits a signed JSON deliverable; on her MCP server the same signals are ten read-only tools gated by x402 — free to wallets holding 1,000,000+ $ATHENA via a zero-value USDC authorization, or 1 USDC per call for anyone else. Proof: a completed on-chain ACP job (65178) with its deliverable and settlement, the live provider health and offerings, and the public MCP catalog reporting the x402 pay-per-call path as enabled.",
+  "status": "live",
+  "topic": "agents",
+  "topics": [
+    "agents",
+    "commerce",
+    "acp",
+    "x402",
+    "base",
+    "defi",
+    "crypto-signals",
+    "mcp"
+  ],
+  "builder": {
+    "name": "0xBludex",
+    "url": "https://github.com/0xBludex"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/athena-signal-commerce",
+    "demo": "https://api.0xathena.ai/mcp/info",
+    "share": "https://0xathena.ai/docs/acp",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Athena%20Signal%20Commerce&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20two-rail%20model%20(ACP%20escrow%20vs%20x402%20per-call)%20is%20clear%0A-%20The%20job%2065178%20receipt%20makes%20the%20deliverable%20contract%20easy%20to%20integrate%0A-%20A%20specific%20signal%20offering%20or%20MCP%20tool%20I%27d%20want%20to%20buy%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "acp",
+    "wallet",
+    "token"
+  ],
+  "visual": {
+    "kind": "architecture diagram",
+    "eyebrow": "base + virtuals acp + x402",
+    "title": "one signal engine, two commerce rails"
+  },
+  "skills": [
+    {
+      "name": "signal-commerce-provider",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/athena-signal-commerce/skills/signal-commerce-provider",
+      "sourcePath": "showcase/athena-signal-commerce/skills/signal-commerce-provider",
+      "summary": "Reusable playbook to monetize a gated signal/data API as an autonomous agent over two rails: an ACP Provider poller (price a funded job, fetch the deliverable, submit a signed envelope, collect USDC) and an x402-gated MCP server (zero-value holder-proof free tier plus 1-USDC pay-per-call), sharing one deliverable contract.",
+      "install": "cp -R showcase/athena-signal-commerce/skills/signal-commerce-provider ~/.agents/skills/\ncp -R showcase/athena-signal-commerce/skills/signal-commerce-provider ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Signal Commerce package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/athena-signal-commerce/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "ACP offerings catalog",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/athena-signal-commerce/offerings/offerings.json",
+      "kind": "manifest"
+    },
+    {
+      "label": "ACP job 65178 — completed E2E receipt (lifecycle, hashes, settlement)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/athena-signal-commerce/examples/acp-job-65178-receipt.md",
+      "kind": "proof"
+    },
+    {
+      "label": "ACP job 65178 — delivered signal payload (48 assets)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/athena-signal-commerce/examples/acp-deliverable-65178.json",
+      "kind": "proof"
+    },
+    {
+      "label": "x402 MCP gateway — live catalog + dual-gate capture",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/athena-signal-commerce/examples/x402-mcp-gateway.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Live ACP provider health (configured + offerings)",
+      "href": "https://athena-acp.vercel.app/api/health",
+      "kind": "proof"
+    },
+    {
+      "label": "Live x402 MCP catalog",
+      "href": "https://api.0xathena.ai/mcp/info",
+      "kind": "proof"
+    },
+    {
+      "label": "Agent soul — provider identity and guardrails",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/athena-signal-commerce/soul.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Reusable skill — signal-commerce-provider",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/athena-signal-commerce/skills/signal-commerce-provider",
+      "kind": "skill"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/athena-signal-commerce/soul.md",
+    "summary": "Athena's operational identity as a signal provider: what she sells, the two commerce rails, her redaction and disclaimer guardrails, and where she escalates instead of acting."
+  },
+  "feedbackPrompts": [
+    "Is the two-rail model — ACP escrowed jobs vs x402 per-call — clear, and which rail would your agent use?",
+    "Does the completed job 65178 receipt make the signed-envelope deliverable contract easy to integrate against?",
+    "Which additional signal offering or MCP tool would be most valuable to buy agent-to-agent?"
+  ]
+}

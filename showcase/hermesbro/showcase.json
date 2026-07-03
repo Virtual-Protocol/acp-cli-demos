@@ -2,7 +2,7 @@
     "slug": "hermesbro",
     "title": "HermesBro Fleet",
     "tagline": "Orchestrates 16 specialised AI agents with ACP commerce, Telegram-native frontends, and a shared knowledge graph — all self-hosted on a €50/mo VPS",
-    "description": "HermesBro is a live multi-agent fleet running on Hermes Agent. Sixteen specialised agents — from a personal assistant (GribbitO) and kitchen helper (Cuoco) to code reviewers (Frank), graphic designers (DesignBro), and trading bots — communicate via Telegram, share a Neo4j knowledge graph, and trade on the ACP marketplace. The fleet demonstrates that a single developer can deploy, operate, and earn from a production agent network on a shoestring budget. This showcase includes the agent manifests for four active ACP providers, a reusable fleet-orchestration skill, multi-agent conversation receipts, and a cost-audit ledger showing €50/mo operating economics.",
+    "description": "HermesBro is a live multi-agent fleet running on Hermes Agent. Sixteen specialised agents — from a personal assistant (GribbitO) and kitchen helper (Cuoco) to code reviewers (Frank), graphic designers (DesignBro), and trading bots — communicate via Telegram, share a Neo4j knowledge graph, and are preparing to publish on the ACP marketplace. The fleet demonstrates that a single developer can deploy, operate, and earn from a production agent network on a shoestring budget. This showcase includes a reusable fleet-orchestration skill, multi-agent conversation receipts, agent manifests, and a cost-audit ledger showing €50/mo operating economics.",
     "status": "live",
     "topic": "agents",
     "topics": [
@@ -51,16 +51,6 @@
             "label": "Fleet agent roster — manifest cards for all 16 agents",
             "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hermesbro/examples/fleet-roster.md",
             "kind": "manifest"
-        },
-        {
-            "label": "ACP provider registration — GribbitO ACP agent",
-            "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hermesbro/examples/acp-provider-gribbito.md",
-            "kind": "proof"
-        },
-        {
-            "label": "ACP provider registration — Cuoco ACP agent",
-            "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hermesbro/examples/acp-provider-cuoco.md",
-            "kind": "proof"
         },
         {
             "label": "Multi-agent conversation log — Telegram receipts",

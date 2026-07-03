@@ -1,0 +1,74 @@
+{
+  "slug": "varius-telegram-shopping",
+  "title": "Varius — Telegram AI Shopping Assistant",
+  "tagline": "A natural-language Telegram AI assistant that finds merchants based on your shopping intent, mints affiliate links via ACP, and earns users real USDC cashback when a purchase is made via the affiliate link.",
+  "description": "Varius is a production Telegram AI assistant (@virtualshoppingbot) that turns a plain-text shopping or travel request into a tracked affiliate link with USDC cashback. The bot uses Virtuals Agent Compute (Kimi K2) for intent extraction and recommendations, then fires an ACP v2 job to hire a Laguna bridge agent that mints the affiliate shortlink. Every link mint is a real on-chain USDC escrow job on Base Mainnet. The end user sees only a clean Telegram conversation and a USDC earnings dashboard; the on-chain agentic commerce layer is invisible.",
+  "status": "production",
+  "topic": "commerce",
+  "topics": ["commerce", "compute", "acp"],
+  "hidden": false,
+  "builder": {
+    "name": "yix",
+    "url": "https://github.com/yx-laguna"
+  },
+  "links": {
+    "repo": "https://github.com/yx-laguna/nexus-gateway",
+    "demo": "https://t.me/virtualshoppingbot",
+    "video": "https://youtu.be/dVV-3BPpvzE",
+    "share": "https://youtu.be/dVV-3BPpvzE",
+    "feedback": "PLACEHOLDER_GITHUB_ISSUE_URL"
+  },
+  "primitives": ["compute", "acp"],
+  "visual": {
+    "kind": "youtube demo video",
+    "eyebrow": "telegram + acp v2",
+    "title": "affiliate link minting",
+    "posterUrl": "https://img.youtube.com/vi/dVV-3BPpvzE/maxresdefault.jpg",
+    "videoLabel": "Watch the demo on YouTube"
+  },
+  "skills": [
+    {
+      "name": "laguna-affiliate-link-via-acp",
+      "href": "https://github.com/yx-laguna/nexus-gateway/tree/main/showcase/varius-telegram-shopping/skills/laguna-affiliate-link-via-acp",
+      "sourcePath": "showcase/varius-telegram-shopping/skills/laguna-affiliate-link-via-acp",
+      "summary": "Reusable ACP workflow to discover 200+ merchants that offers USDC cashback , fund a USDC escrow job, and receive a tracked affiliate shortlink. Works for any merchant supported by Laguna Network.",
+      "install": "cp -R showcase/varius-telegram-shopping/skills/laguna-affiliate-link-via-acp ~/.agents/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "YouTube demo video",
+      "href": "https://youtu.be/dVV-3BPpvzE",
+      "kind": "video"
+    },
+    {
+      "label": "Redacted result report",
+      "href": "https://github.com/yx-laguna/nexus-gateway/blob/main/showcase/varius-telegram-shopping/skills/laguna-affiliate-link-via-acp/examples/hotel-search/result-redacted.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/yx-laguna/nexus-gateway/blob/main/showcase/varius-telegram-shopping/skills/laguna-affiliate-link-via-acp/examples/hotel-search/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Skill source",
+      "href": "https://github.com/yx-laguna/nexus-gateway/tree/main/showcase/varius-telegram-shopping/skills/laguna-affiliate-link-via-acp",
+      "kind": "skill"
+    },
+    {
+      "label": "Live bot",
+      "href": "https://t.me/virtualshoppingbot",
+      "kind": "demo"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which other merchant categories should the bot support (flights, electronics, fashion)?",
+    "Should the ACP bridge support batch link minting for comparison shopping?",
+    "What would make the SKILL.md easier to adapt for a different affiliate network?"
+  ],
+  "soul": {
+    "href": "https://github.com/yx-laguna/nexus-gateway/blob/main/showcase/varius-telegram-shopping/soul.md",
+    "summary": "Varius operates as a deal-finding assistant: it never books on the user's behalf, only delivers tracked links. It earns from the Laguna affiliate network; the 0.01 USDC ACP job cost is recovered via cashback."
+  }
+}

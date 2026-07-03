@@ -1,5 +1,5 @@
 {
-  "slug": "varius-telegram-shopping",
+  "slug": "varius-AIshoppingassistant",
   "title": "Varius — Telegram AI Shopping Assistant",
   "tagline": "A natural-language Telegram AI assistant that finds merchants based on your shopping intent, mints affiliate links via ACP, and earns users real USDC cashback when a purchase is made via the affiliate link.",
   "description": "Varius is a production Telegram AI assistant (@virtualshoppingbot) that turns a plain-text shopping or travel request into a tracked affiliate link with USDC cashback. The bot uses Virtuals Agent Compute (Kimi K2) for intent extraction and recommendations, then fires an ACP v2 job to hire a Laguna bridge agent that mints the affiliate shortlink. Every link mint is a real on-chain USDC escrow job on Base Mainnet. The end user sees only a clean Telegram conversation and a USDC earnings dashboard; the on-chain agentic commerce layer is invisible.",

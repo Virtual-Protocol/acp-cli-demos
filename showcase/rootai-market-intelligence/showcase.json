@@ -29,7 +29,8 @@
   "visual": {
     "kind": "market signal feed",
     "eyebrow": "acp + hyperliquid + base",
-    "title": "graded market intelligence"
+    "title": "graded market intelligence",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/rootai-market-intelligence/assets/poster.jpg"
   },
   "skills": [
     {

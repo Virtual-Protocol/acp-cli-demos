@@ -13,7 +13,7 @@
         "category": "commerce",
         "price": "$0.01 USDC",
         "sla_minutes": 2,
-        "description": "Given a merchant name and a user EVM wallet address, searches the Laguna Network merchant catalogue, selects the best cashback rate, and mints a tracked affiliate shortlink. The shortlink registers the user's wallet for USDC cashback on any qualifying purchase. Supports 1,000+ merchants across travel, retail, and lifestyle categories."
+        "description": "Given a merchant name and a user EVM wallet address, searches the Laguna Network merchant catalogue, selects the best cashback rate, and mints a tracked affiliate shortlink. The shortlink registers the user's wallet for USDC cashback on any qualifying purchase. Supports 1000+ merchants across travel, retail, and lifestyle categories."
       },
       {
         "id": 2,

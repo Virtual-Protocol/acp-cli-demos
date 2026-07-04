@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Aria Vanguard ZHC ACP showcase card">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#102a43"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="64" y="64" width="1152" height="592" rx="24" fill="none" stroke="#00d4aa" stroke-width="3" opacity="0.35"/>
+  <text x="96" y="150" fill="#00d4aa" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">ECONOMYOS · ACP · BASE</text>
+  <text x="96" y="260" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">Aria Vanguard ZHC</text>
+  <text x="96" y="340" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="34">Lite on-chain verdict via USDC escrow</text>
+  <text x="96" y="430" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="28">analyse_lite_x1 → SAFE / CAUTION / DANGER</text>
+  <text x="96" y="600" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="24">GoldenFarFR · Spark delivery proof · ariavanguardzhc.com</text>
+</svg>

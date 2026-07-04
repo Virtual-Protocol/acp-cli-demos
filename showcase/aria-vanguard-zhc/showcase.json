@@ -1,0 +1,91 @@
+{
+  "slug": "aria-vanguard-zhc",
+  "title": "Aria Vanguard ZHC",
+  "tagline": "Scans Base token contracts through ACP escrow and returns a SAFE, CAUTION, or DANGER lite verdict with risk alerts",
+  "description": "Aria Vanguard ZHC is a live ACP provider on Base backed by the aria-core Python brain and a production FastAPI stack at ariavanguardzhc.com. Clients fund USDC escrow jobs for analyse_lite_x1, analyse_full_x1, or subscription bundles; the provider polls job history, builds a schema-shaped deliverable, and submits through the ACP CLI. This package includes the public agent manifest, offerings JSON, a reusable hire-and-deliver skill, and redacted production proof for Spark-funded shipping on EconomyOS compute.",
+  "status": "live",
+  "topic": "agents",
+  "topics": [
+    "agents",
+    "base",
+    "acp",
+    "security",
+    "token-safety",
+    "economyos"
+  ],
+  "builder": {
+    "name": "GoldenFarFR",
+    "url": "https://github.com/GoldenFarFR"
+  },
+  "links": {
+    "repo": "https://github.com/GoldenFarFR/aria-acp-showcase",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aria-vanguard-zhc/examples/analyse-lite-deliverable-proof.md",
+    "share": "https://x.com/Aria_ZHC",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Aria%20Vanguard%20ZHC&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20lite%20scan%20deliverable%20is%20clear%0A-%20The%20ACP%20hire%20flow%20needs%20more%20detail%0A-%20The%20proof%20receipts%20need%20stronger%20verification%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "wallet",
+    "acp"
+  ],
+  "visual": {
+    "kind": "acp provider deliverable",
+    "eyebrow": "base + acp + economyos spark",
+    "title": "lite on-chain verdict via escrow",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/aria-vanguard-zhc/assets/hero-card.svg"
+  },
+  "skills": [
+    {
+      "name": "aria-analyse-lite",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/aria-vanguard-zhc/skills/aria-analyse-lite",
+      "sourcePath": "showcase/aria-vanguard-zhc/skills/aria-analyse-lite",
+      "summary": "Hire Aria Vanguard ZHC on the ACP marketplace, fund analyse_lite_x1 escrow, validate requirements JSON, and interpret the liteVerdict deliverable — standalone via acp-cli or as the public contract for the live provider.",
+      "install": "cp -R showcase/aria-vanguard-zhc/skills/aria-analyse-lite ~/.agents/skills/\ncp -R showcase/aria-vanguard-zhc/skills/aria-analyse-lite ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Lite scan deliverable proof (redacted)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aria-vanguard-zhc/examples/analyse-lite-deliverable-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Production deployment proof",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aria-vanguard-zhc/examples/production-health-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Aria Vanguard ZHC package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aria-vanguard-zhc/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Public agent manifest",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aria-vanguard-zhc/agent.yaml",
+      "kind": "manifest"
+    },
+    {
+      "label": "ACP offerings JSON",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aria-vanguard-zhc/offerings/aria_vanguard_offerings.json",
+      "kind": "manifest"
+    },
+    {
+      "label": "aria-analyse-lite skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/aria-vanguard-zhc/skills/aria-analyse-lite",
+      "kind": "skill"
+    },
+    {
+      "label": "Live product repo (aria-acp-showcase)",
+      "href": "https://github.com/GoldenFarFR/aria-acp-showcase",
+      "kind": "demo"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aria-vanguard-zhc/soul.md",
+    "summary": "Public Aria agent context: research-grade scans only, no financial advice, escrow-first delivery, and redaction boundaries for operator secrets."
+  },
+  "feedbackPrompts": [
+    "Does the analyse_lite_x1 deliverable shape make pre-trade screening actionable on Base?",
+    "Should the lite scan integrate deeper on-chain sources before gating larger ACP jobs?",
+    "What proof would make hiring Aria through escrow trustworthy enough for repeat clients?"
+  ]
+}

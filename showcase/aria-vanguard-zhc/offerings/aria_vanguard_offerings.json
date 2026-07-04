@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "agent": "Aria Vanguard ZHC",
+  "agent_id": "019f0522-b57b-7e8e-a70a-aab2070e070e",
+  "chain": "base",
+  "offerings": [
+    {
+      "name": "analyse_lite_x1",
+      "description": "Lite on-chain token scan — fast SAFE/CAUTION/DANGER verdict for Base contracts.",
+      "price_usd": 1.99,
+      "sla_minutes": 5,
+      "requirements": {
+        "type": "object",
+        "required": ["contractAddress"],
+        "properties": {
+          "contractAddress": {
+            "type": "string",
+            "description": "Base contract address (0x…)."
+          }
+        }
+      },
+      "deliverable": {
+        "type": "object",
+        "required": ["liteVerdict", "riskAlerts"],
+        "properties": {
+          "liteVerdict": {
+            "type": "string",
+            "description": "SAFE, CAUTION, or DANGER heuristic verdict."
+          },
+          "riskAlerts": {
+            "type": "string",
+            "description": "Top risk flags from the heuristic scan."
+          }
+        }
+      }
+    },
+    {
+      "name": "analyse_full_x1",
+      "description": "Full heuristic audit — security score, verdict, and operator-ready markdown report.",
+      "price_usd": 4.99,
+      "sla_minutes": 5,
+      "requirements": {
+        "type": "object",
+        "required": ["contractAddress"],
+        "properties": {
+          "contractAddress": {
+            "type": "string",
+            "description": "Base contract address (0x…)."
+          }
+        }
+      },
+      "deliverable": {
+        "type": "object",
+        "required": ["verdict", "securityScore", "auditReport"],
+        "properties": {
+          "verdict": {
+            "type": "string",
+            "description": "AVOID, SPECULATIVE, or SAFE-style verdict."
+          },
+          "securityScore": {
+            "type": "string",
+            "description": "Heuristic security score 0-100."
+          },
+          "auditReport": {
+            "type": "string",
+            "description": "Full structured audit report (markdown)."
+          }
+        }
+      }
+    },
+    {
+      "name": "aria_full_access",
+      "description": "30-day subscription bundle for Vanguard ecosystem services.",
+      "price_usd": 19.99,
+      "sla_minutes": null,
+      "billing": "subscription_30d"
+    }
+  ]
+}

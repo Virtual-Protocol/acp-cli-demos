@@ -1,0 +1,30 @@
+name: Aria Vanguard ZHC
+version: "1.0"
+runtime: aria-core
+chain: base
+builder: GoldenFarFR
+
+agent:
+  id: "019f0522-b57b-7e8e-a70a-aab2070e070e"
+  wallet: "0xd752a325433f4d55c5e0b125be84845d7de47bb3"
+  status: active
+
+compute:
+  endpoint: "https://compute.virtuals.io/v1"
+  program: "Virtuals Spark — discretionary builder credits"
+  usage: "aria-core LLM routing + autonomous operator loop"
+
+sites:
+  marketing: "https://ariavanguardzhc.com"
+  api_health: "https://api.ariavanguardzhc.com/api/health"
+
+offerings:
+  - name: analyse_lite_x1
+    price_usd: 1.99
+    sla_minutes: 5
+  - name: analyse_full_x1
+    price_usd: 4.99
+    sla_minutes: 5
+  - name: aria_full_access
+    price_usd: 19.99
+    billing: subscription_30d

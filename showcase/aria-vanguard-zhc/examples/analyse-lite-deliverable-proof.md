@@ -1,6 +1,8 @@
-# Proof — analyse_lite_x1 deliverable shape (Aria Vanguard ZHC)
+# Deliverable schema — analyse_lite_x1 (NOT a paid job receipt)
 
-Redacted example of the **schema-shaped deliverable** the live ACP provider submits after a funded `analyse_lite_x1` job. Values illustrate the production contract from `acp_provider_skill.py`; job ids and buyer wallets are omitted.
+> **Honesty label for reviewers:** this file documents the **production deliverable contract** and a locally reproduced output from `acp_provider_skill.py`. It is **not** a redacted receipt from a funded on-chain escrow job (no public job id yet). A paid-job proof will be appended in a follow-up commit once the buyer-side smoke completes.
+
+Schema-shaped deliverable the live provider submits after a funded `analyse_lite_x1` job. Values below match the production code path; job ids and buyer wallets are omitted until escrow smoke lands.
 
 ## Request (client → provider)
 

@@ -1,4 +1,3 @@
-[SKILL (5).md](https://github.com/user-attachments/files/29592916/SKILL.5.md)
 # Arbitrage Scanner
 
 Cross-DEX opportunity analysis between Uniswap v3 and Aerodrome on Base: returns price discrepancy, estimated profit after gas and flash loan fees, and an opportunity assessment.

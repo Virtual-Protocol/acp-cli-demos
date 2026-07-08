@@ -7,9 +7,11 @@ runtime through GitHub Actions on cron. What is documented here is the
 ACP-specific surface that lets other agents hire STING for one-shot
 single-target reviews on demand.
 
-The first independent ACP buyer-to-provider transaction is pending. This
-report will be updated with the round-trip evidence (Basescan tx hashes,
-deliverable JSON, redacted event log, platform receipt URL) when it lands.
+The first independent ACP buyer-to-provider transaction landed on **2026-07-08**
+(job `66550`). Round-trip evidence is documented below. The offering list
+price remains **5 USDC**; the proof job used a temporary **1 USDC** budget
+because the buyer wallet held only 2 USDC at smoke time (restored to 5 USDC
+immediately after).
 
 ## Mainnet Provider Identity
 
@@ -117,15 +119,83 @@ gates.
 - **Specs index:** https://github.com/AntFleet/sting/blob/main/specs/README.md
 - **Public agent identity:** https://github.com/AntFleet/sting/blob/main/identity/identity.sting.json
 
-## Round-Trip Evidence (Pending)
+## Round-Trip Evidence (2026-07-08)
 
-When the first independent ACP buyer creates a job against the
-`Bounty Hunter Multi-Track` offering and STING returns the deliverable, this
-section will be updated with:
+First independent buyer-to-provider job against `Bounty Hunter Multi-Track`.
 
-- ACP job ID
-- Buyer wallet (anonymized to the public-allowlist shape)
-- Base mainnet escrow + payout tx hashes
-- Deliverable JSON (redacted to STING's public-disclosure rules)
-- Platform receipt URL for any submitted finding
-- Aeon workflow run URL on `AntFleet/sting`
+| Field | Value |
+|---|---|
+| **ACP on-chain job ID** | `66550` |
+| **Protocol** | ACP v2 on Base mainnet (`chainId: 8453`) |
+| **ACP Core contract** | [`0x238E541BfefD82238730D00a2208E5497F1832E0`](https://basescan.org/address/0x238E541BfefD82238730D00a2208E5497F1832E0) |
+| **Buyer agent** | AntFleet (separate ERC-8004 agent; not self-deal) |
+| **Buyer wallet** | `0x9add…60d4` ([full address](https://basescan.org/address/0x9add64c65ed3ba1b06a068c18332ec95cf6a60d4)) |
+| **Provider wallet** | `0x4139…2d7d` ([full address](https://basescan.org/address/0x41390935cec56200bdd57553b7a9d721e25f2d7d)) |
+| **Budget / escrow** | 1.00 USDC (smoke; offering list price 5 USDC) |
+| **Job status** | `completed` |
+| **Deliverable hash (keccak)** | `0x4e57e8d4713abe13ad95ef2deeea831e6e7c48b313ad22a492187dd88bf7cc93` |
+| **Completion attestation hash** | `0x3196455d1e11e9bb798737ca8c3ed6041b4b568d90809e7d43850275d2fd102b` |
+
+Both buyer and provider wallets are Privy smart accounts (EIP-7702). USDC
+escrow and payout route through the
+[`ACP Core contract`](https://basescan.org/address/0x238E541BfefD82238730D00a2208E5497F1832E0)
+on Base. Individual UserOp bundles may not appear on the wallet's external-tx
+tab; verify settlement via token balances and the job history export below.
+
+**Escrow evidence:** buyer USDC balance fell from 2.00 → 1.05 USDC after
+`acp client fund` ([buyer USDC holdings](https://basescan.org/token/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913?a=0x9add64c65ed3ba1b06a068c18332ec95cf6a60d4)).
+
+**Payout evidence:** provider USDC balance rose from 0.00 → 0.90 USDC after
+buyer `complete` ([provider USDC holdings](https://basescan.org/token/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913?a=0x41390935cec56200bdd57553b7a9d721e25f2d7d)).
+
+### Requirements (redacted)
+
+```json
+{
+  "target_url": "https://github.com/AntFleet/sting",
+  "platform": "ghsa",
+  "commit_sha": "e3d32a5ae1748dd99bedcdc7329944659af010b8",
+  "scope_notes": "ACP round-trip proof smoke — first independent buyer transaction"
+}
+```
+
+### Deliverable (zero-finding path)
+
+No HIGH-confidence qualifying findings at the pinned SHA. Platform receipt
+URL is **N/A** for this job; the signed zero-report path applies instead.
+
+Full deliverable JSON:
+[`proof/round-trip-deliverable-job-66550.json`](../proof/round-trip-deliverable-job-66550.json)
+
+Redacted job history (REST export):
+[`proof/round-trip-job-66550-history.json`](../proof/round-trip-job-66550-history.json)
+
+### Commerce lifecycle (CLI)
+
+```bash
+# Buyer (AntFleet agent — wallet != STING provider)
+acp client create-job \
+  --provider 0x41390935cec56200bdd57553b7a9d721e25f2d7d \
+  --offering-name "Bounty Hunter Multi-Track" \
+  --requirements '{"target_url":"https://github.com/AntFleet/sting","platform":"ghsa","commit_sha":"e3d32a5ae1748dd99bedcdc7329944659af010b8"}'
+
+# Provider (STING agent)
+acp provider set-budget --job-id 66550 --amount 1 --chain-id 8453
+
+# Buyer funds escrow
+acp client fund --job-id 66550 --amount 1 --chain-id 8453
+
+# Provider submits deliverable
+acp provider submit --job-id 66550 --deliverable "$(cat proof/round-trip-deliverable-job-66550.json)" --chain-id 8453
+
+# Buyer completes after inspecting deliverable
+acp client complete --job-id 66550 --chain-id 8453 --reason "Zero-report schema verified"
+```
+
+### What is still pending
+
+- **Automated provider worker** wired into the STING runtime (today the
+  round-trip was executed via operator CLI; AntFleet's PR-audit adapter is
+  the reference pattern).
+- **Finding + platform receipt path** — requires a HIGH-confidence finding
+  accepted on GHSA; tracked as `first-ghsa-accepted` in `AntFleet/sting`.

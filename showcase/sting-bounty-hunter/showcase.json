@@ -48,6 +48,11 @@
       "kind": "proof"
     },
     {
+      "label": "First ACP buyer round-trip (job 66550, zero-report deliverable)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sting-bounty-hunter/proof/round-trip-deliverable-job-66550.json",
+      "kind": "proof"
+    },
+    {
       "label": "STING package README",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sting-bounty-hunter/README.md",
       "kind": "docs"

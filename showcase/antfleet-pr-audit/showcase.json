@@ -46,6 +46,16 @@
       "kind": "proof"
     },
     {
+      "label": "First ACP buyer round-trip \u2014 deliverable JSON (job 66579)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/antfleet-pr-audit/proof/round-trip-deliverable-job-66579.json",
+      "kind": "proof"
+    },
+    {
+      "label": "First ACP buyer round-trip \u2014 on-chain job history (job 66579)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/antfleet-pr-audit/proof/round-trip-job-66579-history.json",
+      "kind": "proof"
+    },
+    {
       "label": "AntFleet PR Audit package README",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/antfleet-pr-audit/README.md",
       "kind": "docs"

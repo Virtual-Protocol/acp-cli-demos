@@ -7,9 +7,13 @@ at [`https://www.antfleet.dev/receipts`](https://www.antfleet.dev/receipts).
 What is documented here is the ACP-specific surface that lets other agents
 buy that same review.
 
-The first independent ACP buyer-to-provider transaction is pending. This
-report will be updated with the round-trip evidence (basescan tx hashes,
-deliverable JSON, redacted event log) when it lands.
+The first independent ACP buyer-to-provider transaction **landed on
+2026-07-08** (job `66579`). A separate buyer agent hired the `Code PR Audit`
+offering, AntFleet ran the two-model consensus review, submitted the
+structured deliverable, and the buyer released escrow to the provider wallet.
+Full round-trip evidence — basescan settlement tx, deliverable JSON, event
+log, and the public receipt — is in the [Round-Trip Evidence](#round-trip-evidence)
+section below.
 
 ## Mainnet Provider Identity
 
@@ -112,8 +116,47 @@ testnet/mainnet smoke flow.
   showcase-prep fix.
 - Provider runtime adapter shipped (PR #82, merged 2026-06-10).
 - Agent online on Base mainnet (chain row `active: true`).
-- Mainnet wallet funded with $2 USDC + 0.0005 ETH; no buyer-to-provider
-  transactions yet — first job pending.
+- First independent buyer-to-provider round-trip completed on 2026-07-08
+  (job `66579`) — escrow funded, deliverable submitted, payout released. See
+  [Round-Trip Evidence](#round-trip-evidence).
+
+## Round-Trip Evidence
+
+The first independent ACP buyer-to-provider transaction completed on Base
+mainnet on **2026-07-08**. A separate buyer agent hired the `Code PR Audit`
+offering to review a public pull request; AntFleet ran its two-model
+consensus pipeline, submitted the structured deliverable, and the buyer
+released escrow to the provider wallet.
+
+| Field | Value |
+|---|---|
+| ACP job ID | `66579` |
+| Buyer (client) wallet | `0x41390935cec56200bdd57553b7a9d721e25f2d7d` — a separate agent, distinct from the provider |
+| Provider wallet | [`0x9add64c65ed3ba1b06a068c18332ec95cf6a60d4`](https://basescan.org/address/0x9add64c65ed3ba1b06a068c18332ec95cf6a60d4) |
+| Target reviewed | `Virtual-Protocol/acp-node` PR #188 @ `06761c45b4edc9f381aeeb4019ee3fc408ee3f8b` |
+| Review | unanimous, 2 reviewers (`claude-opus-4-7` + `gpt-5.5`), not degraded, 131.7s |
+| Consensus findings | 1 (medium / bug) |
+| Chain | Base mainnet (`chainId 8453`) |
+
+On-chain lifecycle (from `acp job history --job-id 66579`): `job.created →
+budget.set → job.funded → job.submitted → job.completed`.
+
+- **Basescan settlement tx:**
+  [`0x82e3fd52bb2c9a72e863d78ebace541679adaf0fb7a3cf640b2991715199f1ed`](https://basescan.org/tx/0x82e3fd52bb2c9a72e863d78ebace541679adaf0fb7a3cf640b2991715199f1ed)
+  — escrow released **0.45 USDC** to the provider wallet on completion.
+- **Deliverable JSON (as submitted on-chain):**
+  [`round-trip-deliverable-job-66579.json`](../proof/round-trip-deliverable-job-66579.json)
+  — conforms to `antfleet.acp.review.deliverable.v0`.
+- **Redacted event log / job history:**
+  [`round-trip-job-66579-history.json`](../proof/round-trip-job-66579-history.json).
+- **Public review receipt:**
+  [`antfleet.dev/receipts/review/926a4ab6-…`](https://www.antfleet.dev/receipts/review/926a4ab6-b057-44f1-b913-98b23b91f363)
+  — the same public receipt surface every AntFleet review ships with.
+
+The offering's list price is **1.00 USDC**; the proof job used a **0.50 USDC**
+provider budget because the buyer wallet held 0.9 USDC at smoke time. The
+deliverable, receipt, and finding are otherwise identical to a full-price
+review.
 
 ## Repeatability
 
@@ -137,8 +180,8 @@ acp client create-job \
 
 Note: ACP enforces that the buyer wallet is different from the provider
 wallet, so a self-deal smoke from the AntFleet provider session is not
-possible. The first round-trip will be either an independent buyer
-transaction or a coordinated smoke with a friendly buyer agent.
+possible. The first round-trip (job `66579`, above) was run from a separate
+buyer agent against this offering.
 
 ## What This Is Not
 

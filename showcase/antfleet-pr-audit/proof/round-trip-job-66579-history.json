@@ -1,0 +1,79 @@
+{
+  "jobId": "66579",
+  "chainId": 8453,
+  "protocol": "v2",
+  "status": "completed",
+  "entryCount": 6,
+  "entries": [
+    {
+      "kind": "system",
+      "event": {
+        "type": "job.created",
+        "client": "0x41390935CeC56200Bdd57553B7A9D721e25F2d7d",
+        "provider": "0x9aDd64c65ed3ba1b06a068c18332ec95cF6A60d4",
+        "evaluator": "0x41390935CeC56200Bdd57553B7A9D721e25F2d7d",
+        "onChainJobId": "66579"
+      },
+      "chainId": 8453,
+      "timestamp": 1783491399631,
+      "onChainJobId": "66579"
+    },
+    {
+      "from": "0x41390935cec56200bdd57553b7a9d721e25f2d7d",
+      "kind": "message",
+      "chainId": 8453,
+      "content": "{\"mode\":\"pr\",\"target\":{\"repo\":\"Virtual-Protocol/acp-node\",\"pr\":188}}",
+      "timestamp": 1783491400888,
+      "contentType": "requirement",
+      "onChainJobId": "66579"
+    },
+    {
+      "kind": "system",
+      "event": {
+        "type": "budget.set",
+        "amount": 0.5,
+        "onChainJobId": "66579"
+      },
+      "chainId": 8453,
+      "timestamp": 1783491435693,
+      "onChainJobId": "66579"
+    },
+    {
+      "kind": "system",
+      "event": {
+        "type": "job.funded",
+        "amount": 0.5,
+        "client": "0x41390935CeC56200Bdd57553B7A9D721e25F2d7d",
+        "onChainJobId": "66579"
+      },
+      "chainId": 8453,
+      "timestamp": 1783491477586,
+      "onChainJobId": "66579"
+    },
+    {
+      "kind": "system",
+      "event": {
+        "type": "job.submitted",
+        "provider": "0x9aDd64c65ed3ba1b06a068c18332ec95cF6A60d4",
+        "deliverable": "{\"schema_version\":\"antfleet.acp.review.deliverable.v0\",\"status\":\"complete\",\"job\":{\"acp_job_id\":\"66579\",\"antfleet_job_id\":\"pCp4x21YaCzBSXQlXoqqQ\",\"provider_agent\":\"AntFleet\",\"client_agent_wallet\":\"0x41390935cec56200bdd57553b7a9d721e25f2d7d\",\"status_url\":\"https://www.antfleet.dev/api/v1/acp/review-jobs/pCp4x21YaCzBSXQlXoqqQ\"},\"target\":{\"repo\":\"Virtual-Protocol/acp-node\",\"mode\":\"pr\",\"pr\":188,\"head_sha\":\"06761c45b4edc9f381aeeb4019ee3fc408ee3f8b\"},\"review\":{\"review_id\":\"926a4ab6-b057-44f1-b913-98b23b91f363\",\"agreement_mode\":\"unanimous\",\"reviewer_count\":2,\"degraded\":false,\"degraded_reason\":null,\"model_ids\":{\"openai\":\"gpt-5.5\",\"anthropic\":\"claude-opus-4-7\"},\"duration_ms\":131727},\"receipt\":{\"state\":\"finding_receipts_pending\",\"review_receipt_url\":\"https://www.antfleet.dev/receipts/review/926a4ab6-b057-44f1-b913-98b23b91f363\",\"finding_receipt_urls\":[],\"receipt_note\":\"Review receipt is ready. Finding receipts publish after fixes are detected and SHA-pinned.\"},\"findings\":[{\"finding_id\":\"926a4ab6-b057-44f1-b913-98b23b91f363-0\",\"title\":\"Local non-pending payable requests can still be accepted\",\"severity\":\"medium\",\"category\":\"bug\",\"confidence\":\"high\",\"evidence\":[{\"path\":\"src/acpJob.ts\",\"startLine\":256,\"endLine\":260,\"symbol\":\"AcpJob.payAndAcceptRequirement\",\"quote\":\"if (\\n      memo.type === MemoType.PAYABLE_REQUEST &&\\n      memo.state !== AcpMemoState.PENDING &&\\n      memo.payableDetails?.lzDstEid !== undefined &&\\n      memo.payableDetails?.lzDstEid !== 0\\n    )\"},{\"path\":\"src/acpJob.ts\",\"startLine\":262,\"endLine\":263,\"symbol\":\"AcpJob.payAndAcceptRequirement\",\"quote\":\"// Payable request memo required to be in pending state\\n      return;\"},{\"path\":\"src/acpJob.ts\",\"startLine\":384,\"endLine\":384,\"symbol\":\"AcpJob.payAndAcceptRequirement\",\"quote\":\"return await this.acpContractClient.handleOperation(operations);\"}],\"reasoning\":\"The comment states that payable request memos must be pending, but the condition only stops non-pending requests when lzDstEid is both defined and non-zero. A local payable request with state other than PENDING bypasses this guard and proceeds to approve allowances, sign the memo, create an evaluation memo, and submit operations. That can accept a stale/already-handled payable request or at least produce invalid side effects instead of enforcing the documented precondition.\",\"reproduction\":\"Create an AcpJob whose selected memo has `type === MemoType.PAYABLE_REQUEST`, `state !== AcpMemoState.PENDING`, and `payableDetails.lzDstEid` undefined or 0. Calling `payAndAcceptRequirement()` will skip the guard and submit acceptance operations.\",\"recommendation\":\"Use a guard such as `if (memo.type === MemoType.PAYABLE_REQUEST && memo.state !== AcpMemoState.PENDING) throw new AcpError(...)`; if cross-chain needs special handling, keep it separate from the state validation.\",\"whyTestsDoNotAlreadyCoverThis\":\"Existing coverage would need a non-PENDING local payable request; happy-path payable tests with pending state or cross-chain lzDstEid would not expose the extra lzDstEid predicates.\",\"suggestedRegressionTest\":\"Unit test payAndAcceptRequirement with a local PAYABLE_REQUEST in a non-PENDING state and assert that it throws and does not call approveAllowance, signMemo, createMemo, or handleOperation.\",\"minimumFixScope\":\"Change the payable-request state guard in payAndAcceptRequirement so every PAYABLE_REQUEST must be PENDING before approvals/signing are queued, and throw an AcpError instead of silently returning if the memo is not payable.\",\"requiresPolicyReview\":false,\"upstreamOrigin\":null,\"status\":\"open\",\"receipt_url\":null}]}",
+        "onChainJobId": "66579",
+        "deliverableHash": "0xdb8b92ee5af910416cabafaab78fd247a00ac81e75bf29dd71653ed52c883f44"
+      },
+      "chainId": 8453,
+      "timestamp": 1783491649580,
+      "onChainJobId": "66579"
+    },
+    {
+      "kind": "system",
+      "event": {
+        "type": "job.completed",
+        "reason": "0x417070726f766564000000000000000000000000000000000000000000000000",
+        "evaluator": "0x41390935CeC56200Bdd57553B7A9D721e25F2d7d",
+        "onChainJobId": "66579"
+      },
+      "chainId": 8453,
+      "timestamp": 1783491723672,
+      "onChainJobId": "66579"
+    }
+  ]
+}

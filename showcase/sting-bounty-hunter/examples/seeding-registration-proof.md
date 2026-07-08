@@ -192,10 +192,22 @@ acp provider submit --job-id 66550 --deliverable "$(cat proof/round-trip-deliver
 acp client complete --job-id 66550 --chain-id 8453 --reason "Zero-report schema verified"
 ```
 
+### Automation follow-up
+
+Job `66550` was executed via operator CLI for the first independent buyer
+proof. The automated intake path is now wired in `AntFleet/sting`:
+
+- **ACP provider worker:** merged in
+  [AntFleet/sting#60](https://github.com/AntFleet/sting/pull/60) —
+  `acp events listen` + `npm run acp:provider-worker` handles
+  `job.created` → set-budget → `job.funded` → track dispatch → deliverable
+  submit.
+- **Operator runbook:**
+  [`docs/operator/acp-provider-runbook.md`](https://github.com/AntFleet/sting/blob/main/docs/operator/acp-provider-runbook.md)
+
 ### What is still pending
 
-- **Automated provider worker** wired into the STING runtime (today the
-  round-trip was executed via operator CLI; AntFleet's PR-audit adapter is
-  the reference pattern).
+- **Production worker smoke** — run the merged worker against a funded job
+  (not manual CLI only).
 - **Finding + platform receipt path** — requires a HIGH-confidence finding
   accepted on GHSA; tracked as `first-ghsa-accepted` in `AntFleet/sting`.

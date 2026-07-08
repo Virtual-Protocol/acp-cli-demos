@@ -53,6 +53,11 @@
       "kind": "proof"
     },
     {
+      "label": "STING ACP provider worker (automated intake + delivery)",
+      "href": "https://github.com/AntFleet/sting/pull/60",
+      "kind": "docs"
+    },
+    {
       "label": "STING package README",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sting-bounty-hunter/README.md",
       "kind": "docs"

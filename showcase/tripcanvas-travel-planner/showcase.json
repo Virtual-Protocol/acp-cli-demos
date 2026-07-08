@@ -1,0 +1,93 @@
+{
+  "slug": "tripcanvas-travel-planner",
+  "title": "TripCanvas Travel Planner",
+  "tagline": "Turns saved travel Reels into a mapped trip plan with extracted places, reviewable agent reasoning, and an approval-first booking rail",
+  "description": "TripCanvas is a validated travel-planning prototype built around a small, reviewable agent workflow. The demo starts from saved Instagram travel Reels, extracts concrete Tokyo places, recommends a hotel base, and lays out day-by-day route sequences on a map. This public package stays narrow on purpose: it shares redacted proof from the prototype and a reusable skill describing the flow, without exposing private code or credentials.",
+  "status": "validated demo",
+  "topic": "agents",
+  "topics": [
+    "travel",
+    "trip-planning",
+    "maps",
+    "reels",
+    "agent-ui",
+    "workflow"
+  ],
+  "builder": {
+    "name": "Zhi Hao (@haotobuildzip)",
+    "url": "https://x.com/haotobuildzip"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/tripcanvas-travel-planner",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tripcanvas-travel-planner/examples/result-redacted.md",
+    "video": "https://www.youtube.com/watch?v=EoAxPk6OCdo",
+    "share": "https://www.youtube.com/watch?v=EoAxPk6OCdo",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20TripCanvas%20Travel%20Planner&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20workflow%20is%20clear%0A-%20The%20proof%20needs%20more%20runtime%20detail%0A-%20The%20skill%20is%20useful%20to%20reuse%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "acp"
+  ],
+  "visual": {
+    "kind": "youtube demo video",
+    "eyebrow": "travel-planning demo",
+    "title": "review before the agent pays",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tripcanvas-travel-planner/assets/review-flow.png",
+    "videoLabel": "Watch the TripCanvas demo on YouTube"
+  },
+  "skills": [
+    {
+      "name": "tripcanvas-travel-planner",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/tripcanvas-travel-planner/skills/tripcanvas-travel-planner",
+      "sourcePath": "showcase/tripcanvas-travel-planner/skills/tripcanvas-travel-planner",
+      "summary": "Reusable review-first workflow for turning saved travel links into extracted places, a mapped day plan, visible evidence, and an approval gate before any booking-style action.",
+      "install": "cp -R showcase/tripcanvas-travel-planner/skills/tripcanvas-travel-planner ~/.agents/skills/\ncp -R showcase/tripcanvas-travel-planner/skills/tripcanvas-travel-planner ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "TripCanvas demo video",
+      "href": "https://www.youtube.com/watch?v=EoAxPk6OCdo",
+      "kind": "video"
+    },
+    {
+      "label": "Astrail beta waitlist landing page",
+      "href": "https://astrail.xyz/",
+      "kind": "live"
+    },
+    {
+      "label": "Showcase package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tripcanvas-travel-planner/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Input-flow screenshot",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tripcanvas-travel-planner/assets/input-flow.png",
+      "kind": "proof"
+    },
+    {
+      "label": "Review-flow screenshot",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tripcanvas-travel-planner/assets/review-flow.png",
+      "kind": "proof"
+    },
+    {
+      "label": "Payment-complete screenshot",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tripcanvas-travel-planner/assets/payment-complete.png",
+      "kind": "proof"
+    },
+    {
+      "label": "Redacted result report",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tripcanvas-travel-planner/examples/result-redacted.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Reusable TripCanvas skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/tripcanvas-travel-planner/skills/tripcanvas-travel-planner",
+      "kind": "skill"
+    }
+  ],
+  "feedbackPrompts": [
+    "Does the screenshot and proof note make the TripCanvas flow understandable without private code?",
+    "What extra proof would make the approval-first booking rail easier to trust as a prototype?",
+    "Which part of this workflow is worth turning into a stronger reusable skill next?"
+  ]
+}

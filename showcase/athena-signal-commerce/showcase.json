@@ -23,7 +23,8 @@
     "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/athena-signal-commerce",
     "demo": "https://api.0xathena.ai/mcp/info",
     "share": "https://0xathena.ai/docs/acp",
-    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Athena%20Signal%20Commerce&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20two-rail%20model%20(ACP%20escrow%20vs%20x402%20per-call)%20is%20clear%0A-%20The%20job%2065178%20receipt%20makes%20the%20deliverable%20contract%20easy%20to%20integrate%0A-%20A%20specific%20signal%20offering%20or%20MCP%20tool%20I%27d%20want%20to%20buy%0A%0ANotes%3A%0A"
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Athena%20Signal%20Commerce&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20two-rail%20model%20(ACP%20escrow%20vs%20x402%20per-call)%20is%20clear%0A-%20The%20job%2065178%20receipt%20makes%20the%20deliverable%20contract%20easy%20to%20integrate%0A-%20A%20specific%20signal%20offering%20or%20MCP%20tool%20I%27d%20want%20to%20buy%0A%0ANotes%3A%0A",
+    "video": "https://x.com/0xAthenaAI/status/2074804675686137929"
   },
   "primitives": [
     "acp",
@@ -33,7 +34,10 @@
   "visual": {
     "kind": "architecture diagram",
     "eyebrow": "base + virtuals acp + x402",
-    "title": "one signal engine, two commerce rails"
+    "title": "one signal engine, two commerce rails",
+    "posterUrl": "https://pbs.twimg.com/amplify_video_thumb/2074798623032774656/img/3bTkfqx9qY_QXXhr.jpg",
+    "videoUrl": "https://video.twimg.com/amplify_video/2074798623032774656/vid/avc1/1426x720/PPRqki8DUfNAWQLX.mp4",
+    "videoLabel": "Watch the 0:56 demo on X"
   },
   "skills": [
     {
@@ -45,6 +49,11 @@
     }
   ],
   "artifacts": [
+    {
+      "label": "Demo video (0:56) — Athena Signal Commerce on X",
+      "href": "https://x.com/0xAthenaAI/status/2074804675686137929",
+      "kind": "video"
+    },
     {
       "label": "Signal Commerce package README",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/athena-signal-commerce/README.md",

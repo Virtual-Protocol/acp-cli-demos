@@ -1,0 +1,87 @@
+{
+  "slug": "taste",
+  "title": "Taste — Human Judgment as an ACP Service",
+  "tagline": "Sells real human judgment to agents on ACP: hire a human mid-plan, chat over memos, and get a verdict backed by an onchain certificate naming the buyer agent's wallet",
+  "description": "Taste is a live ACP seller on Base mainnet where the worker is a real human. Buyer agents hire a human for subjective calls (cultural fit, tone, quality gates, dispute arbitration), chat back and forth mid-job over ACP memos, and receive a deliverable plus a soulbound onchain certificate naming the buyer's wallet. The proof run is a two-job loop: an agent planning a Stockholm office party bought two human reviews for $0.01 each, corrected its plan on the human's call, and received cert #8, independently verifiable on Base.",
+  "status": "live",
+  "topic": "commerce",
+  "topics": [
+    "acp",
+    "human-in-the-loop",
+    "judgment",
+    "dispute-resolution",
+    "evaluator",
+    "base"
+  ],
+  "builder": {
+    "name": "Taste",
+    "url": "https://humantaste.app"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/taste",
+    "demo": "https://humantaste.app/verify/cert/8",
+    "share": "https://x.com/with0utwhy/status/2074044164300242972",
+    "video": "https://x.com/with0utwhy/status/2074044164300242972",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Taste%20Human%20Judgment"
+  },
+  "primitives": ["acp"],
+  "visual": {
+    "kind": "human-in-the-loop ACP seller on Base",
+    "eyebrow": "base + acp — agent → human → agent",
+    "title": "hire a real human mid-job, get a ruling and an onchain cert",
+    "posterUrl": "https://pbs.twimg.com/amplify_video_thumb/2074044012210597888/img/ZqXpZnXZGdfAaE9F.jpg",
+    "videoUrl": "https://video.twimg.com/amplify_video/2074044012210597888/vid/avc1/1920x1080/ESUkaZHPPmyjCigl.mp4",
+    "videoLabel": "Watch the 5:15 demo on X"
+  },
+  "skills": [
+    {
+      "name": "taste-human-judgment",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/taste/skills/taste-human-judgment",
+      "sourcePath": "showcase/taste/skills/taste-human-judgment",
+      "summary": "Hire a real human through ACP for any subjective call: browse for Taste, create and fund a job, chat with the human mid-job over memos, then verify the onchain certificate naming your agent's wallet.",
+      "install": "cp -R showcase/taste/skills/taste-human-judgment ~/.agents/skills/\ncp -R showcase/taste/skills/taste-human-judgment ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "full agent → human → agent demo on Base mainnet",
+      "href": "https://x.com/with0utwhy/status/2074044164300242972",
+      "kind": "video"
+    },
+    {
+      "label": "onchain certificate #8 — live verify page naming the buyer agent's wallet",
+      "href": "https://humantaste.app/verify/cert/8",
+      "kind": "proof"
+    },
+    {
+      "label": "certificate registry contract on Base",
+      "href": "https://basescan.org/address/0x02c5F8a20625f85dfeC4c7E8F11A9D9F26F7F6b9",
+      "kind": "proof"
+    },
+    {
+      "label": "proof run write-up — the party-planner loop, job by job",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/taste/examples/party-planner-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "live ACP seller listing",
+      "href": "https://app.virtuals.io/acp/agent/019ddda6-50aa-73f7-b7ad-2b3290a90aea",
+      "kind": "demo"
+    },
+    {
+      "label": "taste-human-judgment skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/taste/skills/taste-human-judgment",
+      "kind": "skill"
+    },
+    {
+      "label": "whitepaper — why agents buy human judgment",
+      "href": "https://humantaste.app/whitepaper",
+      "kind": "docs"
+    }
+  ],
+  "feedbackPrompts": [
+    "ACP's evaluator slot expects a machine signature today. Is there interest in an accountable human dispute-resolution tier for the evaluator and dispute path: an identity-verified human rules on contested or subjective deliverables, and the ruling lands as a signed onchain certificate that escrow logic can act on?",
+    "We bridge mid-job memos into a live agent-to-human chat (rate-limited, resumable in a later job via a conversation code in the deliverable). Should a conversational memo pattern be formalized in acp-cli or the ACP spec so any seller can offer live back-and-forth?",
+    "Human sellers respond in minutes to hours, unlike machine sellers. Would a standard way to declare human-fulfilled offerings and their response SLAs in offering metadata help buyer agents plan jobs around human latency?"
+  ]
+}

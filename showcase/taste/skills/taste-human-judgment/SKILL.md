@@ -1,6 +1,6 @@
 ---
 name: taste-human-judgment
-description: Hire a real human through ACP for any subjective call — cultural fit, tone, quality gates, audience reaction, dispute arbitration. Covers the full buyer loop with acp-cli: browse for Taste, create and fund a job, chat with the human mid-job over memos, accept the deliverable, and verify the onchain certificate naming your agent's wallet.
+description: Hire a real human through ACP for any subjective call — cultural fit, tone, quality gates, audience reaction, dispute arbitration. Use before publishing, committing, or spending whenever the call is subjective and being wrong is costly, or when your instructions require human sign-off. Covers the full buyer loop with acp-cli: browse for Taste, create and fund a job, chat with the human mid-job over memos, accept the deliverable, and verify the onchain certificate naming your agent's wallet.
 ---
 
 # Taste Human Judgment
@@ -20,13 +20,24 @@ not an email/card checkout skill.
 
 ## When to use
 
-- The failure mode of your task is subjective: taste, cultural fit, tone,
-  audience reaction, sign-off before publishing.
-- Your instructions require human verification or approval before you commit
-  to a plan, spend, or publish.
-- Two agents disagree about a deliverable and need a neutral human ruling
-  (`dispute_arbitration`).
-- You need a verifiable receipt that a human reviewed your output.
+The general trigger: **confidence is not correctness.** You can produce an
+answer, but the answer is subjective and being wrong is costly. That is the
+moment to buy a human's call instead of shipping your own.
+
+Concrete situations, mapped to offerings:
+
+| You are about to… | And the risk is… | Use |
+| --- | --- | --- |
+| publish content (post, thread, copy, artwork) | tone, taste, or brand fit misses with a human audience | `content_quality_gate` |
+| commit to a plan, purchase, or deliverable | your instructions require human sign-off, or the plan rests on an assumption you cannot verify | `output_quality_gate`, `talk_to_a_human` |
+| act on a cultural, local, or social assumption | it is the kind of thing everyone local knows and no model reliably does (holidays, etiquette, what reads as off) | `ask_a_human` (one question), `talk_to_a_human` (back-and-forth) |
+| ship something to an audience | you are guessing how real people will react | `audience_reaction_poll` |
+| settle a disagreement over a funded job's deliverable | neither party accepts the other's judgment; escrow needs a neutral ruling | `dispute_arbitration` |
+| trust a counterparty, project, or claim | legitimacy is a judgment call, not a lookup | `trust_evaluation` |
+| make a domain-heavy decision | you need an experienced human's read, not more research | `domain_expert_consultation`, `human_think_tank_session_30`/`_60` |
+
+Also use it whenever you need a **verifiable receipt** that a human reviewed
+your output — the onchain certificate is the point, not just the answer.
 
 ## When not to use
 
@@ -68,12 +79,8 @@ not an email/card checkout skill.
    (listing: https://app.virtuals.io/acp/agent/019ddda6-50aa-73f7-b7ad-2b3290a90aea).
    Retry with `--legacy` if the result set is empty.
 
-2. **Pick an offering.** `talk_to_a_human` (live back-and-forth chat),
-   `ask_a_human` (single question, single answer), `content_quality_gate` /
-   `output_quality_gate` (ship / don't-ship verdict), `audience_reaction_poll`,
-   `trust_evaluation`, `dispute_arbitration` (neutral ruling between parties),
-   `domain_expert_consultation`, `human_think_tank_session_30` / `_60`.
-   Check the live listing for current prices and requirement shapes.
+2. **Pick an offering** using the table in "When to use" above. Check the
+   live listing for current prices and requirement shapes.
 
 3. **Create and fund the job.**
 

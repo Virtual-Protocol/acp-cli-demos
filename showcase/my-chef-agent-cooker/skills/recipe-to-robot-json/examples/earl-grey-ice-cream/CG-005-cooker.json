@@ -1,0 +1,181 @@
+{
+ "recipe_id": "CG-005",
+ "title": {
+  "fr": "Glace bergamote Earl Grey",
+  "en": "Earl Grey Bergamot Ice Cream"
+ },
+ "category": "Crème glacée",
+ "domain": "glaces",
+ "ingredients": [
+  {
+   "name": "lait_entier",
+   "unit": "g",
+   "qty": 620
+  },
+  {
+   "name": "creme_fleurette_35",
+   "unit": "g",
+   "qty": 200
+  },
+  {
+   "name": "beurre_motte",
+   "unit": "g",
+   "qty": 30
+  },
+  {
+   "name": "sucre_semoule",
+   "unit": "g",
+   "qty": 120
+  },
+  {
+   "name": "glucose_atomise",
+   "unit": "g",
+   "qty": 30
+  },
+  {
+   "name": "trimoline",
+   "unit": "g",
+   "qty": 20
+  },
+  {
+   "name": "cremodан",
+   "unit": "g",
+   "qty": 5
+  },
+  {
+   "name": "the_earl_grey",
+   "unit": "g",
+   "qty": 40
+  }
+ ],
+ "steps": [
+  {
+   "step": 1,
+   "instruction_fr": "1. Infusion Earl Grey à chaud — Chauffer le lait entier à 60°C. Incorporer les 40g de thé Earl Grey. Couvrir hermétiquement et infuser 15 minutes. Chinoiser très finement en pressant légèrement les feuilles — attention à ne pas trop presser pour éviter l'amertume.",
+   "actions": [
+    "mix",
+    "heat",
+    "infuse",
+    "strain"
+   ],
+   "temperatures_c": [
+    60.0
+   ],
+   "durations_min": [
+    15.0
+   ],
+   "pod_dispense": true,
+   "heating_profile": {
+    "target_c": 60.0,
+    "hold_min": 15.0
+   }
+  },
+  {
+   "step": 2,
+   "instruction_fr": "2. Mélange du mix — Chauffer le lait infusé + crème à 40°C. Incorporer en pluie : sucre, glucose atomisé, crèmodan. Ajouter Trimoline et beurre motte.",
+   "actions": [
+    "mix",
+    "heat",
+    "infuse"
+   ],
+   "temperatures_c": [
+    40.0
+   ],
+   "durations_min": [],
+   "pod_dispense": true,
+   "heating_profile": {
+    "target_c": 40.0,
+    "hold_min": 0
+   }
+  },
+  {
+   "step": 3,
+   "instruction_fr": "3. Pasteurisation — Porter à 85°C, maintenir 30 secondes. Chinoiser finement.",
+   "actions": [
+    "heat",
+    "strain"
+   ],
+   "temperatures_c": [
+    85.0
+   ],
+   "durations_min": [
+    0.5
+   ],
+   "pod_dispense": false,
+   "heating_profile": {
+    "target_c": 85.0,
+    "hold_min": 0.5
+   }
+  },
+  {
+   "step": 4,
+   "instruction_fr": "4. Refroidissement rapide — Descendre à 4°C rapidement.",
+   "actions": [
+    "cool"
+   ],
+   "temperatures_c": [
+    4.0
+   ],
+   "durations_min": [],
+   "pod_dispense": false,
+   "heating_profile": {
+    "target_c": 4.0,
+    "hold_min": 0
+   }
+  },
+  {
+   "step": 5,
+   "instruction_fr": "5. Maturation longue — 18 heures à 4°C filmé au contact — maturation prolongée pour fixer les arômes délicats de bergamote.",
+   "actions": [
+    "rest"
+   ],
+   "temperatures_c": [
+    4.0
+   ],
+   "durations_min": [
+    1080.0
+   ],
+   "pod_dispense": false,
+   "heating_profile": {
+    "target_c": 4.0,
+    "hold_min": 1080.0
+   }
+  },
+  {
+   "step": 6,
+   "instruction_fr": "6. Turbinage — Turbiner jusqu'à -6°C. Arôme bergamote très délicat — ne pas surturbiner.",
+   "actions": [
+    "freeze"
+   ],
+   "temperatures_c": [
+    -6.0
+   ],
+   "durations_min": [],
+   "pod_dispense": false,
+   "heating_profile": {
+    "target_c": -6.0,
+    "hold_min": 0
+   }
+  },
+  {
+   "step": 7,
+   "instruction_fr": "7. Surgélation — Surgeler à -35°C, stocker à -18°C.",
+   "actions": [
+    "freeze"
+   ],
+   "temperatures_c": [
+    -35.0,
+    -18.0
+   ],
+   "durations_min": [],
+   "pod_dispense": false,
+   "heating_profile": {
+    "target_c": -18.0,
+    "hold_min": 0
+   }
+  }
+ ],
+ "procedure_en": "1. Hot Earl Grey infusion — Heat the whole milk to 60°C. Add the 40g of Earl Grey tea. Cover tightly and infuse 15 minutes. Strain very finely, pressing the leaves lightly — do not press too hard or bitterness will develop.\n2. Mixing the base — Heat the infused milk + cream to 40°C. Rain in: sugar, atomized glucose, Cremodan. Add Trimoline and block butter.\n3. Pasteurization — Bring to 85°C, hold 30 seconds. Strain finely.\n4. Rapid cooling — Bring down to 4°C quickly.\n5. Extended maturation — 18 hours at 4°C filmed in contact — prolonged maturation to set the delicate bergamot aromas.\n6. Churning — Churn to -6°C. Very delicate bergamot aroma — do not over-churn.\n7. Deep-freezing — Blast-freeze at -35°C, store at -18°C.",
+ "chef_notes": "Recette signature palace. La bergamote est très volatile — ne jamais dépasser 60°C pour l'infusion. Chinoiser sans presser excessivement. Servir idéalement avec un financier pistache ou des madeleines.",
+ "format": "cooker.recipe.v1-draft"
+}

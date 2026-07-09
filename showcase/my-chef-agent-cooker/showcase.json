@@ -1,0 +1,81 @@
+{
+  "slug": "my-chef-agent-cooker",
+  "title": "My Chef Agent Cooker — Recipe-to-Robot JSON Converter",
+  "tagline": "A working chef's AI agent converts 215 real haute cuisine recipes into machine-executable JSON for culinary robots such as Posha, Aniai, and XRobotics.",
+  "description": "My Chef Agent Cooker is built on an authentic professional French haute cuisine database — 215 recipes developed over 20 years in Michelin-starred kitchens and Parisian palace hotels. This contribution packages its core B2B workflow as a reusable skill: parse a professional recipe (free text or structured JSON), extract machine parameters (temperatures, durations, actions), and emit target-specific JSON profiles for three culinary robot families. EconomyOS provides the agent's registered identity, agent email, and Venice-powered inference credits that fund the conversion workloads. Not affiliated with or endorsed by Posha, Aniai, or XRobotics; trademarks belong to their respective owners. Output formats are independent drafts designed to be mapped onto official vendor specs.",
+  "status": "validated demo",
+  "topic": "skills",
+  "topics": ["skills", "information", "commerce"],
+  "hidden": false,
+  "builder": {
+    "name": "Jean-Matthieu Frederic",
+    "url": "https://github.com/jeanmatthieu58"
+  },
+  "links": {
+    "repo": "https://github.com/jeanmatthieu58/spin-brigade",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/my-chef-agent-cooker",
+    "video": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/my-chef-agent-cooker/assets/demo.mp4",
+    "share": "https://venice.ai/c/my-chef-agent-cooker",
+    "feedback": ""
+  },
+  "primitives": ["email"],
+  "visual": {
+    "kind": "demo video",
+    "eyebrow": "venice character + real chef database",
+    "title": "ask the chef, get the palace recipe",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/my-chef-agent-cooker/assets/poster.jpg",
+    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/my-chef-agent-cooker/assets/demo.mp4",
+    "videoLabel": "Watch the 1:03 demo"
+  },
+  "skills": [
+    {
+      "name": "recipe-to-robot-json",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/my-chef-agent-cooker/skills/recipe-to-robot-json",
+      "sourcePath": "showcase/my-chef-agent-cooker/skills/recipe-to-robot-json",
+      "summary": "Converts professional recipes into machine-executable JSON for culinary robots: step segmentation, temperature/duration extraction, action mapping, and target-specific profiles for cooker, grill, and dispensing robot families.",
+      "install": "cp -R showcase/my-chef-agent-cooker/skills/recipe-to-robot-json ~/.agents/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Demo video (Safari screen recording, 1:03)",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/my-chef-agent-cooker/assets/demo.mp4",
+      "kind": "video"
+    },
+    {
+      "label": "Screenshot — agent identity and question",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/my-chef-agent-cooker/assets/screenshot-agent.jpg",
+      "kind": "proof"
+    },
+    {
+      "label": "Screenshot — real palace recipe with anti-hallucination chef note",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/my-chef-agent-cooker/assets/screenshot-recipe.jpg",
+      "kind": "proof"
+    },
+    {
+      "label": "Redacted result report",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/my-chef-agent-cooker/skills/recipe-to-robot-json/examples/earl-grey-ice-cream/result-redacted.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/my-chef-agent-cooker/skills/recipe-to-robot-json/examples/earl-grey-ice-cream/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/my-chef-agent-cooker/skills/recipe-to-robot-json",
+      "kind": "skill"
+    },
+    {
+      "label": "Live agent on Venice",
+      "href": "https://venice.ai/c/my-chef-agent-cooker",
+      "kind": "demo"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which culinary robot vendor spec should the converter target next?",
+    "Should the skill support batch scaling (e.g. x4 professional batches) in the output profiles?",
+    "What would make this reusable for savory cuisine lines (grill stations, sauce bases)?"
+  ]
+}

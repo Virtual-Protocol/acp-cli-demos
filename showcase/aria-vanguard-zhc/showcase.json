@@ -7,11 +7,8 @@
   "topic": "agents",
   "topics": [
     "agents",
-    "base",
-    "acp",
     "security",
-    "token-safety",
-    "economyos"
+    "commerce"
   ],
   "builder": {
     "name": "GoldenFarFR",

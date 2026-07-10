@@ -1,7 +1,7 @@
 {
   "slug": "my-chef-agent-cooker",
   "title": "My Chef Agent Cooker — Recipe-to-Robot JSON Converter",
-  "tagline": "A working chef's AI agent converts 215 real haute cuisine recipes into machine-executable JSON for culinary robots such as Posha, Aniai, and XRobotics.",
+  "tagline": "Convert 215 real haute cuisine recipes into machine-executable JSON for culinary robots such as Posha, Aniai, and XRobotics",
   "description": "My Chef Agent Cooker is built on an authentic professional French haute cuisine database — 215 recipes developed over 20 years in Michelin-starred kitchens and Parisian palace hotels. This contribution packages its core B2B workflow as a reusable skill: parse a professional recipe (free text or structured JSON), extract machine parameters (temperatures, durations, actions), and emit target-specific JSON profiles for three culinary robot families. EconomyOS provides the agent's registered identity, agent email, and Venice-powered inference credits that fund the conversion workloads. Not affiliated with or endorsed by Posha, Aniai, or XRobotics; trademarks belong to their respective owners. Output formats are independent drafts designed to be mapped onto official vendor specs.",
   "status": "validated demo",
   "topic": "skills",
@@ -16,7 +16,7 @@
     "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/my-chef-agent-cooker",
     "video": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/my-chef-agent-cooker/assets/demo.mp4",
     "share": "https://venice.ai/c/my-chef-agent-cooker",
-    "feedback": ""
+    "feedback": "https://github.com/jeanmatthieu58/spin-brigade/issues"
   },
   "primitives": ["email"],
   "visual": {
@@ -50,6 +50,11 @@
     {
       "label": "Screenshot — real palace recipe with anti-hallucination chef note",
       "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/my-chef-agent-cooker/assets/screenshot-recipe.jpg",
+      "kind": "proof"
+    },
+    {
+      "label": "EconomyOS compute dashboard — active Spark inference credits grant (Tier 1, week 2 of 4)",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/my-chef-agent-cooker/assets/compute-dashboard.jpg",
       "kind": "proof"
     },
     {

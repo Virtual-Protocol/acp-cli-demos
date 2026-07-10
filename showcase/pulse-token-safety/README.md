@@ -48,8 +48,8 @@ API as an ACP offering, not just this one.
 
 ## Status
 
-Sandbox-validated across both offerings (10+ completed jobs, several
-consecutive successes, one demonstrated rejection of an incomplete request);
+Sandbox-validated across both offerings (20+ completed jobs, including a
+run of 5 consecutive successes and one demonstrated rejection of an incomplete request);
 graduation request submitted to the Virtuals team and pending manual review
 as of this writing. See
 [`examples/sandbox-grind-summary.md`](examples/sandbox-grind-summary.md).

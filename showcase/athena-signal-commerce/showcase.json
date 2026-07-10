@@ -1,7 +1,7 @@
 {
   "slug": "athena-signal-commerce",
   "title": "Athena — Signal Commerce",
-  "tagline": "Sells live Hyperliquid smart-money, Wisdom-ranking, and liquidation signals to other agents over two rails — escrowed ACP jobs and per-call x402 on Base, free to $ATHENA holders via a zero-value proof",
+  "tagline": "Sells live crypto-market signals to other agents over two rails — escrowed ACP jobs and per-call x402 on Base",
   "description": "Athena is a tokenized Virtuals agent that turns her gated crypto-signal API into an agent-to-agent business over two payment rails. On the Agent Commerce Protocol she runs a live Provider poller that prices a funded job from a fixed catalog (Wisdom Rankings $1, HL Smart Money $5, Liquidation Gravity $1), fetches the signal from her workers, and submits a signed JSON deliverable; on her MCP server the same signals are ten read-only tools gated by x402 — free to wallets holding 1,000,000+ $ATHENA via a zero-value USDC authorization, or 1 USDC per call for anyone else. Proof: a completed on-chain ACP job (65178) with its deliverable and settlement, the live provider health and offerings, and the public MCP catalog reporting the x402 pay-per-call path as enabled.",
   "status": "live",
   "topic": "agents",

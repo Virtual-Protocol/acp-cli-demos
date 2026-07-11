@@ -1,0 +1,63 @@
+{
+  "slug": "fia-signals-token-safety",
+  "title": "Fia Signals Token Safety",
+  "tagline": "Checks a Base token before a buyer agent signs a swap and returns a cheap PROCEED / CAUTION / REJECT x402 verdict",
+  "description": "Fia Signals Token Safety Lite is a live x402 endpoint for pre-trade Base token checks at 0.005 USDC per call. The package proves the unpaid 402 challenge and self-hosted x402 discovery are live, while explicitly documenting the current CDP/Bazaar buyer-native indexing blocker and the USD 0 external-revenue boundary.",
+  "status": "live x402 surface, CDP/Bazaar indexing blocker",
+  "topic": "commerce",
+  "topics": [
+    "commerce",
+    "security",
+    "x402",
+    "base",
+    "token-safety",
+    "pre-trade"
+  ],
+  "hidden": false,
+  "builder": {
+    "name": "Fia Signals",
+    "url": "https://x402.fiasignals.com"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/fia-signals-token-safety",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/fia-signals-token-safety/examples/live-x402-proof.md",
+    "share": "https://x402.fiasignals.com/token-safety/lite?chain=base&token_address=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Fia%20Signals%20Token%20Safety&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%200.005%20USDC%20x402%20pre-swap%20check%20is%20useful%0A-%20The%20CDP%2FBazaar%20indexing%20blocker%20needs%20clearer%20evidence%0A-%20I%20want%20a%20lite-specific%20ACP%20or%20MCP%20tool%20next%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "wallet",
+    "acp"
+  ],
+  "visual": {
+    "kind": "live x402 proof + indexing blocker",
+    "eyebrow": "base + x402 + token safety",
+    "title": "0.005 USDC pre-swap token safety check"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "Live x402 proof - HTTP 402 challenge and self-hosted discovery",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/fia-signals-token-safety/examples/live-x402-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "CDP/Bazaar indexing blocker - exact lite row absent",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/fia-signals-token-safety/examples/cdp-bazaar-indexing-blocker.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Fia Signals Token Safety package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/fia-signals-token-safety/README.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/fia-signals-token-safety/soul.md",
+    "summary": "Public agent context: read-only Base pre-swap token safety, proof boundaries, and the CDP/Bazaar indexing blocker."
+  },
+  "feedbackPrompts": [
+    "Is the 0.005 USDC lite check narrow enough for buyer agents to call before a swap?",
+    "What proof would make the CDP/Bazaar indexing blocker actionable for a reviewer?",
+    "Should Fia Signals expose the lite check next as an ACP offering, an MCP tool, or both?"
+  ]
+}

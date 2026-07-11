@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cypher Tempre Self-Model"
+  short_description: "Verifiable memory and resumable audits"
+  default_prompt: "Use $cypher-tempre-self-model to verify my local Timechain, recall grounded evidence, and seal this turn."

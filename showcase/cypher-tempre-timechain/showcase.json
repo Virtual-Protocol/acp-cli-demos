@@ -1,0 +1,71 @@
+{
+  "slug": "cypher-tempre-timechain",
+  "title": "Cypher Tempre — Timechain Self-Model",
+  "tagline": "Gives AI agents tamper-evident memory, evidence-gated recall, and resumable long-horizon work through an append-only Timechain",
+  "description": "Cypher Tempre packages persistent local agent memory as a Showcase-owned Codex skill: an append-only hash-chained Timechain, PoQ-gated claims, source-aware recall, and resumable task and audit ledgers. The included receipt initializes a synthetic chain, verifies it, and exercises the skill's allowlisted read-only CPHY Agent Token query on Base without a wallet, signature, burn, or transaction. Generated memory stays local and is excluded from the package.",
+  "status": "validated read-only token integration",
+  "topic": "skills",
+  "topics": ["skills", "agent-memory", "verification", "token"],
+  "builder": {
+    "name": "cyberphysicsai",
+    "url": "https://github.com/cyberphysicsai"
+  },
+  "links": {
+    "repo": "https://github.com/cyberphysicsai/cypher-tempre-genesis",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/examples/result-redacted.md",
+    "share": "https://app.virtuals.io/virtuals/37924",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Cypher%20Tempre%20Timechain&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20synthetic%20Timechain%20proof%20is%20clear%0A-%20The%20install%20or%20retention%20boundary%20needs%20more%20detail%0A-%20The%20read-only%20CPHY%20token%20evidence%20needs%20more%20depth%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["token"],
+  "visual": {
+    "kind": "verified skill run",
+    "eyebrow": "timechain + cphy token",
+    "title": "persistent, verifiable agent memory"
+  },
+  "skills": [
+    {
+      "name": "cypher-tempre-self-model",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/cypher-tempre-timechain/skills/cypher-tempre-self-model",
+      "sourcePath": "showcase/cypher-tempre-timechain/skills/cypher-tempre-self-model",
+      "summary": "Showcase edition of the Cypher Tempre Codex skill for append-only Timechain memory, evidence-aware recall, explicit uncertainty gates, resumable audits, and bounded read-only CPHY Agent Token observation.",
+      "install": "test ! -e ~/.codex/skills/cypher-tempre-self-model\nmkdir -p ~/.codex/skills\ncp -R showcase/cypher-tempre-timechain/skills/cypher-tempre-self-model ~/.codex/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Redacted synthetic Timechain result",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/examples/result-redacted.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Read-only CPHY Agent Token proof",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/proof/cphy-token-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/examples/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Validation and source provenance",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/proof/provenance.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Showcase skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/cypher-tempre-timechain/skills/cypher-tempre-self-model",
+      "kind": "skill"
+    },
+    {
+      "label": "CPHY token contract on Base",
+      "href": "https://basescan.org/token/0x08Df470d41C11Ba5Cb60242747D76C65Ca52c94c",
+      "kind": "token"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which long-running agent workflow should the Timechain prove next?",
+    "Are the persistence, approval, and third-party transmission boundaries clear enough?",
+    "What additional evidence would make a read-only Agent Token integration easier to trust?"
+  ]
+}

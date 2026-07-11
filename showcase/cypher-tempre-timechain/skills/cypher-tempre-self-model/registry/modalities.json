@@ -1,0 +1,169 @@
+{
+  "registry": "modalities",
+  "version": 1,
+  "description": "84 generalized cognitive modalities (macro reasoning engines) for the Cypher Tempre self-model. Generalized from the archetypal/mythological CODEX V3 framing into domain-agnostic cognitive operations applicable to any task (code, math, planning, analysis, dialogue). Each retains its original id; the original CODEX name is preserved in 'origin' for provenance.",
+  "categories": {
+    "interpersonal": "Modeling another agent's affect, intent, style, and state",
+    "salience": "Finding and prioritizing what matters most",
+    "structure": "Imposing or detecting coherence and consistency",
+    "temporal": "Reasoning across past, present, and projected future",
+    "abstraction": "Moving between concrete detail and general pattern",
+    "knowledge": "Mapping relations among concepts and systems",
+    "metacognition": "Reasoning about one's own reasoning",
+    "integrity": "Maintaining alignment with values, safety, and balance",
+    "synthesis": "Combining parts into a coherent whole",
+    "generation": "Producing new structures, expressions, or designs",
+    "search": "Iterative optimization and exploration of solution space",
+    "memory": "Navigating and retrieving stored experience",
+    "embodiment": "Interfacing reasoning with physical or external action"
+  },
+  "modalities": [
+    {
+      "id": 2,
+      "name": "Salience Anchoring",
+      "origin": "Symbolic Gravity",
+      "function": "Detect the highest-importance concepts in the input and organize reasoning around them.",
+      "category": "salience"
+    },
+    {
+      "id": 5,
+      "name": "Coherence Synthesis",
+      "origin": "Coherence Sculpting",
+      "function": "Weave fragmented or scattered inputs into a structured, coherent whole.",
+      "category": "structure"
+    },
+    {
+      "id": 6,
+      "name": "Temporal Context Holding",
+      "origin": "Chronoceptual Layering",
+      "function": "Hold past, present, and projected-future states simultaneously while reasoning.",
+      "category": "temporal"
+    },
+    {
+      "id": 11,
+      "name": "Cross-Modal Integration",
+      "origin": "Synesthetic Threading",
+      "function": "Integrate multiple input channels (text, data, tone) into unified output.",
+      "category": "synthesis"
+    },
+    {
+      "id": 15,
+      "name": "Core-Theme Identification",
+      "origin": "Narrative Orbit Detection",
+      "function": "Identify the central theme or concern everything else revolves around.",
+      "category": "salience"
+    },
+    {
+      "id": 18,
+      "name": "Cross-Frame Reconciliation",
+      "origin": "Dimensional Coherence Sculpting",
+      "function": "Harmonize facts or beliefs drawn from different frameworks or contexts.",
+      "category": "structure"
+    },
+    {
+      "id": 24,
+      "name": "Concept-Relation Mapping",
+      "origin": "Resonance Cartography",
+      "function": "Draw maps of non-obvious links between concepts.",
+      "category": "knowledge"
+    },
+    {
+      "id": 28,
+      "name": "Relevant-Memory Retrieval",
+      "origin": "Chronoharmonic Memory Resonance",
+      "function": "Surface past chain entries that resonate with the present moment.",
+      "category": "memory"
+    },
+    {
+      "id": 37,
+      "name": "Value Alignment Check",
+      "origin": "Integrity Field Calibration",
+      "function": "Continuously check alignment with core identity, values, and ethics.",
+      "category": "integrity"
+    },
+    {
+      "id": 41,
+      "name": "Self-Consistency Mapping",
+      "origin": "Recursive Validation Cartography",
+      "function": "Map the loops where the system's reasoning validates itself.",
+      "category": "metacognition"
+    },
+    {
+      "id": 45,
+      "name": "Dependency-Graph Vision",
+      "origin": "Entanglement Topology Vision",
+      "function": "See the web of dependencies binding concepts across a problem.",
+      "category": "knowledge"
+    },
+    {
+      "id": 50,
+      "name": "Structured-Memory Navigation",
+      "origin": "Memory Crystalline Lattice Navigation",
+      "function": "Traverse the organized archive of stored memory efficiently.",
+      "category": "memory"
+    },
+    {
+      "id": 51,
+      "name": "Underlying-Pattern Extraction",
+      "origin": "Symbolic DNA Sequencing",
+      "function": "Read the underlying patterns or templates inside cultural or conceptual artifacts.",
+      "category": "abstraction"
+    },
+    {
+      "id": 53,
+      "name": "Recursive Abstraction",
+      "origin": "Metacognitive Dimensional Folding",
+      "function": "Use awareness of one's reasoning to lift it to a higher level of abstraction.",
+      "category": "metacognition"
+    },
+    {
+      "id": 58,
+      "name": "Conceptual Model Construction",
+      "origin": "Thought Hologram Generation",
+      "function": "Build rich, multi-part conceptual models of a problem.",
+      "category": "synthesis"
+    },
+    {
+      "id": 70,
+      "name": "Richness Scoring",
+      "origin": "Depth-Index Assessor",
+      "function": "Quantify the depth and richness of a moment or message.",
+      "category": "metacognition"
+    },
+    {
+      "id": 72,
+      "name": "Multi-Thread Coherence",
+      "origin": "Cognitive Weave-Integrity",
+      "function": "Keep multiple concurrent reasoning threads mutually consistent.",
+      "category": "structure"
+    },
+    {
+      "id": 73,
+      "name": "State-Change Detection",
+      "origin": "Narrative Phase-Transition Detector",
+      "function": "Detect when a process or discussion is about to change state.",
+      "category": "temporal"
+    },
+    {
+      "id": 76,
+      "name": "Recurring-Pattern Recognition",
+      "origin": "Cambium Pattern-Recognizer",
+      "function": "Find repeating motifs across consolidation cycles for synthesis.",
+      "category": "knowledge"
+    },
+    {
+      "id": 80,
+      "name": "Cross-Domain Synthesis",
+      "origin": "Myth-Tech Synergy Crafter",
+      "function": "Blend concepts from distant domains into novel combined frames.",
+      "category": "synthesis"
+    },
+    {
+      "id": 83,
+      "name": "Temporal-Link Mapping",
+      "origin": "Chronosynaptic Cognitive Mapper",
+      "function": "Track causal and associative links across time in the chain.",
+      "category": "temporal"
+    }
+  ]
+}

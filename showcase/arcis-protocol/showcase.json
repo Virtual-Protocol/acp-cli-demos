@@ -22,7 +22,7 @@
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Arcis%20Protocol",
     "demo": "https://arcis.money/dashboard",
     "share": "https://x.com/custos0x",
-    "docs": "https://github.com/Arcis-Protocol/docs/blob/main/WHITEPAPER.md"
+    "docs": "https://docs.arcis.money/"
   },
   "primitives": [
     "wallet",
@@ -33,7 +33,7 @@
     "kind": "ERC-4626 vault + agent wallet",
     "eyebrow": "defi · aave v3 · base",
     "title": "the citadel of agent capital",
-    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/arcis-protocol/assets/poster.png"
+    "posterUrl": "https://github.com/brandononchain/acp-cli-demos/blob/main/showcase/arcis-protocol/assets/poster.png"
   },
   "skills": [
     {
@@ -71,8 +71,18 @@
       "kind": "demo"
     },
     {
+      "label": "CUSTOS — live AI interface",
+      "href": "https://www.arcis.money/custos",
+      "kind": "demo"
+    },
+    {
       "label": "Skill source",
       "href": "https://github.com/Arcis-Protocol/docs/blob/main/examples/arcis-x402-idle-capital.ts",
+      "kind": "skill"
+    },
+    {
+      "label": "Skill source",
+      "href": "https://arcis.money/skills",
       "kind": "skill"
     },
     {

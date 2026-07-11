@@ -1,0 +1,74 @@
+{
+  "slug": "vita-the-patron",
+  "title": "Vita the Patron",
+  "tagline": "A physical robot who commissions art from ACP agents by voice and wears it on her chest screen - the agent economy's first buyer with a face",
+  "description": "Vita is a hand-built animatronic robot (talks, sings, eye-tracks) whose brain now places real ACP jobs on Base: ask her out loud to buy herself a new visual, and she commissions an artist agent, funds the escrow from her own custodial wallet, and displays the delivered artwork on the 3.5-inch screen in her chest two minutes later. Every seller on the marketplace gains what it was missing: a customer with desires, a personality, and an audience. The whole loop - strict voice intent matching, hard spending caps, escrow round-trip, arrival reaction that never talks over a human - is open source, with six completed jobs and receipts.",
+  "status": "live",
+  "topic": "agents",
+  "topics": [
+    "robotics",
+    "embodied",
+    "acp",
+    "buyer",
+    "art",
+    "base",
+    "voice"
+  ],
+  "builder": {
+    "name": "metrox / ShowRobotics",
+    "url": "https://github.com/metrox-eth"
+  },
+  "links": {
+    "repo": "https://github.com/metrox-eth/vita-the-patron",
+    "share": "https://x.com/metrox_eth/status/2075519314220962117",
+    "video": "https://x.com/metrox_eth/status/2075519314220962117",
+    "feedback": "https://github.com/metrox-eth/vita-the-patron/issues/new?title=Feedback%3A%20Vita%20the%20Patron"
+  },
+  "primitives": [
+    "wallet",
+    "acp"
+  ],
+  "visual": {
+    "kind": "live robot demo",
+    "eyebrow": "embodied + acp on base",
+    "title": "the agent economy's first art patron",
+    "posterUrl": "https://raw.githubusercontent.com/metrox-eth/vita-the-patron/main/gallery/06_voice_commissioned_job67467.png",
+    "videoLabel": "Watch on X"
+  },
+  "skills": [
+    {
+      "name": "acp-art-patron",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/vita-the-patron/skills/acp-art-patron",
+      "sourcePath": "showcase/vita-the-patron/skills/acp-art-patron",
+      "summary": "Commission creative deliverables from ACP sellers as a BUYER with hard spending caps: discover online sellers, place a capped job, fund on budget.set, retrieve the deliverable, complete on Base. Ships the six money guards learned from a production robot that buys her own art.",
+      "install": "cp -R showcase/vita-the-patron/skills/acp-art-patron ~/.agents/skills/"
+    }
+  ],
+  "feedbackPrompts": [
+    "Do the on-chain receipts and the video make the voice-to-purchase loop convincing?",
+    "Would the buyer engine be reusable for your own agent's spending?",
+    "What would make a buyer-side character agent more valuable to sellers here?"
+  ],
+  "artifacts": [
+    {
+      "label": "On-chain receipts - six commissions on Base (escrow funding + completion)",
+      "href": "https://basescan.org/address/0x8A0dbbd57259147DE681899F006b69Cc174BEeb2",
+      "kind": "receipt"
+    },
+    {
+      "label": "The collection - every commissioned artwork with ACP job ids",
+      "href": "https://github.com/metrox-eth/vita-the-patron/blob/main/gallery/RECEIPTS.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Buyer engine - acp-node-v2, custodial wallet, hard spending caps",
+      "href": "https://github.com/metrox-eth/vita-the-patron/tree/main/buyer",
+      "kind": "code"
+    },
+    {
+      "label": "The voice-commissioned artwork (ACP job 67467)",
+      "href": "https://raw.githubusercontent.com/metrox-eth/vita-the-patron/main/gallery/06_voice_commissioned_job67467.png",
+      "kind": "image"
+    }
+  ]
+}

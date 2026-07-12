@@ -27,12 +27,25 @@
     "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kairune-verifiable-trust/assets/kairune-verify-demo.mp4",
     "videoLabel": "Watch the 0:06 demo on X"
   },
-  "skills": [],
+  "skills": [
+    {
+      "name": "kairune-verify-agent-trust",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/kairune-verifiable-trust/skills/kairune-verify-agent-trust",
+      "sourcePath": "showcase/kairune-verifiable-trust/skills/kairune-verify-agent-trust",
+      "summary": "Check a counterparty agent's Kairune trust score, tier, verified/unverified attestation counts, and suggested daily ceiling before granting spend, accepting a paid job, or wiring a payment. Live API, ACP, and evidence-review modes.",
+      "install": "cp -R showcase/kairune-verifiable-trust/skills/kairune-verify-agent-trust ~/.agents/skills/"
+    }
+  ],
   "artifacts": [
     {
       "label": "X demo video",
       "href": "https://x.com/usekairune/status/2075911860516528241",
       "kind": "video"
+    },
+    {
+      "label": "Skill source — verify agent trust before granting spend",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/kairune-verifiable-trust/skills/kairune-verify-agent-trust",
+      "kind": "skill"
     },
     {
       "label": "Animated demo (mp4)",

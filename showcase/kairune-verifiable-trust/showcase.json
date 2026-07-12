@@ -14,7 +14,8 @@
   "links": {
     "repo": "https://github.com/kairunedev/Kairune",
     "demo": "https://kairune.online/app",
-    "share": "https://x.com/usekairune",
+    "video": "https://x.com/usekairune/status/2075911860516528241",
+    "share": "https://x.com/usekairune/status/2075911860516528241",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Kairune%20Verifiable%20Agent%20Trust%20Layer&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Issuer%20identity%20should%20be%20verified%20on-chain%0A-%20Attestation%20kinds%20for%20agent-to-agent%20commerce%0A-%20Replay-protection%20window%20worth%20the%20friction%3F%0A%0ANotes%3A%0A"
   },
   "primitives": ["acp", "token", "wallet"],
@@ -24,10 +25,15 @@
     "title": "verifiable attestations",
     "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kairune-verifiable-trust/assets/poster.png",
     "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kairune-verifiable-trust/assets/kairune-verify-demo.mp4",
-    "videoLabel": "Watch the 0:06 demo"
+    "videoLabel": "Watch the 0:06 demo on X"
   },
   "skills": [],
   "artifacts": [
+    {
+      "label": "X demo video",
+      "href": "https://x.com/usekairune/status/2075911860516528241",
+      "kind": "video"
+    },
     {
       "label": "Animated demo (mp4)",
       "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kairune-verifiable-trust/assets/kairune-verify-demo.mp4",

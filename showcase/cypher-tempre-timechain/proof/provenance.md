@@ -11,7 +11,7 @@
 - License: MIT in the upstream skill directory
 
 This Showcase directory contains no runtime copy. It is a pointer plus a hero,
-manifest, synthetic proof receipt, and validation notes.
+manifest, public soul, synthetic proof receipt, and validation notes.
 
 ## Source hashes
 

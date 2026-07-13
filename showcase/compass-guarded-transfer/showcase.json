@@ -1,9 +1,9 @@
 {
   "slug": "compass-guarded-transfer",
   "title": "Compass Guarded Transfer",
-  "tagline": "Preflights a bounded Solana devnet transfer with advisory Compass policy before signing",
-  "description": "Compass Guarded Transfer demonstrates an ACP-ready, bounded SOL devnet transfer with an advisory Compass preflight. The runner fails closed unless Compass returns exact lowercase allow, then verifies devnet genesis, builds, simulates, signs, and submits the same normalized transfer. Live transfer proof is pending explicit safe devnet setup; this package does not represent Compass as custody or hard enforcement.",
-  "status": "implementation validated; live devnet proof pending",
+  "tagline": "Preflights a bounded ACP CLI Solana devnet transfer with advisory Compass policy",
+  "description": "Compass Guarded Transfer targets the documented ACP CLI v1.0.24 command/output shape for a bounded SOL devnet transfer with an advisory Compass preflight. The runner resolves ACP's active devnet wallet before Compass and again before transfer, requires exact lowercase allow, then invokes `acp wallet sol transfer` with the same normalized transfer facts. The second check reduces but cannot eliminate an ACP wallet-selection race. Live ACP transfer proof is pending explicit safe devnet setup; this package does not represent Compass as custody or hard enforcement.",
+  "status": "adapter and tests validated; live ACP transfer proof pending",
   "topic": "security",
   "topics": ["solana", "devnet", "security", "acp"],
   "builder": {
@@ -26,7 +26,7 @@
       "name": "compass-guarded-transfer",
       "href": "https://github.com/ram4-dev/acp-cli-demos/tree/feat/compass-guarded-transfer-showcase/showcase/compass-guarded-transfer/skills/compass-guarded-transfer",
       "sourcePath": "showcase/compass-guarded-transfer/skills/compass-guarded-transfer",
-      "summary": "Collect explicit transfer facts, request advisory Compass preflight, and stop unless exact lowercase allow permits a bounded devnet transfer.",
+      "summary": "Collect explicit transfer facts, request advisory Compass preflight, and invoke ACP CLI only after exact lowercase allow permits a bounded devnet transfer.",
       "install": "cp -R showcase/compass-guarded-transfer/skills/compass-guarded-transfer ~/.agents/skills/\ncp -R showcase/compass-guarded-transfer/skills/compass-guarded-transfer ~/.claude/skills/"
     }
   ],

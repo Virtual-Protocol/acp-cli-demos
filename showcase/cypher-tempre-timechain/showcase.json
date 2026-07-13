@@ -20,7 +20,8 @@
   "visual": {
     "kind": "verified skill run",
     "eyebrow": "timechain + cphy token",
-    "title": "persistent, verifiable agent memory"
+    "title": "persistent, verifiable agent memory",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/cypher-tempre-timechain/assets/hero-card.png"
   },
   "skills": [
     {

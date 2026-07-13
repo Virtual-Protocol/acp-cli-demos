@@ -1,8 +1,8 @@
 # Cypher Tempre Synthetic Timechain Result
 
-Captured on `2026-07-11T02:43:46Z` using a disposable root normalized below as
-`$DEMO_ROOT`. Telemetry, automatic maintenance, and faculty growth were disabled
-for the public proof.
+Captured on `2026-07-13T21:31:23Z` from the pinned external Genesis `v3.28.0`
+skill using a disposable root normalized below as `$DEMO_ROOT`. Telemetry,
+automatic maintenance, and faculty growth were disabled for the public proof.
 
 ## Public input and candidate
 
@@ -20,23 +20,21 @@ used.
 ```text
 Genesis Block sealed (Ring 0).
   name:       PublicProof
-  covenant:   loving, joyful, peaceful, patient, kind, good, faithful, gentle, self-controlled
-  ring_hash:  3f00f7216f3d109c81ccfc66fe933bfabc7793c7640a998447e2a46ff081113e
+  ring_hash:  ce2b66548ad82e5b3180492841a0cad942097f764f2190364c46a32e8ff276e6
 
 verify: PASS
 recalled: nothing relevant (new ground — reason from base judgment).
 PoQ decision: SEAL
-sealed self-labeled Ring 1  6c2ad18d4cd14ac5..
-  salience: 101   dissonance: 219
+sealed self-labeled Ring 1  5b327a08d58a3b48..
 ```
 
 The final verification was:
 
 ```text
-AUDIT: PASS
-VERIFY: PASS
+CPHY AUDIT: PASS
+Timechain VERIFY: PASS
 height:     2 rings
-head:       #1 6c2ad18d4cd14ac5..
+head:       #1 5b327a08d58a3b48..
 blockspace: 0 blobs
 location:   $DEMO_ROOT/chain
 ```
@@ -48,7 +46,7 @@ The target command derived this public, keyless address from synthetic Ring 1:
 ```json
 {
   "ring": 1,
-  "deposit_address": "0x6c2ad18d4cd14ac5a0ee19213a2738f694618feb",
+  "deposit_address": "0x5b327a08d58a3b48ef81a843fa2a48655ed9e995",
   "rotation": 0,
   "private": false
 }
@@ -86,7 +84,7 @@ its hash-chain audit.
 
 ## Boundary of the result
 
-This proves that the packaged skill can initialize and verify a synthetic
+This proves that the pinned external skill can initialize and verify a synthetic
 Timechain and execute its canonical, read-only CPHY contract observation path.
 It does **not** prove or claim a token burn, etch, faculty unlock, entitlement,
 nonzero memory multiplier, wallet ownership, transaction, deployment, or

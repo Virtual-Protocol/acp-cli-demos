@@ -1,84 +1,55 @@
 # Validation and Source Provenance
 
-## Source identity
+## Pinned source identity
 
-- Upstream repository: `cyberphysicsai/cypher-tempre-genesis`
-- Upstream tag: `v3.28.0`
-- Dereferenced tag commit: `bf88caa814d0a6f2abe45a325fa32056e99da65d`
-- Upstream Codex skill tree: `28ff752fcc37ab633e6d39bdb2dd8c72c792bf06`
-- Showcase edition: `3.28.0-showcase.1`
-- License: MIT, retained in the skill folder
+- Repository: [`cyberphysicsai/cypher-tempre-genesis`](https://github.com/cyberphysicsai/cypher-tempre-genesis)
+- Release: [`v3.28.0`](https://github.com/cyberphysicsai/cypher-tempre-genesis/releases/tag/v3.28.0)
+- Dereferenced tag commit: [`bf88caa814d0a6f2abe45a325fa32056e99da65d`](https://github.com/cyberphysicsai/cypher-tempre-genesis/commit/bf88caa814d0a6f2abe45a325fa32056e99da65d)
+- Codex skill tree: `28ff752fcc37ab633e6d39bdb2dd8c72c792bf06`
+- Version file: `3.28.0`
+- Skill directory: [`skills/codex/cypher-tempre-self-model`](https://github.com/cyberphysicsai/cypher-tempre-genesis/tree/v3.28.0/skills/codex/cypher-tempre-self-model)
+- License: MIT in the upstream skill directory
 
-The upstream Codex runtime was extracted with `git archive` from the tagged
-skill subtree, so dashboard, site, downloads, other runtime variants, Git data,
-and untracked local state were never copied.
+This Showcase directory contains no runtime copy. It is a pointer plus a hero,
+manifest, synthetic proof receipt, and validation notes.
 
-## Showcase-specific changes
+## Source hashes
 
-The edition keeps the v3.28.0 Python runtime, base registries, contract source,
-Codex hook files, `AGENTS.md`, agent metadata, and license. It then:
+Hashes were calculated directly from a clean checkout of the dereferenced
+`v3.28.0` tag:
 
-- Replaces the 1,158-line entrypoint with a 299-line Showcase operating contract.
-- Uses only `name` and `description` in `SKILL.md` frontmatter.
-- Makes retention, inputs, network behavior, approval gates, stop conditions,
-  redaction, validation, and output fields explicit.
-- Removes the obsolete v3.16 lexical-jailbreak appendix and nonexistent command.
-- Corrects the Codex subagent path.
-- Stops `recall.py turn` before recall, network observation, growth, or sealing
-  when the root is uninitialized or chain verification fails.
-- Adds a hermetic bundle-local smoke test.
-- Routes optional CPHY and layer detail through `references/`.
+- `SKILL.md`: `28201cd39009cc7db9ca45a4b9f75244da347041a6576c4f2968cb9eac9f0ee5`
+- `recall.py`: `2e7e0e1e195983a2388bba862ac82888dadd4de6d4f2d0199ac9ad65c6f261c4`
+- `cphy.py`: `f7e76c5690bd8cfb998960df3827c326967e9e6084b34ffa4210e9a4ca101732`
 
-## Content identity
+## Clean-checkout validation
 
-- Skill files: `62`
-- Relative-path content-manifest SHA-256:
-  `95584413b287bf8a5607f7fcb978488d0caa25088e90564a18fd4fc65970f4c3`
-- `SKILL.md` SHA-256:
-  `b75962785607564856674e51e6e1e32c3dbb4870272c6d2b80dcf5bbdaf7f09f`
-- `recall.py` SHA-256:
-  `33e677b0322dba8c4b62a8b70bbe6508321d0246843490323617d68a204f1a96`
-- `recall_cli.py` SHA-256:
-  `f33aedd49887cd81e79fda8bfa33695fcc642cd9963902667aad0bd377373062`
-- `cphy.py` SHA-256:
-  `f7e76c5690bd8cfb998960df3827c326967e9e6084b34ffa4210e9a4ca101732`
+All checks below ran on `2026-07-13` against the pinned external source:
 
-The content-manifest digest hashes sorted SHA-256 lines for every relative path
-under the skill directory. It must be regenerated if any skill file changes.
+- Full architecture self-test: `SELFTEST: PASS`
+- Smoke suite: `106 passed, 0 failed`
+- Gate-discrimination suite: `12 passed, 0 failed`
+- Synthetic CPHY ledger: `AUDIT: PASS`
+- Synthetic Timechain: `VERIFY: PASS`, height `2`, blockspace `0`
+- Synthetic Ring 0: `ce2b66548ad82e5b3180492841a0cad942097f764f2190364c46a32e8ff276e6`
+- Synthetic Ring 1: `5b327a08d58a3b48ef81a843fa2a48655ed9e9951032167dd3d30d96adee1d54`
+- Derived public keyless target: `0x5b327a08d58a3b48ef81a843fa2a48655ed9e995`
+- Read-only CPHY observation: no errors, changes, events, approvals, burns, or
+  token-weighted multiplier
 
-## Validation results
+The disposable proof disabled automatic growth, maintenance, and telemetry so
+it sealed exactly the requested ring and left the clean source unchanged.
 
-All checks ran on `2026-07-11`:
+## Showcase package boundary
 
-- Showcase skill quick validation: `PASS`
-- Bundle-local synthetic smoke test: `SHOWCASE SMOKE: PASS`
-- Independent cold-start synthetic run: `PASS`
-- Empty-root fail-closed test: expected exit `2`, no ring sealed
-- Tampered-chain fail-closed test: expected exit `2`, no new ring sealed
-- Packaged CPHY module: `SELFTEST PASS 57 checks`
-- Packaged CPHY ledger: `AUDIT: PASS`
-- Packaged synthetic Timechain: `VERIFY: PASS`
-- Upstream full architecture suite: `SELFTEST: PASS`
-- Upstream smoke suite: `106 passed, 0 failed`
-- Upstream gate-discrimination suite: `12 passed, 0 failed`
+- Runtime files committed here: `0`
+- Total project files committed here: `7`
+- Generated chain or registry state committed here: `0`
+- Dashboard, site, alternate runtimes, downloads, and full engine: external
+  Genesis repository only
 
-The current `acp-cli-demos` validator passed before adding this manifest with 23
-existing entries. The final count is recorded in the pull request after this
-package is validated.
-
-The cold-start run exposed that automatic faculty growth can create auxiliary
-rings and generated registries during a turn. The operating contract and demo
-now explicitly disable growth, maintenance, and telemetry when an exact-one-ring
-public receipt is required; normal persisted operation retains the feature.
-
-## Exclusions and redaction
-
-The skill contains no `chain/`, task roots, blockspace, telemetry, learned
-registries, CPHY vault, private rotation salt, active model-authored operation,
-cache, `.env`, API key, private key, wallet material, hook configuration, or
-absolute user path.
-
-The public proof uses a synthetic chain and normalizes its temporary root as
-`$DEMO_ROOT`. It intentionally publishes only synthetic ring hashes, a public
-keyless derived address, public token metadata, bounded read-only output, and
-validation results.
+The public proof excludes lived-in chains, task roots, blockspace, telemetry,
+learned registries, CPHY vaults, private rotation salts, active model-authored
+operations, caches, environment files, credentials, private keys, wallet
+material, hook configuration, absolute user paths, and private prompts. The
+temporary proof root is normalized as `$DEMO_ROOT`.

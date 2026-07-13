@@ -1,7 +1,7 @@
 # CPHY Agent Token Proof
 
-Captured on `2026-07-11` with unauthenticated public endpoints and the packaged
-skill's read-only CPHY lane.
+Captured on `2026-07-13` with unauthenticated public endpoints and the pinned
+Genesis `v3.28.0` skill's read-only CPHY lane.
 
 ## Virtuals project identity
 
@@ -36,8 +36,8 @@ contract code (`45` bytes at the queried address).
 
 ## Skill integration check
 
-The packaged `cphy.py` pins the same address and only accepts three public,
-read-only Base RPC endpoints. Its `onchain sync` command queried ERC-20
+The pinned upstream `cphy.py` uses the same address and accepts only three
+public, read-only Base RPC endpoints. Its `onchain sync` command queried ERC-20
 `balanceOf` for a disposable keyless target using `eth_call` and returned:
 
 ```json
@@ -48,6 +48,7 @@ read-only Base RPC endpoints. Its `onchain sync` command queried ERC-20
   "new_etches": [],
   "new_unlocks": [],
   "pending_approval": [],
+  "rotated": [],
   "awaiting": 0,
   "total_burned_to_blockspace": 0
 }

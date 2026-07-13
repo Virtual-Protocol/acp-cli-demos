@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.4"
+  }
+}

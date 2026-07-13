@@ -63,6 +63,10 @@
       "kind": "token"
     }
   ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/soul.md",
+    "summary": "Public operating context requiring Cypher Tempre on every turn and a boot-time refresh check that preserves the existing Timechain."
+  },
   "feedbackPrompts": [
     "Which long-running agent workflow should the Timechain prove next?",
     "Are the persistence, approval, and third-party transmission boundaries clear enough?",

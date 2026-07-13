@@ -43,7 +43,7 @@ it sealed exactly the requested ring and left the clean source unchanged.
 ## Showcase package boundary
 
 - Runtime files committed here: `0`
-- Total project files committed here: `7`
+- Total project files committed here: `8`
 - Generated chain or registry state committed here: `0`
 - Dashboard, site, alternate runtimes, downloads, and full engine: external
   Genesis repository only

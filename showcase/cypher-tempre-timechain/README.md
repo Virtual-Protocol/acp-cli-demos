@@ -3,7 +3,7 @@
 This is a lightweight Showcase pointer to the full
 [`cypher-tempre-genesis`](https://github.com/cyberphysicsai/cypher-tempre-genesis)
 repository. No Cypher Tempre runtime code is duplicated here. This directory
-contains only the Showcase manifest, hero image, public demo receipt, and
+contains only the Showcase manifest, hero image, public soul, demo receipt, and
 validation notes.
 
 ## Full skill
@@ -65,6 +65,8 @@ ownership, entitlement, transaction, or token-weighted memory change.
 
 ## Public evidence
 
+- [`soul.md`](soul.md) publishes the requested always-on and boot-refresh
+  operating context.
 - [`examples/prompt.md`](examples/prompt.md) contains the synthetic prompt.
 - [`examples/result-redacted.md`](examples/result-redacted.md) records the ring,
   read-only token observation, and verification outputs.

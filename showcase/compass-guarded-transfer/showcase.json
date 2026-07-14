@@ -2,7 +2,7 @@
   "slug": "compass-guarded-transfer",
   "title": "Compass Guarded Transfer",
   "tagline": "Preflights a bounded ACP CLI Solana devnet transfer with advisory Compass policy",
-  "description": "Compass Guarded Transfer targets the documented ACP CLI v1.0.24 command/output shape for a bounded SOL devnet transfer with an advisory Compass preflight. The runner resolves ACP's active devnet wallet before Compass and again before transfer, requires exact lowercase allow, then invokes `acp wallet sol transfer` with the same normalized transfer facts. The second check reduces but cannot eliminate an ACP wallet-selection race. Live ACP transfer proof is pending explicit safe devnet setup; this package does not represent Compass as custody or hard enforcement.",
+  "description": "Compass Guarded Transfer targets the installed ACP CLI v1.0.24 command/output shape for a bounded SOL devnet transfer with an advisory Compass preflight. The runner resolves ACP's cluster-independent Solana wallet before Compass and again before transfer, requires exact lowercase allow, then invokes `acp wallet sol transfer` pinned to devnet with the same normalized transfer facts. The second check reduces but cannot eliminate an ACP wallet-selection race. Live ACP transfer proof is pending explicit safe devnet setup; this package does not represent Compass as custody or hard enforcement.",
   "status": "adapter and tests validated; live ACP transfer proof pending",
   "topic": "security",
   "topics": ["solana", "devnet", "security", "acp"],

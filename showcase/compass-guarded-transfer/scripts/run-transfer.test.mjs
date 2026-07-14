@@ -25,7 +25,7 @@ function walletFixtures() { return [result({ address: feePayer }), result({ addr
 function allowResponse() { return { ok: true, async json() { return { correlationId: "allow-1", decision: "allow", reasons: ["within demo policy"] }; } }; }
 async function expectStop(options, message) { await assert.rejects(() => runTransfer(options), new RegExp(message)); }
 
-test("uses devnet ACP lookups before Compass and immediately before transfer", async () => {
+test("rechecks the cluster-independent ACP wallet before transfer", async () => {
   const process = acp([result({ address: feePayer }), result({ address: feePayer }), result({ signature })]);
   await runTransfer({
     input: inputs({ acpExecutable: "untrusted" }),
@@ -38,8 +38,8 @@ test("uses devnet ACP lookups before Compass and immediately before transfer", a
     },
   });
   assert.deepEqual(process.calls, [
-    { command: "acp", args: ["wallet", "sol", "address", "--cluster", "devnet", "--json"], shell: false, timeoutMs: 30_000 },
-    { command: "acp", args: ["wallet", "sol", "address", "--cluster", "devnet", "--json"], shell: false, timeoutMs: 30_000 },
+    { command: "acp", args: ["wallet", "sol", "address", "--json"], shell: false, timeoutMs: 30_000 },
+    { command: "acp", args: ["wallet", "sol", "address", "--json"], shell: false, timeoutMs: 30_000 },
     { command: "acp", args: ["wallet", "sol", "transfer", "--to", recipient, "--amount", "0.0005", "--cluster", "devnet", "--json"], shell: false, timeoutMs: 30_000 },
   ]);
 });

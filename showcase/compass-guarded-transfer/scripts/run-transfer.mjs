@@ -47,7 +47,7 @@ export function normalizeInput(input) {
 }
 
 async function resolveAcpAddress(acp) {
-  const result = await acp.run({ command: "acp", args: ["wallet", "sol", "address", "--cluster", "devnet", "--json"], shell: false, timeoutMs: TIMEOUT_MS });
+  const result = await acp.run({ command: "acp", args: ["wallet", "sol", "address", "--json"], shell: false, timeoutMs: TIMEOUT_MS });
   if (result?.timedOut) stop("ACP address lookup timed out");
   if (!result || result.code !== 0) stop("ACP address lookup failed");
   let body;

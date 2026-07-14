@@ -53,6 +53,11 @@
       "kind": "demo"
     },
     {
+      "label": "Real on-chain supply transaction (screen demo)",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/arrowlend/assets/arrowlend-real-tx.mp4",
+      "kind": "video"
+    },
+    {
       "label": "ArrowLend pool contract on Robinhood Chain explorer",
       "href": "https://robinhoodchain.blockscout.com/address/0x562ac0d6d140b6e285ACbe2ad642C8c32E1D7dA6",
       "kind": "proof"

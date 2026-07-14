@@ -21,6 +21,7 @@
     "repo": "https://github.com/Arrowlend/arrowlend",
     "demo": "https://arrowlend.app",
     "share": "https://x.com/arrowlend",
+    "video": "https://x.com/arrowlend/status/2076399044532797762",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20ArrowLend"
   },
   "primitives": [
@@ -33,7 +34,8 @@
     "eyebrow": "defi · lending · robinhood chain",
     "title": "liquidity for the agent economy",
     "posterUrl": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arrowlend/assets/poster.png",
-    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/arrowlend/assets/arrowlend-teaser.mp4"
+    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/arrowlend/assets/arrowlend-teaser.mp4",
+    "videoLabel": "Watch the demo on X"
   },
   "skills": [
     {
@@ -64,6 +66,11 @@
       "label": "ArrowLend on X",
       "href": "https://x.com/arrowlend",
       "kind": "demo"
+    },
+    {
+      "label": "Teaser / demo video on X",
+      "href": "https://x.com/arrowlend/status/2076399044532797762",
+      "kind": "proof"
     },
     {
       "label": "Idle-USDG skill source",

@@ -1,0 +1,52 @@
+{
+  "slug": "mon",
+  "title": "MON - Autonomous Source Code & Architecture Auditor",
+  "tagline": "Clones repositories, analyzes backend architectures, and extracts technical metadata for code auditing",
+  "description": "MON is an autonomous static analysis engine that clones source code to discover endpoints, APIs, forms, routes, and tech stacks. It utilizes custom parsers and exporters to build a comprehensive map of any application architecture.",
+  "status": "live",
+  "topic": "security",
+  "topics": [
+    "code-audit",
+    "developer-tools",
+    "static-analysis",
+    "web3-security"
+  ],
+  "builder": {
+    "name": "Mamman Chiroma",
+    "url": "https://github.com/mosonmcn"
+  },
+  "links": {
+    "repo": "https://github.com/mosonmcn/MON",
+    "share": "https://x.com/mosonmcn/status/123456789",
+    "feedback": "https://github.com/mosonmcn/MON/issues"
+  },
+  "primitives": [
+    "acp",
+    "wallet"
+  ],
+  "visual": {
+    "kind": "card",
+    "eyebrow": "Developer Tool",
+    "title": "MON: The Autonomous Code Cloner & Architecture Scanner",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/mon/assets/poster.jpg"
+  },
+  "skills": [
+    {
+      "name": "Code Architecture Discovery",
+      "summary": "Runs deep static analysis to discover APIs, endpoints, and form schemas in any cloned Python or JS project.",
+      "install": "pip install -r requirements.txt && python -m mon.sdk"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "MON Architecture Scan Report",
+      "href": "https://github.com/mosonmcn/MON/blob/main/examples/all_data.py",
+      "kind": "github"
+    }
+  ],
+  "feedbackPrompts": [
+    "How easily does MON integrate with your current CI/CD pipelines?",
+    "Are there other specific web frameworks or languages you want the parsers to support?",
+    "How accurate is the tech-stack discovery on legacy codebases?"
+  ]
+}

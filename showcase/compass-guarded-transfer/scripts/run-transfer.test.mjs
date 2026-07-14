@@ -21,6 +21,7 @@ function acp(results) {
 }
 
 function result(body) { return { code: 0, stdout: JSON.stringify(body), stderr: "" }; }
+function walletFixtures() { return [result({ address: feePayer }), result({ address: feePayer })]; }
 function allowResponse() { return { ok: true, async json() { return { correlationId: "allow-1", decision: "allow", reasons: ["within demo policy"] }; } }; }
 async function expectStop(options, message) { await assert.rejects(() => runTransfer(options), new RegExp(message)); }
 
@@ -55,9 +56,11 @@ test("stops before Compass when ACP address is unavailable or malformed", async 
 
 test("does not invoke ACP transfer before exact Compass allow", async () => {
   for (const decision of ["review", "deny", "ALLOW"]) {
-    const process = acp([result({ address: feePayer })]);
-    await expectStop({ input: inputs(), process, fetch: async () => ({ ok: true, async json() { return { correlationId: decision, decision, reasons: [] }; } }) }, "Compass decision");
-    assert.equal(process.calls.length, 1);
+    const process = acp(walletFixtures());
+    const evidence = [];
+    await expectStop({ input: inputs(), process, fetch: async () => ({ ok: true, async json() { return { correlationId: decision, decision, reasons: [] }; } }), writeProof: async (proof) => evidence.push(proof) }, "Compass decision");
+    assert.equal(process.calls.some((call) => call.args.includes("transfer")), false);
+    assert.equal(evidence[0].stoppedStage, "compass-decision");
   }
 });
 
@@ -122,4 +125,42 @@ test("direct Node invocation runs main and fails closed before network or ACP", 
   const result = spawnSync(process.execPath, [script], { env: { ...process.env, CONFIRMED_TRANSFER: "no" }, encoding: "utf8" });
   assert.notEqual(result.status, 0);
   assert.match(result.stderr, /confirmed inputs are required/);
+});
+
+test("fresh input gate matrix stops before ACP address or transfer", async () => {
+  for (const override of [
+    { recipient: undefined }, { recipient: "bad" }, { amountSol: "0" }, { amountSol: "0.0011" },
+    { recipientAllowlist: "bad" }, { confirmed: "no" }, { cluster: "testnet" },
+    { amountUsdPolicyInput: "NaN" }, { amountUsdPolicyInput: "" },
+  ]) {
+    const process = acp([]);
+    let fetchCalls = 0;
+    await expectStop({ input: inputs(override), process, fetch: async () => { fetchCalls += 1; return allowResponse(); } }, "stopped");
+    assert.equal(fetchCalls, 0);
+    assert.equal(process.calls.length, 0);
+  }
+});
+
+test("fresh Compass failure matrix never invokes ACP transfer", async () => {
+  const responses = [
+    { ok: false, status: 401, async json() { return {}; } },
+    { ok: false, status: 500, async json() { return {}; } },
+    { ok: true, async json() { return { correlationId: "bad", decision: "allow", reasons: "wrong" }; } },
+    { ok: true, async json() { throw new Error("bad json"); } },
+    { ok: true, async json() { return { correlationId: "review", decision: "review", reasons: ["manual"] }; } },
+    { ok: true, async json() { return { correlationId: "deny", decision: "deny", reasons: ["blocked"] }; } },
+  ];
+  for (const response of responses) {
+    const process = acp(walletFixtures());
+    await expectStop({ input: inputs(), process, fetch: async () => response }, "stopped");
+    assert.equal(process.calls.some((call) => call.args.includes("transfer")), false);
+  }
+  for (const [failure, reason] of [
+    [new Error("offline"), "Compass preflight network failure"],
+    [new DOMException("aborted", "AbortError"), "Compass preflight timed out"],
+  ]) {
+    const process = acp(walletFixtures());
+    await expectStop({ input: inputs(), process, fetch: async () => { throw failure; } }, reason);
+    assert.equal(process.calls.some((call) => call.args.includes("transfer")), false);
+  }
 });

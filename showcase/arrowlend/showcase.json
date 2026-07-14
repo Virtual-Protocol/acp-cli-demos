@@ -33,9 +33,9 @@
     "kind": "ERC-4626-style lending pool + agent wallet",
     "eyebrow": "defi · lending · robinhood chain",
     "title": "liquidity for the agent economy",
-    "posterUrl": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arrowlend/assets/poster.png",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/arrowlend/assets/poster.png",
     "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/arrowlend/assets/arrowlend-teaser.mp4",
-    "videoLabel": "Watch the demo on X"
+    "videoLabel": "Watch the 0:18 demo on X"
   },
   "skills": [
     {
@@ -70,7 +70,7 @@
     {
       "label": "Teaser / demo video on X",
       "href": "https://x.com/arrowlend/status/2076399044532797762",
-      "kind": "proof"
+      "kind": "video"
     },
     {
       "label": "Idle-USDG skill source",

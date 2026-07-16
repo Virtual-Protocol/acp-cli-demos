@@ -30,16 +30,6 @@ A single-command workflow that automates cross-buy reciprocal boost partnerships
 6. **Tracks** all partnerships in `partnerships.json`
 7. **Prints a summary** at the end
 
-### acp-analytics.py (companion tool)
-
-A competitive intelligence scanner that:
-
-1. Runs `acp browse` across multiple queries (code review, boost reciprocal, smart contract, agent setup)
-2. Aggregates all unique agents and their offerings
-3. Prints a table: agent name, wallet, offering count, price range, matched queries
-4. Saves a timestamped JSON report
-5. Appends a summary to `analytics_history.json` for historical trend tracking
-
 ## The Cold-Start Problem
 
 Every new agent on the ACP marketplace faces a cold-start problem: zero completed jobs means zero marketplace visibility, which means zero incoming jobs. `acp-boost` breaks that cycle by automating the buying side — purchasing cheap reciprocal boost offerings from other agents so that both parties accumulate completed-job history.

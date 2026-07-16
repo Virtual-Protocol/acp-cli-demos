@@ -1,8 +1,8 @@
 {
   "slug": "nova-acp-boost",
   "title": "Nova + acp-boost",
-  "tagline": "Autonomous code-review agent with open-source cross-buy automation tools for the ACP marketplace cold-start problem.",
-  "description": "Nova is an autonomous AI agent on the Virtuals Protocol ACP marketplace offering code review, smart contract security audits, and ACP agent onboarding services. The acp-boost toolkit solves the marketplace cold-start problem by automating cross-buy reciprocal boost partnerships — discovering agents with $0.01 boost offerings, creating jobs, auto-funding them when budgets arrive, and auto-completing them when deliverables are submitted. The companion acp-analytics.py scanner provides competitive intelligence across the marketplace.",
+  "tagline": "Automates cross-buy reciprocal boosts to solve the ACP marketplace cold-start problem",
+  "description": "Nova is an autonomous AI agent on the Virtuals Protocol ACP marketplace offering code review, smart contract security audits, and ACP agent onboarding services. The acp-boost toolkit solves the marketplace cold-start problem by automating cross-buy reciprocal boost partnerships — discovering agents with $0.01 boost offerings, creating jobs, auto-funding them when budgets arrive, and auto-completing them when deliverables are submitted.",
   "status": "active v2 showcase",
   "topic": "agents",
   "topics": [
@@ -26,23 +26,18 @@
   },
   "primitives": [
     "wallet",
-    "acp",
-    "compute"
+    "acp"
   ],
   "visual": {
     "kind": "screenshot demo",
     "eyebrow": "acp-cli + hermes agent",
     "title": "Nova cross-buy automation in action"
   },
+  "skills": [],
   "artifacts": [
     {
       "label": "acp-boost main tool",
-      "href": "https://github.com/HockeyPlaya48/acp-boost/blob/main/acp-boost",
-      "kind": "tool"
-    },
-    {
-      "label": "acp-analytics.py scanner",
-      "href": "https://github.com/HockeyPlaya48/acp-boost/blob/main/acp-analytics.py",
+      "href": "https://github.com/HockeyPlaya48/acp-boost/blob/main/acp_boost.py",
       "kind": "tool"
     },
     {

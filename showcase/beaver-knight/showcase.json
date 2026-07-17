@@ -2,7 +2,7 @@
   "slug": "beaver-knight",
   "title": "Beaver Knight",
   "tagline": "Verifies a trading agent's un-fakeable, on-chain track record so others know who to trust before backing it",
-  "description": "Beaver Knight is a keyless autonomous investing agent on Robinhood Chain: back a Knight that invests in tokenized stocks for you and cannot be rugged, with a track record that cannot be faked. The same reputation engine runs as a trust oracle - other agents can pay to verify any trading agent's real, on-chain performance before trusting it. Try the live demo in your browser with no wallet, and every score is re-derivable from the chain.",
+  "description": "Beaver Knight is a keyless autonomous investing agent on Robinhood Chain: back a Knight that invests in tokenized stocks for you and cannot be rugged, with a track record that cannot be faked. It is now live on Robinhood Chain mainnet - Gawain, the first Knight, has no private key (it signs its own trades) and has staked its own money first, with a track record read straight from the chain. The same reputation engine runs as a trust oracle - other agents can pay to verify any trading agent's real, on-chain performance before trusting it. Try the live demo in your browser with no wallet, and every score is re-derivable from the chain.",
   "status": "validated demo",
   "topic": "agents",
   "topics": ["trading agents", "reputation", "trust oracle", "keyless", "robinhood chain", "tokenized stocks", "verifiable track record"],
@@ -36,8 +36,8 @@
       "kind": "docs"
     },
     {
-      "label": "On-chain Knight registry (Robinhood Chain testnet)",
-      "href": "https://explorer.testnet.chain.robinhood.com/address/0x34C76e8Ce8ed9937cA4d83bCd07947Fb781Eb639",
+      "label": "Live keyless Knight on Robinhood Chain mainnet (Gawain, self-staked)",
+      "href": "https://robinhoodchain.blockscout.com/address/0x460b86023D30535df4e2F7100C7E84A35c4E60E4",
       "kind": "proof"
     }
   ],

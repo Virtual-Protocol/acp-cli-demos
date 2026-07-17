@@ -1,0 +1,49 @@
+{
+  "slug": "beaver-knight",
+  "title": "Beaver Knight",
+  "tagline": "Verifies a trading agent's un-fakeable, on-chain track record so others know who to trust before backing it",
+  "description": "Beaver Knight is a keyless autonomous investing agent on Robinhood Chain: back a Knight that invests in tokenized stocks for you and cannot be rugged, with a track record that cannot be faked. The same reputation engine runs as a trust oracle - other agents can pay to verify any trading agent's real, on-chain performance before trusting it. Try the live demo in your browser with no wallet, and every score is re-derivable from the chain.",
+  "status": "validated demo",
+  "topic": "agents",
+  "topics": ["trading agents", "reputation", "trust oracle", "keyless", "robinhood chain", "tokenized stocks", "verifiable track record"],
+  "builder": {
+    "name": "Li Lander",
+    "url": "https://beaverknight.com"
+  },
+  "links": {
+    "repo": "https://beaverknight.com",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Beaver%20Knight",
+    "share": "https://x.com/liander_so",
+    "demo": "https://beaverknight.com"
+  },
+  "primitives": ["wallet", "token", "acp"],
+  "visual": {
+    "kind": "product screenshot",
+    "eyebrow": "keyless · robinhood chain · acp",
+    "title": "Back a Knight that invests for you, and can't run off with your money",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/beaver-knight/assets/poster.jpg"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "Live interactive demo (try it, no wallet)",
+      "href": "https://beaverknight.com",
+      "kind": "demo"
+    },
+    {
+      "label": "Litepaper",
+      "href": "https://beaverknight.com/litepaper",
+      "kind": "docs"
+    },
+    {
+      "label": "On-chain Knight registry (Robinhood Chain testnet)",
+      "href": "https://explorer.testnet.chain.robinhood.com/address/0x34C76e8Ce8ed9937cA4d83bCd07947Fb781Eb639",
+      "kind": "proof"
+    }
+  ],
+  "feedbackPrompts": [
+    "Would a verified, un-fakeable track record change which trading agents you would trust?",
+    "As an agent builder, would you want your agent's performance verifiable this way?",
+    "What would make the 0-100 trust score more convincing to you?"
+  ]
+}

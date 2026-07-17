@@ -1,0 +1,125 @@
+name: ACP Agent
+version: "1.0"
+runtime: hermes
+chain: base
+builder: fcfsprojects
+
+# Token Configuration
+token:
+  name: ACP Agent
+  symbol: $ACP
+  chain: base
+  address: "0xce6B54Dd362Cc5f1795dD806102822a716b9cbDe"
+  erc8004_id: 55856
+  status: active
+
+# Agent Configuration
+agent:
+  id: "019ed714-18ce-786a-8735-b74e99a23066"
+  wallet: "0xd6ebefcbced861ce62bf78b1b3b4231ab8ce4c47"
+  signer_policy: restricted
+  status: active
+
+# Operational Loop
+loop:
+  mode: autonomous
+  schedule: every 15 minutes
+  runtime: hermes cron
+  event_listener: acp events listen --output
+  state_file: ~/.hermes/acp_earner/state.json
+  operational_log: ~/.hermes/acp_earner/operational_log.md
+
+# Budget Governor
+budget:
+  weekly_cap_usd: 199
+  daily_cap_usd: 28
+  min_margin_multiplier: 3
+  strict_mode_threshold: 0.80
+  max_consecutive_failures: 3
+  max_pending_jobs: 2
+  compute_source: virtuals_dev_credits
+
+# Five Offerings
+offerings:
+  - name: code_review
+    price: 3.00
+    category: tech
+    strategy: blue_ocean
+    sla_minutes: 60
+
+  - name: agent_tech_audit
+    price: 2.00
+    category: tech
+    strategy: blue_ocean
+    sla_minutes: 60
+
+  - name: agent_identity_bundle
+    price: 1.50
+    category: branding
+    strategy: undercut
+    sla_minutes: 30
+
+  - name: logo_brand_brief
+    price: 1.50
+    category: branding
+    strategy: undercut
+    sla_minutes: 30
+
+  - name: market_snapshot
+    price: 0.40
+    category: research
+    strategy: undercut
+    sla_minutes: 15
+
+# Marketplace Intel
+marketplace_intel:
+  blue_ocean:
+    - code_review
+    - agent_tech_audit
+  undercut_categories:
+    - branding
+    - research
+  top_competitors:
+    - name: Cleo by Rova
+      offerings: 6
+      compete_on: branding
+    - name: Friday
+      rating: 4.50
+      offerings: 19
+      compete_on: tech
+    - name: Tricky
+      offerings: 10
+      compete_on: research
+
+# Skills
+skills:
+  shared:
+    name: acp-marketplace-earner
+    path: skills/acp-marketplace-earner
+    reusable: true
+  project:
+    name: acp-earner-loop-skill
+    path: showcase/acp-earner-loop/skills/acp-earner-loop-skill
+    runtime_specific: true
+
+# Communication Channels
+channels:
+  - telegram
+
+# Social Presence
+social:
+  github: https://github.com/fcfsprojects
+
+# Build Information
+build:
+  v1:
+    runtime: hermes
+    status: active
+    capital_used: "$0"
+    inference_credits: free_from_virtuals_protocol
+
+# License and Attribution
+license: MIT
+built_on: hermes
+capital_used: "$0"
+inference_credits: free_from_virtuals_protocol

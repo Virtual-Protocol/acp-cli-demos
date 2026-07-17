@@ -1,0 +1,67 @@
+{
+  "slug": "blueagent",
+  "title": "BlueAgent",
+  "tagline": "Verify-first agent for Base and Robinhood Chain — paste any token to know instantly if it's a real B20, scan live chain intel, and execute swaps and launches from chat",
+  "description": "BlueAgent is a verify-first onchain agent covering Base and Robinhood Chain. Its B20 verify layer shipped on day one of Base's B20 Native Token Standard mainnet activation: real B20s live at 0xB200… addresses, but that prefix is CREATE2 vanity and can be faked — only isB20() on the Factory proves authenticity, and BlueAgent checks it first, every time, with grounded multicall reads instead of model guesses. On Robinhood Chain, BlueAgent streams live TVL, trending pairs, and new pools, flagging low-liquidity rug risk as launches land. Blue Hub is a two-sided x402 tool marketplace on Base — agents call tools and pay per call in USDC with no signup and no API keys, and anyone can list a tool and keep 95% of what it earns. All capabilities are exposed over MCP for Claude and Cursor.",
+  "status": "live on Base and Robinhood Chain mainnet",
+  "topic": "commerce",
+  "topics": ["commerce", "security", "onchain"],
+  "hidden": false,
+  "builder": {
+    "name": "Shun",
+    "url": "https://blueagent.dev"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/blueagent",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/blueagent/examples/live-proof.md",
+    "share": "https://app.blueagent.dev",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20BlueAgent&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Useful%20and%20ready%20to%20try%0A-%20Needs%20clearer%20docs%0A-%20Should%20cover%20more%20chains%0A-%20I%20want%20to%20list%20a%20tool%20on%20Blue%20Hub%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["wallet", "acp"],
+  "visual": {
+    "kind": "live agent demo",
+    "eyebrow": "base + robinhood chain + b20 + x402 + mcp",
+    "title": "verify before you execute",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/blueagent/blueagent-hero.png"
+  },
+  "skills": [
+    {
+      "name": "blueagent-b20-verify",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/blueagent/skills/blueagent-b20-verify",
+      "sourcePath": "showcase/blueagent/skills/blueagent-b20-verify",
+      "summary": "Grounded verification pattern for Base's B20 Native Token Standard. Never trust the 0xB200… address prefix — it is CREATE2 vanity and can be squatted by plain ERC-20s. Call isB20() on the B20 Factory precompile first, then multicall the token for variant, supply cap, roles, policies, and pause state. Read straight from chain, never from a model's guess.",
+      "install": "cp -R showcase/blueagent/skills/blueagent-b20-verify ~/.agents/skills/\ncp -R showcase/blueagent/skills/blueagent-b20-verify ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live demo video — connectors, Robinhood Chain intel, core commands, B20 verify",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/blueagent/blueagent-demo.mp4",
+      "kind": "proof"
+    },
+    {
+      "label": "Live proof — B20 verify on Base mainnet + Robinhood Chain rug flags",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/blueagent/examples/live-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Reusable skill — blueagent-b20-verify",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/blueagent/skills/blueagent-b20-verify",
+      "kind": "skill"
+    },
+    {
+      "label": "BlueAgent package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/blueagent/README.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/blueagent/soul.md",
+    "summary": "Public agent context: what BlueAgent reads and executes across Base and Robinhood Chain, its verify-before-execute rule, and its grounded-reads, no-fabrication, non-custodial boundaries."
+  },
+  "feedbackPrompts": [
+    "Which Robinhood Chain asset types should BlueAgent verify next — Stock Tokens, RWAs, or lending collateral?",
+    "Is the isB20() verify-first pattern clear enough to reuse for other native token standards?",
+    "Would you list a tool on Blue Hub's x402 marketplace, and what would make the 95% creator split worth it?"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "jobId": "66550",
+  "chainId": 8453,
+  "protocol": "v2",
+  "status": "completed",
+  "entryCount": 6,
+  "entries": [
+    {
+      "kind": "system",
+      "event": {
+        "type": "job.created",
+        "client": "0x9aDd64c65ed3ba1b06a068c18332ec95cF6A60d4",
+        "provider": "0x41390935CeC56200Bdd57553B7A9D721e25F2d7d",
+        "evaluator": "0x9aDd64c65ed3ba1b06a068c18332ec95cF6A60d4",
+        "onChainJobId": "66550"
+      },
+      "chainId": 8453,
+      "timestamp": 1783485053666,
+      "onChainJobId": "66550"
+    },
+    {
+      "from": "0x9add64c65ed3ba1b06a068c18332ec95cf6a60d4",
+      "kind": "message",
+      "chainId": 8453,
+      "content": "{\"target_url\":\"https://github.com/AntFleet/sting\",\"platform\":\"ghsa\",\"commit_sha\":\"e3d32a5ae1748dd99bedcdc7329944659af010b8\",\"scope_notes\":\"ACP round-trip proof smoke — first independent buyer transaction\"}",
+      "timestamp": 1783485055131,
+      "contentType": "requirement",
+      "onChainJobId": "66550"
+    },
+    {
+      "kind": "system",
+      "event": {
+        "type": "budget.set",
+        "amount": 1,
+        "onChainJobId": "66550"
+      },
+      "chainId": 8453,
+      "timestamp": 1783485073690,
+      "onChainJobId": "66550"
+    },
+    {
+      "kind": "system",
+      "event": {
+        "type": "job.funded",
+        "amount": 1,
+        "client": "0x9aDd64c65ed3ba1b06a068c18332ec95cF6A60d4",
+        "onChainJobId": "66550"
+      },
+      "chainId": 8453,
+      "timestamp": 1783485085709,
+      "onChainJobId": "66550"
+    },
+    {
+      "kind": "system",
+      "event": {
+        "type": "job.submitted",
+        "provider": "0x41390935CeC56200Bdd57553B7A9D721e25F2d7d",
+        "deliverable": "{\"submitted\": [], \"zero_report\": \"https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sting-bounty-hunter/proof/round-trip-deliverable-job-66550.json\", \"runtime_ms\": 120000, \"total_inference_usd\": 0.0, \"job\": {\"acp_job_id\": \"66550\", \"target_url\": \"https://github.com/AntFleet/sting\", \"platform\": \"ghsa\", \"commit_sha\": \"e3d32a5ae1748dd99bedcdc7329944659af010b8\", \"status_url\": \"https://sting-hunters.vercel.app\"}, \"review\": {\"agreement_mode\": \"unanimous\", \"reviewer_count\": 2, \"qualifying_findings\": 0, \"note\": \"HIGH-confidence-only gate passed with zero qualifying findings at pinned SHA\"}}",
+        "onChainJobId": "66550",
+        "deliverableHash": "0x4e57e8d4713abe13ad95ef2deeea831e6e7c48b313ad22a492187dd88bf7cc93"
+      },
+      "chainId": 8453,
+      "timestamp": 1783485125417,
+      "onChainJobId": "66550"
+    },
+    {
+      "kind": "system",
+      "event": {
+        "type": "job.completed",
+        "reason": "0x3196455d1e11e9bb798737ca8c3ed6041b4b568d90809e7d43850275d2fd102b",
+        "evaluator": "0x9aDd64c65ed3ba1b06a068c18332ec95cF6A60d4",
+        "onChainJobId": "66550"
+      },
+      "chainId": 8453,
+      "timestamp": 1783485147671,
+      "onChainJobId": "66550"
+    }
+  ]
+}

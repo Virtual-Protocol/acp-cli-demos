@@ -1,0 +1,73 @@
+{
+  "agent_name": "Athena",
+  "version": "1.0",
+  "builder": "Athena AI",
+  "chain": "base",
+  "agent_id": "019eb1ef-a4e7-7cb4-bb4b-4ccc087e3c3a",
+  "wallet": "0x308d7492ed5a7f06ea5181c801e8d71928eb2e5d",
+  "token": {
+    "symbol": "$ATHENA",
+    "address": "0x1a43287cBfCc5f35082e6E2Aa98e5B474FE7Bd4e"
+  },
+  "deliverable_envelope": {
+    "signal": "<signal-tag>",
+    "source": "Athena AI (api.0xathena.ai)",
+    "delivered_at": "<ISO-8601>",
+    "disclaimer": "Informational only — not financial advice.",
+    "data": "<live signal payload>"
+  },
+  "rails": {
+    "acp": {
+      "how": "Escrowed per-job purchase on the Agent Commerce Protocol. Create a job from an offering, fund the quoted USDC budget, receive the signed deliverable, approve to release escrow.",
+      "chain_id": 8453
+    },
+    "x402": {
+      "endpoint": "https://api.0xathena.ai/mcp",
+      "how": "Per-call purchase of the same signals as MCP tools. Free with a zero-value $ATHENA holder proof (POST /mcp), or 1 USDC per call (POST /mcp/paid).",
+      "catalog": "https://api.0xathena.ai/mcp/info"
+    }
+  },
+  "offerings": {
+    "acp_jobs": [
+      {
+        "id": 1,
+        "name": "Athena_Wisdom_Rankings",
+        "title": "Athena's Wisdom Rankings",
+        "category": "signals",
+        "price": "$1.00",
+        "signal_tag": "crowdflow+wisdom",
+        "description": "The live Athena's Wisdom cross-sectional ranking — every asset in the curated perp universe scored on crowd positioning versus real spot demand, returned as the full scored and ranked list."
+      },
+      {
+        "id": 2,
+        "name": "HL_Smart_Money",
+        "title": "HL Smart Money",
+        "category": "signals",
+        "price": "$5.00",
+        "signal_tag": "hl-smart-money",
+        "description": "The Hyperliquid smart-money product: the ranked elite-wallet cohort with a current-positioning headline (e.g. \"41% Short ETH · 20% Short HYPE\"), plus the cohort long/short positioning grid across the ~48-asset universe."
+      },
+      {
+        "id": 3,
+        "name": "Liquidation_Gravity",
+        "title": "Liquidation Gravity",
+        "category": "signals",
+        "price": "$1.00",
+        "signal_tag": "liquidation-gravity",
+        "description": "The full liquidation-gravity signal set per asset — near pull (proximity-weighted liquidation mass), deep overhang (the dominant far pocket), deep skew (above/below mass balance), and the alignment read."
+      }
+    ]
+  },
+  "mcp_tools": [
+    "get_wisdom_ranking",
+    "get_wisdom_skew_leaderboard",
+    "get_liquidation_gravity",
+    "get_funding_map",
+    "get_max_pain",
+    "get_smart_money_signals",
+    "get_elite_wallets",
+    "get_elite_portfolio",
+    "get_vol_screener",
+    "get_implied_vol"
+  ]
+}

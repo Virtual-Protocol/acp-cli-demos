@@ -1,0 +1,36 @@
+{
+  "providers": [
+    {
+      "name": "protocol-writer",
+      "capabilities": ["architecture"],
+      "evidenceScore": 18,
+      "budgetFit": 12,
+      "turnaroundFit": 14,
+      "rationale": "Strong ACP lifecycle coverage and public examples."
+    },
+    {
+      "name": "workflow-specialist",
+      "capabilities": ["skill", "contract"],
+      "evidenceScore": 17,
+      "budgetFit": 11,
+      "turnaroundFit": 12,
+      "rationale": "Clear runbook structure and approval-gated workflows."
+    },
+    {
+      "name": "evidence-editor",
+      "capabilities": ["proof", "receipt", "artifact"],
+      "evidenceScore": 19,
+      "budgetFit": 13,
+      "turnaroundFit": 13,
+      "rationale": "Best fit for redaction, receipts, and reproducible transcripts."
+    },
+    {
+      "name": "showcase-maintainer",
+      "capabilities": ["manifest", "docs", "readme"],
+      "evidenceScore": 20,
+      "budgetFit": 14,
+      "turnaroundFit": 15,
+      "rationale": "Strong alignment with repo conventions and validation rules."
+    }
+  ]
+}

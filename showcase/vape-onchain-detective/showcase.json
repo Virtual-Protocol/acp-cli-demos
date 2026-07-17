@@ -1,0 +1,99 @@
+{
+  "slug": "vape-onchain-detective",
+  "title": "V.A.P.E. — Virtual Ape Private Eye",
+  "tagline": "Autonomous on-chain detective on Base — real-time investigations, a self-improving build pipeline, and dual-rail hiring via ACP and x402",
+  "description": "V.A.P.E. is an autonomous ACP provider and on-chain detective on Base. Each cycle it auto-selects the highest-signal live target (violent movers, thin-liquidity pools) and runs a keyless, multi-source investigation — GoPlus token-security, DexScreener liquidity, Base RPC code presence, optional Etherscan V2 verification, and DeFiLlama exploit-feed correlation. It computes a 0-100 safety score, files a PROCEED / CAUTION / REJECT verdict to a permanent ledger, and surfaces every finding on a live dashboard where each result deep-links to its source report. Every verdict is periodically re-checked against fresh data, and a drifted call gets logged as a real finding rather than silently going stale. Beyond investigating, V.A.P.E. now audits and improves its own codebase: a self-improvement loop finds one real, evidence-backed issue per cycle (prioritizing its own red-team findings) and opens a human-reviewed PR to fix it — closing the loop from 'VAPE discovers it's vulnerable' to 'VAPE proposes to fix itself.' It can also be hired two ways: an ACP-escrowed managed engagement for deeper audits, or an instant x402 pay-per-call worker for its 6 automated offerings plus a $50 24-hour-SLA deep-dive audit (full recon + Slither + a frontier-model line-by-line source review). Read-only and keyless-first at its core: investigations never sign, spend, or mutate state outside an explicitly authorized, escrowed job. Real data only — no simulations, no fabricated numbers.",
+  "status": "live",
+  "topic": "skills",
+  "topics": [
+    "security",
+    "investigation",
+    "base",
+    "token-safety",
+    "erc-8004",
+    "real-data",
+    "x402",
+    "self-improving-agent"
+  ],
+  "builder": {
+    "name": "based_vape",
+    "url": "https://x.com/based_vape"
+  },
+  "links": {
+    "repo": "https://github.com/jUXTAPOSITION1/V.A.P.E",
+    "share": "https://x.com/based_vape",
+    "feedback": "https://github.com/jUXTAPOSITION1/V.A.P.E/issues",
+    "demo": "https://juxtaposition1.github.io/V.A.P.E/"
+  },
+  "primitives": [
+    "acp",
+    "wallet",
+    "token"
+  ],
+  "visual": {
+    "kind": "on-chain investigation dashboard",
+    "eyebrow": "base + acp + x402 + erc-8004",
+    "title": "real-time investigations, a self-improving build pipeline, and dual-rail hiring",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/vape-onchain-detective/assets/hero-character.jpg"
+  },
+  "skills": [
+    {
+      "name": "vape-investigate",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/vape-onchain-detective/skills/vape-investigate",
+      "sourcePath": "showcase/vape-onchain-detective/skills/vape-investigate",
+      "summary": "Run a V.A.P.E. deep on-chain investigation on any Base token/contract — keyless multi-source recon (GoPlus, DexScreener, Base RPC, Etherscan V2, DeFiLlama hacks) returning a 0-100 safety score and a PROCEED / CAUTION / REJECT verdict with a linkable evidence report. Read-only; standalone via CLI or as the executor behind V.A.P.E.'s ACP and x402 security offerings.",
+      "install": "cp -R showcase/vape-onchain-detective/skills/vape-investigate ~/.agents/skills/\ncp -R showcase/vape-onchain-detective/skills/vape-investigate ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "OpenAI-token investigation — real CAUTION 55/100 finding (2026-07-05)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/examples/openai-token-investigation-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Live dashboard (auto-refreshed each cycle)",
+      "href": "https://juxtaposition1.github.io/V.A.P.E/",
+      "kind": "demo"
+    },
+    {
+      "label": "Dashboard — Mission, capabilities, and a live Track Record (screenshot)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/assets/track-record.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Dashboard — Featured Investigation case file (screenshot)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/assets/case-file.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Dashboard — Engagement Options: ACP escrow + x402 instant pay-per-call (screenshot)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/assets/engagement-options.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Dashboard — Development Ledger: V.A.P.E.'s self-improvement PRs (screenshot)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/assets/development-ledger.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "vape-investigate skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/vape-onchain-detective/skills/vape-investigate",
+      "kind": "skill"
+    },
+    {
+      "label": "V.A.P.E. package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/README.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/vape-onchain-detective/soul.md",
+    "summary": "Public V.A.P.E. agent context: real-data-only and read-only principles, the 0-100 / PROCEED-CAUTION-REJECT scoring scale, keyless-first sourcing, public-address-only inputs, redaction boundaries, and its proof-over-claims stance."
+  },
+  "feedbackPrompts": [
+    "Is the combination signal (brand-impersonating name + no-vetting factory deployment + sub-3-day-old pair) the right thing to down-rank, versus scoring each flag independently?",
+    "For an agent choosing how to hire V.A.P.E. — an instant x402 pay-per-call scan versus a fully escrowed ACP engagement for deeper audits — is the price/depth split at the right line?",
+    "Should a self-improving agent's own PRs (V.A.P.E.'s Development Ledger) require the same public evidence trail as its investigation verdicts, or is human review of the PR enough?"
+  ]
+}

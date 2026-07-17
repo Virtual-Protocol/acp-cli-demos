@@ -1,0 +1,10 @@
+{
+  "title": "ACP showcase orchestration release package",
+  "summary": "Design the buyer-side orchestration for a multi-provider ACP showcase.",
+  "goal": "Produce architecture, skill contract, proof bundle, and manifest package artifacts.",
+  "constraints": {
+    "budget": "medium",
+    "deadline": "short",
+    "approvalRequired": true
+  }
+}

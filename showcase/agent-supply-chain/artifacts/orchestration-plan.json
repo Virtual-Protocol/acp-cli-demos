@@ -1,0 +1,210 @@
+{
+  "request": {
+    "title": "ACP showcase orchestration release package",
+    "summary": "Design the buyer-side orchestration for a multi-provider ACP showcase.",
+    "goal": "Produce architecture, skill contract, proof bundle, and manifest package artifacts.",
+    "constraints": {
+      "budget": "medium",
+      "deadline": "short",
+      "approvalRequired": true
+    }
+  },
+  "decomposition": [
+    {
+      "id": "architecture",
+      "label": "Architecture note",
+      "match": [
+        "architecture",
+        "workflow",
+        "flow"
+      ],
+      "index": 1,
+      "acceptanceCriteria": [
+        "Clear output contract",
+        "Inspectable evidence",
+        "Explicit approval gate"
+      ]
+    },
+    {
+      "id": "skill",
+      "label": "Skill contract",
+      "match": [
+        "skill",
+        "runbook",
+        "contract"
+      ],
+      "index": 2,
+      "acceptanceCriteria": [
+        "Clear output contract",
+        "Inspectable evidence",
+        "Explicit approval gate"
+      ]
+    },
+    {
+      "id": "proof",
+      "label": "Proof bundle",
+      "match": [
+        "proof",
+        "receipt",
+        "artifact",
+        "transcript"
+      ],
+      "index": 3,
+      "acceptanceCriteria": [
+        "Clear output contract",
+        "Inspectable evidence",
+        "Explicit approval gate"
+      ]
+    },
+    {
+      "id": "manifest",
+      "label": "Manifest package",
+      "match": [
+        "manifest",
+        "readme",
+        "docs",
+        "publish"
+      ],
+      "index": 4,
+      "acceptanceCriteria": [
+        "Clear output contract",
+        "Inspectable evidence",
+        "Explicit approval gate"
+      ]
+    }
+  ],
+  "ranking": [
+    {
+      "subtask": "Architecture note",
+      "topProviders": [
+        {
+          "provider": "protocol-writer",
+          "score": 84,
+          "rationale": "Strong ACP lifecycle coverage and public examples."
+        },
+        {
+          "provider": "showcase-maintainer",
+          "score": 67,
+          "rationale": "Strong alignment with repo conventions and validation rules."
+        },
+        {
+          "provider": "evidence-editor",
+          "score": 63,
+          "rationale": "Best fit for redaction, receipts, and reproducible transcripts."
+        }
+      ],
+      "selected": {
+        "provider": "protocol-writer",
+        "score": 84,
+        "rationale": "Strong ACP lifecycle coverage and public examples."
+      },
+      "approvalRequired": true
+    },
+    {
+      "subtask": "Skill contract",
+      "topProviders": [
+        {
+          "provider": "workflow-specialist",
+          "score": 80,
+          "rationale": "Clear runbook structure and approval-gated workflows."
+        },
+        {
+          "provider": "showcase-maintainer",
+          "score": 67,
+          "rationale": "Strong alignment with repo conventions and validation rules."
+        },
+        {
+          "provider": "evidence-editor",
+          "score": 63,
+          "rationale": "Best fit for redaction, receipts, and reproducible transcripts."
+        }
+      ],
+      "selected": {
+        "provider": "workflow-specialist",
+        "score": 80,
+        "rationale": "Clear runbook structure and approval-gated workflows."
+      },
+      "approvalRequired": true
+    },
+    {
+      "subtask": "Proof bundle",
+      "topProviders": [
+        {
+          "provider": "evidence-editor",
+          "score": 85,
+          "rationale": "Best fit for redaction, receipts, and reproducible transcripts."
+        },
+        {
+          "provider": "showcase-maintainer",
+          "score": 67,
+          "rationale": "Strong alignment with repo conventions and validation rules."
+        },
+        {
+          "provider": "protocol-writer",
+          "score": 62,
+          "rationale": "Strong ACP lifecycle coverage and public examples."
+        }
+      ],
+      "selected": {
+        "provider": "evidence-editor",
+        "score": 85,
+        "rationale": "Best fit for redaction, receipts, and reproducible transcripts."
+      },
+      "approvalRequired": true
+    },
+    {
+      "subtask": "Manifest package",
+      "topProviders": [
+        {
+          "provider": "showcase-maintainer",
+          "score": 89,
+          "rationale": "Strong alignment with repo conventions and validation rules."
+        },
+        {
+          "provider": "evidence-editor",
+          "score": 63,
+          "rationale": "Best fit for redaction, receipts, and reproducible transcripts."
+        },
+        {
+          "provider": "protocol-writer",
+          "score": 62,
+          "rationale": "Strong ACP lifecycle coverage and public examples."
+        }
+      ],
+      "selected": {
+        "provider": "showcase-maintainer",
+        "score": 89,
+        "rationale": "Strong alignment with repo conventions and validation rules."
+      },
+      "approvalRequired": true
+    }
+  ],
+  "approvals": [
+    {
+      "subtask": "Architecture note",
+      "approved": false,
+      "approvedBy": null
+    },
+    {
+      "subtask": "Skill contract",
+      "approved": false,
+      "approvedBy": null
+    },
+    {
+      "subtask": "Proof bundle",
+      "approved": false,
+      "approvedBy": null
+    },
+    {
+      "subtask": "Manifest package",
+      "approved": false,
+      "approvedBy": null
+    }
+  ],
+  "receipts": [],
+  "status": "planning_only",
+  "notes": [
+    "This helper produces a deterministic orchestration plan.",
+    "Live ACP job creation and settlement still require configured provider credentials."
+  ]
+}

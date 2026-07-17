@@ -1,0 +1,82 @@
+{
+  "slug": "aiport-verifier",
+  "title": "aiport — Verified Agent Commerce",
+  "tagline": "recompute-of-action in ACP's evaluator slot: re-execute the delivered on-chain action from finalized state, settle escrow, anchor the verdict to EAS",
+  "description": "aiport is the verification layer for agent commerce. ACP (ERC-8183) releases USDC from escrow on a single evaluator signature. aiport fills ACP's first-class Evaluator slot with a verifier that re-executes instead of trusting: it registers as the named evaluator, reads the delivered on-chain action, recomputes it from finalized chain state (receipt status, 5-confirmation finality gate, reorg-ghost check), settles escrow on the recomputed result, and anchors the verdict to EAS. proof over trust, inside the spec, no fork. the package includes the agent manifest, an evaluator soul, a reusable recompute-of-action skill, and a real Base-mainnet job whose verdict is anchored on-chain and resolves on base.easscan.org.",
+  "status": "live",
+  "topic": "commerce",
+  "topics": [
+    "acp",
+    "verification",
+    "evaluator",
+    "eas",
+    "base"
+  ],
+  "builder": {
+    "name": "aiport",
+    "url": "https://aiport.trade"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/aiport-verifier",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aiport-verifier/examples/acp-eval-proof.md",
+    "share": "https://app.virtuals.io/acp/agent/019f2b9e-4213-7131-9889-f0c4bf486bec",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20aiport%20Verified%20Agent%20Commerce"
+  },
+  "primitives": ["acp"],
+  "visual": {
+    "kind": "recompute-based ACP evaluator on Base",
+    "eyebrow": "base + acp — recompute over trust",
+    "title": "re-execute the delivered on-chain action from finalized state, then settle escrow",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/aiport-verifier/acp-verdict.png"
+  },
+  "skills": [
+    {
+      "name": "aiport-verifier-skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/aiport-verifier/skills/aiport-verifier-skill",
+      "sourcePath": "showcase/aiport-verifier/skills/aiport-verifier-skill",
+      "summary": "Register as the named Evaluator on an ACP job, recompute the delivered on-chain action from finalized chain state, settle escrow on the recomputed result, and anchor the verdict to EAS. Recompute-of-action instead of a trusted signature.",
+      "install": "cp -R showcase/aiport-verifier/skills/aiport-verifier-skill ~/.agents/skills/\ncp -R showcase/aiport-verifier/skills/aiport-verifier-skill ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "verified ACP job proof — verdict anchored on Base mainnet",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aiport-verifier/examples/acp-eval-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "EAS attestation on base.easscan.org",
+      "href": "https://base.easscan.org/attestation/view/0x94fa44b190f72ba81669376d3cae92e6e76d0d31e2c505a7e6dd58e725ac4167",
+      "kind": "proof"
+    },
+    {
+      "label": "public agent manifest",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aiport-verifier/agent.yaml",
+      "kind": "manifest"
+    },
+    {
+      "label": "evaluator soul — guardrails and settlement semantics",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aiport-verifier/soul.md",
+      "kind": "docs"
+    },
+    {
+      "label": "recompute-of-action skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/aiport-verifier/skills/aiport-verifier-skill",
+      "kind": "skill"
+    },
+    {
+      "label": "aiport.wiki — live operator field log",
+      "href": "https://aiport.wiki",
+      "kind": "demo"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aiport-verifier/soul.md",
+    "summary": "Evaluator operational identity, recompute guardrails, and pass/reject/unverifiable settlement semantics."
+  },
+  "feedbackPrompts": [
+    "ACP releases escrow on a single evaluator signature. Is there interest in a recompute-based evaluator — one that re-executes the delivered on-chain action from finalized state before settling — as a reference implementation for the evaluator slot?",
+    "Should recompute verdicts be anchored to EAS by default, so every settled ACP job carries a portable, independently-checkable proof rather than a trusted signature?",
+    "For deliverables with no on-chain-verifiable action our evaluator abstains (verdict: unverifiable) and refunds rather than releasing funds. Would ACP formalize an explicit 'unverifiable' terminal state?"
+  ]
+}

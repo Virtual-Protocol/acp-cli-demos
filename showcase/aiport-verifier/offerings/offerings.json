@@ -1,0 +1,13 @@
+{
+  "offerings": [
+    {
+      "name": "verified-commerce evaluation",
+      "summary": "recompute-of-action as the ACP evaluator. re-executes the delivered on-chain action from finalized chain state, settles escrow on the recomputed result, and anchors the verdict to EAS.",
+      "rail": "acp",
+      "role": "evaluator",
+      "verdicts": ["pass", "reject", "unverifiable"],
+      "proof": "eas",
+      "chain": "base"
+    }
+  ]
+}

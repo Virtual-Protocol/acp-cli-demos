@@ -1,0 +1,28 @@
+name: Dispatch Showcase Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'showcase/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch:
+    name: Dispatch docs sync
+    if: github.repository == 'Virtual-Protocol/acp-cli-demos'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger EconomyOS docs showcase sync
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.SHOWCASE_SYNC_TOKEN }}
+          repository: Virtual-Protocol/whitepaper-economyOS
+          event-type: showcase-source-updated
+          client-payload: >-
+            {"source_ref":"main","source_sha":"${{ github.sha }}"}

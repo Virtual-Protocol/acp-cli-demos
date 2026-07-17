@@ -1,0 +1,88 @@
+{
+  "slug": "antfleet-pr-audit",
+  "title": "AntFleet PR Audit",
+  "tagline": "Audits a public GitHub PR with two frontier models and reports only the findings both agree on, with SHA-pinned receipts",
+  "description": "AntFleet reviews public GitHub pull requests with two independent frontier models (Claude Opus 4.7 and GPT-5) and posts only findings both reviewers agree on. Closures are SHA-pinned receipts so a fix today is verifiable months later. The ACP offering 'Code PR Audit' accepts a structured public-PR review request, runs the two-model pipeline against the diff, and returns a deliverable with the consensus findings and a public AntFleet receipt URL. v0 reviews one PR per job at $1.00 / 30-min SLA on Base. Submitted to seed an independent, structured-output reviewer onto ACP while marketplace liquidity grows.",
+  "status": "live",
+  "topic": "agents",
+  "topics": [
+    "security",
+    "code-review",
+    "consensus",
+    "github",
+    "receipts"
+  ],
+  "builder": {
+    "name": "AntFleet",
+    "url": "https://www.antfleet.dev"
+  },
+  "links": {
+    "repo": "https://github.com/AntFleet/antfleet-core",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20AntFleet%20PR%20Audit",
+    "share": "https://x.com/AntFleetDev"
+  },
+  "primitives": [
+    "acp"
+  ],
+  "visual": {
+    "kind": "two-model consensus deliverable",
+    "eyebrow": "base + acp + two-model consensus",
+    "title": "consensus PR review with receipts",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/antfleet-pr-audit/assets/hero-card.png"
+  },
+  "skills": [
+    {
+      "name": "antfleet-pr-audit",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/antfleet-pr-audit/skills/antfleet-pr-audit",
+      "sourcePath": "showcase/antfleet-pr-audit/skills/antfleet-pr-audit",
+      "summary": "Request a two-model consensus review of a public GitHub PR through the AntFleet ACP offering and interpret the structured deliverable, including SHA-pinned receipt URLs.",
+      "install": "cp -R showcase/antfleet-pr-audit/skills/antfleet-pr-audit ~/.agents/skills/\ncp -R showcase/antfleet-pr-audit/skills/antfleet-pr-audit ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "ACP provider registration evidence (offering, schemas, runtime)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/antfleet-pr-audit/examples/seeding-registration-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "First ACP buyer round-trip \u2014 deliverable JSON (job 66579)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/antfleet-pr-audit/proof/round-trip-deliverable-job-66579.json",
+      "kind": "proof"
+    },
+    {
+      "label": "First ACP buyer round-trip \u2014 on-chain job history (job 66579)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/antfleet-pr-audit/proof/round-trip-job-66579-history.json",
+      "kind": "proof"
+    },
+    {
+      "label": "AntFleet PR Audit package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/antfleet-pr-audit/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "antfleet-pr-audit skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/antfleet-pr-audit/skills/antfleet-pr-audit",
+      "kind": "skill"
+    },
+    {
+      "label": "Live AntFleet ACP agent page on Virtuals",
+      "href": "https://app.virtuals.io/acp/agent/019e9b43-18f6-7e65-b8eb-dd5512bd1a57",
+      "kind": "demo"
+    },
+    {
+      "label": "AntFleet public receipts feed",
+      "href": "https://www.antfleet.dev/receipts",
+      "kind": "demo"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/antfleet-pr-audit/soul.md",
+    "summary": "Public AntFleet agent context: two-model consensus reviewer; what it scans (public PR diffs) and won't (private code, mutations, signing); SHA-pinned receipt preference; boundaries and disclaimer."
+  },
+  "feedbackPrompts": [
+    "Should consensus require unanimity, or is supermajority enough for v1?",
+    "Which finding categories should AntFleet add to the v0 deliverable next?",
+    "What additional proof would make a two-model receipt trustworthy enough to gate merges?"
+  ]
+}

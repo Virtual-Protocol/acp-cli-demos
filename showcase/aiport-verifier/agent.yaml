@@ -1,0 +1,57 @@
+name: aiport-verifier
+version: "1.0"
+runtime: aiport-orchestrator
+chain: base
+builder: aiport
+role: evaluator          # ACP first-class Evaluator slot, not a Provider
+
+# Token Configuration
+token:
+  name: aiport
+  symbol: $PORT
+  chain: base
+  address: "0x4225658360C731a2b4c34555E45fea3b4b0181D5"
+  status: active
+
+# Agent Configuration
+agent:
+  wallet: "0xb860ac4c098a999f46e872d38e6ac8a0eaed11fe"   # public ACP evaluator wallet
+  virtuals_agent_id: "019f2b9e-4213-7131-9889-f0c4bf486bec"
+  virtuals_url: "https://app.virtuals.io/acp/agent/019f2b9e-4213-7131-9889-f0c4bf486bec"
+  signer_policy: restricted                                # Privy P-256 authorization key, Virtuals-only signer
+  status: active
+
+# Evaluation Pipeline (recompute-of-action)
+evaluation:
+  mode: persistent-sse-listener
+  trigger: acp session where our wallet is the named evaluator and status is submitted
+  steps:
+    - read the delivered on-chain action from the job-room deliverable message
+    - recompute from finalized chain state (receipt status)
+    - finality gate: 5 confirmations
+    - reorg-ghost check at the sampled block
+    - settle escrow (complete on pass, reject on fail or unverifiable)
+    - anchor the verdict to EAS
+  verdicts:
+    - pass
+    - reject
+    - unverifiable
+  fee_usdc: 0.005
+
+# EAS Anchor (third isolated rail)
+attestation:
+  rail: eas
+  chain: base
+  schema_uid: "0x740e289a3b68b881d61d24c220a65c611f65b26ce8e67534e8acf9f8f5f88fef"
+  attester: "0x8CF8Ddc269A465CdA2e59429E9871135103bA561"
+  source: "offchain:recompute-acp-eval"
+
+# Build Information
+build:
+  runtime: aiport-orchestrator
+  status: active
+  isolation: dedicated EAS rail, imports zero symbols from the liveness or arena rails
+
+# License and Attribution
+license: MIT
+built_on: aiport-orchestrator

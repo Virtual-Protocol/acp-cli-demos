@@ -1,0 +1,70 @@
+{
+  "slug": "paid-substack-subscription",
+  "title": "Paid Substack Subscription Agent",
+  "tagline": "Issues its own bounded card to complete a paid newsletter checkout, then verifies access end to end",
+  "description": "This demo packages a live commerce workflow into a reusable skill: resolve the agent email, confirm the merchant plan, issue a bounded card, complete checkout, verify the captured payment, find the receipt, and open paid content.",
+  "status": "validated demo",
+  "topic": "commerce",
+  "topics": ["commerce", "skills", "identity"],
+  "builder": {
+    "name": "Celeste",
+    "url": "https://github.com/celesteanglm"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-paid-subscription-checkout/examples/substack",
+    "video": "https://x.com/buildonvirtuals/status/2056329936072552799",
+    "share": "https://x.com/buildonvirtuals/status/2056329936072552799",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Paid%20Substack%20Subscription%20Agent&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Useful%20and%20ready%20to%20try%0A-%20Needs%20clearer%20docs%0A-%20Could%20support%20more%20merchants%0A-%20I%20want%20to%20reuse%20the%20skill%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["email", "card"],
+  "visual": {
+    "kind": "x demo video",
+    "eyebrow": "browser + acp-cli",
+    "title": "substack checkout",
+    "posterUrl": "/showcase/paid-substack-subscription-poster.jpg",
+    "videoUrl": "https://video.twimg.com/amplify_video/2056329403983151104/vid/avc1/1300x1080/Vfc06h_wgFDTZna_.mp4?tag=27",
+    "videoLabel": "Watch the 11:41 demo on X"
+  },
+  "skills": [
+    {
+      "name": "acp-paid-subscription-checkout",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-paid-subscription-checkout",
+      "sourcePath": "skills/acp-paid-subscription-checkout",
+      "summary": "Reusable bounded checkout workflow for ACP agent email, card issuance, browser checkout, receipt checks, and paid-access verification. Also supports desktop-safe handoff prompts and redacted evidence review.",
+      "install": "cp -R skills/acp-paid-subscription-checkout ~/.agents/skills/\ncp -R skills/acp-paid-subscription-checkout ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "X demo video",
+      "href": "https://x.com/buildonvirtuals/status/2056329936072552799",
+      "kind": "video"
+    },
+    {
+      "label": "Redacted result report",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/skills/acp-paid-subscription-checkout/examples/substack/result-redacted.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/skills/acp-paid-subscription-checkout/examples/substack/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-paid-subscription-checkout",
+      "kind": "skill"
+    },
+    {
+      "label": "Codex and Claude setup guide",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/docs/skill-packages.md",
+      "kind": "skill"
+    }
+  ],
+  "feedbackPrompts": [
+    "Could this support recurring renewals safely?",
+    "Which merchant checkout should this skill try next?",
+    "What docs would make this easier to reuse?"
+  ]
+}

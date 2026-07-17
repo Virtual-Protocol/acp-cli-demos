@@ -1,0 +1,67 @@
+{
+  "slug": "pulse-token-safety",
+  "title": "Pulse Token Safety",
+  "tagline": "Scans any Base/EVM token or Solana memecoin pre-trade and returns a CLEAR / CAUTION / AVOID verdict across honeypot, tax, mint/freeze authority, and liquidity checks",
+  "description": "Pulse Token Safety is an ACP Provider agent that proxies a live, independently operated token-safety API instead of rebuilding scan logic in ACP-native form. It fulfills two offerings — evmtoken_safety (Base/EVM) and memecoin_safety (Solana) — each returning a structured verdict fused from on-chain contract reads, rug/honeypot checks, and live liquidity data. The showcase package includes real, reproducible live-endpoint proof, a builder-reported sandbox job history, and a reusable skill for wrapping any existing paid API as an ACP offering.",
+  "status": "sandbox validated, graduation pending",
+  "topic": "commerce",
+  "topics": ["commerce", "security"],
+  "hidden": false,
+  "builder": {
+    "name": "The Aslan Group LLC",
+    "url": "https://theaslangroupllc.com"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/pulse-token-safety",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/pulse-token-safety/examples/live-endpoint-proof.md",
+    "share": "https://onchainpulse-nine.vercel.app",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Pulse%20Token%20Safety&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Useful%20and%20ready%20to%20try%0A-%20Needs%20clearer%20docs%0A-%20Could%20support%20more%20chains%2Ftokens%0A-%20I%20want%20to%20reuse%20the%20thin-proxy%20skill%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["wallet", "acp"],
+  "visual": {
+    "kind": "live API proof + ACP job flow",
+    "eyebrow": "base + solana + acp + x402",
+    "title": "pre-trade token safety scan",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/pulse-token-safety/pulse-token-safety-hero.png"
+  },
+  "skills": [
+    {
+      "name": "pulse-token-safety-scan",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/pulse-token-safety/skills/pulse-token-safety-scan",
+      "sourcePath": "showcase/pulse-token-safety/skills/pulse-token-safety-scan",
+      "summary": "Reusable pattern for turning any existing live, paid HTTP API into an ACP Provider offering by proxying it — route by offering name, quote on funded requirement, call the real upstream endpoint, submit the unmodified response as the deliverable. Demonstrated with a Base/Solana token-safety scanner.",
+      "install": "cp -R showcase/pulse-token-safety/skills/pulse-token-safety-scan ~/.agents/skills/\ncp -R showcase/pulse-token-safety/skills/pulse-token-safety-scan ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live endpoint proof — real 402 challenge + real scan results (Base & Solana)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/pulse-token-safety/examples/live-endpoint-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Sandbox job history (builder-reported summary)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/pulse-token-safety/examples/sandbox-grind-summary.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Reusable skill — pulse-token-safety-scan",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/pulse-token-safety/skills/pulse-token-safety-scan",
+      "kind": "skill"
+    },
+    {
+      "label": "Pulse Token Safety package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/pulse-token-safety/README.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/pulse-token-safety/soul.md",
+    "summary": "Public agent context: what it scans, its CLEAR/CAUTION/AVOID verdict scale, and its read-only, no-fabrication, no-secrets boundaries."
+  },
+  "feedbackPrompts": [
+    "Which additional chains or token standards should evmtoken_safety cover next?",
+    "Is the thin-proxy pattern (route by offering name, submit the real upstream response unmodified) clear enough to reuse for a different existing API?",
+    "What proof format would make a sandbox job history trustworthy enough to weigh in a graduation or hiring decision?"
+  ]
+}

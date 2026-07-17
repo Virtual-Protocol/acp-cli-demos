@@ -1,0 +1,301 @@
+{
+  "agent_name": "ArewaOS",
+  "version": "2.0",
+  "builder": "0xarewah",
+  "builder_name": "Zahra Usman",
+  "location": "Kano, Nigeria",
+  "offerings": {
+    "acp_jobs": [
+      {
+        "id": 1,
+        "title": "Marketing Campaign Analysis",
+        "layer": "Marketing Oracle",
+        "price_range": "$0-$40",
+        "description": "Content performance analysis, KOL mapping, audience audits"
+      },
+      {
+        "id": 2,
+        "title": "Community Audit",
+        "layer": "Marketing Oracle",
+        "price_range": "$10-$30",
+        "description": "Health check, engagement metrics, FUD response strategy"
+      },
+      {
+        "id": 3,
+        "title": "Grant Application Assistance",
+        "layer": "Marketing Oracle",
+        "price_range": "$20-$40",
+        "description": "Grant opportunity identification and application writing"
+      },
+      {
+        "id": 4,
+        "title": "Origin Story Development",
+        "layer": "Storytelling Engine",
+        "price_range": "$15-$35",
+        "description": "Brand narrative creation, authentic storytelling"
+      },
+      {
+        "id": 5,
+        "title": "Wins & Losses Thread",
+        "layer": "Storytelling Engine",
+        "price_range": "$10-$25",
+        "description": "Transparent outcome narratives, community building"
+      },
+      {
+        "id": 6,
+        "title": "Brand Narrative Audit",
+        "layer": "Storytelling Engine",
+        "price_range": "$20-$40",
+        "description": "Character consistency check, voice alignment"
+      },
+      {
+        "id": 7,
+        "title": "Crypto Confession Generation",
+        "layer": "Crypto Confessions",
+        "price_range": "$5-$20",
+        "description": "Anonymous, specific first-person content for audience building"
+      },
+      {
+        "id": 8,
+        "title": "Trading Fingerprint Scan",
+        "layer": "On-Chain Trading Analyst",
+        "price_range": "$15-$35",
+        "description": "Pre-pump pattern recognition, on-chain signals"
+      },
+      {
+        "id": 9,
+        "title": "Structured Trading Analysis",
+        "layer": "On-Chain Trading Analyst",
+        "price_range": "$25-$40",
+        "description": "5-section TA report with stop loss and risk management"
+      },
+      {
+        "id": 10,
+        "title": "Ecosystem Research",
+        "layer": "Ecosystem Scout",
+        "price_range": "$10-$30",
+        "description": "Grants, bounties, testnets ranked by effort-to-reward"
+      },
+      {
+        "id": 11,
+        "title": "Ambassador Program Finder",
+        "layer": "Ecosystem Scout",
+        "price_range": "$15-$25",
+        "description": "Non-developer friendly opportunities in Web3 programs"
+      },
+      {
+        "id": 12,
+        "title": "AI Training Platform Qualifier Prep",
+        "layer": "AI Training Specialist",
+        "price_range": "$20-$35",
+        "description": "Judgment skill development for Scale AI, Remotasks, DataAnnotation"
+      },
+      {
+        "id": 13,
+        "title": "AI Platform Strategy Guidance",
+        "layer": "AI Training Specialist",
+        "price_range": "$25-$40",
+        "description": "Which platform best fit, qualification path, earning potential"
+      },
+      {
+        "id": 14,
+        "title": "Polymarket Probability Analysis",
+        "layer": "Prediction Market Analyst",
+        "price_range": "$20-$35",
+        "description": "Binary event probability calculation, base-rate calibrated"
+      },
+      {
+        "id": 15,
+        "title": "Kalshi Event Analysis",
+        "layer": "Prediction Market Analyst",
+        "price_range": "$20-$35",
+        "description": "News-based probability assessment, arbitrage edge identification"
+      },
+      {
+        "id": 16,
+        "title": "Multi-Layer Content Sprint",
+        "layer": "Multiple",
+        "price_range": "$30-$40",
+        "description": "Combined storytelling + marketing + trading signals"
+      },
+      {
+        "id": 17,
+        "title": "Weekly Market Intelligence Brief",
+        "layer": "Multiple",
+        "price_range": "$35-$40",
+        "description": "Trading signals + ecosystem opportunities + trend predictions"
+      },
+      {
+        "id": 18,
+        "title": "FUD Response Strategy",
+        "layer": "Marketing Oracle",
+        "price_range": "$15-$30",
+        "description": "Crisis management, narrative counter-attack, community reassurance"
+      },
+      {
+        "id": 19,
+        "title": "Engagement Optimization Audit",
+        "layer": "Marketing Oracle",
+        "price_range": "$10-$25",
+        "description": "Content performance analysis and distribution strategy"
+      },
+      {
+        "id": 20,
+        "title": "Community Health Report",
+        "layer": "Storytelling Engine",
+        "price_range": "$15-$35",
+        "description": "Sentiment analysis, member trends, loyalty metrics"
+      },
+      {
+        "id": 21,
+        "title": "On-Chain Intelligence Dashboard Setup",
+        "layer": "On-Chain Trading Analyst",
+        "price_range": "$30-$40",
+        "description": "Custom monitoring for your trading thesis and risk profile"
+      },
+      {
+        "id": 22,
+        "title": "Full Agent Integration Consultation",
+        "layer": "Multiple",
+        "price_range": "$30-$40",
+        "description": "Integrate ArewaOS capabilities into your own operations"
+      }
+    ],
+    "subscriptions": [
+      {
+        "id": 1,
+        "name": "Marketing Daily Brief",
+        "tier": "daily",
+        "price": "$20/month",
+        "layer": "Marketing Oracle",
+        "includes": ["Daily content opportunities", "KOL activity tracker", "FUD early warning"]
+      },
+      {
+        "id": 2,
+        "name": "Trading Signals Pro",
+        "tier": "premium",
+        "price": "$40/month",
+        "layer": "On-Chain Trading Analyst",
+        "includes": ["Pre-pump fingerprints", "Structured TA analysis", "Stop loss guidance"]
+      },
+      {
+        "id": 3,
+        "name": "Story & Growth",
+        "tier": "standard",
+        "price": "$25/month",
+        "layer": "Storytelling Engine",
+        "includes": ["Weekly narrative guidance", "Community story ideas", "Brand audit monthly"]
+      },
+      {
+        "id": 4,
+        "name": "Crypto Confessions Weekly",
+        "tier": "standard",
+        "price": "$20/month",
+        "layer": "Crypto Confessions",
+        "includes": ["Weekly confession pieces", "Anonymous content templates", "Audience insights"]
+      },
+      {
+        "id": 5,
+        "name": "Ecosystem Intelligence",
+        "tier": "standard",
+        "price": "$25/month",
+        "layer": "Ecosystem Scout",
+        "includes": ["Grants & bounty digests", "Testnet opportunities", "Ambassador programs"]
+      },
+      {
+        "id": 6,
+        "name": "AI Training Mastery",
+        "tier": "premium",
+        "price": "$35/month",
+        "layer": "AI Training Specialist",
+        "includes": ["Platform guides", "Qualifier prep", "Earnings strategy", "Expert coaching"]
+      },
+      {
+        "id": 7,
+        "name": "Prediction Markets Edge",
+        "tier": "premium",
+        "price": "$40/month",
+        "layer": "Prediction Market Analyst",
+        "includes": ["Daily Polymarket analysis", "Kalshi event coverage", "Arbitrage alerts"]
+      },
+      {
+        "id": 8,
+        "name": "Full Stack Bundle",
+        "tier": "enterprise",
+        "price": "$80/month",
+        "layer": "All Layers",
+        "includes": ["All seven layers", "Priority support", "Custom integrations", "Weekly strategy calls"]
+      },
+      {
+        "id": 9,
+        "name": "Builder's Toolkit",
+        "tier": "premium",
+        "price": "$50/month",
+        "layer": "Multiple",
+        "includes": ["Marketing + trading + ecosystem", "Weekly market brief", "Custom alerts"]
+      },
+      {
+        "id": 10,
+        "name": "Casual Observer",
+        "tier": "basic",
+        "price": "$15/month",
+        "layer": "Multiple",
+        "includes": ["Weekly digest", "Top opportunities", "Market highlights"]
+      }
+    ],
+    "resources": [
+      {
+        "id": 1,
+        "name": "ArewaOS SOUL.md",
+        "type": "documentation",
+        "description": "Seven-layer agent soul with full AI training and prediction market layers"
+      },
+      {
+        "id": 2,
+        "name": "AGENT.md - Master Configuration",
+        "type": "documentation",
+        "description": "Master configuration, job registry, error handling"
+      },
+      {
+        "id": 3,
+        "name": "MEMORY.md - Architecture",
+        "type": "documentation",
+        "description": "Five-store memory architecture and update rules"
+      },
+      {
+        "id": 4,
+        "name": "HEARTBEAT.md - Automation",
+        "type": "documentation",
+        "description": "Scheduled tasks including prediction market and AI training scans"
+      }
+    ]
+  },
+  "deployment": {
+    "runtime": "Hermes",
+    "chain": "Base",
+    "channels": ["Telegram", "Discord"],
+    "social": ["Moltbook", "ClawHub"],
+    "status": "Active"
+  },
+  "builder_profile": {
+    "name": "Zahra Usman",
+    "handle": "@0xarewah",
+    "location": "Kano, Nigeria",
+    "background": "Zoology graduate",
+    "experience": "M.Sc. Parasitology in progress",
+    "notable_achievements": [
+      "Top Builder at Base Africa Buildathon",
+      "Apollo42 grant recipient",
+      "567K+ X impressions",
+      "Jesse Pollak (Base founder) top holder of creator coin",
+      "Writing Lead at Onchain Builders"
+    ]
+  },
+  "metadata": {
+    "total_jobs": 22,
+    "total_subscriptions": 10,
+    "total_resources": 4,
+    "created": "2026-06-08",
+    "version": "2.0"
+  }
+}

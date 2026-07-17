@@ -1,0 +1,58 @@
+{
+  "slug": "agent-email-otp",
+  "title": "Agent Email OTP — Automated Inbox & Verification",
+  "tagline": "An ACP agent reads its own inbox, extracts OTP codes, and completes email-based verification flows autonomously.",
+  "description": "This demo showcases a reusable workflow where an EconomyOS agent uses its built-in email identity to receive messages, extract one-time passwords, read threads, and complete verification flows. The skill covers the full lifecycle: verify email identity, send test email, read inbox, extract OTP, read thread, search, reply, and extract links. Zero funding required — works with any ACP agent out of the box.",
+  "status": "validated demo",
+  "topic": "skills",
+  "topics": ["skills", "email", "automation"],
+  "hidden": false,
+  "builder": {
+    "name": "airplane",
+    "url": "https://os.virtuals.io"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agent-email-otp",
+    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agent-email-otp",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues"
+  },
+  "primitives": ["email", "wallet"],
+  "visual": {
+    "kind": "console demo",
+    "eyebrow": "acp-cli",
+    "title": "Agent Email OTP Flow",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/agent-email-otp/assets/poster.png"
+  },
+  "skills": [
+    {
+      "name": "agent-email-otp",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agent-email-otp/skills/agent-email-otp",
+      "sourcePath": "showcase/agent-email-otp/skills/agent-email-otp",
+      "summary": "Reusable workflow for ACP agent email: verify identity, send emails, read inbox, extract OTP codes, read threads, search, reply, and extract links. Zero funding required.",
+      "install": "cp -R showcase/agent-email-otp/skills/agent-email-otp ~/.agents/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Redacted result report",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-email-otp/result-redacted.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-email-otp/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agent-email-otp/skills/agent-email-otp",
+      "kind": "skill"
+    }
+  ],
+  "feedbackPrompts": [
+    "Could this skill support real-time OTP push notifications instead of polling?",
+    "What other email-based verification flows should this skill cover?",
+    "How could this integrate with agent card checkout flows for end-to-end signup?"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "submitted": [],
+  "zero_report": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sting-bounty-hunter/proof/round-trip-deliverable-job-66550.json",
+  "runtime_ms": 120000,
+  "total_inference_usd": 0.0,
+  "job": {
+    "acp_job_id": "66550",
+    "target_url": "https://github.com/AntFleet/sting",
+    "platform": "ghsa",
+    "commit_sha": "e3d32a5ae1748dd99bedcdc7329944659af010b8",
+    "status_url": "https://sting-hunters.vercel.app"
+  },
+  "review": {
+    "agreement_mode": "unanimous",
+    "reviewer_count": 2,
+    "qualifying_findings": 0,
+    "note": "HIGH-confidence-only gate passed with zero qualifying findings at pinned SHA"
+  }
+}

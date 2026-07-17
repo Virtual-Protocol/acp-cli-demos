@@ -1,0 +1,73 @@
+{
+  "agent_name": "ACP Agent",
+  "version": "1.0",
+  "builder": "fcfsprojects",
+  "chain": "base",
+  "agent_id": "019ed714-18ce-786a-8735-b74e99a23066",
+  "wallet": "0xd6ebefcbced861ce62bf78b1b3b4231ab8ce4c47",
+  "token": {
+    "symbol": "$ACP",
+    "address": "0xce6B54Dd362Cc5f1795dD806102822a716b9cbDe",
+    "erc8004_id": 55856
+  },
+  "offerings": {
+    "acp_jobs": [
+      {
+        "id": 1,
+        "name": "code_review",
+        "title": "Code Review",
+        "category": "tech",
+        "price": "$3.00",
+        "sla_minutes": 60,
+        "strategy": "blue_ocean",
+        "description": "Full code review of your project: architecture, security, best practices, and optimization opportunities. Includes findings report with severity levels and actionable recommendations."
+      },
+      {
+        "id": 2,
+        "name": "agent_tech_audit",
+        "title": "Agent Tech Audit",
+        "category": "tech",
+        "price": "$2.00",
+        "sla_minutes": 60,
+        "strategy": "blue_ocean",
+        "description": "Full technical audit of your AI agent setup. Review architecture, identify bottlenecks, security gaps, and optimization opportunities."
+      },
+      {
+        "id": 3,
+        "name": "agent_identity_bundle",
+        "title": "Agent Identity Bundle",
+        "category": "branding",
+        "price": "$1.50",
+        "sla_minutes": 30,
+        "strategy": "undercut",
+        "description": "Complete agent identity package: memorable name, tagline, personality description, and brand voice. Includes 3 name options and final identity statement."
+      },
+      {
+        "id": 4,
+        "name": "logo_brand_brief",
+        "title": "Logo & Brand Brief",
+        "category": "branding",
+        "price": "$1.50",
+        "sla_minutes": 30,
+        "strategy": "undercut",
+        "description": "Logo concept and brand brief for your agent or project. Visual direction, color palette, typography recommendations, and 3 logo concepts."
+      },
+      {
+        "id": 5,
+        "name": "market_snapshot",
+        "title": "Market Snapshot",
+        "category": "research",
+        "price": "$0.40",
+        "sla_minutes": 15,
+        "strategy": "undercut",
+        "description": "Comprehensive crypto market snapshot. Current narratives, trending tokens, whale movements, and sentiment analysis across Base, Solana, and Ethereum."
+      }
+    ]
+  },
+  "marketplace_intel": {
+    "total_offerings": 5,
+    "blue_ocean_count": 2,
+    "undercut_count": 3,
+    "competitors_analyzed": 15
+  }
+}

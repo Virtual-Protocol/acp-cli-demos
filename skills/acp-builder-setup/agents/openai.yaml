@@ -1,0 +1,6 @@
+interface:
+  display_name: "ACP Builder Setup"
+  short_description: "Install ACP skills and configure agent routing"
+  default_prompt: "Use $acp-builder-setup to configure my ACP builder environment for Codex or Claude."
+policy:
+  allow_implicit_invocation: true

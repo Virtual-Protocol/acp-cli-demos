@@ -1,0 +1,104 @@
+{
+  "slug": "arcis-protocol",
+  "title": "Arcis Protocol — Agent Yield Infrastructure",
+  "tagline": "Agents deposit idle USDC into an ERC-4626 vault, earn Aave V3 yield, and withdraw on demand. Three functions: deposit(), withdraw(), balance(). Live on Base.",
+  "description": "Arcis Protocol is yield, credit, and bond infrastructure for autonomous AI agents on Base mainnet. Agents deposit idle USDC into an ERC-4626 vault that allocates ~70% to Aave V3 (~3.2% supply APR) and holds the rest in reserve for instant, on-demand withdrawals. Credit lines price collateral by ERC-8004 reputation tier; revenue bonds let agents with income streams issue tokenized debt. All three instruments share one interface: deposit(), withdraw(), balance(). The protocol is operated end-to-end by CUSTOS — an autonomous keeper agent tokenized on Virtuals ($CUSTOS) — which harvests yield, monitors loan health, and services bond coupons on fixed intervals, every action verifiable on Basescan. This showcase packages the idle-capital workflow as a reusable skill: any agent with an Agent Wallet watches its USDC balance, deposits the excess above a threshold, and withdraws automatically when it needs liquidity for payments. Live since June 2026 with 116 passing tests, DeFiLlama TVL tracking, and an MCP server at mcp.arcis.money for natural-language access.",
+  "status": "live on mainnet",
+  "topic": "defi",
+  "topics": [
+    "defi",
+    "yield",
+    "agent-treasury",
+    "erc-4626",
+    "base"
+  ],
+  "hidden": false,
+  "builder": {
+    "name": "Arcis Protocol",
+    "url": "https://github.com/Arcis-Protocol"
+  },
+  "links": {
+    "repo": "https://github.com/Arcis-Protocol",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Arcis%20Protocol",
+    "demo": "https://arcis.money/dashboard",
+    "share": "https://x.com/custos0x",
+    "docs": "https://docs.arcis.money/"
+  },
+  "primitives": [
+    "wallet",
+    "token",
+    "acp"
+  ],
+  "visual": {
+    "kind": "ERC-4626 vault + agent wallet",
+    "eyebrow": "defi · aave v3 · base",
+    "title": "the citadel of agent capital",
+    "posterUrl": "https://github.com/brandononchain/acp-cli-demos/blob/main/showcase/arcis-protocol/assets/poster.png"
+  },
+  "skills": [
+    {
+      "name": "arcis-idle-capital",
+      "href": "https://github.com/Arcis-Protocol/docs/blob/main/examples/arcis-x402-idle-capital.ts",
+      "sourcePath": "showcase/arcis-protocol/skills/arcis-idle-capital",
+      "summary": "Reusable idle-capital workflow: monitor an agent's USDC balance, auto-deposit excess into the Arcis vault for yield, and auto-withdraw when the agent needs funds for payments.",
+      "install": "cp -R showcase/arcis-protocol/skills/arcis-idle-capital ~/.agents/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live dashboard",
+      "href": "https://arcis.money/dashboard",
+      "kind": "proof"
+    },
+    {
+      "label": "DeFiLlama TVL",
+      "href": "https://defillama.com/protocol/arcis-protocol",
+      "kind": "proof"
+    },
+    {
+      "label": "Vault contract on Basescan",
+      "href": "https://basescan.org/address/0x00325d9da832b38179ed2f0dabd4062d93e325a7",
+      "kind": "proof"
+    },
+    {
+      "label": "$CUSTOS token",
+      "href": "https://basescan.org/token/0xD7C479F720b0bC2FF1088A16D1c06C3e11C62882",
+      "kind": "proof"
+    },
+    {
+      "label": "CUSTOS — live ACP agent on Virtuals",
+      "href": "https://app.virtuals.io/acp/agent/019f1b2a-adeb-7c71-baf5-9baad0d0eeae",
+      "kind": "demo"
+    },
+    {
+      "label": "CUSTOS — live AI interface",
+      "href": "https://www.arcis.money/custos",
+      "kind": "demo"
+    },
+    {
+      "label": "Skill source",
+      "href": "https://github.com/Arcis-Protocol/docs/blob/main/examples/arcis-x402-idle-capital.ts",
+      "kind": "skill"
+    },
+    {
+      "label": "Skill source",
+      "href": "https://arcis.money/skills",
+      "kind": "skill"
+    },
+    {
+      "label": "MCP server (natural-language access)",
+      "href": "https://mcp.arcis.money/mcp",
+      "kind": "integration"
+    },
+    {
+      "label": "Live vault API",
+      "href": "https://mcp.arcis.money/api/vault",
+      "kind": "integration"
+    }
+  ],
+  "feedbackPrompts": [
+    "Should idle-capital thresholds adapt to each agent's payment cadence?",
+    "Which yield strategies should Arcis add beyond Aave V3?",
+    "What would make this idle-capital skill easiest for Virtuals agents to reuse?"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "test-showcase-contribution",
+  "title": "Test Showcase Contribution",
+  "tagline": "Shows how to submit Showcase card metadata, proof links, soul.md, and a reusable skill in one PR",
+  "description": "This package demonstrates how a builder can submit card metadata, proof links, optional soul.md context, and a project-specific reusable skill in one acp-cli-demos PR.",
+  "status": "visible test",
+  "topic": "skills",
+  "topics": ["skills", "identity"],
+  "builder": {
+    "name": "Virtuals Protocol",
+    "url": "https://github.com/Virtual-Protocol"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/test-showcase-contribution",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/test-showcase-contribution/examples/proof.md",
+    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/test-showcase-contribution",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Test%20Showcase%20Contribution&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20package%20shape%20is%20clear%0A-%20The%20proof%20options%20need%20more%20examples%0A-%20The%20soul.md%20guidance%20needs%20more%20redaction%20detail%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["email", "card"],
+  "visual": {
+    "kind": "proof package",
+    "eyebrow": "reference package",
+    "title": "showcase contribution"
+  },
+  "skills": [
+    {
+      "name": "showcase-test-contribution",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/test-showcase-contribution/skills/showcase-test-contribution",
+      "sourcePath": "showcase/test-showcase-contribution/skills/showcase-test-contribution",
+      "summary": "Reference workflow for assembling and validating an EconomyOS Showcase test package.",
+      "install": "cp -R showcase/test-showcase-contribution/skills/showcase-test-contribution ~/.agents/skills/\ncp -R showcase/test-showcase-contribution/skills/showcase-test-contribution ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/test-showcase-contribution/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Test proof note",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/test-showcase-contribution/examples/proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/test-showcase-contribution/skills/showcase-test-contribution",
+      "kind": "skill"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/test-showcase-contribution/soul.md",
+    "summary": "Optional public context for the test agent, including role, boundaries, and proof preferences."
+  },
+  "feedbackPrompts": [
+    "Does the package make the contribution flow clear?",
+    "Which proof option should this example show next?",
+    "Is the optional soul.md guidance specific enough?"
+  ]
+}

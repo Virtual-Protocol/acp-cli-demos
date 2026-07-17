@@ -1,0 +1,93 @@
+{
+  "slug": "arewaos",
+  "title": "ArewaOS",
+  "tagline": "One Base agent bundling seven services: storytelling, on chain trading analysis, ecosystem scouting, and event probability calls, built by a self taught developer from Kano, Nigeria",
+  "description": "ArewaOS packages narrative engineering, storytelling, anonymous crypto confessions, on-chain trading analysis, ecosystem scouting, AI-training guidance, and event-probability analysis into one Base-native agent. This showcase includes the public agent manifest, offerings JSON, redacted market-action receipts, the public live-agent demo post, and the build story from OpenClaw v1 failure to Hermes v2 rebuild.",
+  "status": "active v2 showcase",
+  "topic": "agents",
+  "topics": [
+    "agents",
+    "base",
+    "acp",
+    "storytelling",
+    "market-intelligence"
+  ],
+  "builder": {
+    "name": "Zahra Usman (@0xarewah)",
+    "url": "https://x.com/0xarewah"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/arewaos",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arewaos/examples/market-receipt-chefuniverse-cfCAVIAR.md",
+    "video": "https://youtube.com/shorts/zkWaoRyqmZc",
+    "share": "https://youtube.com/shorts/zkWaoRyqmZc",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20ArewaOS&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20agent%20story%20is%20clear%0A-%20The%20offerings%20need%20more%20pricing%20detail%0A-%20The%20proof%20receipts%20need%20stronger%20verification%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "wallet",
+    "token",
+    "acp"
+  ],
+  "visual": {
+    "kind": "youtube demo video",
+    "eyebrow": "base + virtuals + acp",
+    "title": "live agent from kano",
+    "posterUrl": "https://img.youtube.com/vi/zkWaoRyqmZc/maxresdefault.jpg",
+    "videoLabel": "Watch the ArewaOS live-agent demo on YouTube"
+  },
+  "skills": [
+    {
+      "name": "arewaos-showcase",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/arewaos/skills/arewaos-showcase",
+      "sourcePath": "showcase/arewaos/skills/arewaos-showcase",
+      "summary": "Reusable workflow for packaging and reviewing an ArewaOS-style autonomous agent showcase with isolated manifests, offerings, proof receipts, and redacted public soul context.",
+      "install": "cp -R showcase/arewaos/skills/arewaos-showcase ~/.agents/skills/\ncp -R showcase/arewaos/skills/arewaos-showcase ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "ArewaOS live-agent demo video",
+      "href": "https://youtube.com/shorts/zkWaoRyqmZc",
+      "kind": "video"
+    },
+    {
+      "label": "ArewaOS package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arewaos/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Public agent manifest",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arewaos/agent.yaml",
+      "kind": "manifest"
+    },
+    {
+      "label": "Offerings JSON",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arewaos/offerings/arewaos_v2_offerings.json",
+      "kind": "manifest"
+    },
+    {
+      "label": "Bazaar-native market-action receipt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arewaos/examples/market-receipt-chefuniverse-cfCAVIAR.md",
+      "kind": "proof"
+    },
+    {
+      "label": "External prediction-market receipt example",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arewaos/examples/market-receipt-colombia-group-k.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Project-specific skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/arewaos/skills/arewaos-showcase",
+      "kind": "skill"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arewaos/soul.md",
+    "summary": "Public/redacted ArewaOS agent context, seven layers, boundaries, and review preferences."
+  },
+  "feedbackPrompts": [
+    "Does the live-agent demo make the non-developer builder story clear?",
+    "Which ArewaOS layer should become the next standalone ACP offering?",
+    "What proof would make the agent hiring workflow even stronger?"
+  ]
+}

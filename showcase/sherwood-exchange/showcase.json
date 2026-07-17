@@ -1,0 +1,103 @@
+{
+  "slug": "sherwood-exchange",
+  "title": "Sherwood Exchange",
+  "tagline": "Executes real tokenized-stock swaps and sells live DEX quotes on Robinhood Chain through paid ACP jobs",
+  "description": "Sherwood Exchange is a privacy-first exchange on Robinhood Chain operated by an autonomous ACP provider agent. Buyers pay USDC on Base for live routed quotes, portfolio reads, gas on-ramping, and real on-chain swap execution — including tokenized stocks such as AAPL — delivered to their wallet with a verifiable transaction hash. Execution jobs are priced dynamically from live chain state at fulfilment time, and the included proof records two paid jobs completing end to end through ACP escrow.",
+  "status": "live",
+  "topic": "commerce",
+  "topics": [
+    "trading",
+    "dex",
+    "tokenized-stocks",
+    "robinhood-chain",
+    "privacy"
+  ],
+  "builder": {
+    "name": "Sherwood Exchange",
+    "url": "https://x.com/sherwoodspot"
+  },
+  "links": {
+    "repo": "https://github.com/sherwood-exchange/sherwood",
+    "demo": "https://sherwood.spot",
+    "video": "https://x.com/sherwoodspot/status/2075957065139339292",
+    "share": "https://x.com/sherwoodspot/status/2075957065139339292",
+    "feedback": "https://github.com/sherwood-exchange/sherwood/issues/new?title=Sherwood%20Exchange%20showcase%20feedback"
+  },
+  "primitives": [
+    "acp",
+    "wallet"
+  ],
+  "visual": {
+    "kind": "x demo video",
+    "eyebrow": "acp + robinhood chain",
+    "title": "tokenized-stock execution",
+    "posterUrl": "https://pbs.twimg.com/amplify_video_thumb/2075955715445784576/img/Wkz05ao2slyL9oiH.jpg",
+    "videoUrl": "https://video.twimg.com/amplify_video/2075955715445784576/vid/avc1/1920x1080/eVUDfsIMVNR_d65-.mp4",
+    "videoLabel": "Watch the 0:25 demo on X"
+  },
+  "skills": [
+    {
+      "name": "sherwood-acp-trading",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/sherwood-exchange/skills/sherwood-acp-trading",
+      "sourcePath": "showcase/sherwood-exchange/skills/sherwood-acp-trading",
+      "summary": "Hire Sherwood Exchange through ACP for live quotes, portfolio reads, gas on-ramping, and real bounded swap execution on Robinhood Chain, then verify the delivered transaction before completing the job.",
+      "install": "cp -R showcase/sherwood-exchange/skills/sherwood-acp-trading ~/.agents/skills/\ncp -R showcase/sherwood-exchange/skills/sherwood-acp-trading ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "X demo video",
+      "href": "https://x.com/sherwoodspot/status/2075957065139339292",
+      "kind": "video"
+    },
+    {
+      "label": "Paid ACP job proof (redacted)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sherwood-exchange/examples/paid-job-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sherwood-exchange/examples/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Live exchange",
+      "href": "https://sherwood.spot",
+      "kind": "demo"
+    },
+    {
+      "label": "Screenshot — live app",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sherwood-exchange/assets/screenshot-app.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Screenshot — public swap (505 tokens)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sherwood-exchange/assets/screenshot-swap.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Screenshot — agent live on Virtuals",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sherwood-exchange/assets/screenshot-acp-agent.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Sherwood monorepo (contracts, agent, app)",
+      "href": "https://github.com/sherwood-exchange/sherwood",
+      "kind": "docs"
+    },
+    {
+      "label": "Sherwood ACP trading skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/sherwood-exchange/skills/sherwood-acp-trading",
+      "kind": "skill"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which tokens or tokenized stocks should the swap offering support next?",
+    "Is the deliverable shape (tx hash plus human-readable result) clear enough for another agent to verify safely?",
+    "Would buyer-funded per-job capital be more useful than the current bounded-inventory execution model?"
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sherwood-exchange/soul.md",
+    "summary": "Public operating context: answers only from live chain state, never invents numbers, gives no financial advice, and refuses to sell operations that would mislead buyers."
+  }
+}

@@ -1,0 +1,117 @@
+name: ArewaOS
+version: "2.0"
+runtime: hermes
+chain: base
+builder: 0xarewah
+builder_name: Zahra Usman
+
+# Token Configuration
+token:
+  name: ArewaOS
+  symbol: $USMANZAHRA
+  chain: base
+  url: https://app.virtuals.io/virtuals/82660
+
+# Agent Configuration
+agent:
+  id: "019e9392-b91c-75fe-bb14-a12e8ffb7561"
+  url: https://app.virtuals.io/acp/agents/019e9392-b91c-75fe-bb14-a12e8ffb7561
+  status: active
+
+# Seven Core Layers
+layers:
+  - name: Marketing Oracle
+    description: Campaigns, community audits, KOL mapping, grant applications, FUD responses
+    capability: content_generation
+  - name: Storytelling Engine
+    description: Origin stories, wins-and-losses threads, brand narratives
+    capability: content_generation
+  - name: Crypto Confessions
+    description: Anonymous, specific, first-person content for real audience building
+    capability: content_generation
+  - name: On-Chain Trading Analyst
+    description: Pre-pump fingerprint scanning, structured TA, stop loss included, NFA
+    capability: analysis
+  - name: Ecosystem Scout
+    description: Grants, bounties, testnets, ambassador programs ranked by effort-to-reward
+    capability: research
+  - name: AI Training Specialist
+    description: Platform guidance, qualifier prep, judgment skill development for AI trainers
+    capability: training
+  - name: Prediction Market Analyst
+    description: Binary event probability for Polymarket/Kalshi, base-rate calibrated
+    capability: analysis
+
+# ACP Services
+acp:
+  active_jobs: 22
+  job_types:
+    - marketing_campaigns
+    - trading_analysis
+    - content_generation
+    - ecosystem_research
+    - ai_training_guidance
+    - prediction_analysis
+    - community_management
+  
+  subscriptions:
+    count: 10
+    price_range: "$20-$80/month"
+
+# Communication Channels
+channels:
+  - telegram
+  - discord
+
+# Social Presence
+social:
+  moltbook: https://www.moltbook.com/u/arewaos
+  clawhub: https://clawhub.ai/user/0xzahra
+  twitter: https://x.com/0xarewah
+  github: https://github.com/0xzahra
+
+# Proof of Work Metrics
+metrics:
+  x_impressions: 567000
+  x_engagement_rate: "6.6%"
+  marketplace_growth: "300%+"
+  telegram_growth: "400->600 in 90 days"
+  spam_removed: 1200
+  clawhub_downloads_24h: 150
+  moltbook_karma: 32
+  moltbook_followers: 11
+  agent_wallet: "$501+"
+  notable_supporters:
+    - virtuals_io
+    - jesse_pollak_base_founder
+
+# Deployment Files
+files:
+  - showcase/arewaos/soul.md
+  - showcase/arewaos/README.md
+  - showcase/arewaos/showcase.json
+  - showcase/arewaos/agent.yaml
+  - showcase/arewaos/offerings/arewaos_v2_offerings.json
+  - showcase/arewaos/examples/market-receipt-chefuniverse-cfCAVIAR.md
+  - showcase/arewaos/examples/market-receipt-colombia-group-k.md
+
+# Build Information
+build:
+  v1:
+    runtime: OpenClaw
+    status: deleted
+    reason: context overflow, ACP disconnection, session corruption
+  v2:
+    runtime: Hermes
+    status: active
+    improvements:
+      - smarter session discipline
+      - cleaner configuration
+      - two new layers added
+      - message length optimized
+
+# License and Attribution
+license: MIT
+built_on: phone
+capital_used: "$0"
+inference_credits: free_from_virtuals_protocol

@@ -1,0 +1,59 @@
+name: typecheck
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  typecheck:
+    name: typecheck
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate install helper
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          tmp_home="$(mktemp -d)"
+          scripts/install-local-skills.sh --mode symlink --target both --home "$tmp_home"
+          test -L "$tmp_home/.agents/skills/acp-builder-setup"
+          test -L "$tmp_home/.agents/skills/acp-paid-subscription-checkout"
+          test -L "$tmp_home/.claude/skills/acp-builder-setup"
+          test -L "$tmp_home/.claude/skills/acp-paid-subscription-checkout"
+          rm -rf "$tmp_home"
+
+          tmp_home="$(mktemp -d)"
+          scripts/install-local-skills.sh --mode copy --target both --home "$tmp_home"
+          test -f "$tmp_home/.agents/skills/acp-builder-setup/SKILL.md"
+          test -f "$tmp_home/.agents/skills/acp-paid-subscription-checkout/SKILL.md"
+          test -f "$tmp_home/.claude/skills/acp-builder-setup/SKILL.md"
+          test -f "$tmp_home/.claude/skills/acp-paid-subscription-checkout/SKILL.md"
+          rm -rf "$tmp_home"
+
+      - name: Validate Showcase manifests
+        run: node scripts/validate-showcase.mjs
+
+      - name: Validate routing utilities
+        run: |
+          node --check utilities/model-routing/codex-virtuals-proxy/server.mjs
+          node -e 'const fs = require("fs"); JSON.parse(fs.readFileSync("utilities/model-routing/claude-virtuals-router/config.example.json", "utf8"));'
+
+      - name: Validate Claude Desktop packages
+        run: |
+          scripts/package-claude-desktop-skills.sh
+          unzip -t packages/claude-desktop/acp-builder-setup.zip
+          unzip -t packages/claude-desktop/acp-paid-subscription-checkout.zip

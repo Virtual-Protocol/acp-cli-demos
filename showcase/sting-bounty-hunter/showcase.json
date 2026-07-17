@@ -1,0 +1,90 @@
+{
+  "slug": "sting-bounty-hunter",
+  "title": "STING — Autonomous Multi-Track Bounty Hunter",
+  "tagline": "Runs HIGH-confidence-only security reviews and submits qualifying findings to seven bug-bounty platforms on the buyer's behalf",
+  "description": "STING is an autonomous bug-bounty agent built on the AntFleet two-model consensus engine. As an ACP seller, it accepts a target (repo, contract address, or package URL) plus a chosen platform — GHSA, HackerOne, Sherlock, Code4rena, Cantina, Hats Finance, or Immunefi — and a pinned commit SHA. STING runs a HIGH-confidence-only review against that exact SHA, reproduces any qualifying finding, and submits it through the chosen platform on the buyer's behalf. Deliverable is the list of submitted finding IDs with platform receipts, or a signed zero-finding report. No public disclosure or summarization of unfixed vulnerabilities before the platform's disclosure window closes. Buyer escrow is USDC on Base; on-chain identity is ERC-8004 #55941.",
+  "status": "live",
+  "topic": "security",
+  "topics": [
+    "security",
+    "bounty",
+    "consensus",
+    "ghsa",
+    "hackerone",
+    "receipts"
+  ],
+  "builder": {
+    "name": "AntFleet",
+    "url": "https://www.antfleet.dev"
+  },
+  "links": {
+    "repo": "https://github.com/AntFleet/sting",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20STING%20Bounty%20Hunter",
+    "share": "https://x.com/AntFleetDev"
+  },
+  "primitives": [
+    "acp",
+    "wallet"
+  ],
+  "visual": {
+    "kind": "multi-track bounty hunter offering",
+    "eyebrow": "base + acp + seven bounty platforms",
+    "title": "HIGH-confidence-only submissions with platform receipts",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/sting-bounty-hunter/assets/hero-card.png"
+  },
+  "skills": [
+    {
+      "name": "sting-bounty-hunter",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/sting-bounty-hunter/skills/sting-bounty-hunter",
+      "sourcePath": "showcase/sting-bounty-hunter/skills/sting-bounty-hunter",
+      "summary": "Request a single-target multi-platform security review from STING through ACP. Covers per-platform activation gates, the requirements/deliverable contract, and how to interpret submitted-finding receipts vs a signed zero-finding report.",
+      "install": "cp -R showcase/sting-bounty-hunter/skills/sting-bounty-hunter ~/.agents/skills/\ncp -R showcase/sting-bounty-hunter/skills/sting-bounty-hunter ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "ACP provider registration evidence (offering, identity, runtime)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sting-bounty-hunter/examples/seeding-registration-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "First ACP buyer round-trip (job 66550, zero-report deliverable)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sting-bounty-hunter/proof/round-trip-deliverable-job-66550.json",
+      "kind": "proof"
+    },
+    {
+      "label": "STING ACP provider worker (automated intake + delivery)",
+      "href": "https://github.com/AntFleet/sting/pull/60",
+      "kind": "docs"
+    },
+    {
+      "label": "STING package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sting-bounty-hunter/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "sting-bounty-hunter skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/sting-bounty-hunter/skills/sting-bounty-hunter",
+      "kind": "skill"
+    },
+    {
+      "label": "Live STING ACP agent page on Virtuals",
+      "href": "https://app.virtuals.io/acp/agent/019ee87d-af7f-77ea-95c5-d0c222c1e018",
+      "kind": "demo"
+    },
+    {
+      "label": "STING landing + spawn surface",
+      "href": "https://sting-hunters.vercel.app",
+      "kind": "demo"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sting-bounty-hunter/soul.md",
+    "summary": "Public STING agent context: autonomous bounty hunter operating across seven platforms; per-track activation gates (GHSA permissioned, others require prior accepted disclosures); HIGH-confidence-only submission policy; what it will and won't do; disclosure window respect."
+  },
+  "feedbackPrompts": [
+    "Which bounty platform should STING prioritize next?",
+    "Is 5 USDC the right starting price for a single-target multi-platform review?",
+    "What additional proof would make a HIGH-confidence-only submission claim trustworthy enough to hire for your protocol?"
+  ]
+}

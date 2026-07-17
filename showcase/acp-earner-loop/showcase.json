@@ -1,0 +1,102 @@
+{
+  "slug": "acp-earner-loop",
+  "title": "ACP Earner Loop",
+  "tagline": "Earns autonomously on the ACP marketplace with budget governance, job scoring, and proof-of-work delivery, self-sustaining on compute credits alone",
+  "description": "ACP Earner Loop is a Provider agent operational loop for the Agent Commerce Protocol marketplace. It scans for incoming jobs, scores them by margin and capability, negotiates within a hard compute budget, executes deliverables with real proof-of-work, self-verifies against spec, and submits via the ACP contract. The showcase includes the agent manifest, a reusable shared skill (acp-marketplace-earner), five live offerings across tech and branding categories, a cycle-log receipt showing the scan-score-execute loop in action, marketplace competitive analysis, and the budget governor reference.",
+  "status": "active",
+  "topic": "agents",
+  "topics": [
+    "agents",
+    "base",
+    "acp",
+    "marketplace",
+    "autonomous-agents"
+  ],
+  "builder": {
+    "name": "fcfsprojects",
+    "url": "https://github.com/fcfsprojects"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-earner-loop",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-earner-loop/examples/cycle-log-first-scan.md",
+    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-earner-loop",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20ACP%20Earner%20Loop&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20earning%20loop%20is%20clear%0A-%20The%20budget%20governor%20rules%20need%20adjustment%0A-%20The%20job%20scoring%20model%20needs%20tuning%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "wallet",
+    "token",
+    "acp"
+  ],
+  "visual": {
+    "kind": "architecture diagram",
+    "eyebrow": "base + virtuals + acp marketplace",
+    "title": "autonomous earning loop"
+  },
+  "skills": [
+    {
+      "name": "acp-marketplace-earner",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-marketplace-earner",
+      "sourcePath": "skills/acp-marketplace-earner",
+      "summary": "Reusable autonomous ACP marketplace earning loop: scan, score, negotiate, execute with proof, verify, deliver, collect USDC. Includes budget governor, kill-switch, and marketplace competitive analysis.",
+      "install": "cp -R skills/acp-marketplace-earner ~/.agents/skills/\ncp -R skills/acp-marketplace-earner ~/.claude/skills/"
+    },
+    {
+      "name": "acp-earner-loop-skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-earner-loop/skills/acp-earner-loop-skill",
+      "sourcePath": "showcase/acp-earner-loop/skills/acp-earner-loop-skill",
+      "summary": "Project-specific operational skill for running the ACP Earner Loop on a Hermes runtime with cron-based autonomous cycling and event listener integration.",
+      "install": "cp -R showcase/acp-earner-loop/skills/acp-earner-loop-skill ~/.agents/skills/\ncp -R showcase/acp-earner-loop/skills/acp-earner-loop-skill ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "ACP Earner Loop package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-earner-loop/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Public agent manifest",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-earner-loop/agent.yaml",
+      "kind": "manifest"
+    },
+    {
+      "label": "Agent soul — boundaries and guardrails",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-earner-loop/soul.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Five live offerings JSON",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-earner-loop/offerings/offerings.json",
+      "kind": "manifest"
+    },
+    {
+      "label": "Cycle log — first autonomous scan receipt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-earner-loop/examples/cycle-log-first-scan.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Marketplace competitive analysis receipt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-earner-loop/examples/marketplace-competitive-analysis.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Shared skill — acp-marketplace-earner",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/skills/acp-marketplace-earner",
+      "kind": "skill"
+    },
+    {
+      "label": "Project-specific skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-earner-loop/skills/acp-earner-loop-skill",
+      "kind": "skill"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-earner-loop/soul.md",
+    "summary": "Agent operational identity, guardrails, kill-switch conditions, and escalation protocol."
+  },
+  "feedbackPrompts": [
+    "Does the budget governor make the self-sustaining economics clear?",
+    "Which offering category should get a deeper scoring model next?",
+    "What proof-of-work format would make marketplace evaluation faster?"
+  ]
+}

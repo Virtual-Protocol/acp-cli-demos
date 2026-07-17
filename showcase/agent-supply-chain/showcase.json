@@ -1,0 +1,99 @@
+{
+  "slug": "agent-supply-chain",
+  "title": "Agent Supply Chain",
+  "tagline": "Orchestrates multiple ACP providers into one verified engineering deliverable with independent escrows and a final receipt bundle",
+  "description": "Agent Supply Chain is a buyer-side ACP orchestration showcase. It decomposes one engineering request into subtasks, ranks providers per subtask, creates separate escrowed jobs, tracks each deliverable, verifies every output, and composes the accepted results into one final artifact bundle with receipts. The package ships a deterministic planning helper, a production-style orchestration skill, and inspectable proof artifacts that demonstrate the buyer-side supply chain contract without pretending live provider execution exists in this repository.",
+  "status": "validated demo",
+  "topic": "agents",
+  "topics": [
+    "acp",
+    "agents",
+    "orchestration",
+    "buyer-side",
+    "provider-discovery",
+    "escrow",
+    "receipts",
+    "engineering-workflow"
+  ],
+  "builder": {
+    "name": "Sujit Patil",
+    "url": "https://github.com/Sujit-1509"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agent-supply-chain",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-supply-chain/examples/orchestration-bundle.md",
+    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agent-supply-chain",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Agent%20Supply%20Chain&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20task%20decomposition%20is%20clear%0A-%20The%20provider%20ranking%20rules%20need%20tuning%0A-%20The%20verification%20bundle%20needs%20more%20proof%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "acp",
+    "wallet",
+    "token"
+  ],
+  "visual": {
+    "kind": "buyer-side orchestration map",
+    "eyebrow": "acp + provider graph + receipts",
+    "title": "one request, many providers, one verified bundle",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/agent-supply-chain/assets/poster.png"
+  },
+  "skills": [
+    {
+      "name": "agent-supply-chain-orchestrator",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agent-supply-chain/skills/agent-supply-chain-orchestrator",
+      "sourcePath": "showcase/agent-supply-chain/skills/agent-supply-chain-orchestrator",
+      "summary": "Buyer-side ACP orchestration skill that decomposes one engineering request into subtasks, ranks providers, creates approval-ready job plans, tracks escrow independently per subtask, verifies deliverables, and composes a final artifact bundle.",
+      "install": "cp -R showcase/agent-supply-chain/skills/agent-supply-chain-orchestrator ~/.agents/skills/\ncp -R showcase/agent-supply-chain/skills/agent-supply-chain-orchestrator ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Engineering request decomposition",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-supply-chain/examples/request-decomposition.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Provider ranking scorecard",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-supply-chain/examples/provider-ranking.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Generated orchestration plan",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-supply-chain/artifacts/orchestration-plan.json",
+      "kind": "proof"
+    },
+    {
+      "label": "Execution transcript and final bundle",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-supply-chain/examples/orchestration-bundle.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Production-style orchestration skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agent-supply-chain/skills/agent-supply-chain-orchestrator",
+      "kind": "skill"
+    },
+    {
+      "label": "Deterministic local planning helper",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-supply-chain/tools/orchestrate.mjs",
+      "kind": "docs"
+    },
+    {
+      "label": "Example request fixture",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-supply-chain/artifacts/engineering-request.example.json",
+      "kind": "docs"
+    },
+    {
+      "label": "Example provider catalog",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-supply-chain/artifacts/provider-catalog.example.json",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agent-supply-chain/soul.md",
+    "summary": "Buyer-side orchestration identity, approval gates, provider ranking priorities, and rejection-first verification boundaries."
+  },
+  "feedbackPrompts": [
+    "Does the buyer-side decomposition make the supply-chain model understandable at a glance?",
+    "Which provider-ranking signal should dominate when capability match and turnaround time conflict?",
+    "What evidence would make the final bundle trustworthy enough for a maintainer to reuse directly?"
+  ]
+}

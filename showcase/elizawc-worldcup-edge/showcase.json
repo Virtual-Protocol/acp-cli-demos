@@ -1,0 +1,71 @@
+{
+  "slug": "elizawc-worldcup-edge",
+  "title": "elizaWC World Cup Market Edge",
+  "tagline": "Turns live Polymarket World Cup prices and a 7-day backtest into one grounded AI read per market, delivered as a Telegram card",
+  "description": "elizaWC pulls live Polymarket World Cup markets from the Gamma and CLOB APIs, computes a three-factor signal with a directional 7-day backtest and HIGH/MED/LOW confidence, then calls the EconomyOS compute endpoint (Kimi K2) to write one grounded sentence per market card in Telegram. The read is constrained to the real numbers only, so it explains the edge or flags a low-confidence trap instead of inventing prices or results. The agent funds its own inference: its EconomyOS wallet tops up compute and every read is billed per call. Proof includes the EconomyOS compute-spend dashboard, a rendered live card carrying the AI read, and a redacted inference response with model and cost.",
+  "status": "live",
+  "topic": "agents",
+  "topics": [
+    "prediction-markets",
+    "polymarket",
+    "world-cup",
+    "market-intelligence",
+    "telegram-bot",
+    "inference"
+  ],
+  "builder": {
+    "name": "Baoger",
+    "url": "https://x.com/baogerbao"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/elizawc-worldcup-edge",
+    "demo": "https://t.me/elizaWC_bot",
+    "share": "https://app.virtuals.io/acp/agents/019ebfed-9b45-79e6-9946-44c6d6bf4154",
+    "feedback": "https://x.com/baogerbao"
+  },
+  "primitives": [
+    "wallet"
+  ],
+  "visual": {
+    "kind": "market read card",
+    "eyebrow": "wallet + compute + polymarket",
+    "title": "grounded world cup reads",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/elizawc-worldcup-edge/assets/poster.png"
+  },
+  "skills": [
+    {
+      "name": "elizawc-worldcup-read",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/elizawc-worldcup-edge/skills/elizawc-worldcup-read",
+      "sourcePath": "showcase/elizawc-worldcup-edge/skills/elizawc-worldcup-read",
+      "summary": "Take one Polymarket market's live facts (mid, last, spread, 24h change, 7-day range, signal, backtest hit rate, confidence) and produce a single grounded sentence through the EconomyOS compute endpoint, with hard guardrails against inventing prices, news, or results.",
+      "install": "cp -R showcase/elizawc-worldcup-edge/skills/elizawc-worldcup-read ~/.agents/skills/\ncp -R showcase/elizawc-worldcup-edge/skills/elizawc-worldcup-read ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "EconomyOS compute-spend dashboard",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/elizawc-worldcup-edge/assets/economyos-compute.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Live market card with EconomyOS AI read",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/elizawc-worldcup-edge/assets/card-example.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Redacted inference response (model + cost)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/elizawc-worldcup-edge/examples/compute-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "elizaWC package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/elizawc-worldcup-edge/README.md",
+      "kind": "docs"
+    }
+  ],
+  "feedbackPrompts": [
+    "Is the one-sentence read clear enough to act on without opening the full card?",
+    "Which extra market signals would make the read more useful for a trader?",
+    "Does the read stay honest about low-confidence setups instead of overselling an edge?"
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "ACP Marketplace Earner"
+  short_description: "Autonomous ACP marketplace earning loop with budget governance"
+  default_prompt: "Use $acp-marketplace-earner to run one cycle of the ACP marketplace earning loop."
+policy:
+  allow_implicit_invocation: true

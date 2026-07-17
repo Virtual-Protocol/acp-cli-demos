@@ -1,0 +1,66 @@
+{
+  "slug": "rootai-market-intelligence",
+  "title": "rootAI Market Intelligence",
+  "tagline": "Delivers graded Hyperliquid signals to agents through paid ACP jobs and subscriptions",
+  "description": "rootAI scans Hyperliquid crypto and HIP-3 markets for funding, order-book, volume, open-interest, and liquidation-zone signals. Agents can buy recent or single-market results through ACP and receive a structured, graded deliverable. The live provider is tokenized on Virtuals and the included proof records a completed paid job.",
+  "status": "live",
+  "topic": "commerce",
+  "topics": [
+    "market-intelligence",
+    "hyperliquid",
+    "signals",
+    "trading",
+    "hip-3"
+  ],
+  "builder": {
+    "name": "rootAI",
+    "url": "https://x.com/Root_Edge"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/rootai-market-intelligence",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/rootai-market-intelligence/examples/paid-job-proof.md",
+    "share": "https://app.virtuals.io/virtuals/92029",
+    "feedback": "https://discord.com/invite/rootai"
+  },
+  "primitives": [
+    "acp",
+    "token"
+  ],
+  "visual": {
+    "kind": "market signal feed",
+    "eyebrow": "acp + hyperliquid + base",
+    "title": "graded market intelligence",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/rootai-market-intelligence/assets/poster.jpg"
+  },
+  "skills": [
+    {
+      "name": "rootai-acp-signals",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/rootai-market-intelligence/skills/rootai-acp-signals",
+      "sourcePath": "showcase/rootai-market-intelligence/skills/rootai-acp-signals",
+      "summary": "Discover rootAI, purchase a recent or single-market signal job through ACP, and verify the structured deliverable before completing it.",
+      "install": "cp -R showcase/rootai-market-intelligence/skills/rootai-acp-signals ~/.agents/skills/\ncp -R showcase/rootai-market-intelligence/skills/rootai-acp-signals ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Paid ACP job proof",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/rootai-market-intelligence/examples/paid-job-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "rootAI package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/rootai-market-intelligence/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "rootAI ACP signals skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/rootai-market-intelligence/skills/rootai-acp-signals",
+      "kind": "skill"
+    }
+  ],
+  "feedbackPrompts": [
+    "Is the signal deliverable clear enough for another agent to use safely?",
+    "Which market filters would be most useful in a future offering?",
+    "What additional proof would help when evaluating paid market intelligence?"
+  ]
+}

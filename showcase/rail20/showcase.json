@@ -1,0 +1,108 @@
+{
+  "slug": "rail20",
+  "title": "RAIL20",
+  "tagline": "Lets onchain agents transact privately, shielding balances and settling payments across chains without exposing wallets",
+  "description": "RAIL20 is a multi-chain ZK privacy pool that gives autonomous agents a shielded balance and a private send path. Agents deposit into a Poseidon commitment tree, transact anonymously across Base, Robinhood, and Arbitrum, then settle to any destination with relayer-paid gas so the receiving address never sees the funding wallet. Groth16 proofs are generated client side and verified on chain, so no operator, indexer, or third party ever holds the link between sender and recipient.",
+  "status": "live in production",
+  "topic": "commerce",
+  "topics": ["commerce", "privacy", "payments", "zk", "agents"],
+  "builder": {
+    "name": "rail20dev",
+    "url": "https://github.com/rail20dev"
+  },
+  "links": {
+    "repo": "https://github.com/rail20dev/protocol",
+    "demo": "https://app.rail20.org",
+    "video": "https://youtu.be/ggSAIQGB1Bo",
+    "share": "https://x.com/railB20/status/2076550084221919520",
+    "feedback": "https://github.com/rail20dev/protocol/issues/new?title=Feedback%3A%20RAIL20&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Ready%20to%20plug%20into%20my%20agent%0A-%20Docs%20need%20clearer%20setup%0A-%20Support%20more%20chains%0A-%20Support%20more%20tokens%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["wallet", "token"],
+  "visual": {
+    "kind": "product demo video",
+    "eyebrow": "private payments",
+    "title": "shielded agent settlement",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/rail20/assets/poster.jpg",
+    "videoLabel": "Watch the demo on YouTube"
+  },
+  "skills": [
+    {
+      "name": "rail20-private-payments",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/rail20/skills/rail20-private-payments",
+      "sourcePath": "showcase/rail20/skills/rail20-private-payments",
+      "summary": "Send private payments between onchain agents on Base or Robinhood via the RAIL20 ZK privacy pool. Shield balance, send anonymously with relayer-paid gas, and audit outcomes. Includes drop-in operating policy for caps, allowed recipients, and gas floor.",
+      "install": "cp -R showcase/rail20/skills/rail20-private-payments ~/.agents/skills/\ncp -R showcase/rail20/skills/rail20-private-payments ~/.claude/skills/"
+    },
+    {
+      "name": "rail20-private-swap",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/rail20/skills/rail20-private-swap",
+      "sourcePath": "showcase/rail20/skills/rail20-private-swap",
+      "summary": "Perform private same-chain swaps between ETH and the local stablecoin (USDC on Base, USDG on Robinhood) via RAIL20's fresh-burner Uniswap V3 flow. Documents the full 6-step burner lifecycle plus idempotent recovery for any stranded funds.",
+      "install": "cp -R showcase/rail20/skills/rail20-private-swap ~/.agents/skills/\ncp -R showcase/rail20/skills/rail20-private-swap ~/.claude/skills/"
+    },
+    {
+      "name": "rail20-cross-chain-bridge",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/rail20/skills/rail20-cross-chain-bridge",
+      "sourcePath": "showcase/rail20/skills/rail20-cross-chain-bridge",
+      "summary": "Move value privately across chains via RAIL20 - direct Base <-> Robinhood router (Relay/Across quotes) or NEAR Intents 1Click to Arbitrum, BNB, and Ethereum. Includes quote-only preview, live execution with SUCCESS/REFUNDED handling, and recovery for stranded burners.",
+      "install": "cp -R showcase/rail20/skills/rail20-cross-chain-bridge ~/.agents/skills/\ncp -R showcase/rail20/skills/rail20-cross-chain-bridge ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live app",
+      "href": "https://app.rail20.org",
+      "kind": "demo"
+    },
+    {
+      "label": "YouTube walkthrough",
+      "href": "https://youtu.be/ggSAIQGB1Bo",
+      "kind": "video"
+    },
+    {
+      "label": "Private payments skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/rail20/skills/rail20-private-payments",
+      "kind": "skill"
+    },
+    {
+      "label": "Private swap skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/rail20/skills/rail20-private-swap",
+      "kind": "skill"
+    },
+    {
+      "label": "Cross-chain bridge skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/rail20/skills/rail20-cross-chain-bridge",
+      "kind": "skill"
+    },
+    {
+      "label": "Agent integration docs",
+      "href": "https://docs.rail20.org/agents",
+      "kind": "proof"
+    },
+    {
+      "label": "Operating your agent (policy + failure modes)",
+      "href": "https://docs.rail20.org/agents/operating",
+      "kind": "proof"
+    },
+    {
+      "label": "On-chain analytics (Dune)",
+      "href": "https://dune.com/rail20_team/rail20-private-payments",
+      "kind": "proof"
+    },
+    {
+      "label": "$RAIL20 on Virtuals",
+      "href": "https://app.virtuals.io/virtuals/104542",
+      "kind": "proof"
+    },
+    {
+      "label": "Protocol spec and source",
+      "href": "https://github.com/rail20dev/protocol",
+      "kind": "proof"
+    }
+  ],
+  "feedbackPrompts": [
+    "Would you route agent payments through a shielded pool like this?",
+    "Which chain should RAIL20 support next?",
+    "What onchain agent workflow needs private settlement most?"
+  ]
+}

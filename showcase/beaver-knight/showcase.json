@@ -18,7 +18,7 @@
   },
   "primitives": ["wallet", "token", "acp"],
   "visual": {
-    "kind": "product screenshot",
+    "kind": "live trust leaderboard",
     "eyebrow": "keyless · robinhood chain · acp",
     "title": "Back a Knight that invests for you, and can't run off with your money",
     "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/beaver-knight/assets/poster.jpg"

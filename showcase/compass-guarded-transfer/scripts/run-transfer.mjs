@@ -121,7 +121,11 @@ export function createAcpProcess(spawnProcess = spawn, { killGraceMs = 500, reap
 }
 
 function makeEvidence(input, verdict, outcome) {
-  return { endpointOrigin: new URL(input.compassUrl).origin, transfer: { recipient: input.recipient, amountSol: input.amountSol, lamports: input.lamports, feePayer: input.feePayer, cluster: "devnet" }, decision: verdict.decision, correlationId: verdict.correlationId, reasons: verdict.reasons, ...outcome };
+  return { endpointOrigin: new URL(input.compassUrl).origin, transfer: { recipient: redactWallet(input.recipient), amountSol: input.amountSol, lamports: input.lamports, feePayer: redactWallet(input.feePayer), cluster: "devnet" }, decision: verdict.decision, correlationId: verdict.correlationId, reasons: verdict.reasons, ...outcome };
+}
+
+function redactWallet(value) {
+  return typeof value === "string" && value.length > 10 ? `${value.slice(0, 6)}…${value.slice(-4)}` : "<redacted>";
 }
 
 function solToLamports(amount) { if (typeof amount !== "string" || !/^\d+(?:\.\d{1,9})?$/.test(amount)) stop("invalid SOL amount"); const [whole, fraction = ""] = amount.split("."); return Number(whole) * LAMPORTS_PER_SOL + Number((fraction + "000000000").slice(0, 9)); }

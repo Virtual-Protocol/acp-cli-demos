@@ -9,6 +9,7 @@ import { createAcpProcess, decodeBase58, runTransfer } from "./run-transfer.mjs"
 const recipient = "11111111111111111111111111111111";
 const feePayer = recipient;
 const changedPayer = "SysvarC1ock11111111111111111111111111111111";
+const evidenceAddress = "F6vHs4MiFBTV9Nd2zE644m9KKisdvJh9dpb1aYegF6Mo";
 const signature = "1".repeat(64);
 
 function inputs(overrides = {}) {
@@ -78,14 +79,39 @@ test("requires a valid ACP signature and writes fee-payer evidence", async () =>
   const process = acp([result({ address: feePayer }), result({ address: feePayer }), result({ signature })]);
   const output = await runTransfer({ input: inputs(), process, fetch: async () => allowResponse() });
   assert.equal(output.signature, signature);
-  assert.equal(output.evidence.transfer.feePayer, feePayer);
+  assert.equal(output.evidence.transfer.feePayer, "111111…1111");
+});
+
+test("redacts wallet addresses in generated success and stopped evidence", async () => {
+  const input = inputs({ recipient: evidenceAddress, recipientAllowlist: evidenceAddress });
+  const redacted = "F6vHs4…F6Mo";
+
+  const success = await runTransfer({
+    input,
+    process: acp([result({ address: evidenceAddress }), result({ address: evidenceAddress }), result({ signature })]),
+    fetch: async () => allowResponse(),
+  });
+  assert.equal(success.evidence.transfer.recipient, redacted);
+  assert.equal(success.evidence.transfer.feePayer, redacted);
+  assert.equal(JSON.stringify(success.evidence).includes(evidenceAddress), false);
+
+  for (const [response, results] of [
+    [{ ok: true, async json() { return { correlationId: "review", decision: "review", reasons: ["manual"] }; } }, [result({ address: evidenceAddress })]],
+    [allowResponse(), [result({ address: evidenceAddress }), result({ address: evidenceAddress }), { code: 1, stdout: "", stderr: "" }]],
+  ]) {
+    const evidence = [];
+    await expectStop({ input, process: acp(results), fetch: async () => response, writeProof: async (proof) => evidence.push(proof) }, "stopped");
+    assert.equal(evidence[0].transfer.recipient, redacted);
+    assert.equal(evidence[0].transfer.feePayer, redacted);
+    assert.equal(JSON.stringify(evidence[0]).includes(evidenceAddress), false);
+  }
 });
 
 test("treats ACP timeout, nonzero, malformed JSON, and missing signatures as uncertain", async () => {
   for (const transferResult of [{ timedOut: true, reaped: true, code: null, stdout: "", stderr: "" }, { code: 1, stdout: "", stderr: "error" }, { code: 0, stdout: "no", stderr: "" }, result({})]) {
     const evidence = [];
     await expectStop({ input: inputs(), process: acp([result({ address: feePayer }), result({ address: feePayer }), transferResult]), fetch: async () => allowResponse(), writeProof: async (proof) => evidence.push(proof) }, "check wallet history before retry");
-    assert.equal(evidence[0].transfer.feePayer, feePayer);
+    assert.equal(evidence[0].transfer.feePayer, "111111…1111");
     assert.equal(evidence[0].stoppedStage, "acp-execution-uncertain");
   }
 });

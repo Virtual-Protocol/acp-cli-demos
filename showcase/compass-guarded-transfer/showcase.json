@@ -12,14 +12,15 @@
   },
   "links": {
     "repo": "https://github.com/ram4-dev/acp-cli-demos/tree/feat/compass-guarded-transfer-showcase/showcase/compass-guarded-transfer",
-    "share": "https://github.com/ram4-dev/acp-cli-demos/tree/feat/compass-guarded-transfer-showcase/showcase/compass-guarded-transfer",
+    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/pull/58",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Compass%20Guarded%20Transfer"
   },
   "primitives": ["wallet", "acp"],
   "visual": {
     "kind": "advisory devnet transfer preflight",
     "eyebrow": "solana + devnet + acp",
-    "title": "verify before signing"
+    "title": "verify before signing",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/compass-guarded-transfer/assets/hero.png"
   },
   "skills": [
     {

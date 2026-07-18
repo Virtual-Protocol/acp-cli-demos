@@ -11,7 +11,7 @@
 - License: MIT in the upstream skill directory
 
 This Showcase directory contains no runtime copy. It is a pointer plus a hero,
-manifest, public soul, synthetic proof receipt, and validation notes.
+manifest, synthetic proof receipt, and validation notes.
 
 ## Source hashes
 
@@ -43,7 +43,7 @@ it sealed exactly the requested ring and left the clean source unchanged.
 ## Showcase package boundary
 
 - Runtime files committed here: `0`
-- Total project files committed here: `8`
+- Total project files committed here: `7`
 - Generated chain or registry state committed here: `0`
 - Dashboard, site, alternate runtimes, downloads, and full engine: external
   Genesis repository only

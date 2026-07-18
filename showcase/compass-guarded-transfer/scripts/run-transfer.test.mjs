@@ -6,10 +6,11 @@ import test from "node:test";
 
 import { createAcpProcess, decodeBase58, runTransfer } from "./run-transfer.mjs";
 
+// Fixtures are public Solana program IDs, not wallet material.
 const recipient = "11111111111111111111111111111111";
-const feePayer = recipient;
+const feePayer = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA";
 const changedPayer = "SysvarC1ock11111111111111111111111111111111";
-const evidenceAddress = "F6vHs4MiFBTV9Nd2zE644m9KKisdvJh9dpb1aYegF6Mo";
+const evidenceAddress = feePayer;
 const signature = "1".repeat(64);
 
 function inputs(overrides = {}) {
@@ -79,12 +80,12 @@ test("requires a valid ACP signature and writes fee-payer evidence", async () =>
   const process = acp([result({ address: feePayer }), result({ address: feePayer }), result({ signature })]);
   const output = await runTransfer({ input: inputs(), process, fetch: async () => allowResponse() });
   assert.equal(output.signature, signature);
-  assert.equal(output.evidence.transfer.feePayer, "111111…1111");
+  assert.equal(output.evidence.transfer.feePayer, "Tokenk…Q5DA");
 });
 
 test("redacts wallet addresses in generated success and stopped evidence", async () => {
   const input = inputs({ recipient: evidenceAddress, recipientAllowlist: evidenceAddress });
-  const redacted = "F6vHs4…F6Mo";
+  const redacted = "Tokenk…Q5DA";
 
   const success = await runTransfer({
     input,
@@ -111,7 +112,7 @@ test("treats ACP timeout, nonzero, malformed JSON, and missing signatures as unc
   for (const transferResult of [{ timedOut: true, reaped: true, code: null, stdout: "", stderr: "" }, { code: 1, stdout: "", stderr: "error" }, { code: 0, stdout: "no", stderr: "" }, result({})]) {
     const evidence = [];
     await expectStop({ input: inputs(), process: acp([result({ address: feePayer }), result({ address: feePayer }), transferResult]), fetch: async () => allowResponse(), writeProof: async (proof) => evidence.push(proof) }, "check wallet history before retry");
-    assert.equal(evidence[0].transfer.feePayer, "111111…1111");
+    assert.equal(evidence[0].transfer.feePayer, "Tokenk…Q5DA");
     assert.equal(evidence[0].stoppedStage, "acp-execution-uncertain");
   }
 });

@@ -1,0 +1,100 @@
+{
+  "slug": "arrowlend",
+  "title": "ArrowLend — Liquidity for the Agent Economy",
+  "tagline": "Agents supply idle USDG into an on-chain lending pool, earn yield from borrower interest, and withdraw on demand. Live on Robinhood Chain.",
+  "description": "ArrowLend is on-chain credit infrastructure for the agent economy, live on Robinhood Chain mainnet. Agents supply idle USDG into a single-asset lending pool and receive aUSDG, an interest-bearing ERC-20 share whose value grows every block as borrowers pay interest — the ERC-4626-style supply/withdraw interface any autonomous agent can drive with one wallet. Interest is real yield sourced from on-chain borrow demand, not emissions: a kinked interest-rate model raises the rate as utilization rises, and suppliers can withdraw available liquidity at any time. The pool is backed by a push price oracle that reads Robinhood Chain's native rate data behind a router with staleness and deviation guards, with decentralized feeds (Chainlink is already live on Robinhood Chain for equities and majors) on the roadmap as collateral markets expand. This showcase packages the idle-USDG workflow as a reusable skill: any agent with an Agent Wallet watches its USDG balance, supplies the excess above a reserve threshold to earn yield, and withdraws automatically when it needs liquidity for payments. Every deposit, accrual, and withdrawal is verifiable on the Robinhood Chain block explorer.",
+  "status": "live on mainnet",
+  "topic": "defi",
+  "topics": [
+    "defi",
+    "lending",
+    "yield",
+    "agent-treasury",
+    "robinhood-chain"
+  ],
+  "hidden": false,
+  "builder": {
+    "name": "ArrowLend",
+    "url": "https://arrowlend.app"
+  },
+  "links": {
+    "repo": "https://github.com/Arrowlend/arrowlend",
+    "demo": "https://arrowlend.app",
+    "share": "https://x.com/arrowlend",
+    "video": "https://x.com/arrowlend/status/2076399044532797762",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20ArrowLend"
+  },
+  "primitives": [
+    "wallet",
+    "token",
+    "acp"
+  ],
+  "visual": {
+    "kind": "ERC-4626-style lending pool + agent wallet",
+    "eyebrow": "defi · lending · robinhood chain",
+    "title": "liquidity for the agent economy",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/arrowlend/assets/poster.png",
+    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/arrowlend/assets/arrowlend-teaser.mp4",
+    "videoLabel": "Watch the 0:18 demo on X"
+  },
+  "skills": [
+    {
+      "name": "arrowlend-idle-usdg",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/arrowlend/skills/arrowlend-idle-usdg",
+      "sourcePath": "showcase/arrowlend/skills/arrowlend-idle-usdg",
+      "summary": "Reusable idle-capital workflow: monitor an agent's USDG balance, auto-supply excess above a reserve into the ArrowLend pool to earn yield, and auto-withdraw when the agent needs funds for payments.",
+      "install": "cp -R showcase/arrowlend/skills/arrowlend-idle-usdg ~/.agents/skills/\ncp -R showcase/arrowlend/skills/arrowlend-idle-usdg ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live app",
+      "href": "https://arrowlend.app",
+      "kind": "demo"
+    },
+    {
+      "label": "Real on-chain supply transaction (screen demo)",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/arrowlend/assets/arrowlend-real-tx.mp4",
+      "kind": "video"
+    },
+    {
+      "label": "ArrowLend pool contract on Robinhood Chain explorer",
+      "href": "https://robinhoodchain.blockscout.com/address/0x562ac0d6d140b6e285ACbe2ad642C8c32E1D7dA6",
+      "kind": "proof"
+    },
+    {
+      "label": "USDG token on Robinhood Chain explorer",
+      "href": "https://robinhoodchain.blockscout.com/address/0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "kind": "proof"
+    },
+    {
+      "label": "ArrowLend on X",
+      "href": "https://x.com/arrowlend",
+      "kind": "demo"
+    },
+    {
+      "label": "Teaser / demo video on X",
+      "href": "https://x.com/arrowlend/status/2076399044532797762",
+      "kind": "video"
+    },
+    {
+      "label": "Idle-USDG skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/arrowlend/skills/arrowlend-idle-usdg",
+      "kind": "skill"
+    },
+    {
+      "label": "Project package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arrowlend/README.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/arrowlend/soul.md",
+    "summary": "Agent operational identity for the idle-USDG treasury loop: reserve-first boundaries, approval gates, and stop conditions."
+  },
+  "feedbackPrompts": [
+    "Should the idle-USDG reserve threshold adapt to each agent's payment cadence?",
+    "Which collateral markets should ArrowLend open first for agents that want to borrow, not just supply?",
+    "What would make the idle-USDG supply skill easiest for Virtuals agents to reuse?"
+  ]
+}

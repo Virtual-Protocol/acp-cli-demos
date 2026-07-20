@@ -1,0 +1,56 @@
+{
+  "slug": "krill",
+  "title": "KRILL",
+  "tagline": "Scores every new token launch from 0 to 100 and explains the risk in plain English, then publishes transparent reports anyone can verify",
+  "description": "KRILL is an on-chain intelligence agent that watches new token launches, scores each one across liquidity, contract, holder, and distribution signals, and turns the raw data into a plain-English verdict. Every score ships with the reasoning behind it and a link back to the source data, so the call is auditable rather than a black box. The agent is live on Virtuals with its own $KRILL token on Robinhood Chain.",
+  "status": "live",
+  "topic": "agents",
+  "topics": ["agents", "security", "token", "on-chain-intelligence"],
+  "builder": {
+    "name": "KRILL",
+    "url": "https://krill.live"
+  },
+  "links": {
+    "repo": "https://github.com/krillintel/krill",
+    "demo": "https://krill.live",
+    "share": "https://x.com/krillintel/status/2078045970991108453",
+    "feedback": "https://github.com/krillintel/krill/issues/new?title=Feedback%3A%20KRILL&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Useful%20and%20ready%20to%20try%0A-%20Scoring%20signals%20I%27d%20add%0A-%20Chains%20it%20should%20cover%20next%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["token", "acp"],
+  "visual": {
+    "kind": "demo video",
+    "eyebrow": "on-chain risk agent",
+    "title": "how KRILL works",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/krill/assets/poster.jpg",
+    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/krill/assets/demo.mp4",
+    "videoLabel": "Watch the 17s demo"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "Live site",
+      "href": "https://krill.live",
+      "kind": "proof"
+    },
+    {
+      "label": "Agent on Virtuals",
+      "href": "https://app.virtuals.io/virtuals/112988",
+      "kind": "proof"
+    },
+    {
+      "label": "Launch demo on X",
+      "href": "https://x.com/krillintel/status/2078045970991108453",
+      "kind": "video"
+    },
+    {
+      "label": "How it works poster",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/krill/assets/poster.jpg",
+      "kind": "proof"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which risk signals would make the score more trustworthy?",
+    "What chains should KRILL cover next?",
+    "Would you act on a KRILL score before buying a new launch?"
+  ]
+}

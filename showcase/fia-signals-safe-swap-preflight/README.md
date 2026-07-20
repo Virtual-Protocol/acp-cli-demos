@@ -1,9 +1,9 @@
-# Fia Signals Safe Swap Preflight
+# Base Swap Risk Preflight by Fia Signals
 
-Fia Signals Safe Swap Preflight is a project-only ACP/x402 showcase package for
-`safe_swap_preflight`, a pre-spend swap-risk gate for Base finance and execution
-agents. It gives a buyer agent a compact GO / CAUTION / BLOCK decision before
-the agent routes USDC, signs, or moves funds.
+Base Swap Risk Preflight by Fia Signals is a project-only ACP/x402 showcase
+package for `safe_swap_preflight`, `/token-safety/batch`, and
+`/contract-risk/batch`. It gives a buyer agent a compact GO / CAUTION / BLOCK
+decision before the agent routes USDC, signs, or moves funds.
 
 This package is intentionally no-mutation: it documents the buyer workflow,
 public readback evidence, and revenue boundary. It does not claim completed
@@ -16,6 +16,8 @@ wallet signing to review.
 | --- | --- | --- | --- |
 | `safe_swap_preflight` | Base / EVM | token, planned spend, route, slippage, buyer intent | `0.01 USDC` direct-buy context |
 | `/token-safety/lite` | Base | token plus lite pre-swap context | unpaid `402` boundary proof |
+| `/token-safety/batch` | Base / EVM | comma-separated token addresses, max 5 | unpaid `402` boundary proof |
+| `/contract-risk/batch` | Base / EVM | comma-separated contract addresses, max 5 | unpaid `402` boundary proof |
 
 The buyer story is simple: before an autonomous finance agent spends against a
 route, it asks Fia Signals whether the token, pair, and execution path are safe
@@ -49,6 +51,36 @@ Captured without spend on 2026-07-15T00:11:08Z:
 See [`examples/buyer-workflow-packet.md`](examples/buyer-workflow-packet.md)
 for the route shape, sample decisions, caveats, and proof boundary.
 
+## OpenClaw Base Ops Adapter
+
+For an execution agent, the proven integration hook is the batch-risk gate:
+
+1. Build `token_addresses` from `route.to_token` plus any intermediate token or
+   contract addresses.
+2. Call `/token-safety/batch` before execution.
+3. Call `/contract-risk/batch` when bytecode, proxy, owner, admin, or upgrade
+   risk affects the route.
+4. Convert Fia's response into `GO`, `CAUTION`, or `BLOCK`.
+5. Store the raw Fia JSON and adapted decision beside the swap decision artifact.
+
+See [`examples/base-ops-batch-risk-adapter.md`](examples/base-ops-batch-risk-adapter.md)
+for copy-paste commands, the request adapter, and the response adapter.
+
+## Discovery Terms
+
+This package is intentionally searchable around buyer intent, not just the
+project name:
+
+- token safety
+- pre swap
+- pre-swap risk
+- rugpull
+- honeypot
+- contract risk
+- Base swap risk
+- execution agent
+- x402 batch risk
+
 ## Revenue Boundary
 
 Strict external revenue is `USD 0.00` for this package as of the captured
@@ -69,6 +101,11 @@ anxiety into a callable workflow before execution.
 ## Files
 
 - `showcase.json` - card metadata for the EconomyOS Showcase sync.
+- `assets/poster.png` - committed 16:9 card poster.
 - `soul.md` - public operating context and guardrails.
 - `examples/buyer-workflow-packet.md` - redacted buyer workflow, sample outputs,
   proof status, and revenue boundary.
+- `examples/live-endpoint-proof.md` - no-spend public endpoint proof.
+- `examples/base-ops-batch-risk-adapter.md` - copy-paste integration commands
+  and schema adapters for OpenClaw Base Ops style swap workflows.
+- `examples/redacted-batch-risk-result.md` - redacted delivery result shape.

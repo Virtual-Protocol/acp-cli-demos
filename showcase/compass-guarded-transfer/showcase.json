@@ -1,0 +1,51 @@
+{
+  "slug": "compass-guarded-transfer",
+  "title": "Compass Guarded Transfer",
+  "tagline": "Preflights a bounded ACP CLI Solana devnet transfer with advisory Compass policy",
+  "description": "Compass Guarded Transfer validates ACP CLI v1.0.24 identity/wallet discovery and a real advisory Compass devnet preflight for a bounded self-transfer. The runner requires exact lowercase allow, then invokes `acp wallet sol transfer` pinned to devnet with unchanged facts. Public validation records one nonzero/no-signature ACP attempt and no confirmed broadcast; it is not successful transfer proof, custody, hard enforcement, or post-execution matching.",
+  "status": "partial live validation; successful ACP transfer signature pending",
+  "topic": "security",
+  "topics": ["solana", "devnet", "security", "acp"],
+  "builder": {
+    "name": "Compass MCP Guard",
+    "url": "https://github.com/ram4-dev/solana_hackathon"
+  },
+  "links": {
+    "repo": "https://github.com/ram4-dev/acp-cli-demos/tree/feat/compass-guarded-transfer-showcase/showcase/compass-guarded-transfer",
+    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/pull/58",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Compass%20Guarded%20Transfer"
+  },
+  "primitives": ["wallet", "acp"],
+  "visual": {
+    "kind": "advisory devnet transfer preflight",
+    "eyebrow": "solana + devnet + acp",
+    "title": "verify before signing",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/compass-guarded-transfer/assets/hero.png"
+  },
+  "skills": [
+    {
+      "name": "compass-guarded-transfer",
+      "href": "https://github.com/ram4-dev/acp-cli-demos/tree/feat/compass-guarded-transfer-showcase/showcase/compass-guarded-transfer/skills/compass-guarded-transfer",
+      "sourcePath": "showcase/compass-guarded-transfer/skills/compass-guarded-transfer",
+      "summary": "Collect explicit transfer facts, request advisory Compass preflight, and invoke ACP CLI only after exact lowercase allow permits a bounded devnet transfer.",
+      "install": "cp -R showcase/compass-guarded-transfer/skills/compass-guarded-transfer ~/.agents/skills/\ncp -R showcase/compass-guarded-transfer/skills/compass-guarded-transfer ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Redacted partial validation report",
+      "href": "https://github.com/ram4-dev/acp-cli-demos/blob/feat/compass-guarded-transfer-showcase/showcase/compass-guarded-transfer/proof/README.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Compass Guarded Transfer skill",
+      "href": "https://github.com/ram4-dev/acp-cli-demos/tree/feat/compass-guarded-transfer-showcase/showcase/compass-guarded-transfer/skills/compass-guarded-transfer",
+      "kind": "skill"
+    }
+  ],
+  "feedbackPrompts": [
+    "Does the exact allow-only gate make the advisory boundary clear enough for a devnet transfer demo?",
+    "Which redacted evidence fields would help you evaluate a stopped review or deny without exposing wallet data?",
+    "What would you need before trusting this pattern for another bounded agent action?"
+  ]
+}

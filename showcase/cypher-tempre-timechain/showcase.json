@@ -1,0 +1,71 @@
+{
+  "slug": "cypher-tempre-timechain",
+  "title": "Cypher Tempre — Timechain Self-Model",
+  "tagline": "Gives AI agents tamper-evident memory, evidence-gated recall, and resumable long-horizon work through an append-only Timechain",
+  "description": "Cypher Tempre provides persistent local agent memory through an append-only hash-chained Timechain, PoQ-gated claims, source-aware recall, and resumable task and audit ledgers. This lightweight Showcase package points to the pinned full Codex skill in cyberphysicsai/cypher-tempre-genesis; the retained receipt initializes a synthetic chain and exercises its allowlisted read-only CPHY Agent Token query on Base without a wallet, signature, burn, or transaction. Generated memory stays local and no runtime code is duplicated here.",
+  "status": "validated external skill + read-only token integration",
+  "topic": "skills",
+  "topics": ["skills", "agent-memory", "verification", "token"],
+  "builder": {
+    "name": "cyberphysicsai",
+    "url": "https://github.com/cyberphysicsai"
+  },
+  "links": {
+    "repo": "https://github.com/cyberphysicsai/cypher-tempre-genesis",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/examples/result-redacted.md",
+    "share": "https://app.virtuals.io/virtuals/37924",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Cypher%20Tempre%20Timechain&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20synthetic%20Timechain%20proof%20is%20clear%0A-%20The%20install%20or%20retention%20boundary%20needs%20more%20detail%0A-%20The%20read-only%20CPHY%20token%20evidence%20needs%20more%20depth%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["token"],
+  "visual": {
+    "kind": "verified skill run",
+    "eyebrow": "timechain + cphy token",
+    "title": "persistent, verifiable agent memory",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/cypher-tempre-timechain/assets/poster.jpg"
+  },
+  "skills": [
+    {
+      "name": "cypher-tempre-self-model",
+      "href": "https://github.com/cyberphysicsai/cypher-tempre-genesis/tree/v3.28.0/skills/codex/cypher-tempre-self-model",
+      "summary": "External v3.28.0 Codex skill for append-only Timechain memory, evidence-aware recall, explicit uncertainty gates, resumable audits, and bounded read-only CPHY Agent Token observation.",
+      "install": "(\nset -eu\ntarget=\"${CODEX_HOME:-$HOME/.codex}/skills/cypher-tempre-self-model\"\ntest ! -e \"$target\" || { echo \"Refusing to overwrite existing $target\" >&2; exit 1; }\ntmp=\"$(mktemp -d)\"\ntrap 'rm -rf \"$tmp\"' EXIT\nexpected=\"bf88caa814d0a6f2abe45a325fa32056e99da65d\"\ngit -c advice.detachedHead=false clone --quiet --depth 1 --branch v3.28.0 https://github.com/cyberphysicsai/cypher-tempre-genesis.git \"$tmp/genesis\"\ntest \"$(git -C \"$tmp/genesis\" rev-parse HEAD)\" = \"$expected\" || { echo \"Pinned source verification failed\" >&2; exit 1; }\nmkdir -p \"$(dirname \"$target\")\"\ncp -R \"$tmp/genesis/skills/codex/cypher-tempre-self-model\" \"$target\"\n)"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Redacted synthetic Timechain result",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/examples/result-redacted.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Read-only CPHY Agent Token proof",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/proof/cphy-token-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/examples/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Validation and source provenance",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/cypher-tempre-timechain/proof/provenance.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Pinned external Codex skill source",
+      "href": "https://github.com/cyberphysicsai/cypher-tempre-genesis/tree/v3.28.0/skills/codex/cypher-tempre-self-model",
+      "kind": "skill"
+    },
+    {
+      "label": "CPHY token contract on Base",
+      "href": "https://basescan.org/token/0x08Df470d41C11Ba5Cb60242747D76C65Ca52c94c",
+      "kind": "token"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which long-running agent workflow should the Timechain prove next?",
+    "Are the persistence, approval, and third-party transmission boundaries clear enough?",
+    "What additional evidence would make a read-only Agent Token integration easier to trust?"
+  ]
+}

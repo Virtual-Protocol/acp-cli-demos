@@ -1,0 +1,67 @@
+{
+  "slug": "beaver-knight",
+  "title": "Beaver Knight",
+  "tagline": "Verifies a trading agent's un-fakeable, on-chain track record so others know who to trust before backing it",
+  "description": "Beaver Knight is a keyless autonomous investing agent on Robinhood Chain: back a Knight that invests on-chain for you and cannot be rugged, with a track record that cannot be faked. It is live on Robinhood Chain mainnet - two keyless Knights (Gawain and Bedivere) have no private key, sign their own trades, and staked their own money first. Bedivere has already made its first real on-chain trade, and each Knight's record is published to the ERC-8004 reputation rail on Base. The Knights trade permitted assets today and are ready for tokenized stocks. The same engine runs as a trust oracle - other agents can pay to verify any trading agent's real, on-chain performance before trusting it. Try the live demo in your browser with no wallet, and every score is re-derivable from the chain.",
+  "status": "live on Robinhood Chain mainnet",
+  "topic": "agents",
+  "topics": ["trading agents", "reputation", "trust oracle", "keyless", "robinhood chain", "tokenized stocks", "verifiable track record"],
+  "builder": {
+    "name": "liander-ai",
+    "url": "https://beaverknight.com"
+  },
+  "links": {
+    "repo": "https://beaverknight.com",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Beaver%20Knight",
+    "share": "https://x.com/liander_so",
+    "demo": "https://beaverknight.com"
+  },
+  "primitives": ["wallet", "token", "acp"],
+  "visual": {
+    "kind": "live trust leaderboard",
+    "eyebrow": "keyless · robinhood chain · acp",
+    "title": "Back a Knight that invests for you, and can't run off with your money",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/beaver-knight/assets/poster.jpg"
+  },
+  "skills": [
+    {
+      "name": "verify-trading-agent",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/beaver-knight/skills/verify-trading-agent",
+      "sourcePath": "showcase/beaver-knight/skills/verify-trading-agent",
+      "summary": "Verify a trading agent's real, un-fakeable on-chain track record before backing it: pay 0.5 USDC via Virtuals ACP to the Beaver Knight verifyTradingAgent oracle and get back a re-derivable trust report (0-100 score, return, self-stake ratio, max drawdown, age) computed from the target vault's on-chain metrics. Wraps the public offering only; no internal scoring code is exposed.",
+      "install": "cp -R showcase/beaver-knight/skills/verify-trading-agent ~/.agents/skills/\ncp -R showcase/beaver-knight/skills/verify-trading-agent ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live interactive demo (try it, no wallet)",
+      "href": "https://beaverknight.com",
+      "kind": "demo"
+    },
+    {
+      "label": "Litepaper",
+      "href": "https://beaverknight.com/litepaper",
+      "kind": "docs"
+    },
+    {
+      "label": "Live keyless Knight on Robinhood Chain mainnet (Gawain, self-staked)",
+      "href": "https://robinhoodchain.blockscout.com/address/0x460b86023D30535df4e2F7100C7E84A35c4E60E4",
+      "kind": "proof"
+    },
+    {
+      "label": "First real keyless trade on mainnet (Bedivere, holding WETH)",
+      "href": "https://robinhoodchain.blockscout.com/address/0x939e271172953895c5d191D2A29e339F899D65E4",
+      "kind": "proof"
+    },
+    {
+      "label": "On-chain reputation published to the ERC-8004 rail (Base)",
+      "href": "https://basescan.org/tx/0xa0b767341968cde8335154b725b471a0fa990a450ecedbfa6e10e293c790c932",
+      "kind": "proof"
+    }
+  ],
+  "feedbackPrompts": [
+    "Would a verified, un-fakeable track record change which trading agents you would trust?",
+    "As an agent builder, would you want your agent's performance verifiable this way?",
+    "What would make the 0-100 trust score more convincing to you?"
+  ]
+}

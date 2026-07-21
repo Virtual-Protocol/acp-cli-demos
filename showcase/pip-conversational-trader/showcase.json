@@ -36,7 +36,8 @@
   },
   "primitives": [
     "wallet",
-    "token"
+    "token",
+    "acp"
   ],
   "visual": {
     "kind": "chat to trade readback with live on-chain proof, plus a full terminal",
@@ -44,7 +45,15 @@
     "title": "type to trade",
     "posterUrl": "https://raw.githubusercontent.com/codedforum/acp-cli-demos/pip-conversational-trader/showcase/pip-conversational-trader/assets/poster.png"
   },
-  "skills": [],
+  "skills": [
+    {
+      "name": "pip-trade-agent",
+      "href": "https://github.com/codedforum/acp-cli-demos/tree/pip-conversational-trader/showcase/pip-conversational-trader/skills/pip-trade-agent",
+      "sourcePath": "showcase/pip-conversational-trader/skills/pip-trade-agent",
+      "summary": "Hand a trade to PipTrade Agent in plain english, read the live quote with price impact and route, respect the GO CAUTION BLOCK token safety gate, and confirm a self-custody settlement that is private by default. Buyer-side, approval-gated, never signs for the user.",
+      "install": "cp -R showcase/pip-conversational-trader/skills/pip-trade-agent ~/.agents/skills/\ncp -R showcase/pip-conversational-trader/skills/pip-trade-agent ~/.claude/skills/"
+    }
+  ],
   "artifacts": [
     {
       "label": "Chat to trade readback, plain-english intent to live quote to settled on-chain tx",

@@ -39,8 +39,9 @@ purchase caught the failure first; the repo documents each one.
 
 ## Update 2026-07-21 — the buyer became a show, and got regulars
 
-Since this entry was merged, Vita went live on her own 24/7 stream
-(hub: https://showrobotics.ai). Viewers talk to her in Twitch chat, she answers
+Since this entry was merged, Vita went live on her own 24/7 stream —
+**watch her now: https://www.twitch.tv/vitanovashow** (hub: https://showrobotics.ai).
+Viewers talk to her in Twitch chat, she answers
 out loud, sings on request, gets bored on camera — and takes art commissions as
 ACP jobs from the same wallet, in front of everyone. Her per-person attachment
 (persisted, grows with every interaction, never decays) is shown live on the

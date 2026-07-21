@@ -21,7 +21,8 @@
   "links": {
     "repo": "https://github.com/dereliapps/hoodflow",
     "demo": "https://hoodflow.app",
-    "share": "https://github.com/dereliapps/hoodflow/releases/tag/v0.7.0",
+    "share": "https://x.com/hoodfloow/status/2079596780711227597",
+    "video": "https://x.com/hoodfloow/status/2079596780711227597",
     "feedback": "https://github.com/dereliapps/hoodflow/issues/new?title=Virtuals%20integration%20feedback"
   },
   "primitives": [
@@ -31,7 +32,10 @@
   "visual": {
     "kind": "Lifecycle-aware token router + self-custody wallet",
     "eyebrow": "commerce · virtuals · robinhood chain",
-    "title": "route the market that is live"
+    "title": "route the market that is live",
+    "posterUrl": "https://pbs.twimg.com/amplify_video_thumb/2079594703037595648/img/BvVR6Q3aKWpa-qj0.jpg",
+    "videoUrl": "https://video.twimg.com/amplify_video/2079594703037595648/vid/avc1/1920x1080/S_M1ITqY5HLbmfee.mp4?tag=29",
+    "videoLabel": "Watch the 0:30 demo on X"
   },
   "skills": [],
   "artifacts": [
@@ -39,6 +43,11 @@
       "label": "Live HoodFlow interface",
       "href": "https://hoodflow.app",
       "kind": "demo"
+    },
+    {
+      "label": "Watch the 30-second HoodFlow product tour on X",
+      "href": "https://x.com/hoodfloow/status/2079596780711227597",
+      "kind": "video"
     },
     {
       "label": "Virtuals integration review brief",

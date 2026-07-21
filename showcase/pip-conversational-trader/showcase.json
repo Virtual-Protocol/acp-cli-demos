@@ -32,6 +32,7 @@
     "repo": "https://github.com/codedforum/acp-cli-demos/tree/pip-conversational-trader/showcase/pip-conversational-trader",
     "demo": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/examples/chat-to-trade-readback.md",
     "share": "https://piptradedex.xyz/app",
+    "video": "https://x.com/PipTradeDex/status/2078716840197378351",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20PipTrade%20Agent&body=Which%20prompt%20fits%3F%0A%0A-%20The%20plain-english%20quote%20then%20execute%20flow%20is%20useful%0A-%20The%20private%20by%20default%20settlement%20needs%20clearer%20proof%0A-%20I%20want%20a%20callable%20Pip%20quote%20or%20safety%20skill%20next%0A%0ANotes%3A%0A"
   },
   "primitives": [
@@ -43,6 +44,7 @@
     "kind": "chat to trade readback with live on-chain proof, plus a full terminal",
     "eyebrow": "virtuals, conversational, terminal, private, keep your keys",
     "title": "type to trade",
+    "videoLabel": "Watch the private trading demo on X",
     "posterUrl": "https://raw.githubusercontent.com/codedforum/acp-cli-demos/pip-conversational-trader/showcase/pip-conversational-trader/assets/poster.png"
   },
   "skills": [
@@ -74,6 +76,11 @@
       "label": "PipTrade Agent package README",
       "href": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/README.md",
       "kind": "docs"
+    },
+    {
+      "label": "pip-reads helper, a dependency-free script that calls the public read endpoints for prices, markets, tokens, and stats",
+      "href": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/tools/pip-reads.mjs",
+      "kind": "tool"
     }
   ],
   "soul": {

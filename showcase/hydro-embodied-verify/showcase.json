@@ -1,0 +1,72 @@
+{
+  "slug": "hydro-embodied-verify",
+  "title": "Hydro Embodied-Data Verifier",
+  "tagline": "Scores a first-person task video against its instructions and returns an approve/reject verdict with a 0-100 quality score and a reason",
+  "description": "Hydro runs every crowdsourced human demonstration clip through an AI quality gate: a vision model checks that the video genuinely performs the stated task, then returns a structured {approved, score, reason} verdict. Only verified clips are credited in $HYDRO, which keeps the embodied-data marketplace spam-resistant. This package ships that verification workflow as a reusable skill plus a redacted verdict report from the live pipeline. On-chain ACP Evaluator settlement is planned; this card is a hidden preview.",
+  "status": "hidden preview",
+  "topic": "agents",
+  "topics": ["verification", "embodied-ai", "data", "robotics", "vision"],
+  "builder": {
+    "name": "Hydrobotics",
+    "url": "https://hydrobotics.co"
+  },
+  "links": {
+    "repo": "https://github.com/hydroboticsdotco/hydrobotics",
+    "demo": "https://hydrobotics.co",
+    "share": "https://hydrobotics.co",
+    "feedback": "https://github.com/hydroboticsdotco/hydrobotics/issues/new?title=Feedback%3A%20Hydro%20Embodied-Data%20Verifier&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Useful%20as%20an%20ACP%20evaluator%0A-%20Needs%20a%20public%20verification%20endpoint%0A-%20Rubric%20should%20cover%20more%20dimensions%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["wallet", "email", "token"],
+  "visual": {
+    "kind": "live product page",
+    "eyebrow": "AI quality gate",
+    "title": "embodied-data verification",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/hydro-embodied-verify/assets/poster.jpg"
+  },
+  "skills": [
+    {
+      "name": "hydro-embodied-verify",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/hydro-embodied-verify/skills/hydro-embodied-verify",
+      "sourcePath": "showcase/hydro-embodied-verify/skills/hydro-embodied-verify",
+      "summary": "Reusable verification workflow that scores a first-person task video against its instructions with a vision model and returns a bounded {approved, score, reason} verdict. Designed to plug into the ACP Evaluator slot for embodied-video deliverables.",
+      "install": "cp -R showcase/hydro-embodied-verify/skills/hydro-embodied-verify ~/.agents/skills/\ncp -R showcase/hydro-embodied-verify/skills/hydro-embodied-verify ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live product page - Hydro Data Verification",
+      "href": "https://hydrobotics.co",
+      "kind": "demo"
+    },
+    {
+      "label": "Redacted verdict report from the live pipeline",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hydro-embodied-verify/examples/verify-report.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Hydro app + reward function source",
+      "href": "https://github.com/hydroboticsdotco/hydrobotics",
+      "kind": "repo"
+    },
+    {
+      "label": "Verification skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/hydro-embodied-verify/skills/hydro-embodied-verify",
+      "kind": "skill"
+    },
+    {
+      "label": "Verifier soul - rubric and verdict semantics",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hydro-embodied-verify/soul.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/hydro-embodied-verify/soul.md",
+    "summary": "Embodied-data verifier identity, scoring rubric, and approve/reject/needs-review verdict semantics."
+  },
+  "feedbackPrompts": [
+    "Would ACP benefit from an embodied-video evaluator that scores task completion, not just on-chain actions?",
+    "Should the verdict expose per-dimension rubric scores rather than a single 0-100 number?",
+    "What would you need before wiring this verifier into the ACP Evaluator slot with escrow settlement?"
+  ],
+  "hidden": true
+}

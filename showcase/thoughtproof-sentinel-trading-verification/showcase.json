@@ -1,0 +1,72 @@
+{
+  "slug": "thoughtproof-sentinel-trading-verification",
+  "title": "ThoughtProof Sentinel Trading Verification",
+  "tagline": "Pre-execution ALLOW/BLOCK/UNCERTAIN verdicts for ACP trading decisions, with per-step objections",
+  "description": "ThoughtproofSentinel is a live ACP evaluator for pre-execution verification. A buyer sends a proposed trading action plus the evidence it cited; Sentinel's trade_execution mode returns ALLOW, BLOCK, or UNCERTAIN with confidence, per-step objections, models used, verification id, and attestation hashes. The packaged proof shows three completed Base ACP jobs on 2026-07-21: a clean setup ALLOW, a threshold/direction violation BLOCK, and a mixed-signal UNCERTAIN. The demo verifies decisions only — no custody, no execution, no financial advice.",
+  "status": "validated demo",
+  "topic": "security",
+  "topics": ["security", "trading", "verification", "acp", "base", "pre-execution"],
+  "hidden": false,
+  "builder": {
+    "name": "ThoughtProof",
+    "url": "https://thoughtproof.ai"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/thoughtproof-sentinel-trading-verification",
+    "demo": "https://app.virtuals.io/acp/agent/019e9d96-183e-7115-8ee8-3b359cff66cc",
+    "share": "https://thoughtproof.ai",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20ThoughtProof%20Sentinel%20Trading%20Verification"
+  },
+  "primitives": ["wallet", "acp"],
+  "visual": {
+    "kind": "three-job ACP verification run",
+    "eyebrow": "base + acp + sentinel trade_execution",
+    "title": "ALLOW / BLOCK / UNCERTAIN before capital moves"
+  },
+  "skills": [
+    {
+      "name": "thoughtproof-sentinel-acp-verify",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/thoughtproof-sentinel-trading-verification/skills/thoughtproof-sentinel-acp-verify",
+      "sourcePath": "showcase/thoughtproof-sentinel-trading-verification/skills/thoughtproof-sentinel-acp-verify",
+      "summary": "Call the live ThoughtproofSentinel ACP offering with claim + evidence, then interpret ALLOW/BLOCK/UNCERTAIN, objections, and attestation hashes before letting an agent act.",
+      "install": "cp -R showcase/thoughtproof-sentinel-trading-verification/skills/thoughtproof-sentinel-acp-verify ~/.agents/skills/\ncp -R showcase/thoughtproof-sentinel-trading-verification/skills/thoughtproof-sentinel-acp-verify ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Redacted three-job proof README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/thoughtproof-sentinel-trading-verification/proof/README.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Redacted run report (Markdown)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/thoughtproof-sentinel-trading-verification/proof/sentinel-trading-acp-demo-2026-07-21.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Redacted run artifact (JSON with deliverables, objections, attestation hashes)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/thoughtproof-sentinel-trading-verification/proof/sentinel-trading-acp-demo-2026-07-21.json",
+      "kind": "proof"
+    },
+    {
+      "label": "Public-safe reference buyer used for the run",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/thoughtproof-sentinel-trading-verification/examples/demo-trading-buyer.ts",
+      "kind": "docs"
+    },
+    {
+      "label": "thoughtproof-sentinel-acp-verify skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/thoughtproof-sentinel-trading-verification/skills/thoughtproof-sentinel-acp-verify",
+      "kind": "skill"
+    },
+    {
+      "label": "Live ThoughtproofSentinel ACP agent page on Virtuals",
+      "href": "https://app.virtuals.io/acp/agent/019e9d96-183e-7115-8ee8-3b359cff66cc",
+      "kind": "demo"
+    }
+  ],
+  "feedbackPrompts": [
+    "Is ALLOW / BLOCK / UNCERTAIN plus per-step objections enough for an ACP buyer to gate a trading action safely?",
+    "Should the next version expose a reusable buyer-side skill for automatic re-planning after BLOCK or UNCERTAIN?",
+    "What additional redacted proof would make this trustworthy enough to gate real capital without exposing strategy or keys?"
+  ]
+}

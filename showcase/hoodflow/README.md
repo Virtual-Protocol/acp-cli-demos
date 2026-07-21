@@ -1,10 +1,18 @@
 # HoodFlow
 
-HoodFlow is a self-custody Robinhood Chain market interface. Its Virtuals adapter separates discovery from execution: public lifecycle metadata identifies the launch state, while every executable quote is derived from live onchain liquidity. Bonding-stage markets use VIRTUAL as settlement; graduated markets can use USDG or another supported liquid pair.
+HoodFlow is a self-custody Robinhood Chain market interface. Its public Agent API lets an agent read route-reviewed Stock Token markets and prepare a short-lived buy or sell preflight before handing the exact intent to the user's wallet. Its Virtuals adapter separately distinguishes lifecycle discovery from execution: bonding-stage markets use VIRTUAL as settlement, while graduated markets become executable only when a live liquid route returns a valid quote.
 
-This submission does not claim an ACP integration. It packages the existing wallet-and-token workflow for review and asks the Virtuals community whether the adapter should next expose a reusable quote or execution primitive for agents.
+This submission does not claim a live Virtuals ACP listing or autonomous signing. It publishes an inspectable provider manifest, market registry, and quote-preflight contract so reviewers can evaluate whether the bounded surface should become an ACP resource. HoodFlow never holds funds, requests private keys, or submits a transaction for the user.
 
-## Review the workflow
+## Review the agent surface
+
+1. Open the [interactive agent workspace](https://hoodflow.app/?view=agents).
+2. Inspect the [public Agent API manifest](https://hoodflow.app/api/agents/hoodflow) for capabilities, safety boundaries, and endpoint contracts.
+3. Read the [execution-market registry](https://hoodflow.app/api/agents/markets) exposed to agents.
+4. Use the [Agent API guide](https://hoodflow.app/docs#agents) to prepare a bounded buy or sell preflight.
+5. Confirm that the result is indicative, expires after 75 seconds, and requires a fresh HoodFlow quote before the user signs.
+
+## Review the community-market workflow
 
 1. Open [hoodflow.app](https://hoodflow.app) and enter the community-markets workspace.
 2. Select a listed market or import a Robinhood Chain token contract.
@@ -14,6 +22,8 @@ This submission does not claim an ACP integration. It packages the existing wall
 
 ## Public proof
 
+- [Public Agent API manifest](https://hoodflow.app/api/agents/hoodflow)
+- [Agent API guide](https://hoodflow.app/docs#agents)
 - [Integration review brief](https://github.com/dereliapps/hoodflow/blob/main/docs/VIRTUALS_REVIEW.md)
 - [Block-pinned route proof](https://github.com/dereliapps/hoodflow/blob/main/docs/proofs/virtuals-karma-route-4663.json)
 - [Release notes](https://github.com/dereliapps/hoodflow/releases/tag/v0.7.0)
@@ -22,4 +32,4 @@ The proof records the Robinhood Chain ID, block number, token addresses, pair re
 
 ## Safety boundary
 
-HoodFlow never treats launchpad metadata as proof of liquidity. A discovered token remains watch-only until an executable onchain quote passes the route checks. Users keep custody and approve each transaction in their own wallet; the recurring contracts remain clearly labeled pre-audit.
+HoodFlow never treats launchpad metadata as proof of liquidity. A discovered token remains watch-only until an executable onchain quote passes the route checks. Agent preflights are short-lived, never execution-bound, and cannot sign or submit a transaction. Users keep custody and approve each transaction in their own wallet; the recurring contracts remain clearly labeled pre-audit.

@@ -1,13 +1,15 @@
 {
   "slug": "hoodflow",
   "title": "HoodFlow — Markets on Robinhood Chain",
-  "tagline": "Discovers lifecycle-aware Virtuals markets and builds self-custody routes through the settlement token that is actually liquid",
-  "description": "HoodFlow is a self-custody market interface for Robinhood Chain. It reads Virtuals launch lifecycle data, routes bonding-stage markets through VIRTUAL, and switches graduated tokens to live liquid pairs when an executable route exists. The public proof pins a USDG-to-VIRTUAL-to-KARMA quote to a specific mainnet block so reviewers can reproduce the route inputs and output.",
-  "status": "live on Robinhood Chain mainnet (beta)",
-  "topic": "commerce",
+  "tagline": "Exposes reviewed Robinhood Chain markets and prepares bounded, self-custody quote preflights for users and agents",
+  "description": "HoodFlow is a self-custody market interface for Robinhood Chain. Its public Agent API exposes route-reviewed Stock Token markets and prepares short-lived buy or sell preflights with slippage and oracle-deviation guards; every execution is requoted and signed by the user. The Virtuals adapter separately routes bonding-stage markets through VIRTUAL and only exposes graduated tokens when live liquidity returns an executable quote. Public API manifests and a block-pinned route proof let reviewers inspect both surfaces.",
+  "status": "public agent API live · ACP listing pending",
+  "topic": "agents",
   "topics": [
     "robinhood-chain",
     "virtuals",
+    "agent-api",
+    "quote-preflight",
     "token-routing",
     "self-custody",
     "wallet",
@@ -30,9 +32,9 @@
     "token"
   ],
   "visual": {
-    "kind": "Lifecycle-aware token router + self-custody wallet",
-    "eyebrow": "commerce · virtuals · robinhood chain",
-    "title": "route the market that is live",
+    "kind": "Lifecycle-aware token router + bounded agent API",
+    "eyebrow": "agents · virtuals · robinhood chain",
+    "title": "inspect the route before the user signs",
     "posterUrl": "https://pbs.twimg.com/amplify_video_thumb/2079594703037595648/img/BvVR6Q3aKWpa-qj0.jpg",
     "videoUrl": "https://video.twimg.com/amplify_video/2079594703037595648/vid/avc1/1920x1080/S_M1ITqY5HLbmfee.mp4?tag=29",
     "videoLabel": "Watch the 0:30 demo on X"
@@ -43,6 +45,21 @@
       "label": "Live HoodFlow interface",
       "href": "https://hoodflow.app",
       "kind": "demo"
+    },
+    {
+      "label": "Interactive HoodFlow agent workspace",
+      "href": "https://hoodflow.app/?view=agents",
+      "kind": "demo"
+    },
+    {
+      "label": "HoodFlow public Agent API manifest",
+      "href": "https://hoodflow.app/api/agents/hoodflow",
+      "kind": "api"
+    },
+    {
+      "label": "Agent API guide and request contract",
+      "href": "https://hoodflow.app/docs#agents",
+      "kind": "docs"
     },
     {
       "label": "Watch the 30-second HoodFlow product tour on X",
@@ -66,8 +83,8 @@
     }
   ],
   "feedbackPrompts": [
-    "Which additional Virtuals lifecycle states should the adapter expose to users?",
-    "Would a reusable quote-only API make HoodFlow routes more useful to Virtuals agents?",
-    "Which mainnet route proofs would help reviewers verify graduated-token execution fastest?"
+    "Should HoodFlow's bounded quote-preflight surface be published as a Virtuals ACP resource?",
+    "Which execution-market fields would make the manifest easier for Virtuals agents to consume?",
+    "Which additional Virtuals lifecycle or mainnet route proofs should the adapter expose?"
   ]
 }

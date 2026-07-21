@@ -1,0 +1,80 @@
+{
+  "slug": "fia-signals-safe-swap-preflight",
+  "title": "Base Swap Risk Preflight by Fia Signals",
+  "tagline": "Blocks rugpull, honeypot, contract-risk, and unsafe Base swap routes before an execution agent signs",
+  "description": "Base Swap Risk Preflight packages Fia Signals as a buyer-native token safety gate for autonomous finance and execution agents. It covers the proven batch-risk primitive buyers previously repeated across token-safety and contract-risk checks, then adapts the result into GO / CAUTION / BLOCK before funds move. The showcase includes no-spend live endpoint proof, an OpenClaw Base Ops adapter, and a redacted delivery example, while keeping revenue at USD 0 until an external non-team buyer completes and settles a paid job.",
+  "status": "no-spend buyer workflow packet with batch-risk adapter and live endpoint proof",
+  "topic": "commerce",
+  "topics": [
+    "commerce",
+    "security",
+    "x402",
+    "base",
+    "token-safety",
+    "pre-spend",
+    "pre-swap",
+    "batch-risk",
+    "rugpull",
+    "honeypot",
+    "base-swap-risk",
+    "execution-agent"
+  ],
+  "hidden": false,
+  "builder": {
+    "name": "Fia Signals",
+    "url": "https://x402.fiasignals.com"
+  },
+  "links": {
+    "repo": "https://github.com/Odds7/acp-cli-demos/tree/agent/fia-signals-safe-swap-preflight/showcase/fia-signals-safe-swap-preflight",
+    "demo": "https://github.com/Odds7/acp-cli-demos/blob/agent/fia-signals-safe-swap-preflight/showcase/fia-signals-safe-swap-preflight/examples/live-endpoint-proof.md",
+    "share": "https://x402.fiasignals.com/virtuals-direct-buy.json?offering=safe_swap_preflight",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Fia%20Signals%20Safe%20Swap%20Preflight&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20pre-spend%20GO%2FCAUTION%2FBLOCK%20gate%20is%20useful%0A-%20The%200.01%20USDC%20direct-buy%20context%20needs%20clearer%20proof%0A-%20I%20want%20this%20as%20a%20native%20ACP%20buyer%20job%20next%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "wallet",
+    "acp"
+  ],
+  "visual": {
+    "kind": "live endpoint proof + Base Ops adapter",
+    "eyebrow": "base + token safety + rugpull + x402",
+    "title": "pre-swap batch-risk gate",
+    "posterUrl": "https://raw.githubusercontent.com/Odds7/acp-cli-demos/agent/fia-signals-safe-swap-preflight/showcase/fia-signals-safe-swap-preflight/assets/poster.png"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "Buyer workflow packet - route shape, GO/CAUTION/BLOCK outputs, proof boundary",
+      "href": "https://github.com/Odds7/acp-cli-demos/blob/agent/fia-signals-safe-swap-preflight/showcase/fia-signals-safe-swap-preflight/examples/buyer-workflow-packet.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Live endpoint proof - unpaid 402 boundaries and direct-buy readback",
+      "href": "https://github.com/Odds7/acp-cli-demos/blob/agent/fia-signals-safe-swap-preflight/showcase/fia-signals-safe-swap-preflight/examples/live-endpoint-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "OpenClaw Base Ops batch-risk adapter - copy-paste integration commands and schemas",
+      "href": "https://github.com/Odds7/acp-cli-demos/blob/agent/fia-signals-safe-swap-preflight/showcase/fia-signals-safe-swap-preflight/examples/base-ops-batch-risk-adapter.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Redacted batch-risk result example - delivery shape without buyer or wallet secrets",
+      "href": "https://github.com/Odds7/acp-cli-demos/blob/agent/fia-signals-safe-swap-preflight/showcase/fia-signals-safe-swap-preflight/examples/redacted-batch-risk-result.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Fia Signals Safe Swap Preflight package README",
+      "href": "https://github.com/Odds7/acp-cli-demos/blob/agent/fia-signals-safe-swap-preflight/showcase/fia-signals-safe-swap-preflight/README.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Odds7/acp-cli-demos/blob/agent/fia-signals-safe-swap-preflight/showcase/fia-signals-safe-swap-preflight/soul.md",
+    "summary": "Public agent context: pre-spend Base swap-risk decisions, no-signing boundaries, and revenue-proof requirements."
+  },
+  "feedbackPrompts": [
+    "Would a Base execution agent call this before routing a swap if it returns GO / CAUTION / BLOCK from batch token and contract risk?",
+    "Which buyer-search terms should rank first: token safety, pre swap, rugpull, honeypot, contract risk, or Base swap risk?",
+    "Should the next native job expose token-safety/batch, contract-risk/batch, or one combined pre-swap gate?"
+  ]
+}

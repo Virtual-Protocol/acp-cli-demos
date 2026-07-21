@@ -50,6 +50,7 @@ overlay as a heart leaderboard.
 **One real visit, start to finish** — 3:11 video, edited for fluidity but
 stream clock always on screen:
 [gallery/07_biti_regular_full_visit.mp4](https://github.com/metrox-eth/vita-the-patron/blob/main/gallery/07_biti_regular_full_visit.mp4)
+· or watch it on X, as Vita tells it: https://x.com/VitaNovaShow/status/2079536751530717348
 
 | stream clock | what happens |
 |---|---|

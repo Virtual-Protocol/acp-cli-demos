@@ -14,14 +14,17 @@
     "repo": "https://github.com/OpenRoboArena/openroboarena",
     "share": "https://x.com/OpenRoboArena",
     "feedback": "https://github.com/OpenRoboArena/openroboarena/issues/new?title=OpenRoboArena%20feedback",
-    "demo": "https://www.openroboarena.xyz/motion-control.html"
+    "demo": "https://www.openroboarena.xyz/motion-control.html",
+    "video": "https://raw.githubusercontent.com/OpenRoboArena/openroboarena/main/public/assets/openroboarena-punch-demo.mp4"
   },
   "primitives": ["wallet", "email"],
   "visual": {
     "kind": "interactive 3D robotics motion lab",
     "eyebrow": "open-source robotics + economyos compute",
     "title": "give a robot a movement command",
-    "posterUrl": "https://raw.githubusercontent.com/OpenRoboArena/openroboarena/main/public/assets/openroboarena-github-profile.png"
+    "posterUrl": "https://raw.githubusercontent.com/OpenRoboArena/openroboarena/main/public/assets/openroboarena-github-profile.png",
+    "videoUrl": "https://raw.githubusercontent.com/OpenRoboArena/openroboarena/main/public/assets/openroboarena-punch-demo.mp4",
+    "videoLabel": "Watch the PUNCH movement demo"
   },
   "skills": [
     {
@@ -42,6 +45,11 @@
       "label": "Live Motion Control Lab",
       "href": "https://www.openroboarena.xyz/motion-control.html",
       "kind": "demo"
+    },
+    {
+      "label": "PUNCH movement demo video",
+      "href": "https://raw.githubusercontent.com/OpenRoboArena/openroboarena/main/public/assets/openroboarena-punch-demo.mp4",
+      "kind": "video"
     },
     {
       "label": "EconomyOS Compute redacted verification",

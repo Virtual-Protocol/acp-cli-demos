@@ -7,6 +7,10 @@ repositories and using a safe 3D Motion Control Lab. Visit the live catalog at
 
 Follow project updates on X: <https://x.com/OpenRoboArena>.
 
+## Demo video
+
+[Watch the short PUNCH movement demo](https://github.com/OpenRoboArena/openroboarena/blob/main/public/assets/openroboarena-punch-demo.mp4). It captures the live Motion Control Lab command terminal and the local MX-01 FBX animation.
+
 ## EconomyOS workflow
 
 When a visitor enters unsupported natural-language movement phrasing, the

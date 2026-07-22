@@ -48,14 +48,19 @@
     }
   ],
   "scope": {
-    "economyOsPrimitives": [
+    "showcasePrimitives": [
       "wallet",
       "token"
     ],
+    "economyOsAgentWalletUsed": false,
+    "acpJobUsed": false,
     "agentPrepared": true,
+    "preflightEvidence": "builder_attestation_only",
+    "preflightCryptographicallyBoundToTransaction": false,
     "agentSigned": false,
     "agentSubmitted": false,
     "userWalletConfirmed": true,
-    "liveAcpProviderClaimed": false
+    "liveAcpProviderClaimed": false,
+    "proofLimitations": "The receipt proves the completed wallet/token trade. It does not independently prove the preceding offchain preflight or an ACP job."
   }
 }

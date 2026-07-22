@@ -22,7 +22,23 @@ On 2026-07-22, a HoodFlow Agent API preflight prepared a 1 USDG INTC buy intent.
 - Input transfer: `1.0 USDG`
 - Output transfer: `0.00937386626109376 INTC`
 
-This records completed use of the `wallet` and `token` primitives after an Agent API preflight. The Agent API did not initiate, sign, or submit the transaction, and this is not represented as an ACP job or live ACP provider action; the user wallet remained the signer.
+This records a completed user-wallet token trade after an Agent API preflight. It does not evidence an EconomyOS Agent Wallet or ACP job. The Agent API did not initiate, sign, or submit the transaction; the user wallet remained the signer. The receipt independently proves the trade, but the preceding offchain preflight is builder-attested and is not cryptographically bound to the transaction.
+
+## Reuse the preflight workflow
+
+The [`hoodflow-route-preflight` skill](./skills/hoodflow-route-preflight/SKILL.md) packages the public API workflow for another agent. It verifies the capability manifest and reviewed-market registry, requests a short-lived quote, checks the oracle/deviation/slippage/expiry fields, and returns the exact user-wallet handoff. Its stop conditions forbid wallet connection, token approval, signing, transaction submission, fabricated fallbacks, and ACP claims.
+
+Install after cloning this repository:
+
+```bash
+cp -R showcase/hoodflow/skills/hoodflow-route-preflight ~/.agents/skills/
+cp -R showcase/hoodflow/skills/hoodflow-route-preflight ~/.claude/skills/
+```
+
+## Media proof
+
+- [Commit-pinned 16:9 Showcase poster](https://raw.githubusercontent.com/dereliapps/acp-cli-demos/8245617/showcase/hoodflow/assets/poster.png)
+- [30-second H.264 product tour](https://video.twimg.com/amplify_video/2079594703037595648/vid/avc1/1920x1080/S_M1ITqY5HLbmfee.mp4?tag=29)
 
 ## Review the community-market workflow
 

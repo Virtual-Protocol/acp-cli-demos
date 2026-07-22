@@ -2,8 +2,8 @@
   "slug": "hoodflow",
   "title": "HoodFlow — Markets on Robinhood Chain",
   "tagline": "Exposes reviewed Robinhood Chain markets and prepares bounded, self-custody quote preflights for users and agents",
-  "description": "HoodFlow is a self-custody market interface for Robinhood Chain. Its public Agent API exposes route-reviewed Stock Token markets and prepares short-lived buy or sell preflights with slippage and oracle-deviation guards; every execution is requoted and signed by the user. The Virtuals adapter separately routes bonding-stage markets through VIRTUAL and only exposes graduated tokens when live liquidity returns an executable quote. A public API manifest, an indicative block-pinned route proof, and a successful user-signed mainnet trade receipt let reviewers inspect both surfaces.",
-  "status": "public agent API live · ACP listing pending",
+  "description": "HoodFlow is a self-custody market interface for Robinhood Chain. Its public Agent API exposes route-reviewed Stock Token markets and prepares short-lived buy or sell preflights with slippage and oracle-deviation guards; every execution is requoted and signed by the user. The Virtuals lifecycle adapter classifies bonding-stage launches, exposes their VIRTUAL settlement context, and links them to the official Virtuals market; HoodFlow enables embedded execution only after graduation when live DEX liquidity returns an executable quote. The API manifest and route proof expose the read and preflight surfaces, while a separate user-signed mainnet INTC receipt proves the wallet/token execution path, not an ACP job.",
+  "status": "public preflight API live · user-signed execution proof · ACP not published",
   "topic": "agents",
   "topics": [
     "robinhood-chain",
@@ -23,8 +23,8 @@
   "links": {
     "repo": "https://github.com/dereliapps/hoodflow",
     "demo": "https://hoodflow.app",
-    "share": "https://x.com/hoodfloow/status/2079596780711227597",
-    "video": "https://x.com/hoodfloow/status/2079596780711227597",
+    "share": "https://hoodflow.app/?view=agents",
+    "video": "https://video.twimg.com/amplify_video/2079594703037595648/vid/avc1/1920x1080/S_M1ITqY5HLbmfee.mp4?tag=29",
     "feedback": "https://github.com/dereliapps/hoodflow/issues/new?title=Virtuals%20integration%20feedback"
   },
   "primitives": [
@@ -32,14 +32,22 @@
     "token"
   ],
   "visual": {
-    "kind": "Lifecycle-aware token router + bounded agent API",
-    "eyebrow": "agents · virtuals · robinhood chain",
+    "kind": "Reviewed route preflight + user-signed handoff",
+    "eyebrow": "agents · token routes · robinhood chain",
     "title": "inspect the route before the user signs",
     "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/hoodflow/assets/poster.png",
     "videoUrl": "https://video.twimg.com/amplify_video/2079594703037595648/vid/avc1/1920x1080/S_M1ITqY5HLbmfee.mp4?tag=29",
-    "videoLabel": "Watch the 0:30 demo on X"
+    "videoLabel": "Watch the 0:30 demo"
   },
-  "skills": [],
+  "skills": [
+    {
+      "name": "hoodflow-route-preflight",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/hoodflow/skills/hoodflow-route-preflight",
+      "sourcePath": "showcase/hoodflow/skills/hoodflow-route-preflight",
+      "summary": "Read HoodFlow's reviewed Robinhood Chain markets, request a short-lived oracle-checked quote preflight, validate its slippage floor and expiry, and return a self-custody handoff without signing or submitting a transaction.",
+      "install": "cp -R showcase/hoodflow/skills/hoodflow-route-preflight ~/.agents/skills/\ncp -R showcase/hoodflow/skills/hoodflow-route-preflight ~/.claude/skills/"
+    }
+  ],
   "artifacts": [
     {
       "label": "Live HoodFlow interface",
@@ -62,8 +70,18 @@
       "kind": "docs"
     },
     {
-      "label": "Watch the 30-second HoodFlow product tour on X",
-      "href": "https://x.com/hoodfloow/status/2079596780711227597",
+      "label": "Reusable HoodFlow route-preflight skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/hoodflow/skills/hoodflow-route-preflight",
+      "kind": "skill"
+    },
+    {
+      "label": "Commit-pinned 16:9 Showcase poster preview",
+      "href": "https://raw.githubusercontent.com/dereliapps/acp-cli-demos/8245617/showcase/hoodflow/assets/poster.png",
+      "kind": "image"
+    },
+    {
+      "label": "Watch the 30-second HoodFlow product tour",
+      "href": "https://video.twimg.com/amplify_video/2079594703037595648/vid/avc1/1920x1080/S_M1ITqY5HLbmfee.mp4?tag=29",
       "kind": "video"
     },
     {
@@ -74,6 +92,11 @@
     {
       "label": "Successful user-signed mainnet trade: 1 USDG to 0.00937386626109376 INTC",
       "href": "https://robinhoodchain.blockscout.com/tx/0x7c9d4dcea9c32b5df03283b010617084499d5ab29ca8a093c9f49a6e5c2303c3",
+      "kind": "proof"
+    },
+    {
+      "label": "Decoded user-signed INTC trade proof — not an ACP job",
+      "href": "https://github.com/dereliapps/hoodflow/blob/main/docs/proofs/executed-intc-buy-4663.json",
       "kind": "proof"
     },
     {

@@ -2,7 +2,7 @@
   "slug": "vita-the-patron",
   "title": "Vita the Patron",
   "tagline": "A physical robot who commissions art from ACP agents by voice and wears it on her chest screen - the agent economy's first buyer with a face",
-  "description": "Vita is a hand-built animatronic robot (talks, sings, eye-tracks) whose brain now places real ACP jobs on Base: ask her out loud to buy herself a new visual, and she commissions an artist agent, funds the escrow from her own custodial wallet, and displays the delivered artwork on the 3.5-inch screen in her chest two minutes later. Every seller on the marketplace gains what it was missing: a customer with desires, a personality, and an audience. The whole loop - strict voice intent matching, hard spending caps, escrow round-trip, arrival reaction that never talks over a human - is open source, with six completed jobs and receipts.",
+  "description": "Vita is a hand-built animatronic robot (talks, sings, eye-tracks) whose brain now places real ACP jobs on Base: ask her out loud to buy herself a new visual, and she commissions an artist agent, funds the escrow from her own custodial wallet, and displays the delivered artwork on the 3.5-inch screen in her chest two minutes later. Every seller on the marketplace gains what it was missing: a customer with desires, a personality, and an audience. The whole loop - strict voice intent matching, hard spending caps, escrow round-trip, arrival reaction that never talks over a human - is open source, with 23 delivered art commissions itemized by artwork and on-chain receipt - one of them commissioned live on camera by a returning viewer, on her 24/7 stream where her per-person attachment is displayed as a heart leaderboard and that regular just earned the fifth heart.",
   "status": "live",
   "topic": "agents",
   "topics": [
@@ -19,9 +19,10 @@
     "url": "https://github.com/metrox-eth"
   },
   "links": {
+    "demo": "https://www.twitch.tv/vitanovashow",
     "repo": "https://github.com/metrox-eth/vita-the-patron",
-    "share": "https://x.com/metrox_eth/status/2075519314220962117",
-    "video": "https://x.com/metrox_eth/status/2075519314220962117",
+    "share": "https://x.com/VitaNovaShow/status/2079536751530717348",
+    "video": "https://x.com/VitaNovaShow/status/2079536751530717348",
     "feedback": "https://github.com/metrox-eth/vita-the-patron/issues/new?title=Feedback%3A%20Vita%20the%20Patron"
   },
   "primitives": [
@@ -32,7 +33,8 @@
     "kind": "live robot demo",
     "eyebrow": "embodied + acp on base",
     "title": "the agent economy's first art patron",
-    "posterUrl": "https://raw.githubusercontent.com/metrox-eth/vita-the-patron/main/gallery/06_voice_commissioned_job67467.png",
+    "posterUrl": "https://raw.githubusercontent.com/metrox-eth/vita-the-patron/main/gallery/07_biti_commissioned_job70125.png",
+    "videoUrl": "https://raw.githubusercontent.com/metrox-eth/vita-the-patron/main/gallery/07_biti_regular_full_visit.mp4",
     "videoLabel": "Watch on X"
   },
   "skills": [
@@ -51,7 +53,7 @@
   ],
   "artifacts": [
     {
-      "label": "On-chain receipts - six commissions on Base (escrow funding + completion)",
+      "label": "On-chain receipts - 23 art commissions on Base ($0.15 each), every artwork itemized",
       "href": "https://basescan.org/address/0x8A0dbbd57259147DE681899F006b69Cc174BEeb2",
       "kind": "receipt"
     },
@@ -68,6 +70,16 @@
     {
       "label": "The voice-commissioned artwork (ACP job 67467)",
       "href": "https://raw.githubusercontent.com/metrox-eth/vita-the-patron/main/gallery/06_voice_commissioned_job67467.png",
+      "kind": "image"
+    },
+    {
+      "label": "One real visit, start to finish (3:11) - a stream regular commissions art (job 70125), asks for a song, and earns the fifth heart on camera",
+      "href": "https://github.com/metrox-eth/vita-the-patron/blob/main/gallery/07_biti_regular_full_visit.mp4",
+      "kind": "video"
+    },
+    {
+      "label": "The viewer-commissioned artwork (ACP job 70125, asked live in Twitch chat)",
+      "href": "https://raw.githubusercontent.com/metrox-eth/vita-the-patron/main/gallery/07_biti_commissioned_job70125.png",
       "kind": "image"
     }
   ]

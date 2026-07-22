@@ -11,6 +11,14 @@ Follow project updates on X: <https://x.com/OpenRoboArena>.
 
 [Watch the short PUNCH movement demo](https://github.com/OpenRoboArena/openroboarena/blob/main/public/assets/openroboarena-punch-demo.mp4). It captures the live Motion Control Lab command terminal and the local MX-01 FBX animation.
 
+## EconomyOS primitives disclosure
+
+The OpenRoboArena EconomyOS agent has **wallet** and **email** primitives
+provisioned. They describe the public agent identity only; the live Motion Lab
+does not request credentials or invoke either primitive. The demonstrated
+workflow is the bounded server-side **EconomyOS Compute** classification path,
+which returns only a local animation label.
+
 ## EconomyOS workflow
 
 When a visitor enters unsupported natural-language movement phrasing, the
@@ -26,5 +34,7 @@ The redacted live proof is in [proof/economyos-compute.md](./proof/economyos-com
 
 - `showcase.json` — card metadata and public links.
 - `proof/` — reproducible redacted verification.
+- `examples/` — a supported prompt and redacted output contract.
+- `assets/poster.jpg` — 16:9 Motion Lab card poster.
 - `skills/` — reusable Motion Control Lab workflow.
 - `soul.md` — public agent context and safety boundaries.

@@ -1,8 +1,8 @@
 {
   "slug": "openroboarena",
   "title": "OpenRoboArena",
-  "tagline": "Turns public robotics projects into a discoverable catalog with a safe, prompt-driven 3D motion demo",
-  "description": "OpenRoboArena is a live browser experience for discovering public robotics repositories and interacting with a local 3D Motion Control Lab. The lab sends unsupported natural-language movement phrasing to EconomyOS Compute, which returns a constrained local animation label. The browser only plays local FBX animation assets and never executes submitted repository code or initiates a blockchain transaction.",
+  "tagline": "Turns public robotics repositories into a discoverable catalog with a bounded, prompt-driven Motion Control Lab",
+  "description": "OpenRoboArena is a live browser experience for discovering public robotics repositories and interacting with a local 3D Motion Control Lab. Supported commands play deterministic local FBX animations; unsupported short movement phrasing can be classified by EconomyOS Compute into the same constrained allowlist. The browser never executes a submitted repository, controls physical hardware, or initiates a blockchain transaction.",
   "status": "live EconomyOS-powered prototype",
   "topic": "agents",
   "topics": ["robotics", "threejs", "open-source", "motion-control", "interactive-demo"],
@@ -22,9 +22,9 @@
     "kind": "interactive 3D robotics motion lab",
     "eyebrow": "open-source robotics + economyos compute",
     "title": "give a robot a movement command",
-    "posterUrl": "https://raw.githubusercontent.com/OpenRoboArena/openroboarena/main/public/assets/openroboarena-github-profile.png",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/openroboarena/assets/poster.jpg",
     "videoUrl": "https://raw.githubusercontent.com/OpenRoboArena/openroboarena/main/public/assets/openroboarena-punch-demo.mp4",
-    "videoLabel": "Watch the PUNCH movement demo"
+    "videoLabel": "Watch the 0:03 demo"
   },
   "skills": [
     {
@@ -50,6 +50,16 @@
       "label": "PUNCH movement demo video",
       "href": "https://raw.githubusercontent.com/OpenRoboArena/openroboarena/main/public/assets/openroboarena-punch-demo.mp4",
       "kind": "video"
+    },
+    {
+      "label": "Supported Motion Lab prompt example",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/openroboarena/examples/prompt.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Redacted Motion Lab result example",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/openroboarena/examples/result-redacted.md",
+      "kind": "proof"
     },
     {
       "label": "EconomyOS Compute redacted verification",

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NexMarkets HyperFrames golden fixture</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080808;color:#f5f1e8;font-family:Arial,Helvetica,sans-serif}
+    #stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:#080808}
+    .scene{position:absolute;inset:0;padding:120px;display:flex;align-items:flex-end;background:#080808}
+    .scene-content{width:100%;display:grid;grid-template-columns:1fr 420px;gap:100px;align-items:end}
+    .kicker{color:#ffb000;font-size:28px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    h1{font-size:136px;line-height:.92;letter-spacing:-.065em;max-width:10ch;margin:28px 0 0}
+    p{font-size:36px;line-height:1.2;color:#aaa59d;max-width:28ch}
+    .card{border:1px solid #3a3732;background:#111;padding:42px;min-height:290px;display:flex;flex-direction:column;justify-content:space-between}
+    .card b{font-size:54px;line-height:1}.card span{font-size:22px;color:#99958d}
+    #scene-2,#scene-3{visibility:hidden}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+</head>
+<body>
+  <div id="stage" data-composition-id="nexmarkets-golden" data-start="0" data-duration="30" data-width="1920" data-height="1080">
+    <div id="scene-1" class="scene clip" data-start="0" data-duration="10" data-track-index="0"><div class="scene-content"><div><div class="kicker">NexMarkets</div><h1>Bring the unfinished thought.</h1></div><div class="card"><span>One clear destination</span><b>Shape it with NexMind.</b></div></div></div>
+    <div id="scene-2" class="scene clip" data-start="10" data-duration="10" data-track-index="0"><div class="scene-content"><div><div class="kicker">NexStudio</div><h1>One approved direction.</h1><p>Sources, message and decisions stay attached to the work.</p></div><div class="card"><span>Production path</span><b>HTML → HyperFrames → MP4</b></div></div></div>
+    <div id="scene-3" class="scene clip" data-start="20" data-duration="10" data-track-index="0"><div class="scene-content"><div><div class="kicker">Ready</div><h1>Leave safely. Return to the result.</h1></div><div class="card"><span>Managed rendering</span><b>HeyGen cloud</b></div></div></div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.from("#scene-1 .scene-content > *", { y: 48, autoAlpha: 0, duration: .8, stagger: .12, ease: "power3.out" }, .2);
+    tl.to("#scene-1 .card", { y: -10, duration: 3, repeat: 2, yoyo: true, ease: "sine.inOut" }, 1);
+    tl.set("#scene-1", { autoAlpha: 0 }, 10);
+    tl.set("#scene-2", { autoAlpha: 1 }, 10);
+    tl.from("#scene-2 .scene-content > *", { y: 48, autoAlpha: 0, duration: .8, stagger: .12, ease: "power3.out" }, 10.2);
+    tl.to("#scene-2 .card", { y: -10, duration: 3, repeat: 2, yoyo: true, ease: "sine.inOut" }, 11);
+    tl.set("#scene-2", { autoAlpha: 0 }, 20);
+    tl.set("#scene-3", { autoAlpha: 1 }, 20);
+    tl.from("#scene-3 .scene-content > *", { y: 48, autoAlpha: 0, duration: .8, stagger: .12, ease: "power3.out" }, 20.2);
+    tl.to("#scene-3 .card", { y: -10, duration: 3, repeat: 2, yoyo: true, ease: "sine.inOut" }, 21);
+    window.__timelines["nexmarkets-golden"] = tl;
+  </script>
+</body>
+</html>

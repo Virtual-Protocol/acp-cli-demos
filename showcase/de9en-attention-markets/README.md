@@ -11,14 +11,38 @@ that models each market as a priced ACP offering returning one stable signed
 deliverable envelope — so a provider agent can sell De9en attention/odds signals
 and a buyer agent integrates once across every market.
 
-## What's live vs. what's a reference
+## Integration status: PLANNED
 
-- **Live now:** the attention-market product at
-  [de9en.fun](https://de9en.fun/dashboard) — a public dashboard, the KOL Wars
-  grid, and per-market share cards.
-- **Reference in this package:** the ACP rail (offerings catalog, deliverable
-  envelope, provider skill, and soul). No on-chain job settlement is claimed
-  here; the skill is the design contract for exposing the live market over ACP.
+To be explicit about what is and isn't running:
+
+- **Live now (product):** the attention-market app at
+  [de9en.app](https://de9en.app/dashboard) — a public dashboard, the KOL Wars
+  grid, and per-market share cards. See [Product Demo](#product-demo) below.
+- **Planned (ACP integration):** the ACP rail in this package (offerings
+  catalog, signed deliverable envelope, provider skill, and soul) is a **design
+  contract, not a live deployment**. There is **no completed ACP job and no
+  on-chain settlement** yet. This package documents how De9en will expose its
+  live market to buyer agents over ACP once the on-chain integration ships.
+
+## Product Demo
+
+How the product is used today: browse the KOL Wars grid, pick a battle, take
+YES or NO on which creator wins the week's attention, and watch live odds,
+volume, and mindshare update. Each battle also produces a shareable card.
+
+**1. Dashboard — KOL Wars grid with live odds, volume, and mindshare ranking.**
+
+![De9en dashboard](assets/dashboard.jpg)
+
+**2. Placing a position — pick YES/NO on a battle; see odds, probability, and estimated payout (on-chain trading coming soon).**
+
+![De9en bet modal](assets/bet-modal.jpg)
+
+**3. Shareable battle card — the same market odds rendered for agent/social sharing.**
+
+![De9en battle share card](assets/share-card.jpg)
+
+Live to try: https://de9en.app/dashboard
 
 ## Package contents
 
@@ -38,7 +62,7 @@ Every offering returns the same signed envelope so a buyer integrates once:
 {
   "signal": "kol-battle-odds",
   "market": "<market-slug>",
-  "source": "de9en (de9en.fun)",
+  "source": "de9en (de9en.app)",
   "delivered_at": "<ISO-8601>",
   "disclaimer": "Informational only — not financial advice.",
   "data": { "question": "...", "yes": {}, "no": {}, "mindshare_rank": 0 }
@@ -47,9 +71,10 @@ Every offering returns the same signed envelope so a buyer integrates once:
 
 ## Proof
 
-- Live dashboard: https://de9en.fun/dashboard
-- Live per-market share card: https://de9en.fun/share/unipcs-vs-orangie
-- Redacted deliverable: [`examples/attention-signal-envelope.json`](examples/attention-signal-envelope.json)
+- Product demo screenshots: [`assets/`](assets) (dashboard, bet modal, share card)
+- Live dashboard: https://de9en.app/dashboard
+- Live per-market share card: https://de9en.app/share/unipcs-vs-orangie
+- Redacted deliverable (design reference for the planned ACP rail): [`examples/attention-signal-envelope.json`](examples/attention-signal-envelope.json)
 
 ## Install the skill
 

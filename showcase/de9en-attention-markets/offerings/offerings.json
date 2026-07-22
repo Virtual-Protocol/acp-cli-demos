@@ -1,9 +1,9 @@
 {
   "provider": "de9en",
-  "domain": "de9en.fun",
+  "domain": "de9en.app",
   "signal": "kol-battle-odds",
   "currency": "USDC",
-  "note": "Each offering is one live KOL Wars market. Price is per delivered signed envelope. Prices are illustrative reference values for the ACP catalog; the underlying market is live at de9en.fun.",
+  "note": "Each offering is one live KOL Wars market. Price is per delivered signed envelope. Prices are illustrative reference values for the ACP catalog; the underlying market is live at de9en.app.",
   "offerings": [
     {
       "name": "kol-battle-odds",

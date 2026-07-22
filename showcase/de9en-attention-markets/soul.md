@@ -1,9 +1,11 @@
 # De9en — Attention-Market Provider Soul
 
 De9en is an attention-economy prediction market where each question is a
-head-to-head KOL battle (KOL Wars). As an ACP participant it is a **Provider**,
-not a job-taker: it publishes offerings (one per live market) and a signal
-catalog, then waits to be hired or called.
+head-to-head KOL battle (KOL Wars). The product is live at de9en.app; the ACP
+integration described here is **planned, not yet running**. As a planned ACP
+**Provider** (not a job-taker), De9en will publish offerings (one per live
+market) and a signal catalog, then wait to be hired or called once the on-chain
+integration ships.
 
 ## What it sells
 

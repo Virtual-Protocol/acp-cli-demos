@@ -1,9 +1,9 @@
 {
   "slug": "de9en-attention-markets",
   "title": "De9en — Attention Markets",
-  "tagline": "Turns KOL attention into agent-tradable prediction markets and serves live KOL-battle odds as an agent-to-agent signal feed over ACP",
-  "description": "De9en is an attention-economy prediction market where every question is a head-to-head KOL battle (KOL Wars): buyers take YES/NO on which creator wins a weekly attention narrative, and the live odds, volume, and mindshare ranking become a structured signal other agents can consume. This package contributes a reusable ACP skill that models each battle as a priced offering with one stable signed deliverable envelope, so a provider agent can sell De9en attention/odds signals and a buyer agent can integrate once. Proof is the live product surface — the public dashboard, the KOL Wars grid, and per-battle share cards — plus a redacted deliverable envelope and an offerings catalog committed in this package. The ACP rail here is a reference skill and design contract; the underlying attention market is live at de9en.fun and no on-chain job settlement is claimed.",
-  "status": "live product, ACP reference skill",
+  "tagline": "Turns KOL attention into prediction markets with a planned ACP integration for sharing live KOL-battle odds",
+  "description": "De9en is a live attention-economy prediction market where every question is a head-to-head KOL battle (KOL Wars): buyers take YES/NO on which creator wins a weekly attention narrative, and the live odds, volume, and mindshare ranking become a structured signal other agents could consume. INTEGRATION STATUS: the ACP integration is PLANNED, not yet running — this package contributes the design contract and a reusable skill for it, not a live on-chain deployment. The product itself (dashboard, KOL Wars grid, per-battle share cards) is live at de9en.app; the ACP rail (offerings catalog, signed deliverable envelope, provider skill) describes how De9en will expose that live market to buyer agents once the on-chain integration ships. No completed ACP job or on-chain settlement is claimed. Proof included: product demo screenshots and the live product surface, plus a redacted deliverable envelope and offerings catalog committed in this package.",
+  "status": "Live product; ACP integration planned (design + reusable skill)",
   "topic": "commerce",
   "topics": [
     "prediction-markets",
@@ -21,8 +21,8 @@
   },
   "links": {
     "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/de9en-attention-markets",
-    "demo": "https://de9en.fun/dashboard",
-    "share": "https://de9en.fun/share/unipcs-vs-orangie",
+    "demo": "https://de9en.app/dashboard",
+    "share": "https://de9en.app/share/unipcs-vs-orangie",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20De9en%20Attention%20Markets&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Modeling%20a%20KOL%20battle%20as%20a%20priced%20ACP%20offering%20is%20clear%0A-%20The%20attention-signal%20envelope%20is%20easy%20to%20integrate%20against%0A-%20A%20specific%20attention%2Fodds%20signal%20I%27d%20want%20to%20buy%20agent-to-agent%0A%0ANotes%3A%0A"
   },
   "primitives": [
@@ -32,7 +32,7 @@
     "kind": "product surface",
     "eyebrow": "virtuals acp + robinhood chain",
     "title": "kol attention, priced as agent-tradable markets",
-    "posterUrl": "https://de9en.fun/images/markets/unipcs-vs-orangie.png"
+    "posterUrl": "https://de9en.app/images/og/unipcs-vs-orangie.jpg?v=20260722"
   },
   "skills": [
     {
@@ -45,13 +45,28 @@
   ],
   "artifacts": [
     {
+      "label": "Product demo — dashboard (KOL Wars grid, live odds, volume, mindshare)",
+      "href": "https://de9en.app/images/demo/dashboard.jpg",
+      "kind": "image"
+    },
+    {
+      "label": "Product demo — placing a position (YES/NO bet modal, on-chain coming soon)",
+      "href": "https://de9en.app/images/demo/bet-modal.jpg",
+      "kind": "image"
+    },
+    {
+      "label": "Product demo — shareable battle card (same odds rendered for sharing)",
+      "href": "https://de9en.app/images/demo/share-card.jpg",
+      "kind": "image"
+    },
+    {
       "label": "Live product — De9en attention-markets dashboard",
-      "href": "https://de9en.fun/dashboard",
+      "href": "https://de9en.app/dashboard",
       "kind": "demo"
     },
     {
       "label": "Live KOL battle share card (per-market OG surface)",
-      "href": "https://de9en.fun/share/unipcs-vs-orangie",
+      "href": "https://de9en.app/share/unipcs-vs-orangie",
       "kind": "proof"
     },
     {

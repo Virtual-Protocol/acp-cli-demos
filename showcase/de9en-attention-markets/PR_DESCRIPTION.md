@@ -6,7 +6,8 @@
 - Project title: De9en — Attention Markets
 - Builder name and URL: de9en — https://github.com/de9enfun
 - EconomyOS primitives used: acp
-- Public proof: Live dashboard https://de9en.fun/dashboard and live per-market share card https://de9en.fun/share/unipcs-vs-orangie ; plus a redacted deliverable envelope and offerings catalog committed in this package
+- Public proof: Product demo screenshots (showcase/de9en-attention-markets/assets/ and https://de9en.app/images/demo/), live dashboard https://de9en.app/dashboard, and live per-market share card https://de9en.app/share/unipcs-vs-orangie ; plus a redacted deliverable envelope and offerings catalog committed in this package
+- Integration status: the ACP integration is PLANNED (design contract + reusable skill), not yet running. The product itself is live at de9en.app. No completed ACP job or on-chain settlement is claimed.
 - Optional soul.md: showcase/de9en-attention-markets/soul.md (public, redacted)
 
 ## Project package
@@ -39,8 +40,19 @@
 
 ## Notes
 
-The De9en attention market is live at de9en.fun (public dashboard, KOL Wars grid,
+The De9en attention market is live at de9en.app (public dashboard, KOL Wars grid,
 per-market share cards). This package contributes the ACP rail as a reusable
 provider skill and design contract; no on-chain job settlement is claimed. The
 skill generalizes to any live prediction/attention market that produces
 read-only quotes.
+
+## Changes in response to review
+
+- **Clarified integration status.** The manifest, README, and soul now state
+  explicitly that the ACP integration is **planned** (design contract + reusable
+  skill), not a live deployment, and that no completed ACP job or on-chain
+  settlement is claimed. The product itself is live at de9en.app.
+- **Added a product demo.** Committed screenshots under `assets/` (dashboard,
+  bet modal, shareable battle card) and a new "Product Demo" section in the
+  README showing how the product is used, plus image artifacts in the manifest.
+- Updated the primary domain to de9en.app.

@@ -1,8 +1,8 @@
 {
   "slug": "pip-conversational-trader",
   "title": "PipTrade Agent",
-  "tagline": "Trade by chat or work the desk. Say it in plain english, or run market, limit, TWAP, and stop orders. You keep your keys, and it settles private by default.",
-  "description": "PipTrade Agent is a conversational trading agent in the Virtuals ecosystem, with two surfaces on the same self-custody wallet. In chat you type a trade the way you would say it, like buy 10 usd of PIP, or swap 2 usdc on base to sol and send it over, and Pip reads the intent, shows a live quote with price impact, minimum received, route, and a token safety read, then executes on your own wallet where you keep your keys. The same chat handles private sends, price, balance, a GO CAUTION BLOCK token safety check, price alerts, deposits from another chain, and a referral link. On the /rh terminal you get a full Robinhood Chain desk, trade any listed token with a honeypot and sell guard, quote transparency with a safety badge, and market, limit, TWAP, and stop orders run by a keeper, plus a private send. Settlement is private by default across both surfaces, so the on-chain link between your wallet and the destination is broken rather than left in the open, and $PIP itself is a Virtuals token traded through the Virtuals bonding curve. This entry ships a chat to trade readback with a live on-chain proof, an honest private by default writeup, and the full command surface across chat and the terminal.",
+  "tagline": "Trade by chat or work the desk, private by default, on a wallet where you keep your keys",
+  "description": "PipTrade Agent is a conversational trading agent in the Virtuals ecosystem. You type a trade in plain english and it quotes, safety checks, and settles it private by default on your own wallet where you keep your keys, and $PIP is a Virtuals token traded through the Virtuals bonding curve. The entry includes on-chain proof of real private settlements, a callable skill, and a public reads helper.",
   "status": "live product, conversational trading in chat and a full Robinhood Chain terminal, private by default, you keep your keys",
   "topic": "commerce",
   "topics": [
@@ -37,8 +37,7 @@
   },
   "primitives": [
     "wallet",
-    "token",
-    "acp"
+    "token"
   ],
   "visual": {
     "kind": "chat to trade readback with live on-chain proof, plus a full terminal",
@@ -81,6 +80,11 @@
       "label": "pip-reads helper, a dependency-free script that calls the public read endpoints for prices, markets, tokens, and stats",
       "href": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/tools/pip-reads.mjs",
       "kind": "tool"
+    },
+    {
+      "label": "Type to trade demo video on X",
+      "href": "https://x.com/PipTradeDex/status/2078716840197378351",
+      "kind": "video"
     }
   ],
   "soul": {

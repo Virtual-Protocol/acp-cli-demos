@@ -1,6 +1,6 @@
 # Chat to trade readback
 
-A plain-english instruction taken all the way to a settled on-chain transaction. Nothing signs until the user confirms, and the trade runs on the user's own wallet.
+One worked example of the conversational execution flow, a plain-english instruction taken to a settled on-chain transaction. This shows the intent, the quote, and the on-chain result for that single trade. Nothing signs until the user confirms, and the trade runs on the user's own wallet.
 
 ## Input
 

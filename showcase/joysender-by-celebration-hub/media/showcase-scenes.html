@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JoySender showcase</title>
+  <style>
+    :root {
+      --ink: #f8f7ff;
+      --muted: #b8b4cc;
+      --line: rgba(255,255,255,.12);
+      --panel: rgba(20,18,34,.76);
+      --violet: #7c3aed;
+      --pink: #d946ef;
+      --mint: #6ee7b7;
+      --gold: #facc15;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #090812;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(circle at 14% 12%, rgba(124,58,237,.35), transparent 34%),
+        radial-gradient(circle at 88% 76%, rgba(217,70,239,.22), transparent 30%),
+        linear-gradient(135deg, #090812 0%, #111027 48%, #090812 100%);
+    }
+    body::after {
+      content: "";
+      position: fixed; inset: 0;
+      opacity: .22;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+    .scene {
+      position: relative; z-index: 1;
+      width: 1600px; height: 900px;
+      padding: 58px 72px 48px;
+      display: flex; flex-direction: column;
+    }
+    .hidden { display: none !important; }
+    .brand { display: flex; align-items: center; gap: 14px; font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+    .brand img { width: 52px; height: 52px; border-radius: 16px; box-shadow: 0 12px 34px rgba(124,58,237,.3); }
+    .brand small { color: var(--muted); font-size: 15px; font-weight: 650; letter-spacing: .02em; }
+    .eyebrow { color: #c4b5fd; font-size: 15px; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 76px; line-height: .98; letter-spacing: -.065em; max-width: 830px; }
+    h2 { font-size: 52px; line-height: 1.03; letter-spacing: -.045em; }
+    h3 { font-size: 23px; letter-spacing: -.025em; }
+    p { color: var(--muted); font-size: 22px; line-height: 1.5; }
+    .footer { margin-top: auto; display: flex; justify-content: space-between; color: #9994ad; font-size: 15px; font-weight: 700; }
+    .pill-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pill { padding: 11px 16px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.06); color: #e8e6f1; font-size: 15px; font-weight: 750; }
+    .panel { border: 1px solid var(--line); background: var(--panel); border-radius: 30px; box-shadow: 0 32px 80px rgba(0,0,0,.26); backdrop-filter: blur(22px); }
+
+    .cover-main { flex: 1; display: grid; grid-template-columns: 1.15fr .85fr; gap: 70px; align-items: center; }
+    .cover-copy { display: flex; flex-direction: column; gap: 28px; }
+    .cover-copy p { max-width: 790px; }
+    .cover-art { position: relative; height: 650px; display: grid; place-items: center; }
+    .halo { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(124,58,237,.42), rgba(217,70,239,.12) 55%, transparent 72%); filter: blur(4px); }
+    .cover-art > img { position: relative; width: 580px; height: 580px; object-fit: contain; filter: drop-shadow(0 40px 48px rgba(0,0,0,.45)); }
+    .proof-chip { position: absolute; right: 0; bottom: 72px; display: flex; align-items: center; gap: 12px; padding: 15px 18px; border-radius: 18px; border: 1px solid rgba(110,231,183,.35); background: rgba(6,36,31,.85); font-weight: 760; }
+    .proof-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 20px var(--mint); }
+
+    .workflow-head { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 62px; }
+    .workflow-head p { max-width: 580px; text-align: right; font-size: 19px; }
+    .request-card { margin-top: 32px; padding: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .request-top { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+    .status { display: inline-flex; align-items: center; gap: 9px; color: var(--mint); font-size: 14px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .field { min-height: 128px; padding: 24px; border-radius: 22px; border: 1px solid var(--line); background: rgba(255,255,255,.045); display: flex; flex-direction: column; justify-content: center; gap: 9px; }
+    .field-label { color: #8f8aa1; font-size: 13px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+    .field-value { font-size: 28px; font-weight: 850; letter-spacing: -.025em; }
+    .identity { display: flex; align-items: center; gap: 15px; }
+    .identity img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid rgba(196,181,253,.65); }
+    .identity span { display: block; color: var(--muted); font-size: 15px; font-weight: 650; margin-top: 3px; }
+    .message { grid-column: 1 / -1; min-height: 92px; flex-direction: row; align-items: center; justify-content: space-between; }
+    .message blockquote { margin: 0; color: #f8f7ff; font-size: 22px; font-weight: 720; }
+    .button { padding: 15px 24px; border-radius: 15px; background: linear-gradient(135deg, var(--violet), var(--pink)); color: white; font-size: 16px; font-weight: 850; }
+
+    .acp-body { flex: 1; display: grid; grid-template-columns: .78fr 1.22fr; gap: 52px; align-items: center; }
+    .acp-copy { display: flex; flex-direction: column; gap: 24px; }
+    .acp-copy p { max-width: 590px; }
+    .acp-flow { padding: 28px; display: flex; flex-direction: column; gap: 13px; }
+    .acp-flow-head { display: flex; align-items: center; justify-content: space-between; padding: 4px 4px 18px; border-bottom: 1px solid var(--line); }
+    .acp-row { display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 17px; padding: 18px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.045); }
+    .acp-icon { width: 52px; height: 52px; border-radius: 17px; display: grid; place-items: center; color: #d8ccff; background: rgba(124,58,237,.22); font-size: 20px; font-weight: 900; }
+    .acp-row small { display: block; margin-bottom: 4px; color: #8f8aa1; font-size: 12px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+    .acp-row strong { font-size: 19px; }
+    .acp-value { color: var(--mint); font-size: 14px; font-weight: 850; }
+
+    .approval-body { flex: 1; display: grid; grid-template-columns: .88fr 1.12fr; gap: 42px; align-items: center; }
+    .approval-copy { display: flex; flex-direction: column; gap: 24px; }
+    .steps { padding: 30px; display: flex; flex-direction: column; gap: 12px; }
+    .step { display: grid; grid-template-columns: 52px 1fr auto; gap: 16px; align-items: center; padding: 19px; border-radius: 20px; background: rgba(255,255,255,.045); border: 1px solid var(--line); }
+    .step-number { width: 52px; height: 52px; border-radius: 17px; display: grid; place-items: center; background: rgba(124,58,237,.22); color: #d8ccff; font-weight: 900; }
+    .step p { font-size: 15px; }
+    .check { color: var(--mint); font-size: 14px; font-weight: 850; }
+    .approval-note { margin-top: 8px; padding: 18px 20px; border-radius: 18px; background: rgba(110,231,183,.08); border: 1px solid rgba(110,231,183,.25); color: #c7f9e7; font-size: 16px; font-weight: 700; line-height: 1.45; }
+
+    .delivery-head { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 48px; }
+    .delivery-head p { max-width: 610px; text-align: right; font-size: 18px; }
+    .delivery-card { margin-top: 28px; height: 590px; overflow: hidden; display: grid; grid-template-columns: 420px 1fr; }
+    .delivery-copy { padding: 45px; display: flex; flex-direction: column; gap: 20px; justify-content: center; border-right: 1px solid var(--line); }
+    .delivery-copy p { font-size: 18px; }
+    .delivery-copy.nft-copy { padding: 28px 38px; gap: 12px; }
+    .delivery-copy.nft-copy .fact { margin-top: 3px; padding: 13px 16px; }
+    .fact { margin-top: 12px; padding: 18px; border-radius: 18px; background: rgba(255,255,255,.05); border: 1px solid var(--line); }
+    .fact strong { display: block; color: #fff; font-size: 18px; margin-bottom: 5px; }
+    .fact span { color: var(--muted); font-size: 14px; }
+    .browser { padding: 22px; background: rgba(255,255,255,.025); }
+    .browser-bar { height: 42px; display: flex; align-items: center; gap: 8px; padding: 0 15px; border-radius: 14px 14px 0 0; background: #11101c; border: 1px solid var(--line); border-bottom: 0; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: #5c586c; }
+    .url { margin-left: 12px; color: #aaa5bb; font-size: 13px; font-weight: 650; }
+    .browser img { width: 100%; height: 500px; object-fit: cover; object-position: center; border-radius: 0 0 18px 18px; border: 1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <section class="scene" data-scene="cover">
+    <div class="brand"><img src="celebration-hub-icon.png" alt="Celebration Hub" /><div>JoySender <small>by Celebration Hub</small></div></div>
+    <div class="cover-main">
+      <div class="cover-copy">
+        <div class="eyebrow">Personal celebration delivery</div>
+        <h1>Turn a clear request into a gift worth opening.</h1>
+        <p>Resolve a Farcaster username or X handle. When a platform ID is provided, JoySender verifies that it matches before delivery.</p>
+        <div class="pill-row"><span class="pill">AI</span><span class="pill">Draw</span><span class="pill">NexArt</span><span class="pill">Classic</span><span class="pill">NFT on Base</span></div>
+      </div>
+      <div class="cover-art"><div class="halo"></div><img src="joysender-mascot.png" alt="JoySender" /><div class="proof-chip"><span class="proof-dot"></span>Approval-first delivery</div></div>
+    </div>
+    <div class="footer"><span>JoySender by Celebration Hub</span><span>One request · one approval · one gift</span></div>
+  </section>
+
+  <section class="scene hidden" data-scene="acp">
+    <div class="brand"><img src="celebration-hub-icon.png" alt="Celebration Hub" /><div>JoySender <small>by Celebration Hub</small></div></div>
+    <div class="acp-body">
+      <div class="acp-copy">
+        <div class="eyebrow">1 &middot; ACP request</div>
+        <h2>An agent asks JoySender to create one gift.</h2>
+        <p>A structured request carries the recipient, occasion, visual style, and delivery choice into one approval flow.</p>
+        <div class="pill-row"><span class="pill">Farcaster usernames</span><span class="pill">X handles</span><span class="pill">Approval required</span></div>
+      </div>
+      <div class="acp-flow panel">
+        <div class="acp-flow-head"><h3>Celebration request</h3><div class="status"><span class="proof-dot"></span>Validated</div></div>
+        <div class="acp-row"><div class="acp-icon">1</div><div><small>Recipient</small><strong>duckfacts.eth</strong></div><div class="acp-value">Resolved</div></div>
+        <div class="acp-row"><div class="acp-icon">2</div><div><small>Gift</small><strong>Birthday &middot; Draw</strong></div><div class="acp-value">Prepared</div></div>
+        <div class="acp-row"><div class="acp-icon">3</div><div><small>Delivery</small><strong>Classic gift</strong></div><div class="acp-value">Selected</div></div>
+        <div class="acp-row"><div class="acp-icon">4</div><div><small>Execution</small><strong>One approval, one delivery</strong></div><div class="button">Review</div></div>
+      </div>
+    </div>
+    <div class="footer"><span>ACP request in</span><span>Approved Celebration Hub gift out</span></div>
+  </section>
+
+  <section class="scene hidden" data-scene="brief">
+    <div class="brand"><img src="celebration-hub-icon.png" alt="Celebration Hub" /><div>JoySender <small>by Celebration Hub</small></div></div>
+    <div class="workflow-head"><div><div class="eyebrow">2 · Resolve the person</div><h2>Start with the person.</h2></div><p>JoySender resolves the recipient independently before any gift is prepared.</p></div>
+    <div class="request-card panel">
+      <div class="request-top"><h3>Celebration request</h3><div class="status"><span class="proof-dot"></span>Ready to preview</div></div>
+      <div class="field"><div class="field-label">Recipient</div><div class="identity"><img src="duckfacts-pfp.png" alt="duckfacts.eth" /><div class="field-value">duckfacts.eth<span>Farcaster FID 217261</span></div></div></div>
+      <div class="field"><div class="field-label">Gift style</div><div class="field-value">Draw</div></div>
+      <div class="field"><div class="field-label">Delivery</div><div class="field-value">Classic gift</div></div>
+      <div class="field"><div class="field-label">Occasion</div><div class="field-value">Birthday</div></div>
+      <div class="field message"><div><div class="field-label">Message</div><blockquote>“A small celebration made just for you.”</blockquote></div><div class="button">Preview request</div></div>
+    </div>
+    <div class="footer"><span>Handle required · platform ID optional</span><span>Recipient identity verified before delivery</span></div>
+  </section>
+
+  <section class="scene hidden" data-scene="approval">
+    <div class="brand"><img src="celebration-hub-icon.png" alt="Celebration Hub" /><div>JoySender <small>by Celebration Hub</small></div></div>
+    <div class="approval-body">
+      <div class="approval-copy"><div class="eyebrow">3 · Review and approve</div><h2>Nothing is sent by accident.</h2><p>The recipient, style, delivery type, and message stay visible before execution.</p><div class="pill-row"><span class="pill">Farcaster resolved</span><span class="pill">Draw</span><span class="pill">Classic</span></div></div>
+      <div class="steps panel">
+        <div class="step"><div class="step-number">1</div><div><h3>Resolve recipient</h3><p>duckfacts.eth matches FID 217261.</p></div><div class="check">Verified</div></div>
+        <div class="step"><div class="step-number">2</div><div><h3>Prepare preview</h3><p>Draw gift with a shareable Celebration Hub link.</p></div><div class="check">Ready</div></div>
+        <div class="step"><div class="step-number">3</div><div><h3>Approve delivery</h3><p>One approved action creates one gift.</p></div><div class="button">Approve</div></div>
+        <div class="approval-note">Classic gifts stay offchain. When requested and approved, supported gifts can instead be minted as an NFT on Base.</div>
+      </div>
+    </div>
+    <div class="footer"><span>Bounded and idempotent</span><span>No duplicate delivery</span></div>
+  </section>
+
+  <section class="scene hidden" data-scene="classic">
+    <div class="brand"><img src="celebration-hub-icon.png" alt="Celebration Hub" /><div>JoySender <small>by Celebration Hub</small></div></div>
+    <div class="delivery-head"><div><div class="eyebrow">4 · Delivered</div><h2>A real classic gift.</h2></div><p>Completed ACP pilot delivery to the owner-controlled Farcaster profile behind duckfacts.eth.</p></div>
+    <div class="delivery-card panel">
+      <div class="delivery-copy"><div class="eyebrow">Classic · Draw</div><h3>Off-feed, personal, and ready to share.</h3><p>The gift opens on Celebration Hub with the artwork, message, and social actions together.</p><div class="fact"><strong>Recipient</strong><span>duckfacts.eth · FID 217261</span></div><div class="fact"><strong>Delivery</strong><span>Classic gift · not published to the feed</span></div></div>
+      <div class="browser"><div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">celebration-hub.xyz/share-greeting/87370502</span></div><img src="raw-delivered-classic.png" alt="Classic gift delivered to duckfacts.eth" /></div>
+    </div>
+    <div class="footer"><span>Real completed delivery</span><span>Draw · Classic · Celebration Hub</span></div>
+  </section>
+
+  <section class="scene hidden" data-scene="nft">
+    <div class="brand"><img src="celebration-hub-icon.png" alt="Celebration Hub" /><div>JoySender <small>by Celebration Hub</small></div></div>
+    <div class="delivery-head"><div><div class="eyebrow">Optional onchain delivery</div><h2>The same flow, as an NFT on Base.</h2></div><p>This is the completed AI gift delivered by JoySender to duckfacts.eth through the ACP pilot.</p></div>
+    <div class="delivery-card panel">
+      <div class="delivery-copy nft-copy"><div class="eyebrow">AI · NFT on Base</div><h3>A collectible celebration, approved before minting.</h3><p>The public gift page keeps the artwork and recipient context readable after delivery.</p><div class="fact"><strong>Recipient</strong><span>duckfacts.eth · FID 217261</span></div><div class="fact"><strong>Delivery</strong><span>NFT on Base · completed ACP job</span></div><div class="fact"><strong>Result</strong><span>Celebration Hub share URL returned</span></div></div>
+      <div class="browser"><div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">celebration-hub.xyz/share-gift-nft/73446b7e…</span></div><img src="raw-delivered-nft.png" alt="NFT on Base delivered to duckfacts.eth" /></div>
+    </div>
+    <div class="footer"><span>Gift delivered · share URL returned</span><span>AI · NFT on Base · Celebration Hub</span></div>
+  </section>
+
+  <script>
+    const scene = new URLSearchParams(location.search).get('scene') || 'cover';
+    document.querySelectorAll('[data-scene]').forEach((node) => node.classList.toggle('hidden', node.dataset.scene !== scene));
+  </script>
+</body>
+</html>

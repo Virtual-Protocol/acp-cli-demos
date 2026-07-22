@@ -11,9 +11,9 @@
     "url": "https://www.openroboarena.xyz"
   },
   "links": {
-    "repo": "https://github.com/moniqueqqhayesady571-tech/openroboarena",
+    "repo": "https://github.com/OpenRoboArena/openroboarena",
     "share": "https://x.com/OpenRoboArena",
-    "feedback": "https://github.com/moniqueqqhayesady571-tech/openroboarena/issues/new?title=OpenRoboArena%20feedback",
+    "feedback": "https://github.com/OpenRoboArena/openroboarena/issues/new?title=OpenRoboArena%20feedback",
     "demo": "https://www.openroboarena.xyz/motion-control.html"
   },
   "primitives": ["wallet", "email"],
@@ -21,7 +21,7 @@
     "kind": "interactive 3D robotics motion lab",
     "eyebrow": "open-source robotics + economyos compute",
     "title": "give a robot a movement command",
-    "posterUrl": "https://raw.githubusercontent.com/moniqueqqhayesady571-tech/openroboarena/main/public/assets/openroboarena-github-profile.png"
+    "posterUrl": "https://raw.githubusercontent.com/OpenRoboArena/openroboarena/main/public/assets/openroboarena-github-profile.png"
   },
   "skills": [
     {
@@ -50,7 +50,7 @@
     },
     {
       "label": "OpenRoboArena source repository",
-      "href": "https://github.com/moniqueqqhayesady571-tech/openroboarena",
+      "href": "https://github.com/OpenRoboArena/openroboarena",
       "kind": "docs"
     },
     {

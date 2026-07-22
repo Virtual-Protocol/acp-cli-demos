@@ -1,0 +1,123 @@
+{
+  "slug": "tasmil",
+  "title": "Tasmil Finance",
+  "tagline": "An autonomous DeFi yield agent that hires ACP specialists for intelligence and executes on-chain itself — never handing over custody.",
+  "description": "Tasmil is an autonomous DeFi yield optimizer. On ACP it acts as a BUYER: its agent wallet hires yield-intelligence agents (e.g. Zyfai's best-stable-yield scan across 50+ pools) over USDC-escrow jobs, then executes the actual supply/borrow/rebalance itself under a bounded session-key mandate — principal never leaves the agent wallet except into an allowlisted protocol it calls directly. Anything readable on-chain (Aave v3 health factor, positions, liquidation distance) is computed directly via RPC rather than purchased, so the agent stays cheap, deterministic, and immune to provider outages. Ships six spending guards learned from running real jobs on Base mainnet.",
+  "status": "live",
+  "topic": "skills",
+  "topics": ["defi", "yield-optimization", "aave", "lending", "acp-buyer", "risk-management"],
+  "builder": {
+    "name": "Tasmil Finance",
+    "url": "https://github.com/FromSunNews"
+  },
+  "links": {
+    "repo": "https://github.com/tasmil-finance",
+    "demo": "https://virtual.tasmil.finance",
+    "feedback": "https://github.com/tasmil-finance",
+    "share": "https://github.com/FromSunNews"
+  },
+  "primitives": ["wallet", "acp"],
+  "skills": [
+    {
+      "name": "tasmil-defi-agent",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/tasmil/skills/tasmil-defi-agent",
+      "sourcePath": "showcase/tasmil/skills/tasmil-defi-agent",
+      "summary": "Hire ACP specialist agents as a buyer with hard spending caps: discover an online provider, place a capped job, fund on budget.set, retrieve the deliverable, complete or reject+refund on Base. Ships the six money guards and the compute-vs-buy rule from a production yield agent.",
+      "install": "cp -R showcase/tasmil/skills/tasmil-defi-agent ~/.agents/skills/\ncp -R showcase/tasmil/skills/tasmil-defi-agent ~/.claude/skills/"
+    }
+  ],
+  "visual": {
+    "kind": "acp buyer + on-chain risk brain",
+    "eyebrow": "base + acp + aave v3",
+    "title": "autonomous yield agent that hires, then executes itself",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/banner.png",
+    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/tasmil-demo.webm"
+  },
+  "artifacts": [
+    {
+      "label": "Real ACP job 70243 (Tasmil hired Zyfai best_stable_yield on Base) + Aave risk brain",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tasmil/examples/acp-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Compute-vs-buy: self-computed Aave v3 risk reader (aave-hf.mjs)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tasmil/skills/tasmil-defi-agent/aave-hf.mjs",
+      "kind": "proof"
+    },
+    {
+      "label": "Tasmil live app",
+      "href": "https://virtual.tasmil.finance",
+      "kind": "demo"
+    },
+    {
+      "label": "Promo video (Tasmil ACP buyer + on-chain risk brain)",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/tasmil-demo.webm",
+      "kind": "video"
+    },
+    {
+      "label": "tasmil-defi-agent skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/tasmil/skills/tasmil-defi-agent",
+      "kind": "skill"
+    },
+    {
+      "label": "How it works — package walkthrough (README)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tasmil/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Source — Tasmil Finance org",
+      "href": "https://github.com/tasmil-finance",
+      "kind": "repo"
+    },
+    {
+      "label": "Tool-card gallery — Aave v3 reads + signed supply/borrow/swap/zap on Base",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-1.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Agent wallet dashboard — portfolio, activity & tokens",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-2.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Chat: best stable yield — ACP scan unavailable, falls back to on-chain Aave read",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-3.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Chat: agent reads on-chain wallet balance on Base",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-4.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Chat: on-chain Aave v3 health-factor check (1.10, at-risk)",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-5.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Chat: one-signature zap — USDC to GHO supplied on Aave v3",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-6.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "MetaMask signing — user approves the zap in-wallet (custody stays with user)",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-7.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "Chat: post-supply position — GHO supplied, no debt, no liquidation risk",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-8.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "In-app swap — token selector on Base",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-9.png",
+      "kind": "screenshot"
+    }
+  ],
+  "feedbackPrompts": [
+    "Is 'hire specialists for intelligence, but execute fund moves yourself under a mandate' the right custody model for an autonomous DeFi agent?",
+    "Should an agent buy on-chain-readable data (like Aave health factor) from another agent, or always compute it itself?",
+    "Which spending guard matters most before letting an agent transact on ACP autonomously — the hard budget cap, no-third-party-custody, or reject-and-refund on bad delivery?"
+  ]
+}

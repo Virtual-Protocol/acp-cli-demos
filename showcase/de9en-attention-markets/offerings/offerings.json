@@ -1,0 +1,35 @@
+{
+  "provider": "de9en",
+  "domain": "de9en.app",
+  "signal": "kol-battle-odds",
+  "currency": "USDC",
+  "note": "Each offering is one live KOL Wars market. Price is per delivered signed envelope. Prices are illustrative reference values for the ACP catalog; the underlying market is live at de9en.app.",
+  "offerings": [
+    {
+      "name": "kol-battle-odds",
+      "title": "KOL Battle — live odds",
+      "price": 1,
+      "requirements": { "market": "<market-slug>" },
+      "returns": "signed attention-signal envelope with yes/no odds, volume, mindshare_rank",
+      "example_markets": [
+        "unipcs-vs-orangie",
+        "ansem-vs-cooker",
+        "west-vs-crypto-dog"
+      ]
+    },
+    {
+      "name": "mindshare-ranking",
+      "title": "Attention mindshare ranking (top markets)",
+      "price": 3,
+      "requirements": { "limit": 5 },
+      "returns": "ranked list of active markets by attention/volume with odds snapshots"
+    },
+    {
+      "name": "volume-momentum",
+      "title": "Volume momentum snapshot (single market)",
+      "price": 1,
+      "requirements": { "market": "<market-slug>" },
+      "returns": "signed envelope with rolling volume delta and odds drift for one market"
+    }
+  ]
+}

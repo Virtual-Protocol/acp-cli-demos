@@ -1,0 +1,64 @@
+{
+  "slug": "joysender-by-celebration-hub",
+  "title": "JoySender by Celebration Hub",
+  "tagline": "Delivers approved classic or NFT on Base celebration gifts to Farcaster and X recipients through an idempotent ACP workflow",
+  "description": "JoySender turns a structured ACP job into one off-feed Celebration Hub AI, Draw, or NexArt gift and returns a public share URL as the deliverable. The public bridge is isolated from production wallet and social credentials, while the private worker independently resolves Farcaster or X handles, verifies optional platform IDs, requires explicit approval, applies scoped spend limits, and uses no-retry handling for ambiguous side effects. The package includes a completed owner-controlled ACP pilot and English showcase media.",
+  "status": "validated pilot",
+  "topic": "agents",
+  "topics": ["celebrations", "social gifting", "farcaster", "x", "idempotency"],
+  "builder": {
+    "name": "Celebration Hub",
+    "url": "https://celebration-hub.xyz/about"
+  },
+  "links": {
+    "repo": "https://github.com/Altagers/joysender-acp-showcase",
+    "share": "https://celebration-hub.xyz/about",
+    "feedback": "https://github.com/Altagers/joysender-acp-showcase/issues",
+    "demo": "https://celebration-hub.xyz/feed",
+    "video": "https://raw.githubusercontent.com/Altagers/joysender-acp-showcase/main/showcase/joysender-by-celebration-hub/media/joysender-demo-en.mp4"
+  },
+  "primitives": ["acp"],
+  "visual": {
+    "kind": "agent workflow",
+    "eyebrow": "ACP social gifting",
+    "title": "One approved job, one celebration gift",
+    "posterUrl": "https://raw.githubusercontent.com/Altagers/joysender-acp-showcase/main/showcase/joysender-by-celebration-hub/media/cover.png",
+    "videoUrl": "https://raw.githubusercontent.com/Altagers/joysender-acp-showcase/main/showcase/joysender-by-celebration-hub/media/joysender-demo-en.mp4",
+    "videoLabel": "Watch the 21-second JoySender demo"
+  },
+  "skills": [
+    {
+      "name": "joysender-celebration-gift",
+      "href": "https://github.com/Altagers/joysender-acp-showcase/tree/main/showcase/joysender-by-celebration-hub/skills/joysender-celebration-gift",
+      "summary": "Prepare and validate a bounded ACP request for one Farcaster or X celebration gift.",
+      "install": "Copy the skill folder into your agent skills directory and invoke it before creating the ACP job.",
+      "sourcePath": "showcase/joysender-by-celebration-hub/skills/joysender-celebration-gift"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Completed ACP pilot proof",
+      "href": "https://github.com/Altagers/joysender-acp-showcase/blob/main/showcase/joysender-by-celebration-hub/proof/production-pilot.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Security architecture",
+      "href": "https://github.com/Altagers/joysender-acp-showcase/blob/main/docs/ARCHITECTURE.md",
+      "kind": "documentation"
+    },
+    {
+      "label": "JoySender showcase video",
+      "href": "https://raw.githubusercontent.com/Altagers/joysender-acp-showcase/main/showcase/joysender-by-celebration-hub/media/joysender-demo-en.mp4",
+      "kind": "video"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Altagers/joysender-acp-showcase/blob/main/showcase/joysender-by-celebration-hub/soul.md",
+    "summary": "Public operating principles for a celebration agent that asks before acting and never improvises financial operations."
+  },
+  "feedbackPrompts": [
+    "Was the approval and recipient scope clear before the gift was created?",
+    "Did the delivered gift URL make the result easy to inspect and share?",
+    "Which celebration workflow should come next: birthday context or event preparation?"
+  ]
+}

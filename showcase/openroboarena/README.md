@@ -5,6 +5,8 @@ repositories and using a safe 3D Motion Control Lab. Visit the live catalog at
 <https://www.openroboarena.xyz> or open the lab directly at
 <https://www.openroboarena.xyz/motion-control.html>.
 
+Follow project updates on X: <https://x.com/OpenRoboArena>.
+
 ## EconomyOS workflow
 
 When a visitor enters unsupported natural-language movement phrasing, the

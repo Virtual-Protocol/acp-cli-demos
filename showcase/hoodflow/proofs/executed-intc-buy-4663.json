@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "proofType": "completed_wallet_token_trade",
+  "network": {
+    "name": "Robinhood Chain Mainnet",
+    "chainId": 4663
+  },
+  "execution": {
+    "source": "HoodFlow public Agent API preflight handoff",
+    "signerPolicy": "user_wallet_only",
+    "side": "buy",
+    "asset": "INTC",
+    "settlementAsset": "USDG",
+    "maxSlippageBps": 50
+  },
+  "transaction": {
+    "hash": "0x7c9d4dcea9c32b5df03283b010617084499d5ab29ca8a093c9f49a6e5c2303c3",
+    "status": "success",
+    "statusCode": 1,
+    "blockNumber": 16478330,
+    "timestamp": "2026-07-22T13:56:55.000Z",
+    "from": "0xaE40947b604A5861bac432F7D0d52970B6c08a95",
+    "router": "0x8876789976dEcBfCbBbe364623C63652db8C0904",
+    "gasUsed": "182008",
+    "explorerUrl": "https://robinhoodchain.blockscout.com/tx/0x7c9d4dcea9c32b5df03283b010617084499d5ab29ca8a093c9f49a6e5c2303c3",
+    "receiptApiUrl": "https://robinhoodchain.blockscout.com/api/v2/transactions/0x7c9d4dcea9c32b5df03283b010617084499d5ab29ca8a093c9f49a6e5c2303c3"
+  },
+  "transfers": [
+    {
+      "direction": "input",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "symbol": "USDG",
+      "from": "0xaE40947b604A5861bac432F7D0d52970B6c08a95",
+      "to": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+      "rawAmount": "1000000",
+      "decimals": 6,
+      "amount": "1.0"
+    },
+    {
+      "direction": "output",
+      "token": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
+      "symbol": "INTC",
+      "from": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+      "to": "0xaE40947b604A5861bac432F7D0d52970B6c08a95",
+      "rawAmount": "9373866261093760",
+      "decimals": 18,
+      "amount": "0.00937386626109376"
+    }
+  ],
+  "scope": {
+    "economyOsPrimitives": [
+      "wallet",
+      "token"
+    ],
+    "agentPrepared": true,
+    "agentSigned": false,
+    "agentSubmitted": false,
+    "userWalletConfirmed": true,
+    "liveAcpProviderClaimed": false
+  }
+}

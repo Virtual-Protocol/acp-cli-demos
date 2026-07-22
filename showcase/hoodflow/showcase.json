@@ -2,7 +2,7 @@
   "slug": "hoodflow",
   "title": "HoodFlow — Markets on Robinhood Chain",
   "tagline": "Exposes reviewed Robinhood Chain markets and prepares bounded, self-custody quote preflights for users and agents",
-  "description": "HoodFlow is a self-custody market interface for Robinhood Chain. Its public Agent API exposes route-reviewed Stock Token markets and prepares short-lived buy or sell preflights with slippage and oracle-deviation guards; every execution is requoted and signed by the user. The Virtuals adapter separately routes bonding-stage markets through VIRTUAL and only exposes graduated tokens when live liquidity returns an executable quote. Public API manifests and a block-pinned route proof let reviewers inspect both surfaces.",
+  "description": "HoodFlow is a self-custody market interface for Robinhood Chain. Its public Agent API exposes route-reviewed Stock Token markets and prepares short-lived buy or sell preflights with slippage and oracle-deviation guards; every execution is requoted and signed by the user. The Virtuals adapter separately routes bonding-stage markets through VIRTUAL and only exposes graduated tokens when live liquidity returns an executable quote. A public API manifest, an indicative block-pinned route proof, and a successful user-signed mainnet trade receipt let reviewers inspect both surfaces.",
   "status": "public agent API live · ACP listing pending",
   "topic": "agents",
   "topics": [
@@ -70,6 +70,11 @@
       "label": "Virtuals integration review brief",
       "href": "https://github.com/dereliapps/hoodflow/blob/main/docs/VIRTUALS_REVIEW.md",
       "kind": "docs"
+    },
+    {
+      "label": "Successful user-signed mainnet trade: 1 USDG to 0.00937386626109376 INTC",
+      "href": "https://robinhoodchain.blockscout.com/tx/0x7c9d4dcea9c32b5df03283b010617084499d5ab29ca8a093c9f49a6e5c2303c3",
+      "kind": "proof"
     },
     {
       "label": "Block-pinned USDG to VIRTUAL to KARMA route proof",

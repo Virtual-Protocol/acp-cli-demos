@@ -12,6 +12,18 @@ This submission does not claim a live Virtuals ACP listing or autonomous signing
 4. Use the [Agent API guide](https://hoodflow.app/docs#agents) to prepare a bounded buy or sell preflight.
 5. Confirm that the result is indicative, expires after 75 seconds, and requires a fresh HoodFlow quote before the user signs.
 
+## Completed execution proof
+
+On 2026-07-22, a HoodFlow Agent API preflight prepared a 1 USDG INTC buy intent. HoodFlow carried that exact side, asset, amount, and slippage into a fresh quote; the user wallet then confirmed the router transaction. Robinhood Chain finalized the transaction successfully in block `16478330`.
+
+- Transaction: [`0x7c9d...03c3`](https://robinhoodchain.blockscout.com/tx/0x7c9d4dcea9c32b5df03283b010617084499d5ab29ca8a093c9f49a6e5c2303c3)
+- Machine-readable receipt: [Blockscout API](https://robinhoodchain.blockscout.com/api/v2/transactions/0x7c9d4dcea9c32b5df03283b010617084499d5ab29ca8a093c9f49a6e5c2303c3)
+- Decoded proof: [`proofs/executed-intc-buy-4663.json`](./proofs/executed-intc-buy-4663.json)
+- Input transfer: `1.0 USDG`
+- Output transfer: `0.00937386626109376 INTC`
+
+This records completed use of the `wallet` and `token` primitives after an Agent API preflight. The Agent API did not initiate, sign, or submit the transaction, and this is not represented as an ACP job or live ACP provider action; the user wallet remained the signer.
+
 ## Review the community-market workflow
 
 1. Open [hoodflow.app](https://hoodflow.app) and enter the community-markets workspace.
@@ -24,6 +36,7 @@ This submission does not claim a live Virtuals ACP listing or autonomous signing
 
 - [Public Agent API manifest](https://hoodflow.app/api/agents/hoodflow)
 - [Agent API guide](https://hoodflow.app/docs#agents)
+- [Completed user-signed wallet/token transaction](https://robinhoodchain.blockscout.com/tx/0x7c9d4dcea9c32b5df03283b010617084499d5ab29ca8a093c9f49a6e5c2303c3)
 - [Integration review brief](https://github.com/dereliapps/hoodflow/blob/main/docs/VIRTUALS_REVIEW.md)
 - [Block-pinned route proof](https://github.com/dereliapps/hoodflow/blob/main/docs/proofs/virtuals-karma-route-4663.json)
 - [Release notes](https://github.com/dereliapps/hoodflow/releases/tag/v0.7.0)

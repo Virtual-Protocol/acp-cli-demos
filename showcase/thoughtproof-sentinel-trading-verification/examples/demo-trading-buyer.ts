@@ -304,10 +304,10 @@ async function main() {
     note: "Redacted demo artifact. No private keys, no .env values. Public wallet addresses only.",
   };
 
-  mkdirSync(join(__dirname, "proof"), { recursive: true });
+  mkdirSync(join(__dirname, "../proof"), { recursive: true });
   const stamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const jsonPath = join(__dirname, "proof", `sentinel-trading-acp-demo-${stamp}.json`);
-  const mdPath = join(__dirname, "proof", `sentinel-trading-acp-demo-${stamp}.md`);
+  const jsonPath = join(__dirname, "../proof", `sentinel-trading-acp-demo-${stamp}.json`);
+  const mdPath = join(__dirname, "../proof", `sentinel-trading-acp-demo-${stamp}.md`);
   writeFileSync(jsonPath, JSON.stringify({ summary, artifacts }, null, 2));
 
   const md = [

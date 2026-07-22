@@ -21,7 +21,8 @@
   "visual": {
     "kind": "three-job ACP verification run",
     "eyebrow": "base + acp + sentinel trade_execution",
-    "title": "ALLOW / BLOCK / UNCERTAIN before capital moves"
+    "title": "ALLOW / BLOCK / UNCERTAIN before capital moves",
+    "posterUrl": "https://raw.githubusercontent.com/ThoughtProof/acp-cli-demos/showcase/thoughtproof-sentinel-trading-verification/showcase/thoughtproof-sentinel-trading-verification/assets/poster.png"
   },
   "skills": [
     {

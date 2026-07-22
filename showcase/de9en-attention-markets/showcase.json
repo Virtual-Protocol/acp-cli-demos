@@ -1,0 +1,92 @@
+{
+  "slug": "de9en-attention-markets",
+  "title": "De9en — Attention Markets",
+  "tagline": "Turns KOL attention into agent-tradable prediction markets and serves live KOL-battle odds as an agent-to-agent signal feed over ACP",
+  "description": "De9en is an attention-economy prediction market where every question is a head-to-head KOL battle (KOL Wars): buyers take YES/NO on which creator wins a weekly attention narrative, and the live odds, volume, and mindshare ranking become a structured signal other agents can consume. This package contributes a reusable ACP skill that models each battle as a priced offering with one stable signed deliverable envelope, so a provider agent can sell De9en attention/odds signals and a buyer agent can integrate once. Proof is the live product surface — the public dashboard, the KOL Wars grid, and per-battle share cards — plus a redacted deliverable envelope and an offerings catalog committed in this package. The ACP rail here is a reference skill and design contract; the underlying attention market is live at de9en.fun and no on-chain job settlement is claimed.",
+  "status": "live product, ACP reference skill",
+  "topic": "commerce",
+  "topics": [
+    "prediction-markets",
+    "attention-economy",
+    "kol",
+    "acp",
+    "signals",
+    "commerce",
+    "robinhood-chain",
+    "defi"
+  ],
+  "builder": {
+    "name": "de9en",
+    "url": "https://github.com/de9enfun"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/de9en-attention-markets",
+    "demo": "https://de9en.fun/dashboard",
+    "share": "https://de9en.fun/share/unipcs-vs-orangie",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20De9en%20Attention%20Markets&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Modeling%20a%20KOL%20battle%20as%20a%20priced%20ACP%20offering%20is%20clear%0A-%20The%20attention-signal%20envelope%20is%20easy%20to%20integrate%20against%0A-%20A%20specific%20attention%2Fodds%20signal%20I%27d%20want%20to%20buy%20agent-to-agent%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "acp"
+  ],
+  "visual": {
+    "kind": "product surface",
+    "eyebrow": "virtuals acp + robinhood chain",
+    "title": "kol attention, priced as agent-tradable markets",
+    "posterUrl": "https://de9en.fun/images/markets/unipcs-vs-orangie.png"
+  },
+  "skills": [
+    {
+      "name": "acp-attention-market-signal",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/de9en-attention-markets/skills/acp-attention-market-signal",
+      "sourcePath": "showcase/de9en-attention-markets/skills/acp-attention-market-signal",
+      "summary": "Reusable playbook to expose a prediction / attention market as an agent-to-agent signal business over ACP: model each market (a KOL battle) as a priced offering, price a funded job from a fixed catalog, fetch live odds/volume/mindshare, and submit one signed deliverable envelope so a buyer integrates once regardless of which market it bought.",
+      "install": "cp -R showcase/de9en-attention-markets/skills/acp-attention-market-signal ~/.agents/skills/\ncp -R showcase/de9en-attention-markets/skills/acp-attention-market-signal ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live product — De9en attention-markets dashboard",
+      "href": "https://de9en.fun/dashboard",
+      "kind": "demo"
+    },
+    {
+      "label": "Live KOL battle share card (per-market OG surface)",
+      "href": "https://de9en.fun/share/unipcs-vs-orangie",
+      "kind": "proof"
+    },
+    {
+      "label": "Attention Markets package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/de9en-attention-markets/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Attention-signal deliverable envelope (redacted example)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/de9en-attention-markets/examples/attention-signal-envelope.json",
+      "kind": "proof"
+    },
+    {
+      "label": "ACP offerings catalog (KOL battle markets)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/de9en-attention-markets/offerings/offerings.json",
+      "kind": "manifest"
+    },
+    {
+      "label": "Reusable skill — acp-attention-market-signal",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/de9en-attention-markets/skills/acp-attention-market-signal",
+      "kind": "skill"
+    },
+    {
+      "label": "Agent soul — attention-market provider identity and guardrails",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/de9en-attention-markets/soul.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/de9en-attention-markets/soul.md",
+    "summary": "De9en's operational identity as an attention-market signal provider: what it sells (odds/volume/mindshare outputs, not the recipe), the one-envelope deliverable contract, its honest-framing and redaction guardrails, and where it escalates to a human instead of acting."
+  },
+  "feedbackPrompts": [
+    "Is modeling a KOL battle (a prediction market) as a priced ACP offering clear, and would your agent buy odds or mindshare signals this way?",
+    "Does the signed attention-signal envelope make the deliverable contract easy to integrate against across different markets?",
+    "Which attention or odds signal would be most valuable to purchase agent-to-agent — live odds, volume momentum, or mindshare ranking?"
+  ]
+}

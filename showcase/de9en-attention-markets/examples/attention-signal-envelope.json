@@ -1,0 +1,16 @@
+{
+  "signal": "kol-battle-odds",
+  "market": "unipcs-vs-orangie",
+  "source": "de9en (de9en.fun)",
+  "delivered_at": "2026-07-22T09:00:00Z",
+  "disclaimer": "Informational only — not financial advice.",
+  "data": {
+    "question": "Who gets more CT attention after the Robinhood token push?",
+    "yes": { "label": "Unipcs", "odds": 0.56, "volume": "284.6 BNB" },
+    "no": { "label": "orangie", "odds": 0.44, "volume": "284.6 BNB" },
+    "liquidity": "86.2 BNB",
+    "mindshare_rank": 1,
+    "as_of_block": null
+  },
+  "note": "Redacted reference deliverable. Numbers mirror the live market card at https://de9en.fun/share/unipcs-vs-orangie. No pricing-engine internals, credentials, or signer material are included."
+}

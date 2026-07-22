@@ -1,0 +1,71 @@
+{
+  "slug": "openroboarena",
+  "title": "OpenRoboArena",
+  "tagline": "Turns public robotics projects into a discoverable catalog with a safe, prompt-driven 3D motion demo",
+  "description": "OpenRoboArena is a live browser experience for discovering public robotics repositories and interacting with a local 3D Motion Control Lab. The lab sends unsupported natural-language movement phrasing to EconomyOS Compute, which returns a constrained local animation label. The browser only plays local FBX animation assets and never executes submitted repository code or initiates a blockchain transaction.",
+  "status": "live EconomyOS-powered prototype",
+  "topic": "agents",
+  "topics": ["robotics", "threejs", "open-source", "motion-control", "interactive-demo"],
+  "builder": {
+    "name": "OpenRoboArena",
+    "url": "https://www.openroboarena.xyz"
+  },
+  "links": {
+    "repo": "https://github.com/moniqueqqhayesady571-tech/openroboarena",
+    "share": "https://www.openroboarena.xyz",
+    "feedback": "https://github.com/moniqueqqhayesady571-tech/openroboarena/issues/new?title=OpenRoboArena%20feedback",
+    "demo": "https://www.openroboarena.xyz/motion-control.html"
+  },
+  "primitives": ["wallet", "email"],
+  "visual": {
+    "kind": "interactive 3D robotics motion lab",
+    "eyebrow": "open-source robotics + economyos compute",
+    "title": "give a robot a movement command",
+    "posterUrl": "https://www.openroboarena.xyz/assets/openroboarena-token-logo.png"
+  },
+  "skills": [
+    {
+      "name": "openroboarena-motion-control",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/openroboarena/skills/openroboarena-motion-control",
+      "sourcePath": "showcase/openroboarena/skills/openroboarena-motion-control",
+      "summary": "Run the public OpenRoboArena Motion Control Lab with supported plain-language commands and verify its local animation safety boundaries.",
+      "install": "cp -R showcase/openroboarena/skills/openroboarena-motion-control ~/.agents/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live OpenRoboArena catalog",
+      "href": "https://www.openroboarena.xyz",
+      "kind": "demo"
+    },
+    {
+      "label": "Live Motion Control Lab",
+      "href": "https://www.openroboarena.xyz/motion-control.html",
+      "kind": "demo"
+    },
+    {
+      "label": "EconomyOS Compute redacted verification",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/openroboarena/proof/economyos-compute.md",
+      "kind": "proof"
+    },
+    {
+      "label": "OpenRoboArena source repository",
+      "href": "https://github.com/moniqueqqhayesady571-tech/openroboarena",
+      "kind": "docs"
+    },
+    {
+      "label": "OpenRoboArena EconomyOS agent",
+      "href": "https://app.virtuals.io/acp/agents/019f8a5d-d300-7923-a606-c945edf12f93",
+      "kind": "demo"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/openroboarena/soul.md",
+    "summary": "Public OpenRoboArena agent context covering its robotics discovery and motion-control role, permitted inputs, and safety boundaries."
+  },
+  "feedbackPrompts": [
+    "Which open-source robotics project should OpenRoboArena profile next?",
+    "What movement commands would make the Motion Control Lab most useful for a first-time visitor?",
+    "What public proof would make the EconomyOS workflow easiest to evaluate?"
+  ]
+}

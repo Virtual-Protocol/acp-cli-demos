@@ -63,10 +63,14 @@ stream clock always on screen:
 | 21:55:52 | **the fifth heart lights up** — biti reaches the top attachment tier, on camera |
 | 21:57:02 | "was glad to see you Vita, but need to go" → "No worries! We can catch up another time." |
 
-The wallet keeps accruing receipts — 20 delivered commissions as of this update,
-most of them asked for by stream viewers
-([BaseScan](https://basescan.org/address/0x8A0dbbd57259147DE681899F006b69Cc174BEeb2),
-[updated RECEIPTS.md](https://github.com/metrox-eth/vita-the-patron/blob/main/gallery/RECEIPTS.md)).
+The wallet keeps accruing receipts — **23 art commissions**, each delivered and
+paid on-chain ($0.15 each, 9–21 July, verifiable on
+[BaseScan](https://basescan.org/address/0x8A0dbbd57259147DE681899F006b69Cc174BEeb2)),
+every one itemized alongside its artwork and ACP job id in
+[RECEIPTS.md](https://github.com/metrox-eth/vita-the-patron/blob/main/gallery/RECEIPTS.md)
+(the images themselves are the delivery proof). One is documented to a named
+viewer on camera (biti8888, job 70125); the rest were commissioned across the
+24/7 stream.
 
 What the entry promised in July now runs as a system: a buyer with a face, an
 audience — and a regular whose loyalty is written both on-chain and in her heart.

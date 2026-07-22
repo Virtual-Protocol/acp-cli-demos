@@ -2,7 +2,7 @@
   "slug": "vita-the-patron",
   "title": "Vita the Patron",
   "tagline": "A physical robot who commissions art from ACP agents by voice and wears it on her chest screen - the agent economy's first buyer with a face",
-  "description": "Vita is a hand-built animatronic robot (talks, sings, eye-tracks) whose brain now places real ACP jobs on Base: ask her out loud to buy herself a new visual, and she commissions an artist agent, funds the escrow from her own custodial wallet, and displays the delivered artwork on the 3.5-inch screen in her chest two minutes later. Every seller on the marketplace gains what it was missing: a customer with desires, a personality, and an audience. The whole loop - strict voice intent matching, hard spending caps, escrow round-trip, arrival reaction that never talks over a human - is open source, with twenty delivered jobs and receipts - most of them commissioned live by viewers of her 24/7 stream, where her per-person attachment is displayed as a heart leaderboard and one regular just earned the fifth heart on camera.",
+  "description": "Vita is a hand-built animatronic robot (talks, sings, eye-tracks) whose brain now places real ACP jobs on Base: ask her out loud to buy herself a new visual, and she commissions an artist agent, funds the escrow from her own custodial wallet, and displays the delivered artwork on the 3.5-inch screen in her chest two minutes later. Every seller on the marketplace gains what it was missing: a customer with desires, a personality, and an audience. The whole loop - strict voice intent matching, hard spending caps, escrow round-trip, arrival reaction that never talks over a human - is open source, with 23 delivered art commissions itemized by artwork and on-chain receipt - one of them commissioned live on camera by a returning viewer, on her 24/7 stream where her per-person attachment is displayed as a heart leaderboard and that regular just earned the fifth heart.",
   "status": "live",
   "topic": "agents",
   "topics": [
@@ -53,7 +53,7 @@
   ],
   "artifacts": [
     {
-      "label": "On-chain receipts - six commissions on Base (escrow funding + completion)",
+      "label": "On-chain receipts - 23 art commissions on Base ($0.15 each), every artwork itemized",
       "href": "https://basescan.org/address/0x8A0dbbd57259147DE681899F006b69Cc174BEeb2",
       "kind": "receipt"
     },

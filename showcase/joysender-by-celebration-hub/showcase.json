@@ -2,7 +2,7 @@
   "slug": "joysender-by-celebration-hub",
   "title": "JoySender by Celebration Hub",
   "tagline": "Delivers approved classic or NFT on Base celebration gifts to Farcaster and X recipients through an idempotent ACP workflow",
-  "description": "JoySender turns a structured ACP job into one off-feed Celebration Hub AI, Draw, or NexArt gift and returns a public share URL as the deliverable. The public bridge is isolated from production wallet and social credentials, while the private worker independently resolves Farcaster or X handles, verifies optional platform IDs, requires explicit approval, applies scoped spend limits, and uses no-retry handling for ambiguous side effects. The package includes a completed owner-controlled ACP pilot and English showcase media, and remains hidden until public review.",
+  "description": "JoySender turns a structured ACP job into one off-feed Celebration Hub AI, Draw, or NexArt gift and returns a public share URL as the deliverable. The public bridge is isolated from production wallet and social credentials, while the private worker independently resolves Farcaster or X handles, verifies optional platform IDs, requires explicit approval, applies scoped spend limits, and uses no-retry handling for ambiguous side effects. The package includes a completed owner-controlled ACP pilot and English showcase media.",
   "status": "validated pilot",
   "topic": "agents",
   "topics": ["celebrations", "social gifting", "farcaster", "x", "idempotency"],

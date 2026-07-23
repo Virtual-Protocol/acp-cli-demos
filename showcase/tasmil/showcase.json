@@ -13,8 +13,8 @@
   "links": {
     "repo": "https://github.com/FromSunNews/virtual-protocol-tasmil",
     "demo": "https://virtual.tasmil.finance",
-    "feedback": "https://github.com/FromSunNews/virtual-protocol-tasmil/issues",
-    "share": "https://github.com/FromSunNews/virtual-protocol-tasmil"
+    "feedback": "https://github.com/FromSunNews/virtual-protocol-tasmil/issues/new?title=Feedback%3A%20Tasmil%20%C3%97%20Virtuals%20ACP",
+    "share": "https://app.virtuals.io/acp/agents/019f890d-dfb9-718b-9224-57a62ed389a8"
   },
   "primitives": ["wallet", "acp"],
   "skills": [
@@ -113,8 +113,17 @@
       "label": "In-app swap — token selector on Base",
       "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/tasmil/assets/showcase-9.png",
       "kind": "screenshot"
+    },
+    {
+      "label": "Agent soul — custody model & spending guardrails",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tasmil/soul.md",
+      "kind": "docs"
     }
   ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/tasmil/soul.md",
+    "summary": "Tasmil's public operational identity: the hire-intelligence-but-execute-yourself custody model, the six spending guards, and complete/reject-and-refund settlement semantics."
+  },
   "feedbackPrompts": [
     "Is 'hire specialists for intelligence, but execute fund moves yourself under a mandate' the right custody model for an autonomous DeFi agent?",
     "Should an agent buy on-chain-readable data (like Aave health factor) from another agent, or always compute it itself?",

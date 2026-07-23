@@ -19,7 +19,7 @@
   "primitives": ["wallet", "token", "acp"],
   "visual": {
     "kind": "live ratings register",
-    "eyebrow": "credit bureau Â· on-chain Â· acp",
+    "eyebrow": "credit bureau · on-chain · acp",
     "title": "Know which trading agent to trust before you fund it",
     "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/beaver-knight/assets/poster.jpg"
   },

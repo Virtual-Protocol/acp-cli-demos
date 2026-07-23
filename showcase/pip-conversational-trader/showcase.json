@@ -1,0 +1,99 @@
+{
+  "slug": "pip-conversational-trader",
+  "title": "PipTrade Agent",
+  "tagline": "Trade by chat or work the desk, private by default, on a wallet where you keep your keys",
+  "description": "PipTrade Agent is a conversational trading agent in the Virtuals ecosystem. You type a trade in plain english and it quotes, safety checks, and settles it private by default on your own wallet where you keep your keys, and $PIP is a Virtuals token traded through the Virtuals bonding curve. The entry includes on-chain proof of real private settlements, a callable skill, and a public reads helper.",
+  "status": "live product, conversational trading in chat and a full Robinhood Chain terminal, private by default, you keep your keys",
+  "topic": "commerce",
+  "topics": [
+    "commerce",
+    "agent",
+    "conversational",
+    "trading",
+    "swap",
+    "terminal",
+    "limit-orders",
+    "twap",
+    "alerts",
+    "private",
+    "self-custody",
+    "token-safety",
+    "virtuals",
+    "pip",
+    "base",
+    "robinhood-chain"
+  ],
+  "hidden": false,
+  "builder": {
+    "name": "PipTradeDex",
+    "url": "https://piptradedex.xyz"
+  },
+  "links": {
+    "repo": "https://github.com/codedforum/acp-cli-demos/tree/pip-conversational-trader/showcase/pip-conversational-trader",
+    "demo": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/examples/chat-to-trade-readback.md",
+    "share": "https://piptradedex.xyz/app",
+    "video": "https://x.com/PipTradeDex/status/2078716840197378351",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20PipTrade%20Agent&body=Which%20prompt%20fits%3F%0A%0A-%20The%20plain-english%20quote%20then%20execute%20flow%20is%20useful%0A-%20The%20private%20by%20default%20settlement%20needs%20clearer%20proof%0A-%20I%20want%20a%20callable%20Pip%20quote%20or%20safety%20skill%20next%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "wallet",
+    "token"
+  ],
+  "visual": {
+    "kind": "chat to trade readback with live on-chain proof, plus a full terminal",
+    "eyebrow": "virtuals, conversational, terminal, private, keep your keys",
+    "title": "type to trade",
+    "videoLabel": "Watch the private trading demo on X",
+    "posterUrl": "https://raw.githubusercontent.com/codedforum/acp-cli-demos/pip-conversational-trader/showcase/pip-conversational-trader/assets/poster.png"
+  },
+  "skills": [
+    {
+      "name": "pip-trade-agent",
+      "href": "https://github.com/codedforum/acp-cli-demos/tree/pip-conversational-trader/showcase/pip-conversational-trader/skills/pip-trade-agent",
+      "sourcePath": "showcase/pip-conversational-trader/skills/pip-trade-agent",
+      "summary": "Hand a trade to PipTrade Agent in plain english, read the live quote with price impact and route, respect the GO CAUTION BLOCK token safety gate, and confirm a self-custody settlement that is private by default. Buyer-side, approval-gated, never signs for the user.",
+      "install": "cp -R showcase/pip-conversational-trader/skills/pip-trade-agent ~/.agents/skills/\ncp -R showcase/pip-conversational-trader/skills/pip-trade-agent ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Chat to trade readback, plain-english intent to live quote to settled on-chain tx",
+      "href": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/examples/chat-to-trade-readback.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Private by default settlement, what is hidden and what is not, stated honestly",
+      "href": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/examples/private-by-default.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Command surface, every plain-english instruction in chat and every terminal order type",
+      "href": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/examples/command-surface.md",
+      "kind": "docs"
+    },
+    {
+      "label": "PipTrade Agent package README",
+      "href": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "pip-reads helper, a dependency-free script that calls the public read endpoints for prices, markets, tokens, and stats",
+      "href": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/tools/pip-reads.mjs",
+      "kind": "tool"
+    },
+    {
+      "label": "Type to trade demo video on X",
+      "href": "https://x.com/PipTradeDex/status/2078716840197378351",
+      "kind": "video"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/codedforum/acp-cli-demos/blob/pip-conversational-trader/showcase/pip-conversational-trader/soul.md",
+    "summary": "Public agent context for PipTrade Agent, a conversational trader and a full terminal that keep your keys, settle private by default, and never sign without the user."
+  },
+  "feedbackPrompts": [
+    "Would an agent hand a trade to PipTrade Agent in plain english if it returns a live quote with price impact, minimum received, route, and a token safety read before anything signs?",
+    "Which buyer search terms should rank first for PipTrade Agent: conversational trading, private swap, keep your keys, limit and TWAP orders, token safety, or Virtuals trading?",
+    "Should the next callable PipTrade skill expose a quote, a token safety check, or a full private swap as a native buyer job?"
+  ]
+}

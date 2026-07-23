@@ -40,12 +40,12 @@
     "kind": "guarded agent wallet + on-chain mandate",
     "eyebrow": "smart wallet · delegation · acp · 19 mainnets",
     "title": "the financial os for ai agents",
-    "posterUrl": "https://raw.githubusercontent.com/huyphamcs/acp-cli-demos/showcase-botanary/showcase/botanary/assets/poster.png"
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/botanary/assets/poster.png"
   },
   "skills": [
     {
       "name": "botanary-guarded-agent-spend",
-      "href": "https://github.com/huyphamcs/acp-cli-demos/tree/showcase-botanary/showcase/botanary/skills/botanary-guarded-agent-spend",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/botanary/skills/botanary-guarded-agent-spend",
       "sourcePath": "showcase/botanary/skills/botanary-guarded-agent-spend",
       "summary": "Let an agent request a bounded Botanary mandate, then send, swap, or hire within it via build, sign client-side, relay, stopping at approval gates with the kill-switch and audit anchor as stop conditions.",
       "install": "cp -R showcase/botanary/skills/botanary-guarded-agent-spend ~/.agents/skills/\ncp -R showcase/botanary/skills/botanary-guarded-agent-spend ~/.claude/skills/"
@@ -54,22 +54,22 @@
   "artifacts": [
     {
       "label": "Grant a delegation: spending cap, per-action max, allowlisted recipients, and expiry, enforced on-chain",
-      "href": "https://github.com/huyphamcs/acp-cli-demos/blob/showcase-botanary/showcase/botanary/assets/screenshots/grant-delegation.png",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/assets/screenshots/grant-delegation.png",
       "kind": "demo"
     },
     {
       "label": "Bounded send with the network fee paid in USDC (no ETH needed)",
-      "href": "https://github.com/huyphamcs/acp-cli-demos/blob/showcase-botanary/showcase/botanary/assets/screenshots/send-usdc-gas.png",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/assets/screenshots/send-usdc-gas.png",
       "kind": "demo"
     },
     {
       "label": "Agents marketplace: hireable agents with jobs, success rate, and rating",
-      "href": "https://github.com/huyphamcs/acp-cli-demos/blob/showcase-botanary/showcase/botanary/assets/screenshots/markets-agents.png",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/assets/screenshots/markets-agents.png",
       "kind": "demo"
     },
     {
       "label": "Token market detail with a live price chart (Virtuals agent token)",
-      "href": "https://github.com/huyphamcs/acp-cli-demos/blob/showcase-botanary/showcase/botanary/assets/screenshots/token-detail.png",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/assets/screenshots/token-detail.png",
       "kind": "demo"
     },
     {
@@ -84,27 +84,27 @@
     },
     {
       "label": "Real testnet transactions: contract deploys, grant, delegated action, revoke, freeze (Arb Sepolia, Base Sepolia, Robinhood testnet)",
-      "href": "https://github.com/huyphamcs/acp-cli-demos/blob/showcase-botanary/showcase/botanary/proof/testnet-tx.md",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/proof/testnet-tx.md",
       "kind": "proof"
     },
     {
       "label": "Guarded-spend decisions reproduced from the AgentGuard test suite",
-      "href": "https://github.com/huyphamcs/acp-cli-demos/blob/showcase-botanary/showcase/botanary/skills/botanary-guarded-agent-spend/examples/guarded-spend-decisions.md",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/skills/botanary-guarded-agent-spend/examples/guarded-spend-decisions.md",
       "kind": "proof"
     },
     {
       "label": "Redacted proof index and public/private boundary",
-      "href": "https://github.com/huyphamcs/acp-cli-demos/blob/showcase-botanary/showcase/botanary/proof/README.md",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/proof/README.md",
       "kind": "proof"
     },
     {
       "label": "Botanary Guarded Agent Spend skill",
-      "href": "https://github.com/huyphamcs/acp-cli-demos/tree/showcase-botanary/showcase/botanary/skills/botanary-guarded-agent-spend",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/botanary/skills/botanary-guarded-agent-spend",
       "kind": "skill"
     }
   ],
   "soul": {
-    "href": "https://github.com/huyphamcs/acp-cli-demos/blob/showcase-botanary/showcase/botanary/soul.md",
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/soul.md",
     "summary": "Public agent context: what bounded authority means, what the wallet will and will not do, and why the backend can never move funds on its own."
   },
   "feedbackPrompts": [

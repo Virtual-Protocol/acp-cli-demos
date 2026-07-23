@@ -24,7 +24,7 @@
     "repo": "https://github.com/dereliapps/hoodflow",
     "demo": "https://hoodflow.app",
     "share": "https://hoodflow.app/?view=agents",
-    "video": "https://x.com/hoodfloow/status/2079596780711227597",
+    "video": "https://cdn.jsdelivr.net/gh/dereliapps/acp-cli-demos@b34a371c1a44f0d43416b0d83914cb1b2a2308b3/showcase/hoodflow/assets/demo.mp4",
     "feedback": "https://github.com/dereliapps/hoodflow/issues/new?title=Virtuals%20integration%20feedback"
   },
   "primitives": [
@@ -36,8 +36,8 @@
     "eyebrow": "agents · token routes · robinhood chain",
     "title": "inspect the route before the user signs",
     "posterUrl": "https://raw.githubusercontent.com/dereliapps/acp-cli-demos/591f38029fcaf4bf96ea88dd24786a26d6b29cb0/showcase/hoodflow/assets/poster.png",
-    "videoUrl": "https://raw.githubusercontent.com/dereliapps/acp-cli-demos/b34a371c1a44f0d43416b0d83914cb1b2a2308b3/showcase/hoodflow/assets/demo.mp4",
-    "videoLabel": "Watch the 0:30 demo on X"
+    "videoUrl": "https://cdn.jsdelivr.net/gh/dereliapps/acp-cli-demos@b34a371c1a44f0d43416b0d83914cb1b2a2308b3/showcase/hoodflow/assets/demo.mp4",
+    "videoLabel": "Watch the 0:30 demo"
   },
   "skills": [
     {
@@ -81,7 +81,7 @@
     },
     {
       "label": "Watch the 30-second HoodFlow product tour",
-      "href": "https://x.com/hoodfloow/status/2079596780711227597",
+      "href": "https://cdn.jsdelivr.net/gh/dereliapps/acp-cli-demos@b34a371c1a44f0d43416b0d83914cb1b2a2308b3/showcase/hoodflow/assets/demo.mp4",
       "kind": "video"
     },
     {

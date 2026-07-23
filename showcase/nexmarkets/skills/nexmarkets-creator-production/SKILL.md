@@ -1,12 +1,12 @@
 ---
 name: nexmarkets-creator-production
-description: Plan and operate an existing Nexmarkets creator-production request with source, payment, render, delivery, and settlement approval gates.
+description: Plan and operate an existing NexMarkets creator-production request with source, payment, render, delivery, and settlement approval gates.
 version: 0.1.0
 ---
 
-# Nexmarkets Creator Production
+# NexMarkets Creator Production
 
-Use this skill for an existing Nexmarkets deployment when an operator needs to
+Use this skill for an existing NexMarkets deployment when an operator needs to
 prepare, inspect, or advance a commissioned video or infographic request. It
 supports the production and marketplace lifecycle without treating browser
 state, a client claim, or a provider response as proof of payment or delivery.

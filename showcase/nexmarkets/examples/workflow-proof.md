@@ -1,9 +1,10 @@
-# Nexmarkets source-backed workflow proof
+# NexMarkets source-backed workflow proof
 
 ## Evidence type
 
-This is a source-validation record for the supplied
-[NexStudio source snapshot](../source/). It is not a claim that an on-chain
+This is a source-validation record for the maintained
+[NexMarkets source repository](https://github.com/Domistro16/NexID/tree/main/nexstudio).
+It is not a claim that an on-chain
 payment, a live render, a settlement, or a refund has completed. No
 credentials, wallet material, personal data, payment details, or private source
 content are included here.
@@ -23,7 +24,8 @@ failure-closed provider and chain boundaries. Reviewers can inspect the source
 at the repository link above, then reproduce the test run with:
 
 ```bash
-cd nexstudio
+git clone https://github.com/Domistro16/NexID.git
+cd NexID/nexstudio
 npm install
 npm test
 ```
@@ -44,7 +46,7 @@ confirmation depth, and is recomputed if an indexed event is orphaned.
 
 ## Reviewer checks
 
-- Inspect the linked NexStudio source and its `README.md` workflow boundaries.
+- Inspect the linked NexMarkets source and its `README.md` workflow boundaries.
 - Run `npm test` from the source directory; the result above is a reproducible
   code-validation snapshot, not a substitute for a production receipt.
 - Confirm this Showcase package contains no operational secrets or claims of

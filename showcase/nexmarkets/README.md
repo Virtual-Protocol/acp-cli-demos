@@ -1,9 +1,11 @@
-# Nexmarkets
+# NexMarkets
 
-Nexmarkets is the Showcase package for the NexStudio application. Its
-redacted, reviewable source snapshot is included in
-[`source/`](source/), alongside the package that presents the creator
-marketplace and production studio for commissioned video and infographic work.
+The NexMarkets Showcase package presents the newer NexMarkets application: an
+open-source creator marketplace with Studio production for commissioned video
+and infographic work. The maintained implementation lives in the
+[NexMarkets source repository](https://github.com/Domistro16/NexID/tree/main/nexstudio);
+this demos repository contains only the card manifest, review documentation,
+workflow proof, and reusable production skill.
 
 ## What the codebase does
 
@@ -26,15 +28,18 @@ test result, review steps, and the distinction between verified source behavior
 and an on-chain production receipt. This submission does not claim that a live
 payment, render, settlement, or refund occurred.
 
+[SOURCE_SNAPSHOT.md](SOURCE_SNAPSHOT.md) records the external source boundary
+used for review without duplicating the application in this repository.
+
 ## Package contents
 
 - `showcase.json` is the card-ready Showcase manifest.
-- `source/` is the supplied NexStudio source snapshot, with local credentials,
-  build outputs, dependencies, local databases, and generated clients omitted.
+- `SOURCE_SNAPSHOT.md` links to the maintained NexMarkets source repository and
+  documents the validation boundary.
 - `examples/workflow-proof.md` records the redacted validation evidence and
   reviewer checks.
 - `skills/nexmarkets-creator-production/SKILL.md` is the reusable,
-  approval-gated operator workflow for a Nexmarkets production request.
+  approval-gated operator workflow for a NexMarkets production request.
 
 ## Reuse
 
@@ -45,6 +50,6 @@ cp -R showcase/nexmarkets/skills/nexmarkets-creator-production ~/.agents/skills/
 ```
 
 The skill is deliberately conservative: it supports planning and operation of
-an existing, configured Nexmarkets deployment, but requires explicit human
+an existing, configured NexMarkets deployment, but requires explicit human
 approval before it creates a paid request, starts a render, publishes a
 deliverable, settles funds, or changes a production record.

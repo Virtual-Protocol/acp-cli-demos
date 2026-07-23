@@ -1,21 +1,17 @@
-# Source snapshot boundary
+# Source review boundary
 
-`source/` is a reviewer-visible snapshot of the NexStudio application supplied
-for this Showcase submission. It contains the application, contract, Prisma,
-rendering, configuration-template, public-image, and test source needed to
-inspect the documented workflow.
+The newer NexMarkets application, including its Studio implementation, is
+maintained in the public
+[NexID repository](https://github.com/Domistro16/NexID/tree/main/nexstudio).
+The application source is intentionally linked rather than copied into this
+Showcase package, keeping `acp-cli-demos` focused on the showcase manifest,
+review evidence, and reusable skill.
 
-The snapshot intentionally excludes local and generated material that does not
-belong in a public Showcase submission:
+Reviewers can inspect the NexMarkets application, contracts, Prisma schema, rendering
+integration, configuration template, and tests at that source link.
 
-- `.env` files and other local credential material;
-- `node_modules/`, `.next/`, caches, coverage, and TypeScript build state;
-- local databases, uploads, renders, and deployment outputs; and
-- generated Prisma clients.
-
-Nonessential test helpers containing credential-shaped local test configuration
-are also omitted.
-
-Run the source-level test suite from `source/` with `npm install` followed by
-`npm test`. A passing test suite is code-validation evidence only; it does not
-prove a live payment, render, settlement, or refund.
+The local validation recorded in
+[`examples/workflow-proof.md`](examples/workflow-proof.md) is source-level
+evidence only. It does not prove a live payment, provider render, settlement,
+or refund. Operational credentials, local databases, uploads, generated
+clients, caches, and build outputs are not part of this Showcase package.

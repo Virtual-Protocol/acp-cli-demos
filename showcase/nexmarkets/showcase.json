@@ -1,8 +1,8 @@
 {
   "slug": "nexmarkets",
-  "title": "Nexmarkets",
+  "title": "NexMarkets",
   "tagline": "Coordinates wallet-gated creator production from approved source and confirmed payment through review and settlement",
-  "description": "Nexmarkets is an open-source creator marketplace and production studio for commissioned videos and infographics. Its workflow records authorised sources, server-derived quotes, verified payment confirmation, render jobs, versioned artifacts, buyer review, and settlement or refund decisions. The Showcase package is source-backed and explicitly distinguishes tested code from live production transactions.",
+  "description": "NexMarkets is an open-source creator marketplace and production studio for commissioned videos and infographics. Its workflow records authorised sources, server-derived quotes, verified payment confirmation, render jobs, versioned artifacts, buyer review, and settlement or refund decisions. The Showcase package is source-backed and explicitly distinguishes tested code from live production transactions.",
   "status": "source-validated preview",
   "topic": "commerce",
   "topics": [
@@ -17,10 +17,10 @@
     "url": "https://github.com/Domistro16"
   },
   "links": {
-    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/nexmarkets/source",
+    "repo": "https://github.com/Domistro16/NexID/tree/main/nexstudio",
     "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/nexmarkets/examples/workflow-proof.md",
     "share": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/nexmarkets",
-    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Nexmarkets&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20creator-production%20workflow%20is%20clear%0A-%20The%20approval%20boundaries%20need%20more%20detail%0A-%20The%20source-backed%20proof%20needs%20another%20artifact%0A%0ANotes%3A%0A"
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20NexMarkets&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20creator-production%20workflow%20is%20clear%0A-%20The%20approval%20boundaries%20need%20more%20detail%0A-%20The%20source-backed%20proof%20needs%20another%20artifact%0A%0ANotes%3A%0A"
   },
   "primitives": [
     "wallet",
@@ -29,21 +29,24 @@
   "visual": {
     "kind": "creator marketplace",
     "eyebrow": "wallet + token-gated production",
-    "title": "approved work, verified delivery"
+    "title": "approved work, verified delivery",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/nexmarkets/assets/hero-card.png",
+    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/nexmarkets/assets/nexmarkets-demo.mp4",
+    "videoLabel": "Watch the NexMarkets Studio workflow"
   },
   "skills": [
     {
       "name": "nexmarkets-creator-production",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/nexmarkets/skills/nexmarkets-creator-production",
       "sourcePath": "showcase/nexmarkets/skills/nexmarkets-creator-production",
-      "summary": "Operator workflow for running a Nexmarkets creator-production request with explicit source, spending, render, delivery, and settlement approval gates.",
+      "summary": "Operator workflow for running a NexMarkets creator-production request with explicit source, spending, render, delivery, and settlement approval gates.",
       "install": "cp -R showcase/nexmarkets/skills/nexmarkets-creator-production ~/.agents/skills/\ncp -R showcase/nexmarkets/skills/nexmarkets-creator-production ~/.claude/skills/"
     }
   ],
   "artifacts": [
     {
-      "label": "Nexmarkets source snapshot",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/nexmarkets/source",
+      "label": "NexMarkets source repository",
+      "href": "https://github.com/Domistro16/NexID/tree/main/nexstudio",
       "kind": "source"
     },
     {
@@ -52,7 +55,17 @@
       "kind": "proof"
     },
     {
-      "label": "Nexmarkets creator-production skill",
+      "label": "NexMarkets Showcase hero",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/nexmarkets/assets/hero-card.png",
+      "kind": "screenshot"
+    },
+    {
+      "label": "NexMarkets Studio workflow video",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/nexmarkets/assets/nexmarkets-demo.mp4",
+      "kind": "video"
+    },
+    {
+      "label": "NexMarkets creator-production skill",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/nexmarkets/skills/nexmarkets-creator-production",
       "kind": "skill"
     },

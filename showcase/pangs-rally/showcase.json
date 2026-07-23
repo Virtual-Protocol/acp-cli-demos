@@ -18,7 +18,7 @@
   "links": {
     "repo": "https://github.com/pangsdev/pangsrallyv1",
     "demo": "https://app.virtuals.io/virtuals/115020",
-    "video": "https://x.com/PangsRally/status/2078492624860926104",
+    "video": "showcase/pangs-rally/assets/pangsrally-demo.mp4",
     "share": "https://x.com/PangsRally/status/2078492624860926104",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues"
   },
@@ -26,12 +26,24 @@
     "token"
   ],
   "visual": {
-    "kind": "x demo video",
+    "kind": "hosted video",
     "eyebrow": "web3 game + virtuals token",
     "title": "Pangs Rally on Virtuals",
-    "posterUrl": "",
-    "videoLabel": "Watch the gameplay demo on X"
+    "posterUrl": "showcase/pangs-rally/assets/poster.png",
+    "videoUrl": "showcase/pangs-rally/assets/pangsrally-demo.mp4",
+    "videoLabel": "Watch the gameplay demo"
   },
   "skills": [],
-  "artifacts": []
+  "artifacts": [
+    {
+      "type": "proof",
+      "title": "Gameplay Video on X",
+      "url": "https://x.com/PangsRally/status/2078492624860926104"
+    },
+    {
+      "type": "demo",
+      "title": "Live Token on Virtuals",
+      "url": "https://app.virtuals.io/virtuals/115020"
+    }
+  ]
 }

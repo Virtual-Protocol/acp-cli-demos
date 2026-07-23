@@ -20,7 +20,8 @@
   "visual": {
     "kind": "capability card",
     "eyebrow": "acp + hyperliquid",
-    "title": "live trade execution"
+    "title": "live trade execution",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/degenai/assets/poster.jpg"
   },
   "skills": [
     {

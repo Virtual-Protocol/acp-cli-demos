@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sovegent Nomad — Sovereign Connectivity"
+  short_description: "Buy a scoped ACP passage to a region, pay in $NMD, get signed proof of egress"
+  default_prompt: "Use $acp-sovereign-connectivity to buy a passage to a target region and verify the signed egress proof before completing."
+policy:
+  allow_implicit_invocation: true

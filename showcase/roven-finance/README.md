@@ -21,6 +21,10 @@ Follow updates on X: <https://x.com/RovenFinance>.
 Live proof of the screening path is in
 [proof/morpho-usdg-screen.md](./proof/morpho-usdg-screen.md).
 
+## Demo video
+
+[Watch the 0:21 product walkthrough](./assets/roven-demo.mp4) — landing → live explorer → Discover → security model.
+
 ## Included package
 
 - `showcase.json` — card metadata and public links

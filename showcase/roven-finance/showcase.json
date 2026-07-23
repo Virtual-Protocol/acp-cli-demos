@@ -1,8 +1,8 @@
 {
   "slug": "roven-finance",
   "title": "Roven Finance",
-  "tagline": "Screens Robinhood Chain Morpho USDG vaults by net APY, TVL, liquidity and Market Quality — read-only, no custody or approvals",
-  "description": "Roven is a live yield-intelligence layer for Robinhood Chain mainnet. It pulls Morpho Vault V2 data, keeps only canonical USDG opportunities with positive net APY that are Morpho-listed or at least $10M TVL, then ranks them with a transparent Market Quality screening score that is explicitly not a security rating. Optional wallet connect reads only the public USDG balance via eth_call. Roven never constructs deposits, withdrawals, approvals, or routing transactions — users verify contracts on Blockscout and execute on the underlying protocol.",
+  "tagline": "Screens Robinhood Chain Morpho USDG vaults by net APY, TVL, liquidity and Market Quality \u2014 read-only, no custody or approvals",
+  "description": "Roven is a live yield-intelligence layer for Robinhood Chain mainnet. It pulls Morpho Vault V2 data, keeps only canonical USDG opportunities with positive net APY that are Morpho-listed or at least $10M TVL, then ranks them with a transparent Market Quality screening score that is explicitly not a security rating. Optional wallet connect reads only the public USDG balance via eth_call. Roven never constructs deposits, withdrawals, approvals, or routing transactions \u2014 users verify contracts on Blockscout and execute on the underlying protocol.",
   "status": "live on mainnet",
   "topic": "defi",
   "topics": [
@@ -22,14 +22,20 @@
     "repo": "https://github.com/RovenFinance/roven-finance",
     "demo": "https://roven.finance/app",
     "share": "https://x.com/RovenFinance",
-    "feedback": "https://github.com/RovenFinance/roven-finance/issues/new?title=Feedback%3A%20Roven%20Finance"
+    "feedback": "https://github.com/RovenFinance/roven-finance/issues/new?title=Feedback%3A%20Roven%20Finance",
+    "video": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/roven-finance/assets/roven-demo.mp4"
   },
-  "primitives": ["wallet", "token"],
+  "primitives": [
+    "wallet",
+    "token"
+  ],
   "visual": {
     "kind": "read-only Morpho USDG yield screen + Ask Roven",
-    "eyebrow": "defi · yield · robinhood chain",
+    "eyebrow": "defi \u00b7 yield \u00b7 robinhood chain",
     "title": "screen USDG vaults before you leave the desk",
-    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/roven-finance/assets/poster.jpg"
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/roven-finance/assets/poster.jpg",
+    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/roven-finance/assets/roven-demo.mp4",
+    "videoLabel": "Watch the 0:21 demo"
   },
   "skills": [
     {
@@ -47,7 +53,12 @@
       "kind": "demo"
     },
     {
-      "label": "Live opportunities API (Morpho → screened USDG set)",
+      "label": "Product walkthrough demo",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/roven-finance/assets/roven-demo.mp4",
+      "kind": "video"
+    },
+    {
+      "label": "Live opportunities API (Morpho \u2192 screened USDG set)",
       "href": "https://roven.finance/api/opportunities",
       "kind": "proof"
     },

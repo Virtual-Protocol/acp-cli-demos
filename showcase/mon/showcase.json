@@ -42,7 +42,7 @@
   "artifacts": [
     {
       "label": "MON Architecture Scan Sample Output",
-      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/mon/sample_output.json",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/mon/sample_output",
       "kind": "file"
     }
   ],

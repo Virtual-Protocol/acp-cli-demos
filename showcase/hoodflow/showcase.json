@@ -35,7 +35,7 @@
     "kind": "Reviewed route preflight + user-signed handoff",
     "eyebrow": "agents · token routes · robinhood chain",
     "title": "inspect the route before the user signs",
-    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/hoodflow/assets/poster.png",
+    "posterUrl": "https://raw.githubusercontent.com/dereliapps/acp-cli-demos/591f38029fcaf4bf96ea88dd24786a26d6b29cb0/showcase/hoodflow/assets/poster.png",
     "videoUrl": "https://video.twimg.com/amplify_video/2079594703037595648/vid/avc1/1920x1080/S_M1ITqY5HLbmfee.mp4?tag=29",
     "videoLabel": "Watch the 0:30 demo"
   },

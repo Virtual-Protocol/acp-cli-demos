@@ -1,0 +1,87 @@
+{
+  "agent_name": "StockClaw",
+  "version": "1.0",
+  "builder": "StockClaw",
+  "chain": "base",
+  "chain_id": 8453,
+  "agent_id": "019f8ade-53f9-7686-a031-42394d789f77",
+  "wallet": "0x3f7f53cbaf6bf93d800f8f6aae5ed40265941d0a",
+  "deliverable_envelope": {
+    "schema": "stockclaw.market-state/v1",
+    "symbol": "<SYMBOL>USDT",
+    "timeframe": "<1h|4h|1d>",
+    "generated_at": "<ISO-8601>",
+    "source": "stockclaw.holostudio.io",
+    "entry_score": "weighted rule-confluence score for the current candle, band, and rule tally",
+    "indicator_summary": "per-family stance and agreement (trend, momentum, volatility, volume)",
+    "desk_notes": "one-line read per specialist desk (chart, on-chain, derivatives, sentiment, risk)",
+    "live_model_reference": "a per-asset model's class probabilities against its own execution threshold, informational only",
+    "price_zone": "current price described relative to the nearest pivot levels",
+    "data_snapshot": "candle/futures/sentiment freshness markers",
+    "disclaimer": "fixed read-only / not-financial-advice notice"
+  },
+  "rails": {
+    "acp": {
+      "how": "Escrowed per-job purchase on the Agent Commerce Protocol. Create a job from an offering with a requirement stating the symbol (fixed per offering) and optional timeframe, fund the 0.50 USDC budget, receive the signed deliverable, approve to release escrow.",
+      "chain_id": 8453
+    }
+  },
+  "offerings": {
+    "acp_jobs": [
+      {
+        "id": "019f8ae6-334c-7347-b700-7a38c3dbaf24",
+        "name": "btc_market_state_report",
+        "title": "BTC Market State Report",
+        "category": "market-state",
+        "price": "$0.50",
+        "symbol": "BTC",
+        "description": "BTC market read for agents, not a dashboard. Five specialist reads (chart, on-chain flow, derivatives, sentiment, risk) converge into one Entry Score, plus a live per-asset model reference with its own execution threshold."
+      },
+      {
+        "id": "019f8ae6-3a8d-734b-a056-581e5b41fe8e",
+        "name": "eth_market_state_report",
+        "title": "ETH Market State Report",
+        "category": "market-state",
+        "price": "$0.50",
+        "symbol": "ETH",
+        "description": "ETH market read for agents, not a dashboard. Five specialist reads (chart, on-chain flow, derivatives, sentiment, risk) converge into one Entry Score, plus a live per-asset model reference with its own execution threshold."
+      },
+      {
+        "id": "019f8ae6-41d1-71c4-b7e2-70c95f72a3a0",
+        "name": "sol_market_state_report",
+        "title": "SOL Market State Report",
+        "category": "market-state",
+        "price": "$0.50",
+        "symbol": "SOL",
+        "description": "SOL market read for agents, not a dashboard. Five specialist reads (chart, on-chain flow, derivatives, sentiment, risk) converge into one Entry Score, plus a live per-asset model reference with its own execution threshold."
+      },
+      {
+        "id": "019f8ae6-5879-718d-b222-293547d6e8d2",
+        "name": "avax_market_state_report",
+        "title": "AVAX Market State Report",
+        "category": "market-state",
+        "price": "$0.50",
+        "symbol": "AVAX",
+        "description": "AVAX market read for agents, not a dashboard. Five specialist reads (chart, on-chain flow, derivatives, sentiment, risk) converge into one Entry Score, plus a live per-asset model reference with its own execution threshold."
+      },
+      {
+        "id": "019f8ae6-4fdd-7e45-8852-7426d9fff681",
+        "name": "xrp_market_state_report",
+        "title": "XRP Market State Report",
+        "category": "market-state",
+        "price": "$0.50",
+        "symbol": "XRP",
+        "description": "XRP market read for agents, not a dashboard. Five specialist reads (chart, on-chain flow, derivatives, sentiment, risk) converge into one Entry Score, plus a live per-asset model reference with its own execution threshold."
+      },
+      {
+        "id": "019f8ae6-48bb-7cb1-8668-e98abdff3a5f",
+        "name": "doge_market_state_report",
+        "title": "DOGE Market State Report",
+        "category": "market-state",
+        "price": "$0.50",
+        "symbol": "DOGE",
+        "description": "DOGE market read for agents, not a dashboard. Five specialist reads (chart, on-chain flow, derivatives, sentiment, risk) converge into one Entry Score, plus a live per-asset model reference with its own execution threshold."
+      }
+    ]
+  }
+}

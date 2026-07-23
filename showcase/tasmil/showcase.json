@@ -11,10 +11,10 @@
     "url": "https://github.com/FromSunNews"
   },
   "links": {
-    "repo": "https://github.com/tasmil-finance",
+    "repo": "https://github.com/FromSunNews/virtual-protocol-tasmil",
     "demo": "https://virtual.tasmil.finance",
-    "feedback": "https://github.com/tasmil-finance",
-    "share": "https://github.com/FromSunNews"
+    "feedback": "https://github.com/FromSunNews/virtual-protocol-tasmil/issues",
+    "share": "https://github.com/FromSunNews/virtual-protocol-tasmil"
   },
   "primitives": ["wallet", "acp"],
   "skills": [
@@ -65,8 +65,8 @@
       "kind": "docs"
     },
     {
-      "label": "Source — Tasmil Finance org",
-      "href": "https://github.com/tasmil-finance",
+      "label": "Source — virtual-protocol-tasmil (this demo's repo)",
+      "href": "https://github.com/FromSunNews/virtual-protocol-tasmil",
       "kind": "repo"
     },
     {

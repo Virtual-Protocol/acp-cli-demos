@@ -38,7 +38,8 @@ cp -R showcase/hoodflow/skills/hoodflow-route-preflight ~/.claude/skills/
 ## Media proof
 
 - [Commit-pinned 16:9 Showcase poster](https://raw.githubusercontent.com/dereliapps/acp-cli-demos/8245617/showcase/hoodflow/assets/poster.png)
-- [30-second H.264 product tour](https://video.twimg.com/amplify_video/2079594703037595648/vid/avc1/1920x1080/S_M1ITqY5HLbmfee.mp4?tag=29)
+- [Watch the 30-second product tour on X](https://x.com/hoodfloow/status/2079596780711227597)
+- [Direct H.264 Showcase asset](https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/hoodflow/assets/demo.mp4)
 
 ## Review the community-market workflow
 

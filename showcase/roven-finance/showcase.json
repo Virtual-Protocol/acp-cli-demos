@@ -1,0 +1,105 @@
+{
+  "slug": "roven-finance",
+  "title": "Roven Finance",
+  "tagline": "Screens Robinhood Chain Morpho USDG vaults by net APY, TVL, liquidity and Market Quality \u2014 read-only, no custody or approvals",
+  "description": "Roven is a live yield-intelligence layer for Robinhood Chain mainnet. It pulls Morpho Vault V2 data, keeps only canonical USDG opportunities with positive net APY that are Morpho-listed or at least $10M TVL, then ranks them with a transparent Market Quality screening score that is explicitly not a security rating. Optional wallet connect reads only the public USDG balance via eth_call. Roven never constructs deposits, withdrawals, approvals, or routing transactions \u2014 users verify contracts on Blockscout and execute on the underlying protocol.",
+  "status": "live on mainnet",
+  "topic": "defi",
+  "topics": [
+    "defi",
+    "yield",
+    "morpho",
+    "usdg",
+    "robinhood-chain",
+    "read-only"
+  ],
+  "hidden": false,
+  "builder": {
+    "name": "Roven Finance",
+    "url": "https://roven.finance"
+  },
+  "links": {
+    "repo": "https://github.com/RovenFinance/roven-finance",
+    "demo": "https://roven.finance/app",
+    "share": "https://x.com/rovenfinance",
+    "feedback": "https://github.com/RovenFinance/roven-finance/issues/new?title=Feedback%3A%20Roven%20Finance",
+    "video": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/roven-finance/assets/roven-demo.mp4"
+  },
+  "primitives": [
+    "wallet",
+    "token"
+  ],
+  "visual": {
+    "kind": "read-only Morpho USDG yield screen + Ask Roven",
+    "eyebrow": "defi \u00b7 yield \u00b7 robinhood chain",
+    "title": "screen USDG vaults before you leave the desk",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/roven-finance/assets/poster.jpg",
+    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/roven-finance/assets/roven-demo.mp4",
+    "videoLabel": "Watch the 0:21 demo"
+  },
+  "skills": [
+    {
+      "name": "roven-screen-usdg",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/roven-finance/skills/roven-screen-usdg",
+      "sourcePath": "showcase/roven-finance/skills/roven-screen-usdg",
+      "summary": "Reusable read-only workflow: fetch Roven's screened Morpho USDG opportunities on Robinhood Chain, compare net APY / TVL / liquidity / Market Quality, and return explorer links without any spend or approval step.",
+      "install": "cp -R showcase/roven-finance/skills/roven-screen-usdg ~/.agents/skills/\ncp -R showcase/roven-finance/skills/roven-screen-usdg ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live yield explorer",
+      "href": "https://roven.finance/app",
+      "kind": "demo"
+    },
+    {
+      "label": "Product walkthrough demo",
+      "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/roven-finance/assets/roven-demo.mp4",
+      "kind": "video"
+    },
+    {
+      "label": "Live opportunities API (Morpho \u2192 screened USDG set)",
+      "href": "https://roven.finance/api/opportunities",
+      "kind": "proof"
+    },
+    {
+      "label": "Redacted live screening proof",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/roven-finance/proof/morpho-usdg-screen.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Steakhouse USDG vault on Robinhood Chain explorer",
+      "href": "https://robinhoodchain.blockscout.com/address/0xBeEff033F34C046626B8D0A041844C5d1A5409dd",
+      "kind": "proof"
+    },
+    {
+      "label": "Canonical USDG token on Robinhood Chain explorer",
+      "href": "https://robinhoodchain.blockscout.com/address/0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "kind": "proof"
+    },
+    {
+      "label": "Security model (no custody, no approvals)",
+      "href": "https://roven.finance/security",
+      "kind": "docs"
+    },
+    {
+      "label": "Screening methodology",
+      "href": "https://roven.finance/methodology",
+      "kind": "docs"
+    },
+    {
+      "label": "roven-screen-usdg skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/roven-finance/skills/roven-screen-usdg",
+      "kind": "skill"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/roven-finance/soul.md",
+    "summary": "Public Roven agent context: read-only USDG screening on Robinhood Chain, Market Quality boundaries, and hard bans on custody, approvals, and transaction construction."
+  },
+  "feedbackPrompts": [
+    "Which additional Robinhood Chain venue should Roven screen next after Morpho Vault V2 USDG?",
+    "What Market Quality inputs would make the score more useful without turning it into a fake security rating?",
+    "What would make the roven-screen-usdg skill easiest for Virtuals agents to reuse before they leave the desk?"
+  ]
+}

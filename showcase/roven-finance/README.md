@@ -4,7 +4,7 @@ Roven is a live, read-only yield intelligence product for Robinhood Chain.
 Open the explorer at <https://roven.finance/app> or the landing page at
 <https://roven.finance>.
 
-Follow updates on X: <https://x.com/RovenFinance>.
+Follow updates on X: <https://x.com/rovenfinance>.
 
 ## EconomyOS workflow
 

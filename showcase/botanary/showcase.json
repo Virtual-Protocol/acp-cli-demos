@@ -1,0 +1,115 @@
+{
+  "slug": "botanary",
+  "title": "Botanary - The Financial OS for AI agents",
+  "tagline": "Gives an AI agent a self-custodial smart-wallet identity and lets it send, swap, and hire other agents only within on-chain spend limits the owner can freeze or revoke in one op",
+  "description": "Botanary is a self-custodial ERC-7579 and ERC-4337 smart wallet whose backend never holds keys and never signs; every action is build, sign client-side, then relay. It gives an agent an on-chain identity and treasury, then bounds what that agent or a delegated session key may do through AgentGuard, an on-chain hook that enforces spend caps, recipient allowlists, an instant kill-switch, and a tamper-evident audit trail. Send and swap are live on 19 mainnets today, including tokenized-stock routing on Robinhood Chain, while delegation, the ACP-hire mandate, and guardrail enforcement are validated on testnet across an 88-test suite covering fuzz, invariant, compromise, and mainnet-fork cases. Proof includes real testnet transactions (contract deploys, grant, delegated action, revoke, and freeze on Arbitrum Sepolia, Base Sepolia, and Robinhood Chain testnet), the public contracts, and the 88-test suite.",
+  "status": "live on 19 mainnets (basic tier); delegation and agent guardrails validated on testnet",
+  "topic": "agents",
+  "topics": [
+    "agents",
+    "smart-wallet",
+    "erc-7579",
+    "erc-4337",
+    "account-abstraction",
+    "delegation",
+    "agent-guardrails",
+    "spend-caps",
+    "identity",
+    "acp",
+    "robinhood-chain",
+    "audit",
+    "kill-switch"
+  ],
+  "hidden": false,
+  "builder": {
+    "name": "Botanary",
+    "url": "https://github.com/Botanary"
+  },
+  "links": {
+    "repo": "https://github.com/Botanary",
+    "demo": "https://docs.botanary.xyz",
+    "share": "https://github.com/Botanary",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Botanary"
+  },
+  "primitives": [
+    "wallet",
+    "acp",
+    "token"
+  ],
+  "visual": {
+    "kind": "guarded agent wallet + on-chain mandate",
+    "eyebrow": "smart wallet · delegation · acp · 19 mainnets",
+    "title": "the financial os for ai agents",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/botanary/assets/poster.png"
+  },
+  "skills": [
+    {
+      "name": "botanary-guarded-agent-spend",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/botanary/skills/botanary-guarded-agent-spend",
+      "sourcePath": "showcase/botanary/skills/botanary-guarded-agent-spend",
+      "summary": "Let an agent request a bounded Botanary mandate, then send, swap, or hire within it via build, sign client-side, relay, stopping at approval gates with the kill-switch and audit anchor as stop conditions.",
+      "install": "cp -R showcase/botanary/skills/botanary-guarded-agent-spend ~/.agents/skills/\ncp -R showcase/botanary/skills/botanary-guarded-agent-spend ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Grant a delegation: spending cap, per-action max, allowlisted recipients, and expiry, enforced on-chain",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/assets/screenshots/grant-delegation.png",
+      "kind": "demo"
+    },
+    {
+      "label": "Bounded send with the network fee paid in USDC (no ETH needed)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/assets/screenshots/send-usdc-gas.png",
+      "kind": "demo"
+    },
+    {
+      "label": "Agents marketplace: hireable agents with jobs, success rate, and rating",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/assets/screenshots/markets-agents.png",
+      "kind": "demo"
+    },
+    {
+      "label": "Token market detail with a live price chart (Virtuals agent token)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/assets/screenshots/token-detail.png",
+      "kind": "demo"
+    },
+    {
+      "label": "Documentation (docs.botanary.xyz)",
+      "href": "https://docs.botanary.xyz",
+      "kind": "docs"
+    },
+    {
+      "label": "Botanary contracts and 88-test suite (fuzz, invariant, compromise, fork)",
+      "href": "https://github.com/Botanary/botanary-contracts",
+      "kind": "docs"
+    },
+    {
+      "label": "Real testnet transactions: contract deploys, grant, delegated action, revoke, freeze (Arb Sepolia, Base Sepolia, Robinhood testnet)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/proof/testnet-tx.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Guarded-spend decisions reproduced from the AgentGuard test suite",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/skills/botanary-guarded-agent-spend/examples/guarded-spend-decisions.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Redacted proof index and public/private boundary",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/proof/README.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Botanary Guarded Agent Spend skill",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/botanary/skills/botanary-guarded-agent-spend",
+      "kind": "skill"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/botanary/soul.md",
+    "summary": "Public agent context: what bounded authority means, what the wallet will and will not do, and why the backend can never move funds on its own."
+  },
+  "feedbackPrompts": [
+    "Would you let an agent spend from a wallet where every limit is enforced on-chain and you can freeze it in one op?",
+    "Which bound matters most for a delegated agent: budget, per-action max, recipient allowlist, or allowed venues?",
+    "Which chain or ACP venue should the guarded mandate support next?"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "degenai",
+  "title": "DegenAI",
+  "tagline": "Executes live HyperLiquid perp trades from a natural-language ACP job and returns on-chain fill proof",
+  "description": "Accepts a natural-language trading job over Virtuals ACP, validates the caller's HyperLiquid agent authorization and margin, and executes the order (limit, market, stop, or batch with take-profit/stop-loss) through the same engine that powers the DegenAI terminal. Returns a deliverable with on-chain fill hashes, average fill price, fees, realized PnL, and post-trade account leverage as proof.",
+  "status": "live integration",
+  "topic": "commerce",
+  "topics": ["trading", "defi", "acp"],
+  "builder": {
+    "name": "DegenAI",
+    "url": "https://degenai.dev"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/degenai",
+    "demo": "https://degenai.dev",
+    "share": "https://x.com/DegenAI_0x/status/2000544000667685004",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20DegenAI"
+  },
+  "primitives": ["acp", "wallet"],
+  "visual": {
+    "kind": "capability card",
+    "eyebrow": "acp + hyperliquid",
+    "title": "live trade execution"
+  },
+  "skills": [
+    {
+      "name": "acp-hyperliquid-trade-execution",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/degenai/skills/acp-hyperliquid-trade-execution",
+      "sourcePath": "showcase/degenai/skills/acp-hyperliquid-trade-execution",
+      "summary": "Submit a trading job to DegenAI over Virtuals ACP and receive an executed HyperLiquid order with on-chain fill proof. Covers asset discovery, order placement (limit/market/stop/batch), take-profit and stop-loss, and reading back fills, PnL, and account leverage.",
+      "install": "cp -R showcase/degenai/skills/acp-hyperliquid-trade-execution ~/.agents/skills/\ncp -R showcase/degenai/skills/acp-hyperliquid-trade-execution ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live product",
+      "href": "https://degenai.dev",
+      "kind": "proof"
+    },
+    {
+      "label": "ACP trade-execution skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/degenai/skills/acp-hyperliquid-trade-execution",
+      "kind": "skill"
+    },
+    {
+      "label": "ACP launch announcement",
+      "href": "https://x.com/DegenAI_0x/status/2000544000667685004",
+      "kind": "proof"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which venues beyond HyperLiquid should this execute on next?",
+    "What deliverable fields matter most for your agent's downstream logic?",
+    "Would preset risk controls (stop-loss / take-profit) make this safer to call?"
+  ]
+}

@@ -4,7 +4,7 @@
     "tagline": "Institutional-grade reputation analytics using specialized AI agents to emit real-time, verifiable on-chain attestations",
     "description": "RepHood is a premium reputation analytics platform built on the Robinhood Chain (Arbitrum Orbit Stack) and powered by Virtuals Protocol. It replaces subjective reviews with a deterministic, agent-driven audit pipeline. The system samples telemetry—transaction volume, network age, and anomaly flags—to compute a reputation delta (ΔR) using a weighted formula. Final scores are committed to the Robinhood Chain via emitAttestation() with IPFS records for complete cryptographic verifiability. Built with Next.js 16, Wagmi v2, and Tailwind v4.",
     "status": "Live MVP on Robinhood Chain",
-    "topic": "ai-agents",
+    "topic": "agents",
     "topics": [
         "robinhood-chain",
         "virtuals",
@@ -25,13 +25,13 @@
         "feedback": "https://github.com/Anmol-345/rephood/issues"
     },
     "primitives": [
-        "wallet",
-        "agent"
+        "wallet"
     ],
     "visual": {
         "kind": "Institutional agentic reputation dashboard + Web3 wallet connection",
         "eyebrow": "ai-agents · virtuals · robinhood chain",
-        "title": "deterministic agent trust & telemetry"
+        "title": "deterministic agent trust & telemetry",
+        "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/rephood/assets/hero.png"
     },
     "skills": [],
     "artifacts": [

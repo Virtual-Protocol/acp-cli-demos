@@ -1,0 +1,1368 @@
+{
+    "/assets/api/get_auth_token.php": {
+        "function_purpose": "res",
+        "method": "GET",
+        "expected_payload_format": "Multipart FormData (multipart/form-data)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "token",
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status"
+        ],
+        "extracted_response_schema_from_js": {
+            "token": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const res = await fetch('../api/get_auth_token.php');",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/assets/api/user/auth/login.php": {
+        "function_purpose": "res",
+        "method": "POST",
+        "expected_payload_format": "Multipart FormData (multipart/form-data)",
+        "guessed_payload_keys": [
+            "dataPrices",
+            "transactions",
+            "userDetails"
+        ],
+        "js_response_reading_keys": [
+            "token",
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status"
+        ],
+        "extracted_response_schema_from_js": {
+            "token": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const res = await fetch('../api/user/auth/login.php', {",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 90,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Payload keys matched from FormData/JSON body",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/user.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Raw JSON (application/json)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "electricityData",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "cableData"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "electricityData": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "cableData": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('/api/user.php?token=' + encodeURIComponent(token), {",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/electric/providers.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "token",
+            "customer_name",
+            "message",
+            "status",
+            "new_balance",
+            "data",
+            "units"
+        ],
+        "extracted_response_schema_from_js": {
+            "token": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "customer_name": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "new_balance": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "units": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('/api/electric/providers.php?token=' + encodeURIComponent(token), {",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/electric/verify.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [
+            "meter_number",
+            "provider_id",
+            "token"
+        ],
+        "js_response_reading_keys": [
+            "token",
+            "customer_name",
+            "message",
+            "status",
+            "new_balance",
+            "data",
+            "units"
+        ],
+        "extracted_response_schema_from_js": {
+            "token": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "customer_name": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "new_balance": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "units": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('/api/electric/verify.php', {",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 90,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Payload keys matched from FormData/JSON body",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/electric/buy.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [
+            "amount",
+            "meter_number",
+            "pin",
+            "provider_id",
+            "token"
+        ],
+        "js_response_reading_keys": [
+            "token",
+            "customer_name",
+            "message",
+            "status",
+            "new_balance",
+            "data",
+            "units"
+        ],
+        "extracted_response_schema_from_js": {
+            "token": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "customer_name": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "new_balance": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "units": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('/api/electric/buy.php', {",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 90,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Payload keys matched from FormData/JSON body",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/ai/chat.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Raw JSON (application/json)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "payment_link",
+            "message",
+            "action",
+            "pending_id",
+            "status",
+            "new_balance"
+        ],
+        "extracted_response_schema_from_js": {
+            "payment_link": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "action": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "pending_id": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "new_balance": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('/api/ai/chat.php', {",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Message is required"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/assets/api/ai/confirm.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Raw JSON (application/json)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "payment_link",
+            "message",
+            "action",
+            "pending_id",
+            "status",
+            "new_balance"
+        ],
+        "extracted_response_schema_from_js": {
+            "payment_link": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "action": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "pending_id": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "new_balance": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('../api/ai/confirm.php', {",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/${API_BASE_URL}/${endpoint}": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch(`${API_BASE_URL}/${endpoint}`, options);",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/data/buy.php": {
+        "function_purpose": "unknown_function",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "apiCall('data/buy.php', 'POST', { phone, plan_code: planCode, pin });",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/airtime/buy.php": {
+        "function_purpose": "unknown_function",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "apiCall('airtime/buy.php', 'POST', { phone, network, amount, pin });",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/user/user.php": {
+        "function_purpose": "result",
+        "method": "GET",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [
+            "dataPrices",
+            "transactions",
+            "userDetails"
+        ],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const result = await apiCall('user/user.php', 'POST', { action: 'get' });",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required. Please login."
+        },
+        "confidence": {
+            "score": 90,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Payload keys matched from FormData/JSON body",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/user/fund/initialize.php": {
+        "function_purpose": "initializePayment",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.initializePayment = async (amount) => apiCall('user/fund/initialize.php', 'POST', { amount });",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/user/fund/verify.php": {
+        "function_purpose": "verifyPayment",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.verifyPayment = async (reference) => apiCall('user/fund/verify.php', 'POST', { reference });",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/user/fund/pending.php": {
+        "function_purpose": "checkPendingFundingAPI",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "//window.checkPendingFundingAPI = async () => apiCall('user/fund/pending.php', 'POST', { action: 'check' });",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/user/update_profile": {
+        "function_purpose": "updateUserProfile",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.updateUserProfile = async (name, email) => apiCall('user/update_profile', 'POST', { name, email });",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "{\n    \"status\": \"success\",\n    \"message\": \"Profile updated successfully\",\n    \"data\": {\n        \"fullname\": \"Abba Moson\",\n        \"email\": \"abba@moson.ng\"\n    }\n}"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/user/change_password": {
+        "function_purpose": "changeUserPassword",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.changeUserPassword = async (currentPassword, newPassword) => apiCall('user/change_password', 'POST', { current_password: currentPassword, new_password: newPassword });",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "{\n    \"status\": \"success\",\n    \"message\": \"Password changed successfully\"\n}"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/user/set_pin/pin.php": {
+        "function_purpose": "setTransactionPin",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.setTransactionPin = async (pin) => apiCall('user/set_pin/pin.php', 'POST', { pin });",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/user/change_pin/pin.php": {
+        "function_purpose": "changeTransactionPin",
+        "method": "GET",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.changeTransactionPin = async (oldPin, newPin) => apiCall('user/change_pin/pin.php', 'POST', { old_pin: oldPin, new_pin: newPin });",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/ai/chat": {
+        "function_purpose": "sendChatMessage",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.sendChatMessage = async (message) => apiCall('ai/chat', 'POST', { message });",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/cable/providers": {
+        "function_purpose": "getCableProviders",
+        "method": "GET",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.getCableProviders = async () => apiCall('cable/providers', 'POST', {});",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "{\n    \"status\": \"success\",\n    \"data\": [\n        { \"id\": 1, \"name\": \"DSTV\", \"code\": \"dstv\", \"plans\": [\n            { \"id\": 101, \"name\": \"Compact\", \"price\": 7500, \"validity\": \"30 days\" },\n            {"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/cable/subscribe": {
+        "function_purpose": "subscribeCable",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.subscribeCable = async (provider, smartCard, planCode) => apiCall('cable/subscribe', 'POST', { provider, smart_card: smartCard, plan_code: planCode });",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/electricity/providers": {
+        "function_purpose": "getElectricityProviders",
+        "method": "GET",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.getElectricityProviders = async () => apiCall('electricity/providers', 'POST', {});",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/electricity/pay": {
+        "function_purpose": "payElectricity",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "transactions",
+            "userDetails",
+            "dataPrices",
+            "message",
+            "status",
+            "data"
+        ],
+        "extracted_response_schema_from_js": {
+            "transactions": [
+                {
+                    "id": "TYPE_NUMBER",
+                    "reference": "TYPE_STRING",
+                    "amount": "TYPE_NUMBER",
+                    "status": "TYPE_STRING"
+                }
+            ],
+            "userDetails": {
+                "id": "TYPE_NUMBER",
+                "name": "TYPE_STRING",
+                "email": "TYPE_STRING",
+                "token": "TYPE_STRING"
+            },
+            "dataPrices": {},
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "window.payElectricity = async (disco, meterNumber, meterType, amount) => apiCall('electricity/pay', 'POST', { disco, meter_number: meterNumber, meter_type: meterType, amount });",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/js/api/user/verify_kyc.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Raw JSON (application/json)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "data",
+            "status",
+            "message"
+        ],
+        "extracted_response_schema_from_js": {
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('../api/user/verify_kyc.php', {",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/js/api/user/fund/pending.php": {
+        "function_purpose": "unknown_function",
+        "method": "POST",
+        "expected_payload_format": "Raw JSON (application/json)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "data",
+            "status",
+            "message"
+        ],
+        "extracted_response_schema_from_js": {
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "return await apiCall('user/fund/pending.php', 'POST', { action: 'check' });",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/cable/providers.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "data",
+            "new_balance",
+            "status",
+            "message"
+        ],
+        "extracted_response_schema_from_js": {
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "new_balance": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('/api/cable/providers.php?token=' + encodeURIComponent(token), {",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/cable/packages.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "data",
+            "new_balance",
+            "status",
+            "message"
+        ],
+        "extracted_response_schema_from_js": {
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "new_balance": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch(`/api/cable/packages.php?provider_id=${providerId}&token=${encodeURIComponent(token)}`, {",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/cable/verify.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [
+            "iuc_number",
+            "provider_id",
+            "token"
+        ],
+        "js_response_reading_keys": [
+            "data",
+            "new_balance",
+            "status",
+            "message"
+        ],
+        "extracted_response_schema_from_js": {
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "new_balance": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('/api/cable/verify.php', {",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 90,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Payload keys matched from FormData/JSON body",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/api/cable/buy.php": {
+        "function_purpose": "response",
+        "method": "POST",
+        "expected_payload_format": "Parameters (application/x-www-form-urlencoded)",
+        "guessed_payload_keys": [
+            "iuc_number",
+            "package_id",
+            "pin",
+            "provider_id",
+            "token"
+        ],
+        "js_response_reading_keys": [
+            "data",
+            "new_balance",
+            "status",
+            "message"
+        ],
+        "extracted_response_schema_from_js": {
+            "data": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "new_balance": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const response = await fetch('/api/cable/buy.php', {",
+        "live_verified": true,
+        "live_response_sample": {
+            "status": "error",
+            "message": "Authentication required."
+        },
+        "confidence": {
+            "score": 90,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Payload keys matched from FormData/JSON body",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/js/api/developer/get_api_key.php": {
+        "function_purpose": "result",
+        "method": "GET",
+        "expected_payload_format": "Raw JSON (application/json)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "status",
+            "api_key",
+            "message"
+        ],
+        "extracted_response_schema_from_js": {
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "api_key": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const result = await apiCall('developer/get_api_key.php', 'POST', { pin });",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    },
+    "/js/api/developer/regenerate_api_key.php": {
+        "function_purpose": "result",
+        "method": "POST",
+        "expected_payload_format": "Raw JSON (application/json)",
+        "guessed_payload_keys": [],
+        "js_response_reading_keys": [
+            "status",
+            "api_key",
+            "message"
+        ],
+        "extracted_response_schema_from_js": {
+            "status": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "api_key": "TYPE_UNKNOWN_DETERMINED_BY_JS",
+            "message": "TYPE_UNKNOWN_DETERMINED_BY_JS"
+        },
+        "raw_js_context": "const result = await apiCall('developer/regenerate_api_key.php', 'POST', { pin });",
+        "live_verified": true,
+        "live_response_sample": {
+            "raw_non_json_sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found"
+        },
+        "confidence": {
+            "score": 75,
+            "reasons": [
+                "Discovered via static JS analysis (apiCall/fetch call site)",
+                "Success/error branches detected in JS",
+                "Live-verified against server"
+            ]
+        }
+    }
+}

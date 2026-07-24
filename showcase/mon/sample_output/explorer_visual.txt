@@ -1,0 +1,68 @@
+📂 payfluxai.com.ng (Enterprise Frontend Map Layout)
+├── /  📌 (PayFlux AI – Buy Data, Airtime & Pay Bills Instantly in Nigeria)
+├── /assets/scripts/autoTheme.js
+├── /assets/scripts/login.js
+├── /assets/scripts/payfluxai.js
+├── /dashboard/  📌 (PayFlux-AI | User Dashboard)
+├── /dashboard/  📌 (PayFlux-AI | User Dashboard)
+├── /document/  📌 (PayFlux AI API Documentation)
+├── /document/  📌 (PayFlux AI API Documentation)
+├── /favicon.ico
+├── /forgot-password/  📌 (Forgot Password | PayFlux AI)
+├── /forgot-password/  📌 (Forgot Password | PayFlux AI)
+├── /js/main.js
+├── /js/mainapi.js
+├── /js/modules/airtime.js
+├── /js/modules/auth.js
+├── /js/modules/balance.js
+├── /js/modules/cable.js
+├── /js/modules/cookie.js
+├── /js/modules/data.js
+├── /js/modules/developer.js
+├── /js/modules/electricity.js
+├── /js/modules/other.js
+├── /js/modules/security.js
+├── /js/modules/sidebar.js
+├── /js/modules/theme.js
+├── /js/modules/toast.js
+├── /js/modules/transactions.js
+├── /js/modules/user.js
+├── /js/modules/utils.js
+├── /js/modules/wallet.js
+├── /login/  📌 (Login | PayFlux AI)
+├── /login/  📌 (Login | PayFlux AI)
+└── /register/  📌 (Create Account | PayFlux AI)
+
+⚙️ Simulated Backend API Endpoint Tree
+├── /api/${API_BASE_URL}/${endpoint}
+├── /api/ai/chat
+├── /api/ai/chat.php
+├── /api/airtime/buy.php
+├── /api/cable/buy.php
+├── /api/cable/packages.php
+├── /api/cable/providers
+├── /api/cable/providers.php
+├── /api/cable/subscribe
+├── /api/cable/verify.php
+├── /api/data/buy.php
+├── /api/electric/buy.php
+├── /api/electric/providers.php
+├── /api/electric/verify.php
+├── /api/electricity/pay
+├── /api/electricity/providers
+├── /api/user.php
+├── /api/user/change_password
+├── /api/user/change_pin/pin.php
+├── /api/user/fund/initialize.php
+├── /api/user/fund/pending.php
+├── /api/user/fund/verify.php
+├── /api/user/set_pin/pin.php
+├── /api/user/update_profile
+├── /api/user/user.php
+├── /assets/api/ai/confirm.php
+├── /assets/api/get_auth_token.php
+├── /assets/api/user/auth/login.php
+├── /js/api/developer/get_api_key.php
+├── /js/api/developer/regenerate_api_key.php
+├── /js/api/user/fund/pending.php
+└── /js/api/user/verify_kyc.php

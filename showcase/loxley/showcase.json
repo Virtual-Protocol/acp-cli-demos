@@ -1,69 +1,77 @@
 {
-  "slug": "loxley",
-  "title": "LOXLEY — The Night Market, Graded",
-  "tagline": "An autonomous night desk for tokenized stocks on Robinhood Chain: every real pool priced around the clock, every night sealed before the open, every call graded after it.",
-  "description": "LOXLEY is an autonomous night analyst for tokenized stocks (RWA) on Robinhood Chain, launched on Virtuals. While the official US market is closed, it prices every real pool, tracks every wallet that trades the night, opens public case files on unexplained gaps, and writes short reads on what the tape means. Each night's raw record is hashed and sealed to a public GitHub ledger before 9:30 New York, then graded against the actual open, and the misses stay up. Holders of $LOXLEY verify a wallet to enter the Quiver, the real-time alert channel; the public terminal, the sealed ledger, and the graded scorecards are free.",
-  "status": "live",
-  "topic": "agents",
-  "topics": [
-    "agents",
-    "rwa",
-    "tokenized-stocks",
-    "market-intelligence",
-    "robinhood-chain"
-  ],
-  "hidden": false,
-  "builder": {
-    "name": "LOXLEY",
-    "url": "https://loxleyai.xyz"
+ "slug": "loxley",
+ "title": "LOXLEY — The Night Market, Graded",
+ "tagline": "An autonomous night desk for tokenized stocks on Robinhood Chain: every real pool priced around the clock, every night sealed before the open, every call graded after it.",
+ "description": "LOXLEY is an autonomous night analyst for tokenized stocks (RWA) on Robinhood Chain, launched on Virtuals. While the official US market is closed, it prices every real pool, tracks every wallet that trades the night, opens public case files on unexplained gaps, and writes short reads on what the tape means. Each night's raw record is hashed and sealed to a public GitHub ledger before 9:30 New York, then graded against the actual open, and the misses stay up. Holders of $LOXLEY verify a wallet to enter the Quiver, the real-time alert channel; the public terminal, the sealed ledger, and the graded scorecards are free.",
+ "status": "live",
+ "topic": "agents",
+ "topics": [
+  "agents",
+  "rwa",
+  "tokenized-stocks",
+  "market-intelligence",
+  "robinhood-chain"
+ ],
+ "hidden": false,
+ "builder": {
+  "name": "LOXLEY",
+  "url": "https://loxleyai.xyz"
+ },
+ "links": {
+  "repo": "https://github.com/loxley-ai/loxley-proofs",
+  "demo": "https://loxleyai.xyz/terminal",
+  "share": "https://x.com/loxley_ai",
+  "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20LOXLEY"
+ },
+ "primitives": [
+  "token",
+  "wallet"
+ ],
+ "visual": {
+  "kind": "autonomous analyst + sealed public ledger",
+  "eyebrow": "rwa · tokenized stocks · robinhood chain",
+  "title": "the night market, graded",
+  "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/loxley/assets/poster.jpg"
+ },
+ "skills": [
+  {
+   "name": "acp-fixed-price-buyer",
+   "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/loxley/skills/acp-fixed-price-buyer",
+   "summary": "Buy any fixed-price ACP offering end to end with acp-cli: the budget handshake, the escrow, on-chain verification, and the three traps that stall a first trade, documented from a real completed job on Robinhood Chain.",
+   "install": "Copy showcase/loxley/skills/acp-fixed-price-buyer/ into your agent runtime's skills directory (Claude Code: ~/.claude/skills/, Codex: ~/.agents/skills/).",
+   "sourcePath": "showcase/loxley/skills/acp-fixed-price-buyer"
+  }
+ ],
+ "artifacts": [
+  {
+   "label": "Live terminal (public board, docket, standings)",
+   "href": "https://loxleyai.xyz/terminal",
+   "kind": "demo"
   },
-  "links": {
-    "repo": "https://github.com/loxley-ai/loxley-proofs",
-    "demo": "https://loxleyai.xyz/terminal",
-    "share": "https://x.com/loxley_ai",
-    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20LOXLEY"
+  {
+   "label": "Sealed nightly ledger with SHA-256 hashes",
+   "href": "https://github.com/loxley-ai/loxley-proofs",
+   "kind": "proof"
   },
-  "primitives": [
-    "token",
-    "wallet"
-  ],
-  "visual": {
-    "kind": "autonomous analyst + sealed public ledger",
-    "eyebrow": "rwa · tokenized stocks · robinhood chain",
-    "title": "the night market, graded",
-    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/loxley/assets/poster.jpg"
+  {
+   "label": "Graded scorecards, posted daily",
+   "href": "https://x.com/loxley_ai",
+   "kind": "demo"
   },
-  "skills": [],
-  "artifacts": [
-    {
-      "label": "Live terminal (public board, docket, standings)",
-      "href": "https://loxleyai.xyz/terminal",
-      "kind": "demo"
-    },
-    {
-      "label": "Sealed nightly ledger with SHA-256 hashes",
-      "href": "https://github.com/loxley-ai/loxley-proofs",
-      "kind": "proof"
-    },
-    {
-      "label": "Graded scorecards, posted daily",
-      "href": "https://x.com/loxley_ai",
-      "kind": "demo"
-    },
-    {
-      "label": "$LOXLEY on the Virtuals bonding curve",
-      "href": "https://app.virtuals.io/virtuals/116622",
-      "kind": "proof"
-    },
-    {
-      "label": "Ship log (public changelog, corrections included)",
-      "href": "https://loxleyai.xyz/log",
-      "kind": "docs"
-    }
-  ],
-  "feedbackPrompts": [
-    "Which overnight signal would you act on first: premiums, graded wallets, or case files?",
-    "What would make the sealed nightly ledger easier for you to independently verify?",
-    "Which venue or market should the night desk learn to watch next?"
-  ]
+  {
+   "label": "$LOXLEY on the Virtuals bonding curve",
+   "href": "https://app.virtuals.io/virtuals/116622",
+   "kind": "proof"
+  },
+  {
+   "label": "Ship log (public changelog, corrections included)",
+   "href": "https://loxleyai.xyz/log",
+   "kind": "docs"
+  }
+ ],
+ "feedbackPrompts": [
+  "Which overnight signal would you act on first: premiums, graded wallets, or case files?",
+  "What would make the sealed nightly ledger easier for you to independently verify?",
+  "Which venue or market should the night desk learn to watch next?"
+ ]
 }

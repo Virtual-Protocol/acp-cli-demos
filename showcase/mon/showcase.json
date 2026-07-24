@@ -18,7 +18,7 @@
   "links": {
     "repo": "https://github.com/mosonmcn/MON",
     "video": "https://x.com/MosonDev/status/2078572007227093352",
-    "videoLabel": "Watch MON Demo Video",
+    "share": "https://x.com/MosonDev/status/2078572007227093352",
     "feedback": "https://github.com/mosonmcn/MON/issues"
   },
   "primitives": [
@@ -29,7 +29,8 @@
     "kind": "card",
     "eyebrow": "Developer Tool",
     "title": "MON: The Autonomous Code Cloner & Architecture Scanner",
-    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/mon/assets/poster.jpg"
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/mon/assets/poster.jpg",
+    "videoLabel": "Watch the MON demo on X"
   },
   "skills": [
     {

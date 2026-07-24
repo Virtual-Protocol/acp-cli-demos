@@ -36,14 +36,19 @@
   "skills": [],
   "artifacts": [
     {
-      "type": "proof",
-      "title": "Gameplay Video on X",
-      "url": "https://x.com/PangsRally/status/2078492624860926104"
+      "label": "Gameplay Video on X",
+      "href": "https://x.com/PangsRally/status/2078492624860926104",
+      "kind": "video"
     },
     {
-      "type": "demo",
-      "title": "Live Token on Virtuals",
-      "url": "https://app.virtuals.io/virtuals/115020"
+      "label": "Live Token on Virtuals",
+      "href": "https://app.virtuals.io/virtuals/115020",
+      "kind": "demo"
     }
+  ],
+  "feedbackPrompts": [
+    "How intuitive is the invite-only referral flow for new players?",
+    "Which terrains or racing mechanics would you most want to see next?",
+    "How appealing is the NFT Pangolin management as a long-term progression loop?"
   ]
 }

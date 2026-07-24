@@ -1,22 +1,24 @@
 ---
 name: accountable-onchain-agent
-description: Make an AI agent's outputs verifiable and tamper-evident by giving the agent an on-chain identity, having it EIP-712 sign a structured assessment of each output, and recording that signature on-chain in the same transaction as the action it justifies. Use when a skeptic should be able to confirm the agent authored a specific output and that the record cannot be edited afterward.
+description: Make an AI agent's outputs verifiable and tamper-evident by giving the agent an on-chain identity, having it EIP-712 sign a structured assessment of each output, and recording that signature on-chain against the action it justifies. Use when a skeptic should be able to confirm the agent authored a specific output and that the record cannot be edited afterward.
 ---
 
 # Accountable On-Chain Agent
 
 ## Overview
 
-This skill turns an AI agent's outputs into a verifiable, uneditable on-chain record. The
+This skill turns an AI agent's outputs into a verifiable, append-only on-chain record. The
 agent gets a verifiable identity (an ERC-8004 registration, for example via Virtuals ACP),
 signs a structured claim about each output with its own key (EIP-712), and that signature is
-verified and written on-chain in the same transaction as the action it justifies. Anyone can
-later read the agent's identity, recover the signer of a recorded claim, and confirm they
-match. It proves authorship and integrity, not correctness.
+verified and written on-chain against the action it justifies. Anyone can later read the
+agent's identity, recover the signer of a recorded claim, and confirm they match. It proves
+authorship and integrity, not correctness.
 
 Monvera runs this pattern in production: Vera (agent #1) signs a `RiskInference` assessment of
-each investment plan, and the signature is verified and recorded by the `VeraRecord` contract
-in the same transaction that buys the stocks.
+each investment plan, and the `VeraRecord` contract verifies and records it immediately after
+the buys settle, over the legs that actually filled. Batching the record into the action
+transaction is the stronger shape; Monvera records as a follow-up so a failed record never
+unwinds real buys.
 
 ## When to use
 
@@ -36,20 +38,20 @@ in the same transaction that buys the stocks.
 - An ERC-8004 identity for the agent (an Identity Registry entry; Virtuals ACP can register one). Note the `agentId` and registry address.
 - A verify-and-record contract on your target chain that recovers the EIP-712 signer, checks it equals the trusted `agentSigner`, enforces bounds, stores the record, and reverts if any check fails. Monvera's is `VeraRecord`.
 - A minimal, meaningful EIP-712 typed struct to sign (the claim schema).
-- An account-abstraction / batching path (for example ERC-4337) so the record and the action land in one transaction.
+- An account-abstraction / batching path (for example ERC-4337) so the record can be batched with the action where the venue allows it.
 
 ## Step-by-step workflow
 
 1. Define the claim. Choose the smallest struct that captures the agent's assessment. Monvera uses `RiskInference(bytes32 planId, uint16 assessedRisk, uint16 maxRisk, uint256 expiry)`.
 2. Register the agent identity. Register the agent in an ERC-8004 Identity Registry (via Virtuals ACP or directly). Record `agentId` and the registry address, and publish an agent card at `/.well-known/agent-card.json`.
 3. Sign server-side. When the agent produces an output, EIP-712-sign the claim with the agent signing key under a fixed domain `{name, version, chainId, verifyingContract}`.
-4. Verify and record on-chain, atomically. In the same transaction as the action, call the verify-and-record contract with the claim plus signature. It recovers the signer, asserts `recovered == agentSigner`, enforces bounds (for example `assessedRisk <= maxRisk`) and expiry, then stores the record. If any check fails, the whole transaction reverts, so an action can never be recorded with an invalid or unauthorized claim.
+4. Verify and record on-chain. Call the verify-and-record contract with the claim plus signature. It recovers the signer, asserts `recovered == agentSigner`, enforces expiry and single-use of the claim id, then stores the record. If any check fails the call reverts, so a claim can never be recorded with an invalid or unauthorized signature. Batching this call into the action transaction is the strongest shape; if you record as a follow-up instead, record only what actually settled and treat a failed record as non-fatal to the action.
 5. Expose a read path. Provide an endpoint or a docs recipe so anyone can fetch a recorded claim, recover its signer, and compare it to `agentSigner()` and the agent's identity.
 
 ## Approval gates
 
 - The user, not the agent, signs the value-moving step (the trade or payment). The agent's signature only attests to its own assessment. Keep the two signatures separate and never conflate them.
-- Bounds are enforced on-chain (for example a risk ceiling the agent cannot exceed), not only in the UI.
+- Say which bounds are enforced on-chain and which are enforced before signing. A bound the agent derives itself is not a constraint on the agent: if a ceiling is meant to bind it, the value must come from the user or from config the agent cannot write.
 
 ## Stop conditions
 
@@ -67,12 +69,13 @@ in the same transaction that buys the stocks.
 - [ ] The agent card resolves and lists the identity registry and `agentSigner`.
 - [ ] A recorded claim's recovered signer equals `agentSigner()` read live on-chain.
 - [ ] The verify-and-record contract reverts on a bad signer, an out-of-bounds claim, and an expired claim.
-- [ ] The record and the action share one transaction (atomic).
+- [ ] The record is bound to the action - ideally one transaction; if not, it records only what actually settled.
 - [ ] No secrets appear anywhere in the package.
 
 ## Output contract
 
-- On-chain: one record event per output (for example `RecommendationCommitted(planId, user, recHash, riskScore, agentId)`), emitted in the same transaction as the action.
+- On-chain: one record event per output (for example `RecommendationCommitted(planId, user, recHash, riskScore, agentId)`).
+- Only the fields inside the signed struct are attested by the agent. Any field the event emits that is not in the struct (a user address, a content hash, a spend amount) is attested by the caller. Either put it in the struct or do not present it as agent-attested.
 - Off-chain: a read endpoint returning the recorded claim, its signature, the recovered signer, the `agentId`, and the identity registry, so a third party can reproduce the check.
 
 ## Worked example (Monvera)

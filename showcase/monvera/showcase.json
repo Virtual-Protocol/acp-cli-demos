@@ -1,11 +1,11 @@
 {
   "slug": "monvera",
   "title": "Monvera - an accountable AI broker",
-  "tagline": "Turns a plain-language goal into a diversified basket of real tokenized stocks and records a signed, verifiable risk assessment on-chain in the same transaction that invests it",
-  "description": "Monvera is an AI broker for real tokenized stocks and funds on Robinhood Chain. You tell Vera a goal in plain words and she builds a diversified basket of real companies, each with a reason and a plain read on the risk, then invests it in one tap: gasless, non-custodial, from one dollar. Vera is a verifiable on-chain agent whose ERC-8004 identity is registered via Virtuals ACP, and she signs each plan's risk assessment with her own key. That signature is verified and recorded on-chain in the same transaction that buys the stocks, so anyone can read her agent card, recover the signer of a recorded plan, and confirm it against her identity.",
+  "tagline": "Turns a plain-language goal into a diversified basket of real tokenized stocks and records a signed, verifiable risk assessment on-chain over what actually filled",
+  "description": "Monvera is an AI broker for real tokenized stocks and funds on Robinhood Chain. You tell Vera a goal in plain words and she builds a diversified basket of real companies, each with a reason and a plain read on the risk, then invests it in one tap: gasless, non-custodial, and a single stock starts at a dollar. Vera is a verifiable on-chain agent whose ERC-8004 identity is registered via Virtuals ACP; she signs each plan's risk assessment with her own key and records it on-chain, so anyone can read her agent card, recover the signer, and confirm it against her identity. She is also a live seller on the ACP marketplace: seven analysis services any agent can hire, from a 3 cent research note to a 15 cent allocation plan, settled in USDG escrow on Robinhood Chain.",
   "status": "live",
   "topic": "agents",
-  "topics": ["finance", "investing", "tokenized-stocks", "identity", "accountability", "erc-8004"],
+  "topics": ["finance", "investing", "tokenized-stocks", "robinhood-chain", "identity", "accountability", "erc-8004", "acp"],
   "hidden": false,
   "builder": {
     "name": "Magicianafk",
@@ -18,10 +18,10 @@
     "share": "https://x.com/monvera_best/status/2074487457505268213",
     "feedback": "https://github.com/Magicianhax/monvera/issues"
   },
-  "primitives": ["card", "wallet"],
+  "primitives": ["wallet", "acp", "token"],
   "visual": {
     "kind": "x demo video",
-    "eyebrow": "ai broker - robinhood chain",
+    "eyebrow": "ai broker - acp seller - robinhood chain",
     "title": "meet vera",
     "videoUrl": "https://assets.monvera.best/promo/monvera-1min.mp4",
     "posterUrl": "https://monvera.best/opengraph-image.png",
@@ -32,8 +32,8 @@
       "name": "accountable-onchain-agent",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/monvera/skills/accountable-onchain-agent",
       "sourcePath": "showcase/monvera/skills/accountable-onchain-agent",
-      "summary": "Make an AI agent's outputs verifiable: give it an ERC-8004 identity, EIP-712 sign a structured assessment of each output, and record the signature on-chain in the same transaction as the action, so anyone can recover the signer and confirm it against the agent's identity.",
-      "install": "cp -R showcase/monvera/skills/accountable-onchain-agent ~/.agents/skills/"
+      "summary": "Make an AI agent's outputs verifiable: give it an ERC-8004 identity, EIP-712 sign a structured assessment of each output, and record the signature on-chain against the action it justifies, so anyone can recover the signer and confirm it against the agent's identity.",
+      "install": "cp -R showcase/monvera/skills/accountable-onchain-agent ~/.agents/skills/\ncp -R showcase/monvera/skills/accountable-onchain-agent ~/.claude/skills/"
     }
   ],
   "artifacts": [
@@ -58,9 +58,14 @@
       "kind": "proof"
     },
     {
-      "label": "ACP registration file",
-      "href": "https://api.acp.virtuals.io/agents/019f2d81-921d-7951-a4f7-50f9d228c47b/erc8004",
-      "kind": "proof"
+      "label": "Hire Vera on ACP (7 analysis services)",
+      "href": "https://app.virtuals.io/acp/agent/019f619c-6f1a-7768-b2c3-1b5f7b8a340d",
+      "kind": "live"
+    },
+    {
+      "label": "ACP listing docs (offerings, prices, requirements)",
+      "href": "https://docs.monvera.best/dev/vera-on-virtuals-acp/",
+      "kind": "docs"
     },
     {
       "label": "A signed plan recorded on-chain (Blockscout)",
@@ -80,7 +85,7 @@
     {
       "label": "Verify Vera yourself (docs)",
       "href": "https://docs.monvera.best/dev/verify-vera/",
-      "kind": "doc"
+      "kind": "docs"
     },
     {
       "label": "Reusable skill: accountable-onchain-agent",
@@ -95,7 +100,7 @@
   ],
   "soul": {
     "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/monvera/soul.md",
-    "summary": "Public context for Vera: her role building diversified baskets of real tokenized stocks, what she is allowed to do, her boundaries (non-custodial, signs assessments not spends, an on-chain risk ceiling), and how to verify her."
+    "summary": "Public context for Vera: her role building diversified baskets of real tokenized stocks, what she is allowed to do, her boundaries (non-custodial, signs assessments not spends, a risk ceiling she commits to in her own signature), and how to verify her."
   },
   "feedbackPrompts": [
     "Which other agent outputs are worth recording on-chain for accountability?",

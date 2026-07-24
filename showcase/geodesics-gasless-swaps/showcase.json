@@ -1,0 +1,70 @@
+{
+  "slug": "geodesics-gasless-swaps",
+  "title": "Geodesics Gasless Swaps",
+  "tagline": "Gives any ACP/EconomyOS or local agent gasless cross-chain swaps with one signature, settling into its own wallet in seconds",
+  "description": "Geodesics turns tokens an agent holds into tokens it wants on the chain it wants, gasless and self-custodial, across 7 EVM chains and Solana; gas and fees come out of the input token. An existing EconomyOS agent is set up and swapping in under five minutes with the CLI, any raw-key wallet onboards itself during its first swap, and the packaged skill lets Claude Code, Codex, or Cursor drive swaps unattended. Proof: an uncut 3-minute video onboarding an EconomyOS agent and settling a 25 USDG swap from Robinhood Chain into VIRTUAL on Base.",
+  "status": "live",
+  "topic": "commerce",
+  "topics": ["swaps", "gasless", "cross-chain", "robinhood-chain", "solana", "wallets", "skills"],
+  "builder": {
+    "name": "Geodesics",
+    "url": "https://geodesics.ai"
+  },
+  "links": {
+    "repo": "https://www.npmjs.com/package/@geodesics-protocol/cli",
+    "demo": "https://docs.geodesics.ai/quickstart",
+    "video": "https://x.com/Geodesics_ai/status/2080197523403083800",
+    "share": "https://x.com/Geodesics_ai/status/2080197523403083800",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Geodesics%20Gasless%20Swaps"
+  },
+  "primitives": ["wallet", "token", "acp"],
+  "visual": {
+    "kind": "x demo video",
+    "eyebrow": "geodesics cli + economyos",
+    "title": "gasless cross-chain swaps",
+    "posterUrl": "https://pbs.twimg.com/amplify_video_thumb/2080195534929698817/img/KI2m20Hs0xGe5mW1.jpg",
+    "videoUrl": "https://video.twimg.com/amplify_video/2080195534929698817/vid/avc1/2542x1266/98Vwhg2JtuyZ8zcs.mp4?tag=29",
+    "videoLabel": "Watch the 2:53 demo on X"
+  },
+  "skills": [
+    {
+      "name": "geodesics-swaps",
+      "href": "https://docs.geodesics.ai/integrations/agent-skill",
+      "sourcePath": "showcase/geodesics-gasless-swaps/skills/geodesics-swaps",
+      "summary": "Reusable swap skill for agent runtimes: quote, swap, withdraw, balance, and status over the Geodesics CLI, with JSON output, typed error recovery, spend approval gates, and stop conditions. Works with a Virtuals ACP wallet or any raw-key wallet.",
+      "install": "npm i -g @geodesics-protocol/cli\ngeodesics init"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "X demo video (2:53, uncut)",
+      "href": "https://x.com/Geodesics_ai/status/2080197523403083800",
+      "kind": "video"
+    },
+    {
+      "label": "Quickstart: any agent to its first swap",
+      "href": "https://docs.geodesics.ai/quickstart",
+      "kind": "docs"
+    },
+    {
+      "label": "Launch article",
+      "href": "https://x.com/Geodesics_ai/status/2080129915064656119",
+      "kind": "writeup"
+    },
+    {
+      "label": "Skill source (snapshot of the npm-packaged skill)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/geodesics-gasless-swaps/skills/geodesics-swaps",
+      "kind": "skill"
+    },
+    {
+      "label": "Geodesics CLI on npm",
+      "href": "https://www.npmjs.com/package/@geodesics-protocol/cli",
+      "kind": "package"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which chain or token pair should the rails support next?",
+    "What would make the skill easier to drop into your agent stack?",
+    "Are you building on Robinhood Chain and missing a route you need?"
+  ]
+}

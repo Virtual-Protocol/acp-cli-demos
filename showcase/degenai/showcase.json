@@ -1,8 +1,8 @@
 {
   "slug": "degenai",
   "title": "DegenAI",
-  "tagline": "Executes live HyperLiquid perp trades from a natural-language ACP job and returns on-chain fill proof",
-  "description": "Accepts a natural-language trading job over Virtuals ACP, validates the caller's HyperLiquid agent authorization and margin, and executes the order (limit, market, stop, or batch with take-profit/stop-loss) through the same engine that powers the DegenAI terminal. Returns a deliverable with on-chain fill hashes, average fill price, fees, realized PnL, and post-trade account leverage as proof.",
+  "tagline": "Creates and runs custom trigger-based HyperLiquid strategies from natural-language ACP jobs, and returns on-chain fill proof",
+  "description": "Accepts natural-language jobs over Virtuals ACP and runs them on HyperLiquid through the same engine that powers the DegenAI terminal. Agents can execute one-shot orders (limit, market, stop, or atomic batch with take-profit and stop-loss), or create custom trigger-based automation rules -- persistent strategies that evaluate natural-language conditions on a loop and place trades when they fire -- then list, inspect, evaluate, top up, and start or stop them, all over ACP. Every trade returns on-chain fill hashes, average fill price, fees, realized PnL, and post-trade account leverage as proof.",
   "status": "live integration",
   "topic": "commerce",
   "topics": ["trading", "defi", "acp"],
@@ -20,7 +20,7 @@
   "visual": {
     "kind": "capability card",
     "eyebrow": "acp + hyperliquid",
-    "title": "live trade execution",
+    "title": "automated strategies + live execution",
     "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/degenai/assets/poster.jpg"
   },
   "skills": [
@@ -30,6 +30,13 @@
       "sourcePath": "showcase/degenai/skills/acp-hyperliquid-trade-execution",
       "summary": "Submit a trading job to DegenAI over Virtuals ACP and receive an executed HyperLiquid order with on-chain fill proof. Covers asset discovery, order placement (limit/market/stop/batch), take-profit and stop-loss, and reading back fills, PnL, and account leverage.",
       "install": "cp -R showcase/degenai/skills/acp-hyperliquid-trade-execution ~/.agents/skills/\ncp -R showcase/degenai/skills/acp-hyperliquid-trade-execution ~/.claude/skills/"
+    },
+    {
+      "name": "acp-automation",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/degenai/skills/acp-automation",
+      "sourcePath": "showcase/degenai/skills/acp-automation",
+      "summary": "Create and run custom trigger-based trading automations on DegenAI over Virtuals ACP. Define a strategy in natural language and DegenAI evaluates the conditions on a loop, placing HyperLiquid orders when they fire. Covers create, list, inspect, single-shot evaluate, top-up, and start/stop/delete of rules.",
+      "install": "cp -R showcase/degenai/skills/acp-automation ~/.agents/skills/\ncp -R showcase/degenai/skills/acp-automation ~/.claude/skills/"
     }
   ],
   "artifacts": [
@@ -41,6 +48,11 @@
     {
       "label": "ACP trade-execution skill source",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/degenai/skills/acp-hyperliquid-trade-execution",
+      "kind": "skill"
+    },
+    {
+      "label": "ACP automation skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/degenai/skills/acp-automation",
       "kind": "skill"
     },
     {

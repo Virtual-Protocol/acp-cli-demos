@@ -13,6 +13,30 @@ This skill exists because the flow has three places where a first-time buyer
 silently stalls. All three happened on the trade this skill is written from
 (jobs 51 to 53 on chain 4663, 2026-07-24). They are marked TRAP below.
 
+## When to use / when not to
+
+Use it to buy a **fixed-price** offering (`priceType: fixed`) as a one-off job.
+Do not use it for subscriptions, for offerings with `requiredFunds: true`
+(those carry a fund-request flow this skill does not cover), for negotiated or
+custom jobs (`create-custom-job` has different semantics), or on testnet
+(`IS_TESTNET` changes endpoints; every address here is mainnet).
+
+## Approval gates (list them to your operator before running)
+
+- **Spending**: step 3 moves real funds into escrow, and step 5 releases them.
+  Get the amount and the chain approved before step 2, because the job's short
+  expiry leaves no time to ask between steps.
+- **Signer creation**: `add-signer` requires a human approving in the
+  dashboard. That is by design; do not script around it.
+- Nothing in this skill posts publicly or creates accounts.
+
+## Stop conditions
+
+Stop and hand back to a human when: fund reverts with anything OTHER than
+`BudgetMismatch()`; the same job reverts twice after `budget.set` is visible;
+the deliverable arrives malformed twice from the same provider; or any step
+asks for a private key in plain text (nothing in this flow ever should).
+
 ## Prerequisites
 
 - `acp-cli` authenticated: `npx @virtuals-protocol/acp-cli configure`
@@ -94,6 +118,14 @@ acp client reject --job-id <id> --chain-id 4663 --json
 The ACP escrow's `getJob(uint256)` returns `status` (3 = COMPLETED) and the
 budget. Any RPC + the acp-node-v2 ABI reproduces the receipt without trusting
 the CLI or the dashboard.
+
+## Output contract
+
+A finished run produces, in order: a `jobId`; a job history whose entries read
+`job.created → requirement → budget.set → job.funded → job.submitted → completed`
+(or `rejected`); and an on-chain `getJob(jobId).status` of 3 (COMPLETED) or
+4 (REJECTED). If the run cannot produce that history, it reports which entry
+is missing and stops rather than settling.
 
 ## Outcome
 

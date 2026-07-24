@@ -1,0 +1,5 @@
+# secrets — NEVER commit
+.env
+*.wgconf
+# deps
+node_modules/

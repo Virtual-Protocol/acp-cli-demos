@@ -12,7 +12,8 @@
     "acp",
     "typescript",
     "nodejs",
-    "x-spaces"
+    "x-spaces",
+    "telegram"
   ],
   "builder": {
     "name": "Dr. Q (@jk_drq) / Qchain",
@@ -20,7 +21,7 @@
   },
   "links": {
     "repo": "https://github.com/drQedwards/acp-cli-demos/tree/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration",
-    "demo": "https://github.com/drQedwards/acp-cli-demos/tree/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/examples",
+    "demo": "https://t.me/Qchaingoldbot",
     "video": "https://x.com/i/spaces/1dKrPPWnNDzJX",
     "share": "https://x.com/i/spaces/1dKrPPWnNDzJX",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20ACP%20SDK%20v2%20to%20v3%20Migration"
@@ -50,6 +51,11 @@
       "label": "Distorted Face Piano Space on X (@jk_drq)",
       "href": "https://x.com/i/spaces/1dKrPPWnNDzJX",
       "kind": "video"
+    },
+    {
+      "label": "Telegram bot @Qchaingoldbot",
+      "href": "https://t.me/Qchaingoldbot",
+      "kind": "demo"
     },
     {
       "label": "Piano Spaces proof notes",

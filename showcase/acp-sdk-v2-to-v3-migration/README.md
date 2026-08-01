@@ -117,3 +117,7 @@ Primary piano Space used as the showcase watch link:
 - **Distorted Face Piano** — [https://x.com/i/spaces/1dKrPPWnNDzJX](https://x.com/i/spaces/1dKrPPWnNDzJX)
 
 Spaces are linked via `links.video` (public X page). There is no stable public `video.twimg.com` mp4 for Spaces replays, so `visual.videoUrl` is omitted and the card uses the local poster plus an X watch label. Details: [`proof/jk-drq-piano-spaces.md`](proof/jk-drq-piano-spaces.md).
+
+## Telegram
+
+Public desk bot: [https://t.me/Qchaingoldbot](https://t.me/Qchaingoldbot) (`@Qchaingoldbot`).

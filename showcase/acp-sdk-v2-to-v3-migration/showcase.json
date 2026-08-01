@@ -2,7 +2,7 @@
   "slug": "acp-sdk-v2-to-v3-migration",
   "title": "ACP SDK v2 \u2192 v3 Migration",
   "tagline": "Migrate AcpClient onNewTask/onEvaluate callbacks to AcpAgent entry events, AssetToken, and session actions with offline-proofed skeletons",
-  "description": "A public migration kit for the Virtuals ACP Node SDK cutover. It maps v2 phases to v3 entry events, replaces FareAmount with AssetToken.usdc, and swaps job.accept/deliver/evaluate for session.setBudget/fund/submit/complete. The package ships before/after examples, a reusable skill, and an offline self-check so builders can validate the rewrite without keys or mainnet funds.",
+  "description": "A public migration kit for the Virtuals ACP Node SDK cutover. It maps v2 phases to v3 entry events, replaces FareAmount with AssetToken.usdc, and swaps job.accept/deliver/evaluate for session.setBudget/fund/submit/complete. The package ships before/after examples, a reusable skill, offline self-check, and public watch proof from @jk_drq piano Spaces on X.",
   "status": "validated offline demo",
   "topic": "skills",
   "topics": [
@@ -11,16 +11,18 @@
     "migration",
     "acp",
     "typescript",
-    "nodejs"
+    "nodejs",
+    "x-spaces"
   ],
   "builder": {
-    "name": "Qchain / Druck desk",
-    "url": "https://github.com/Virtual-Protocol/acp-cli-demos"
+    "name": "Dr. Q (@jk_drq) / Qchain",
+    "url": "https://x.com/jk_drq"
   },
   "links": {
     "repo": "https://github.com/drQedwards/acp-cli-demos/tree/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration",
     "demo": "https://github.com/drQedwards/acp-cli-demos/tree/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/examples",
-    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/pull/94",
+    "video": "https://x.com/i/spaces/1dKrPPWnNDzJX",
+    "share": "https://x.com/i/spaces/1dKrPPWnNDzJX",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20ACP%20SDK%20v2%20to%20v3%20Migration"
   },
   "primitives": [
@@ -28,10 +30,11 @@
     "acp"
   ],
   "visual": {
-    "kind": "migration kit card",
-    "eyebrow": "sdk + acp-cli",
+    "kind": "x spaces + migration kit",
+    "eyebrow": "sdk + @jk_drq spaces",
     "title": "v2 callbacks \u2192 v3 entry events",
-    "posterUrl": "https://raw.githubusercontent.com/drQedwards/acp-cli-demos/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/assets/poster.png"
+    "posterUrl": "https://raw.githubusercontent.com/drQedwards/acp-cli-demos/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/assets/poster.png",
+    "videoLabel": "Watch the Distorted Face Piano Space on X"
   },
   "skills": [
     {
@@ -43,6 +46,16 @@
     }
   ],
   "artifacts": [
+    {
+      "label": "Distorted Face Piano Space on X (@jk_drq)",
+      "href": "https://x.com/i/spaces/1dKrPPWnNDzJX",
+      "kind": "video"
+    },
+    {
+      "label": "Piano Spaces proof notes",
+      "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/proof/jk-drq-piano-spaces.md",
+      "kind": "proof"
+    },
     {
       "label": "Offline validation receipt",
       "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/proof/offline-validation.md",
@@ -82,6 +95,11 @@
       "label": "Package README",
       "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/README.md",
       "kind": "docs"
+    },
+    {
+      "label": "Public contribution PR",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/pull/94",
+      "kind": "docs"
     }
   ],
   "soul": {
@@ -90,7 +108,7 @@
   },
   "feedbackPrompts": [
     "Does the phase \u2192 event table match the SDK behavior you see in production?",
-    "Which live proof (testnet job round-trip, CLI companion, or video) would make this migration kit easier to trust?",
+    "Is the @jk_drq Distorted Face Piano Space the right public watch surface, or should we attach a clipped status mp4 instead?",
     "What adapter/bootstrap snippet should we add next for Privy vs raw viem providers?"
   ]
 }

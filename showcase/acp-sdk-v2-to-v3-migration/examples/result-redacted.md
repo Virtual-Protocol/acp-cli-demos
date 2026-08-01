@@ -18,6 +18,7 @@ node scripts/validate-showcase.mjs
 - Showcase validator: **PASS** for slug `acp-sdk-v2-to-v3-migration`
 - Secrets printed: **none**
 - On-chain txs: **none** (offline by design)
+- Public video proof: [@jk_drq Distorted Face Piano Space](https://x.com/i/spaces/1dKrPPWnNDzJX)
 
 ## Migration deltas demonstrated
 
@@ -28,3 +29,7 @@ node scripts/validate-showcase.mjs
 | `FareAmount` | `AssetToken.usdc(amount, chainId)` |
 | `job.deliver` / `job.evaluate` | `session.submit` / `session.complete` |
 | `offering.initiateJob` | `agent.createJobFromOffering` |
+
+## Public PR
+
+https://github.com/Virtual-Protocol/acp-cli-demos/pull/94

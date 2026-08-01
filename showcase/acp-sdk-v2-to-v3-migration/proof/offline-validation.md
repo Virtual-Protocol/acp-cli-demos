@@ -47,3 +47,9 @@ intentionally out of band and requires a human-approved provider adapter.
 ## Public PR
 
 https://github.com/Virtual-Protocol/acp-cli-demos/pull/94
+
+## Public video proof (@jk_drq piano Spaces)
+
+- Primary: https://x.com/i/spaces/1dKrPPWnNDzJX
+- Notes: see `proof/jk-drq-piano-spaces.md`
+- Public PR: https://github.com/Virtual-Protocol/acp-cli-demos/pull/94

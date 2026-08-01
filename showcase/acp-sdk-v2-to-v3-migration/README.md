@@ -107,3 +107,13 @@ cp -R showcase/acp-sdk-v2-to-v3-migration/skills/acp-sdk-v2-to-v3-migration ~/.c
 
 See [`proof/offline-validation.md`](proof/offline-validation.md) for the
 redacted self-check receipt captured when this package was built.
+
+## Public video proof
+
+Builder X identity: [@jk_drq](https://x.com/jk_drq)
+
+Primary piano Space used as the showcase watch link:
+
+- **Distorted Face Piano** — [https://x.com/i/spaces/1dKrPPWnNDzJX](https://x.com/i/spaces/1dKrPPWnNDzJX)
+
+Spaces are linked via `links.video` (public X page). There is no stable public `video.twimg.com` mp4 for Spaces replays, so `visual.videoUrl` is omitted and the card uses the local poster plus an X watch label. Details: [`proof/jk-drq-piano-spaces.md`](proof/jk-drq-piano-spaces.md).

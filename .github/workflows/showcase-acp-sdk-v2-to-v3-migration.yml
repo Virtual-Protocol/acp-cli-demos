@@ -1,0 +1,106 @@
+name: showcase acp-sdk-v2-to-v3-migration
+
+on:
+  pull_request:
+    paths:
+      - 'showcase/acp-sdk-v2-to-v3-migration/**'
+      - '.github/workflows/showcase-acp-sdk-v2-to-v3-migration.yml'
+  push:
+    branches:
+      - main
+      - 'feat/acp-sdk-v2-to-v3-migration'
+    paths:
+      - 'showcase/acp-sdk-v2-to-v3-migration/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: showcase-acp-sdk-v2-to-v3-migration-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package-check:
+    name: package self-check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Report contributor association
+        env:
+          GH_ASSOCIATION: ${{ github.event.pull_request.author_association || 'N/A' }}
+          DECLARED_ASSOCIATION: champion
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "github author_association : ${GH_ASSOCIATION}"
+          echo "declared association      : ${DECLARED_ASSOCIATION}"
+          {
+            echo "### Contributor association"
+            echo ""
+            echo "| field | value |"
+            echo "| --- | --- |"
+            echo "| github \`author_association\` | \`${GH_ASSOCIATION}\` |"
+            echo "| declared (manifest \`builder.association\`) | \`${DECLARED_ASSOCIATION}\` |"
+            echo ""
+            echo "\`author_association\` is derived by GitHub from repository permissions and"
+            echo "cannot be set by a contributor. \`champion\` is a manifest-level declaration only."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Assert declared association is champion
+        shell: bash
+        run: |
+          set -euo pipefail
+          manifest=showcase/acp-sdk-v2-to-v3-migration/showcase.json
+          declared="$(node -e "const m=require('./'+process.argv[1]);process.stdout.write(String(m.builder&&m.builder.association))" "$manifest")"
+          echo "builder.association = ${declared}"
+          test "${declared}" = "champion"
+
+      - name: Validate showcase manifests
+        run: node scripts/validate-showcase.mjs
+
+      - name: Syntax-check package sources
+        working-directory: showcase/acp-sdk-v2-to-v3-migration
+        run: |
+          set -euo pipefail
+          node --check examples/v3-provider.mjs
+          node --check examples/v3-client.mjs
+          node --check examples/phase-event-map.mjs
+          node --check examples/v2-provider.legacy.mjs
+
+      - name: Run package offline self-check
+        working-directory: showcase/acp-sdk-v2-to-v3-migration
+        run: npm run check
+
+      - name: Assert skill is installable
+        shell: bash
+        run: |
+          set -euo pipefail
+          skill=showcase/acp-sdk-v2-to-v3-migration/skills/acp-sdk-v2-to-v3-migration
+          test -f "${skill}/SKILL.md"
+          tmp_home="$(mktemp -d)"
+          mkdir -p "${tmp_home}/.agents/skills" "${tmp_home}/.claude/skills"
+          cp -R "${skill}" "${tmp_home}/.agents/skills/"
+          cp -R "${skill}" "${tmp_home}/.claude/skills/"
+          test -f "${tmp_home}/.agents/skills/acp-sdk-v2-to-v3-migration/SKILL.md"
+          test -f "${tmp_home}/.claude/skills/acp-sdk-v2-to-v3-migration/SKILL.md"
+          rm -rf "${tmp_home}"
+
+      - name: Assert proof artifacts present
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd showcase/acp-sdk-v2-to-v3-migration
+          test -f proof/jk-drq-piano-spaces.md
+          test -f proof/offline-validation.md
+          test -f proof/telegram-qchaingoldbot.md
+          test -f assets/poster.png
+          test -f soul.md

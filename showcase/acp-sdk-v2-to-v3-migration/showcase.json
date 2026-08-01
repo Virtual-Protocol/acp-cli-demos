@@ -17,7 +17,8 @@
   ],
   "builder": {
     "name": "Dr. Q (@jk_drq) / Qchain",
-    "url": "https://x.com/jk_drq"
+    "url": "https://x.com/jk_drq",
+    "association": "champion"
   },
   "links": {
     "repo": "https://github.com/drQedwards/acp-cli-demos/tree/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration",

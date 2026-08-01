@@ -1,0 +1,13 @@
+{
+  "name": "acp-sdk-v2-to-v3-migration",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "check": "node --check examples/v3-provider.mjs && node --check examples/v3-client.mjs && node --check examples/phase-event-map.mjs && node scripts/print-migration-map.mjs && node scripts/self-check.mjs",
+    "map": "node scripts/print-migration-map.mjs",
+    "self-check": "node scripts/self-check.mjs"
+  }
+}

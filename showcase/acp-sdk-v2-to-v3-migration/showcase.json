@@ -18,9 +18,9 @@
     "url": "https://github.com/Virtual-Protocol/acp-cli-demos"
   },
   "links": {
-    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-sdk-v2-to-v3-migration",
-    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-sdk-v2-to-v3-migration/examples",
-    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-sdk-v2-to-v3-migration",
+    "repo": "https://github.com/drQedwards/acp-cli-demos/tree/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration",
+    "demo": "https://github.com/drQedwards/acp-cli-demos/tree/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/examples",
+    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/pull/94",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20ACP%20SDK%20v2%20to%20v3%20Migration"
   },
   "primitives": [
@@ -31,12 +31,12 @@
     "kind": "migration kit card",
     "eyebrow": "sdk + acp-cli",
     "title": "v2 callbacks \u2192 v3 entry events",
-    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/acp-sdk-v2-to-v3-migration/assets/poster.png"
+    "posterUrl": "https://raw.githubusercontent.com/drQedwards/acp-cli-demos/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/assets/poster.png"
   },
   "skills": [
     {
       "name": "acp-sdk-v2-to-v3-migration",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-sdk-v2-to-v3-migration/skills/acp-sdk-v2-to-v3-migration",
+      "href": "https://github.com/drQedwards/acp-cli-demos/tree/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/skills/acp-sdk-v2-to-v3-migration",
       "sourcePath": "showcase/acp-sdk-v2-to-v3-migration/skills/acp-sdk-v2-to-v3-migration",
       "summary": "Step-by-step rewrite from AcpClient two-callback jobs to AcpAgent entry events, AssetToken budgets, and session lifecycle actions, with offline validation gates.",
       "install": "cp -R showcase/acp-sdk-v2-to-v3-migration/skills/acp-sdk-v2-to-v3-migration ~/.agents/skills/\ncp -R showcase/acp-sdk-v2-to-v3-migration/skills/acp-sdk-v2-to-v3-migration ~/.claude/skills/"
@@ -45,47 +45,47 @@
   "artifacts": [
     {
       "label": "Offline validation receipt",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sdk-v2-to-v3-migration/proof/offline-validation.md",
+      "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/proof/offline-validation.md",
       "kind": "proof"
     },
     {
       "label": "Redacted result report",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sdk-v2-to-v3-migration/examples/result-redacted.md",
+      "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/examples/result-redacted.md",
       "kind": "proof"
     },
     {
       "label": "Demo prompt",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sdk-v2-to-v3-migration/examples/prompt.md",
+      "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/examples/prompt.md",
       "kind": "prompt"
     },
     {
       "label": "v3 provider skeleton",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sdk-v2-to-v3-migration/examples/v3-provider.mjs",
+      "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/examples/v3-provider.mjs",
       "kind": "code"
     },
     {
       "label": "v3 client skeleton",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sdk-v2-to-v3-migration/examples/v3-client.mjs",
+      "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/examples/v3-client.mjs",
       "kind": "code"
     },
     {
       "label": "Phase \u2192 event map",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sdk-v2-to-v3-migration/examples/phase-event-map.mjs",
+      "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/examples/phase-event-map.mjs",
       "kind": "code"
     },
     {
       "label": "Reusable migration skill",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-sdk-v2-to-v3-migration/skills/acp-sdk-v2-to-v3-migration",
+      "href": "https://github.com/drQedwards/acp-cli-demos/tree/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/skills/acp-sdk-v2-to-v3-migration",
       "kind": "skill"
     },
     {
       "label": "Package README",
-      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sdk-v2-to-v3-migration/README.md",
+      "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/README.md",
       "kind": "docs"
     }
   ],
   "soul": {
-    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/acp-sdk-v2-to-v3-migration/soul.md",
+    "href": "https://github.com/drQedwards/acp-cli-demos/blob/feat/acp-sdk-v2-to-v3-migration/showcase/acp-sdk-v2-to-v3-migration/soul.md",
     "summary": "Public redacted operating rules for an SDK migration desk: offline-first, no key material, exact fund matching."
   },
   "feedbackPrompts": [

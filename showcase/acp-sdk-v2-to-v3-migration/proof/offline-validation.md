@@ -43,3 +43,7 @@ node scripts/validate-showcase.mjs
 This proof validates **migration helper correctness and showcase packaging**.
 It does **not** claim a live mainnet job round-trip. Live verification is
 intentionally out of band and requires a human-approved provider adapter.
+
+## Public PR
+
+https://github.com/Virtual-Protocol/acp-cli-demos/pull/94

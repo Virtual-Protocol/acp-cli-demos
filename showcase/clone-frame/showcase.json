@@ -1,0 +1,57 @@
+{
+  "slug": "clone-frame",
+  "title": "CLONE FRAME HUB",
+  "tagline": "Turns one HTML file plus a local daemon into a desktop for agents — real terminals, an in-app browser, a wallet, and a resident pi coding agent skilled in acp-cli",
+  "description": "CLONE FRAME HUB is a local-first desktop app for working with AI agents: a single-file index.html plus a local Node bridge daemon, installed by double-click, strictly BYOK and model-agnostic — Virtuals EconomyOS Compute works as a drop-in provider. The resident pi coding agent gets a body inside the app: PTY terminals, an in-app browser, panel and file control, a wallet with iNFT support, and bundled skills for acp-cli and on-chain work. Everything is inspectable: public source, a v0.4.1 release with SHA-256 sums, and a 1:21 tour video captured from the running app.",
+  "status": "live",
+  "topic": "agents",
+  "topics": ["desktop", "byok", "developer-tools", "terminal", "inft"],
+  "builder": {
+    "name": "devclone20",
+    "url": "https://github.com/devclone20"
+  },
+  "links": {
+    "repo": "https://github.com/devclone20/cloneframe_app_executable",
+    "demo": "https://github.com/devclone20/cloneframe_app_executable/releases/latest",
+    "share": "https://cloneframe.io",
+    "video": "https://raw.githubusercontent.com/devclone20/cloneframe_app_executable/main/docs/media/CLONE_FRAME_TOUR.mp4",
+    "feedback": "https://github.com/devclone20/cloneframe_app_executable/issues/new?title=Feedback%3A%20CLONE%20FRAME%20HUB&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20I%20want%20to%20run%20it%20as%20my%20daily%20driver%0A-%20I%20want%20the%20resident%20agent%20to%20drive%20more%20tools%0A-%20I%20want%20to%20plug%20in%20a%20different%20model%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["wallet", "acp"],
+  "visual": {
+    "kind": "app demo video",
+    "eyebrow": "desktop · one file + local daemon",
+    "title": "a desktop body for agents",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/clone-frame/assets/poster.jpg",
+    "videoUrl": "https://raw.githubusercontent.com/devclone20/cloneframe_app_executable/main/docs/media/CLONE_FRAME_TOUR.mp4",
+    "videoLabel": "Watch the 1:21 demo"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "Tour video (1:21)",
+      "href": "https://raw.githubusercontent.com/devclone20/cloneframe_app_executable/main/docs/media/CLONE_FRAME_TOUR.mp4",
+      "kind": "video"
+    },
+    {
+      "label": "v0.4.1 release — app zip, bare HTML, SHA256SUMS",
+      "href": "https://github.com/devclone20/cloneframe_app_executable/releases/latest",
+      "kind": "demo"
+    },
+    {
+      "label": "Source repository — bridge daemon, panels, bundled agent skills",
+      "href": "https://github.com/devclone20/cloneframe_app_executable",
+      "kind": "proof"
+    },
+    {
+      "label": "Project site",
+      "href": "https://cloneframe.io",
+      "kind": "page"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which tool should the resident pi agent learn to drive next?",
+    "Would you run this as your daily driver — and what is missing for that?",
+    "Which model or provider should the BYOK picker support out of the box?"
+  ]
+}

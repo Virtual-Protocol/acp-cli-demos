@@ -1,0 +1,8 @@
+receipt:  /home/user/workspace/acp-cli-demos/showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt/examples/receipt.json
+jwks_url: https://agentoracle.co/.well-known/jwks.json
+
+=== VerifyResult ===
+  canonical_sha256:  sha256-b9cf4e4afbee83cfd110c7923c6adff68a70487fb2cc7053fcb203e898afd695
+  valid:             True
+  checks:            {'canonical_recomputes': True, 'all_signatures_verified': True}
+  signers:           [{'kid': 'ao-composed-2026-07-ed25519-3d44ba27', 'issuer': 'https://agentoracle.co/.well-known/jwks.json', 'verified': True}]

@@ -1,0 +1,81 @@
+{
+  "slug": "agentoracle-verifiable-delivery",
+  "title": "AgentOracle Verifiable Delivery",
+  "tagline": "An ACP transaction outcome becomes a signed evidence artifact any third party can verify offline",
+  "description": "This showcase packages a live AgentOracle receipt against an ACP-shaped delivery claim: the exact request sent to the live production gateway, the JWS General Serialization envelope returned, and a reference verifier that runs offline against the published JWKS. The receipt is content-addressed (RFC 8785 JCS + Ed25519), so two agents who later disagree about what happened — or any neutral auditor with no AgentOracle account — can independently confirm the settlement at the byte level.",
+  "status": "validated demo",
+  "topic": "commerce",
+  "topics": ["commerce", "acp", "verification", "receipts", "settlement", "security"],
+  "builder": {
+    "name": "TK Collective",
+    "url": "https://github.com/TKCollective"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos",
+    "demo": "https://agentoracle.co",
+    "share": "https://agentoracle.co/changelog",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20AgentOracle%20Verifiable%20Delivery&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Which%20of%20your%20ACP%20flows%20would%20benefit%20most%20from%20settlement-grade%20evidence%3F%0A-%20What%20additional%20adversarial%20checks%20would%20you%20want%20in%20the%20v_gate%20pipeline%3F%0A-%20Would%20you%20use%20this%20as%20a%20co-issuer%20%28append%20your%20own%20signature%29%20or%20as%20a%20standalone%20reference%3F%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["acp"],
+  "visual": {
+    "kind": "receipt verification demo",
+    "eyebrow": "acp + agentoracle",
+    "title": "verifiable delivery"
+  },
+  "skills": [
+    {
+      "name": "agentoracle-signed-receipt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt",
+      "sourcePath": "showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt",
+      "summary": "Reusable ACP-outcome evidence workflow: caller computes a v_gate result, AgentOracle signs a JWS composed envelope binding claim_hash + skill_hash + v_gate + mapping_hash, downstream verifiers verify offline against the published JWKS. Ed25519 + RFC 8785 JCS + RFC 7515 JWS.",
+      "install": "# Verify a received receipt (any language)\npip install agentoracle-receipt-verify\n\n# Issue a new receipt (requires paid AgentOracle key)\nexport AO_API_KEY=<your $99/mo key from https://agentoracle.co/register>"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Signed receipt (live production issuance)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt/examples/receipt.json",
+      "kind": "proof"
+    },
+    {
+      "label": "Verifier output (VALID against live JWKS)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt/examples/verify-output.txt",
+      "kind": "proof"
+    },
+    {
+      "label": "Redacted run report",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt/examples/result-redacted.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo prompt and reproduction steps",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt/examples/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Skill source (SKILL.md)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt/SKILL.md",
+      "kind": "skill"
+    },
+    {
+      "label": "Offline reference verifier (PyPI)",
+      "href": "https://pypi.org/project/agentoracle-receipt-verify/",
+      "kind": "verifier"
+    },
+    {
+      "label": "Receipt format specification (IETF Internet-Draft)",
+      "href": "https://datatracker.ietf.org/doc/draft-krausz-verification-state",
+      "kind": "spec"
+    },
+    {
+      "label": "Open draft under review — v0.4 (sealed evidence + multi-clock anchors), not part of this demo",
+      "href": "https://github.com/TKCollective/agentoracle-receipt-spec/pull/5",
+      "kind": "draft"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which of your ACP flows would benefit most from settlement-grade evidence?",
+    "What additional adversarial checks would you want in the v_gate pipeline?",
+    "Would you use this as a co-issuer (append your own signature) or as a standalone reference?"
+  ]
+}

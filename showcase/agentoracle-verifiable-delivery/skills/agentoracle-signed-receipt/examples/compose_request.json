@@ -1,0 +1,13 @@
+{
+  "subject": {
+    "claim_hash": "sha256-4ecb7096fdfeff23ee1ea86d8c906bf45777beb9ec6d1f039c65badfbdec037e",
+    "skill_hash": "sha256-20b1be1fef665c5fe49345e5ec1bcb64ee00daf7533fc14f0e552160fbcef336"
+  },
+  "v_gate": {
+    "verdict": "act",
+    "v_confidence": 0.95,
+    "v_gate_threshold": 0.7,
+    "v_adversarial_result": "resilient",
+    "v_recommendation": "confident_supported"
+  }
+}

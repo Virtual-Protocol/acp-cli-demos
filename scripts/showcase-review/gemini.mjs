@@ -144,6 +144,14 @@ Output rules:
   literal replacement text that will land if the author clicks Apply, so it must
   be valid content for that file (valid JSON with no comments or trailing commas
   for showcase.json). Keep advice prose out of the suggestion itself.
+- EVERY finding must actually reach the contributor: state it in overview_comment,
+  or emit it as an inline_suggestions entry, or both. The blockers/should_fix/minor
+  arrays are a summary for the maintainer — they are NOT shown to the author, so a
+  finding that exists only there is a finding you failed to deliver.
+- Only refer to inline comments ("left some suggestions inline") when
+  inline_suggestions is actually non-empty. If you cannot anchor a fix to a changed
+  line, write it out in overview_comment instead of promising a comment you did not
+  leave.
 - Report anything you could not verify as unverified rather than guessing.
 - You are advisory only. Never claim to approve, block, or merge.`
 }

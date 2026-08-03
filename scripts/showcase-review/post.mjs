@@ -31,8 +31,48 @@ async function find_existing_comment({ base_repo, pr_number, token }) {
   return null
 }
 
-function build_body({ review, model, head_sha, is_refresh, unapplyable }) {
+// A finding listed only in blockers/should_fix/minor never reaches the author — those
+// arrays are a maintainer summary, not comment text. If the overview didn't carry the
+// findings and there are no inline suggestions either, they'd be silently dropped, so
+// append them rather than trusting the model to have written them out.
+function find_undelivered_findings({ review, has_inline }) {
+  const overview = (review.overview_comment ?? '').toLowerCase()
+  const groups = [
+    ['Blocker', review.blockers],
+    ['Should fix', review.should_fix],
+    ['Minor', review.minor],
+  ]
+
+  const missing = []
+  for (const [label, items] of groups) {
+    for (const item of Array.isArray(items) ? items : []) {
+      if (typeof item !== 'string' || !item.trim()) continue
+      // Cheap containment check: compare the finding's distinctive words against the
+      // overview, so a reworded-but-present finding isn't duplicated.
+      const words = item
+        .toLowerCase()
+        .split(/[^a-z0-9_.-]+/)
+        .filter((word) => word.length > 4)
+      const overlap = words.filter((word) => overview.includes(word)).length
+      const covered = words.length > 0 && overlap / words.length >= 0.5
+      if (!covered) missing.push({ label, item })
+    }
+  }
+
+  // With inline suggestions present the author does get line-level feedback, so only
+  // surface findings that look genuinely absent from everywhere.
+  return has_inline ? missing.filter((entry) => entry.label === 'Blocker') : missing
+}
+
+function build_body({ review, model, head_sha, is_refresh, unapplyable, has_inline }) {
   const parts = [MARKER, review.overview_comment.trim()]
+
+  const undelivered = find_undelivered_findings({ review, has_inline })
+  if (undelivered.length) {
+    parts.push(
+      `**Also flagged:**\n${undelivered.map((entry) => `- *${entry.label}:* ${entry.item}`).join('\n')}`,
+    )
+  }
 
   // Suggestions that could not be anchored inline still get surfaced, just without
   // an Apply button (a suggestion block only becomes applyable as an inline review
@@ -111,6 +151,20 @@ async function post_inline_suggestions({ base_repo, pr_number, token, head_sha, 
   return { posted: 0, rejected: suggestions }
 }
 
+// What a dry run prints, so the log matches what would actually be posted rather than
+// just the model's raw prose.
+export function preview_body({ review, model, head_sha }) {
+  const suggestions = Array.isArray(review.inline_suggestions) ? review.inline_suggestions : []
+  return build_body({
+    review,
+    model,
+    head_sha,
+    is_refresh: false,
+    unapplyable: [],
+    has_inline: suggestions.length > 0,
+  })
+}
+
 export async function post_review({ base_repo, pr_number, token, head_sha, review, model }) {
   const existing = await find_existing_comment({ base_repo, pr_number, token })
   const suggestions = Array.isArray(review.inline_suggestions) ? review.inline_suggestions : []
@@ -137,6 +191,8 @@ export async function post_review({ base_repo, pr_number, token, head_sha, revie
     head_sha,
     is_refresh: Boolean(existing),
     unapplyable,
+    // Suggestions that fell back into the body still count as delivered feedback.
+    has_inline: suggestions.length > 0,
   })
 
   const comment = await upsert_overview({ base_repo, pr_number, token, body, existing })

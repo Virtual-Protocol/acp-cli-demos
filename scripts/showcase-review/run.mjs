@@ -22,7 +22,7 @@ import fs from 'node:fs'
 import process from 'node:process'
 import { gather_evidence, list_open_prs } from './gather.mjs'
 import { request_review } from './gemini.mjs'
-import { post_review } from './post.mjs'
+import { post_review, preview_body } from './post.mjs'
 
 function require_env(name) {
   const value = process.env[name]
@@ -110,10 +110,12 @@ async function review_one_pr({
 
   if (dry_run) {
     console.log('\n--- DRY RUN: body that would be posted ---\n')
-    console.log(review.overview_comment)
+    console.log(preview_body({ review, model, head_sha: evidence.head_sha }))
     if (review.inline_suggestions?.length) {
-      console.log('\n--- inline suggestions ---')
+      console.log(`\n--- ${review.inline_suggestions.length} inline suggestion(s) ---`)
       console.log(JSON.stringify(review.inline_suggestions, null, 2))
+    } else {
+      console.log('\n--- no inline suggestions ---')
     }
     console.log('\n--- end dry run ---\n')
     return 'reviewed'

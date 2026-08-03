@@ -22,7 +22,7 @@ import fs from 'node:fs'
 import process from 'node:process'
 import { gather_evidence, list_open_prs } from './gather.mjs'
 import { request_review } from './gemini.mjs'
-import { post_review, preview_body } from './post.mjs'
+import { post_review, preview_body, screen_suggestions } from './post.mjs'
 
 function require_env(name) {
   const value = process.env[name]
@@ -109,13 +109,29 @@ async function review_one_pr({
   )
 
   if (dry_run) {
+    const screened = screen_suggestions({
+      suggestions: review.inline_suggestions ?? [],
+      package_files: evidence.package_files,
+      baseline_passed: evidence.validator.passed,
+    })
     console.log('\n--- DRY RUN: body that would be posted ---\n')
-    console.log(preview_body({ review, model, head_sha: evidence.head_sha }))
-    if (review.inline_suggestions?.length) {
-      console.log(`\n--- ${review.inline_suggestions.length} inline suggestion(s) ---`)
-      console.log(JSON.stringify(review.inline_suggestions, null, 2))
+    console.log(
+      preview_body({
+        review,
+        model,
+        head_sha: evidence.head_sha,
+        package_files: evidence.package_files,
+        baseline_passed: evidence.validator.passed,
+      }),
+    )
+    for (const item of screened.rejected) {
+      console.log(`\n[dropped] ${item.path}:${item.line} — ${item.reason}`)
+    }
+    if (screened.kept.length) {
+      console.log(`\n--- ${screened.kept.length} inline suggestion(s) that would post ---`)
+      console.log(JSON.stringify(screened.kept, null, 2))
     } else {
-      console.log('\n--- no inline suggestions ---')
+      console.log('\n--- no inline suggestions would post ---')
     }
     console.log('\n--- end dry run ---\n')
     return 'reviewed'
@@ -128,6 +144,8 @@ async function review_one_pr({
     head_sha: evidence.head_sha,
     review,
     model,
+    package_files: evidence.package_files,
+    baseline_passed: evidence.validator.passed,
   })
   console.log(`  ${result.updated ? 'Updated' : 'Posted'}: ${result.url}`)
   return 'reviewed'

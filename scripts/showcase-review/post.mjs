@@ -3,6 +3,9 @@
 // Deliberately limited: event is always COMMENT. This never approves, never
 // requests changes, and never merges.
 
+import process from 'node:process'
+import { run_validator } from './gather.mjs'
+
 const GITHUB_API = 'https://api.github.com'
 const MARKER = '<!-- showcase-auto-review:v1 -->'
 
@@ -29,6 +32,83 @@ async function find_existing_comment({ base_repo, pr_number, token }) {
     if (comments.length < 100) return null
   }
   return null
+}
+
+// A GitHub suggestion block is committed verbatim when the author clicks Apply, so a
+// mis-anchored one silently corrupts the file. Simulate the apply and drop anything
+// that doesn't survive it. This has caught real damage: suggestions aimed at a line
+// number the model estimated rather than read, which would have replaced an unrelated
+// key and left the manifest invalid.
+export function screen_suggestions({
+  suggestions,
+  package_files,
+  repo_root = process.cwd(),
+  // Only meaningful if the PR validates to begin with; otherwise a failure after
+  // patching can't be blamed on the suggestion.
+  baseline_passed = false,
+}) {
+  const by_path = new Map(
+    package_files.filter((file) => typeof file.text === 'string').map((file) => [file.path, file.text]),
+  )
+
+  const kept = []
+  const rejected = []
+
+  for (const item of suggestions) {
+    const reject = (reason) => rejected.push({ ...item, reason })
+
+    if (!item?.path || !item?.suggestion || !Number.isInteger(item.line) || item.line < 1) {
+      reject('missing path, line, or suggestion')
+      continue
+    }
+
+    const original = by_path.get(item.path)
+    if (original === undefined) {
+      reject('file is not among the PR files that were read')
+      continue
+    }
+
+    const lines = original.split('\n')
+    if (item.line > lines.length) {
+      reject(`line ${item.line} is past the end of the file (${lines.length} lines)`)
+      continue
+    }
+
+    if (lines[item.line - 1] === item.suggestion) {
+      reject('suggestion is identical to the current line')
+      continue
+    }
+
+    // Only JSON can be mechanically verified; markdown is judgement, so let it through.
+    if (item.path.endsWith('.json')) {
+      const patched = [...lines.slice(0, item.line - 1), item.suggestion, ...lines.slice(item.line)].join('\n')
+      try {
+        JSON.parse(patched)
+      } catch (error) {
+        reject(`applying it would break the JSON: ${error.message}`)
+        continue
+      }
+
+      // Valid JSON is not enough. A suggestion anchored to the wrong line can still
+      // parse while quietly deleting a required field — replacing builder.name with a
+      // "topics" line parses fine and loses builder.name. Only the real validator
+      // catches that, so re-run it over the patched manifest.
+      if (baseline_passed && /^showcase\/[^/]+\/showcase\.json$/.test(item.path)) {
+        const patched_files = package_files.map((file) =>
+          file.path === item.path ? { ...file, text: patched } : file,
+        )
+        const result = run_validator({ package_files: patched_files, repo_root })
+        if (!result.passed) {
+          reject(`applying it would fail validation: ${result.output}`)
+          continue
+        }
+      }
+    }
+
+    kept.push(item)
+  }
+
+  return { kept, rejected }
 }
 
 // A finding listed only in blockers/should_fix/minor never reaches the author — those
@@ -153,21 +233,42 @@ async function post_inline_suggestions({ base_repo, pr_number, token, head_sha, 
 
 // What a dry run prints, so the log matches what would actually be posted rather than
 // just the model's raw prose.
-export function preview_body({ review, model, head_sha }) {
-  const suggestions = Array.isArray(review.inline_suggestions) ? review.inline_suggestions : []
+export function preview_body({ review, model, head_sha, package_files = [], baseline_passed = false }) {
+  const { kept } = screen_suggestions({
+    suggestions: Array.isArray(review.inline_suggestions) ? review.inline_suggestions : [],
+    package_files,
+    baseline_passed,
+  })
   return build_body({
     review,
     model,
     head_sha,
     is_refresh: false,
     unapplyable: [],
-    has_inline: suggestions.length > 0,
+    has_inline: kept.length > 0,
   })
 }
 
-export async function post_review({ base_repo, pr_number, token, head_sha, review, model }) {
+export async function post_review({
+  base_repo,
+  pr_number,
+  token,
+  head_sha,
+  review,
+  model,
+  package_files = [],
+  baseline_passed = false,
+}) {
   const existing = await find_existing_comment({ base_repo, pr_number, token })
-  const suggestions = Array.isArray(review.inline_suggestions) ? review.inline_suggestions : []
+  const screened = screen_suggestions({
+    suggestions: Array.isArray(review.inline_suggestions) ? review.inline_suggestions : [],
+    package_files,
+    baseline_passed,
+  })
+  for (const item of screened.rejected) {
+    console.log(`  Dropped suggestion for ${item.path}:${item.line} — ${item.reason}`)
+  }
+  const suggestions = screened.kept
 
   let unapplyable = []
   if (!existing && suggestions.length) {

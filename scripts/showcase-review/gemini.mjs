@@ -62,12 +62,19 @@ function render_evidence(evidence) {
     )
   }
 
+  // Line numbers are prefixed so inline suggestions can be anchored to a real line.
+  // Without them the model guesses, and a suggestion aimed at the wrong line corrupts
+  // the file when the author clicks Apply.
   const file_blocks = package_files
     .map((file) => {
       if (file.binary) return `### ${file.path} (${file.status})\n[binary or non-text file — path only]`
       if (file.unavailable) return `### ${file.path} (${file.status})\n[could not fetch: ${file.unavailable}]`
+      const numbered = file.text
+        .split('\n')
+        .map((line, index) => `${index + 1}: ${line}`)
+        .join('\n')
       const truncated = file.truncated ? '\n[...truncated...]' : ''
-      return `### ${file.path} (${file.status})\n\`\`\`\n${file.text}${truncated}\n\`\`\``
+      return `### ${file.path} (${file.status})\n(each line is prefixed "<line number>: " — the prefix is NOT part of the file)\n\`\`\`\n${numbered}${truncated}\n\`\`\``
     })
     .join('\n\n')
 
@@ -139,11 +146,18 @@ Output rules:
 - overview_comment is the markdown body that will be posted as a single PR
   comment. Write it in the rubric's voice. Do not include a greeting header, an
   approval, or any request to merge.
-- Put line-anchored fixes in inline_suggestions. "line" must be a line number in
-  the NEW version of that file that the PR actually changed. "suggestion" is the
-  literal replacement text that will land if the author clicks Apply, so it must
-  be valid content for that file (valid JSON with no comments or trailing commas
-  for showcase.json). Keep advice prose out of the suggestion itself.
+- Put line-anchored fixes in inline_suggestions. "line" is the number shown in the
+  file listing for the exact line your suggestion REPLACES — read it off the listing,
+  never estimate it. "suggestion" replaces that whole line, so it must include the
+  same indentation and trailing comma the original had, and the file must still parse
+  afterwards (valid JSON, no comments, no trailing commas, no duplicate keys) — a
+  suggestion that breaks the file is worse than no suggestion. Verify by reading the
+  surrounding lines: check the key you are editing is the one on that line and that
+  it sits in the object you think it does. If a fix spans several lines that are not
+  contiguous, describe it in prose instead. Keep advice prose out of the suggestion.
+- Do not claim a field is deprecated, required, or disallowed unless the rubric or
+  the validator output in the evidence says so. Both "topic" (a single string) and
+  "topics" (an array) are currently required by the validator.
 - EVERY finding must actually reach the contributor: state it in overview_comment,
   or emit it as an inline_suggestions entry, or both. The blockers/should_fix/minor
   arrays are a summary for the maintainer — they are NOT shown to the author, so a

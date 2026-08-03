@@ -1,0 +1,80 @@
+name: Showcase PR Auto-Review
+
+# Advisory pre-review for showcase contribution PRs. Posts (or updates) a single
+# comment so a human reviewer starts from a first pass instead of a blank page.
+# It NEVER approves, never requests changes, and never merges.
+#
+# Uses pull_request_target so fork PRs still get a review comment (fork PRs on the
+# plain pull_request event get a read-only token and no secrets). SECURITY: this
+# workflow therefore checks out the BASE commit only and never executes any file
+# from the PR head. Contributor files are fetched as text through the API, are
+# treated as untrusted data, and are only ever read.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'showcase/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+# One review per PR at a time; a new push supersedes an in-flight run.
+concurrency:
+  group: showcase-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    name: Draft advisory review
+    runs-on: ubuntu-latest
+
+    steps:
+      # Base commit only. Never `ref: pull_request.head.sha` here — that would put
+      # contributor-controlled code in a job that holds secrets and write access.
+      - name: Checkout base commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # The rubric lives in the private devrel repo, so it needs a read-only
+      # cross-repo token. If the token is missing or expired we fail loudly rather
+      # than silently reviewing against no rubric.
+      - name: Fetch review rubric
+        env:
+          DEVREL_SKILL_TOKEN: ${{ secrets.DEVREL_SKILL_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DEVREL_SKILL_TOKEN}" ]; then
+            echo "::error::DEVREL_SKILL_TOKEN is not set — cannot fetch the review rubric."
+            exit 1
+          fi
+          mkdir -p .review-rubric
+          http_code="$(curl -sS -o .review-rubric/SKILL.md -w '%{http_code}' \
+            -H "Authorization: Bearer ${DEVREL_SKILL_TOKEN}" \
+            -H "Accept: application/vnd.github.raw" \
+            "https://api.github.com/repos/game-by-virtuals/devrel/contents/skills/review-showcase-pr/SKILL.md?ref=main")"
+          if [ "${http_code}" != "200" ]; then
+            echo "::error::Rubric fetch failed with HTTP ${http_code}. Check DEVREL_SKILL_TOKEN scope/expiry."
+            exit 1
+          fi
+          echo "Rubric fetched ($(wc -c < .review-rubric/SKILL.md) bytes)."
+
+      - name: Review and post
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-pro
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUBRIC_PATH: .review-rubric/SKILL.md
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          BASE_REPO: ${{ github.repository }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: node scripts/showcase-review/run.mjs

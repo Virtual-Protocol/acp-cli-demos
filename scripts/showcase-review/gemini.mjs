@@ -109,6 +109,15 @@ ${url_lines}
 
 ## Secret scan hits
 ${secret_hits.length ? secret_hits.map((hit) => `- ${hit.path}: ${hit.kind}`).join('\n') : '- none'}
+NOTE: this scan is a crude keyword heuristic, NOT a verified finding. On-chain
+identifiers (transaction hashes, EAS attestation and schema UIDs, block and
+deliverable hashes, hex-encoded strings) share the shape of a private key and are the
+normal, expected content of this repo. Before mentioning a hit at all, look at the
+actual value in the file contents above and decide what it really is. If it is an
+identifier in a URL or labelled as a hash/UID/tx, say nothing about it. Only if a
+value is genuinely key-shaped AND presented as a credential should you raise it — and
+then ask the author to confirm rather than asserting a leak, and do not tell anyone to
+rewrite git history.
 
 ## Contributor file contents
 ${file_blocks || '[no text files read]'}`

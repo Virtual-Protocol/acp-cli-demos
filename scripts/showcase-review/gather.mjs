@@ -329,17 +329,45 @@ export async function check_urls(urls, { head_repo, head_sha, token } = {}) {
   return checks
 }
 
+// A bare 0x + 64 hex is NOT evidence of a private key. Transaction hashes, EAS
+// attestation and schema UIDs, block hashes, deliverable hashes and hex-encoded
+// strings are all exactly that shape — and they are the entire point of this repo, so
+// matching on shape alone flags every genuine proof artifact. (Measured on PR #95: six
+// hits, all of them attestation UIDs, tx hashes or a hex-encoded "Approved".)
+//
+// So require key-ish wording near the value, and stand down when the surrounding text
+// names a known-public identifier or the value sits inside a URL.
+const SECRET_CONTEXT = /(private[_\s-]?key|privkey|secret[_\s-]?key|seed[_\s-]?phrase|mnemonic)/i
+const PUBLIC_IDENTIFIER = /(tx|transaction|hash|uid|attestation|schema|block|deliverable|receipt|digest|commit|signature|proof|address|wallet)/i
+
+function looks_like_leaked_key(text, match) {
+  const before = text.slice(Math.max(0, match.index - 80), match.index)
+  const after = text.slice(match.index + match[0].length, match.index + match[0].length + 40)
+
+  // Inside a URL it is a public identifier by definition.
+  if (/https?:\/\/\S*$/.test(before)) return false
+  if (PUBLIC_IDENTIFIER.test(before) && !SECRET_CONTEXT.test(before)) return false
+  return SECRET_CONTEXT.test(before) || SECRET_CONTEXT.test(after)
+}
+
 export function scan_for_secrets(package_files) {
-  const patterns = [
-    ['raw private key', /0x[a-fA-F0-9]{64}/],
-    ['PRIVATE_KEY assignment', /PRIVATE_KEY\s*[=:]\s*\S+/],
-    ['mnemonic', /\bmnemonic\b\s*[=:]/i],
-  ]
   const hits = []
   for (const file of package_files) {
     if (typeof file.text !== 'string') continue
-    for (const [label, pattern] of patterns) {
-      if (pattern.test(file.text)) hits.push({ path: file.path, kind: label })
+
+    for (const match of file.text.matchAll(/0x[a-fA-F0-9]{64}/g)) {
+      if (looks_like_leaked_key(file.text, match)) {
+        hits.push({ path: file.path, kind: 'possible private key (64-hex next to key wording)' })
+        break
+      }
+    }
+
+    // These two are high-signal on their own: a hash is never introduced this way.
+    if (/PRIVATE_KEY\s*[=:]\s*["']?0x?[a-fA-F0-9]{32,}/i.test(file.text)) {
+      hits.push({ path: file.path, kind: 'PRIVATE_KEY assigned a key-shaped value' })
+    }
+    if (/\b(mnemonic|seed[_\s-]?phrase)\b\s*[=:]\s*["']?(\w+\s+){11,}/i.test(file.text)) {
+      hits.push({ path: file.path, kind: 'mnemonic / seed phrase assignment' })
     }
   }
   return hits

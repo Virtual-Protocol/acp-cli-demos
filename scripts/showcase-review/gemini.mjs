@@ -39,6 +39,29 @@ const REVIEW_SCHEMA = {
 function render_evidence(evidence) {
   const { meta, changed_files, package_files, manifests, validator, url_checks, secret_hits } = evidence
 
+  // Be explicit when the evidence is partial, so the review doesn't imply full
+  // coverage it doesn't have.
+  const coverage_notes = []
+  if (evidence.dropped_count > 0) {
+    coverage_notes.push(
+      `Only ${package_files.length} of ${changed_files.length} changed files were read ` +
+        `(${evidence.dropped_count} beyond the cap). Your view of this PR is PARTIAL — ` +
+        'say so rather than implying you reviewed everything.',
+    )
+  }
+  const unreadable = package_files.filter((file) => file.unavailable)
+  if (unreadable.length) {
+    coverage_notes.push(`${unreadable.length} file(s) could not be fetched and were not reviewed.`)
+  }
+  if (package_files.some((file) => file.truncated)) {
+    coverage_notes.push('Some file contents were truncated; judge those cautiously.')
+  }
+  if (evidence.urls_total > url_checks.length) {
+    coverage_notes.push(
+      `Only ${url_checks.length} of ${evidence.urls_total} URLs were checked; the rest are unverified.`,
+    )
+  }
+
   const file_blocks = package_files
     .map((file) => {
       if (file.binary) return `### ${file.path} (${file.status})\n[binary or non-text file — path only]`
@@ -52,7 +75,7 @@ function render_evidence(evidence) {
     ? url_checks.map((check) => `- ${check.url} → HTTP ${check.status} (${check.verdict})`).join('\n')
     : '- none found'
 
-  return `## PR metadata
+  return `${coverage_notes.length ? `## Coverage limits\n${coverage_notes.map((note) => `- ${note}`).join('\n')}\n\n` : ''}## PR metadata
 - number: ${meta.number}
 - title: ${meta.title}
 - author: ${meta.author}
@@ -125,6 +148,20 @@ Output rules:
 - You are advisory only. Never claim to approve, block, or merge.`
 }
 
+// Gemini errors come back as a nested JSON blob. Across a batch of PRs that's pages
+// of noise, so keep the one line that says what went wrong.
+function summarize_api_error(body) {
+  try {
+    const parsed = JSON.parse(body)
+    const message = parsed?.error?.message
+    const reason = parsed?.error?.details?.find((detail) => detail.reason)?.reason
+    if (message) return reason ? `${message} (${reason})` : message
+  } catch {
+    // not JSON — fall through
+  }
+  return body.replace(/\s+/g, ' ').slice(0, 300)
+}
+
 export async function request_review({ api_key, model, rubric, evidence }) {
   const prompt = build_prompt({ rubric, evidence })
   let last_error
@@ -145,14 +182,12 @@ export async function request_review({ api_key, model, rubric, evidence }) {
       })
 
       if (!response.ok) {
-        const detail = await response.text()
+        const detail = summarize_api_error(await response.text())
         // Rate limits and transient server errors are worth another try.
         if (response.status === 429 || response.status >= 500) {
-          throw new Error(`retryable Gemini ${response.status}: ${detail.slice(0, 400)}`)
+          throw new Error(`retryable Gemini ${response.status}: ${detail}`)
         }
-        throw Object.assign(new Error(`Gemini ${response.status}: ${detail.slice(0, 800)}`), {
-          fatal: true,
-        })
+        throw Object.assign(new Error(`Gemini ${response.status}: ${detail}`), { fatal: true })
       }
 
       const payload = await response.json()

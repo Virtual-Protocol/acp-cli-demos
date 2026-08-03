@@ -52,10 +52,25 @@ export async function fetch_pr_meta({ base_repo, pr_number, token }) {
     author: pr.user?.login ?? 'unknown',
     draft: pr.draft === true,
     head_ref: pr.head?.ref ?? '',
+    // A workflow_dispatch backfill has no PR event payload to read these from, so
+    // they come off the PR itself. head.repo is null when the fork was deleted.
+    head_repo: pr.head?.repo?.full_name ?? '',
+    head_sha: pr.head?.sha ?? '',
+    state: pr.state,
     additions: pr.additions,
     deletions: pr.deletions,
     changed_files: pr.changed_files,
   }
+}
+
+// Open PRs, newest first. The caller still runs each through the normal structural
+// check, so non-showcase PRs cost nothing but a file listing.
+export async function list_open_prs({ base_repo, token }) {
+  const prs = await github_json(
+    `${GITHUB_API}/repos/${base_repo}/pulls?state=open&per_page=100&sort=created&direction=desc`,
+    token,
+  )
+  return prs.map((pr) => ({ number: pr.number, title: pr.title, draft: pr.draft === true }))
 }
 
 export async function fetch_changed_files({ base_repo, pr_number, token }) {
@@ -331,15 +346,21 @@ export function scan_for_secrets(package_files) {
 }
 
 export async function gather_evidence({ base_repo, head_repo, head_sha, pr_number, token, repo_root }) {
-  // Without a head sha every blob fetch 404s, and the run would otherwise sail on to
-  // report a passing validator having read none of the PR's files. Fail loudly.
-  if (!head_sha) throw new Error('head_sha is required — refusing to review without the PR head commit')
-
   const meta = await fetch_pr_meta({ base_repo, pr_number, token })
+
+  // The event payload supplies these on a normal run; a dispatch backfill falls back
+  // to the PR itself. Without a head sha every blob fetch 404s and the run would sail
+  // on to report a passing validator having read none of the PR's files.
+  const resolved_head_sha = head_sha || meta.head_sha
+  const resolved_head_repo = head_repo || meta.head_repo || base_repo
+  if (!resolved_head_sha) {
+    throw new Error('Could not resolve the PR head commit — refusing to review nothing')
+  }
+
   const changed_files = await fetch_changed_files({ base_repo, pr_number, token })
   const { files: package_files, dropped_count } = await fetch_package_files({
-    head_repo: head_repo || base_repo,
-    head_sha,
+    head_repo: resolved_head_repo,
+    head_sha: resolved_head_sha,
     token,
     changed_files,
   })
@@ -350,16 +371,18 @@ export async function gather_evidence({ base_repo, head_repo, head_sha, pr_numbe
   const unreadable = text_candidates.filter((file) => file.unavailable)
   if (text_candidates.length > 0 && unreadable.length === text_candidates.length) {
     throw new Error(
-      `Could not read any of the ${text_candidates.length} text file(s) at ${head_repo || base_repo}@${head_sha.slice(0, 7)} ` +
+      `Could not read any of the ${text_candidates.length} text file(s) at ` +
+        `${resolved_head_repo}@${resolved_head_sha.slice(0, 7)} ` +
         `(first reason: ${unreadable[0].unavailable}). The fork may be deleted or force-pushed.`,
     )
   }
 
   const manifests = find_manifests(changed_files)
   const validator = run_validator({ package_files, repo_root })
-  const url_checks = await check_urls(extract_urls(package_files), {
-    head_repo: head_repo || base_repo,
-    head_sha,
+  const all_urls = extract_urls(package_files)
+  const url_checks = await check_urls(all_urls, {
+    head_repo: resolved_head_repo,
+    head_sha: resolved_head_sha,
     token,
   })
   const secret_hits = scan_for_secrets(package_files)
@@ -370,11 +393,14 @@ export async function gather_evidence({ base_repo, head_repo, head_sha, pr_numbe
 
   return {
     meta,
+    head_repo: resolved_head_repo,
+    head_sha: resolved_head_sha,
     changed_files,
     package_files,
     manifests,
     validator,
     url_checks,
+    urls_total: all_urls.length,
     secret_hits,
     dropped_count,
   }

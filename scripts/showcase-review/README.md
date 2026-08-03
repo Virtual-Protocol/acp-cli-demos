@@ -18,6 +18,31 @@ Two things decide whether a comment actually gets posted:
 2. the model's own `is_showcase_contribution` call, which filters out e.g. a
    maintainer editing showcase tooling rather than adding a package.
 
+Only the first is free; the second costs one model call. Non-showcase PRs are
+normally caught by the first.
+
+## One-off / backfill run
+
+For PRs that were already open before this existed, or to re-review on demand: run
+the workflow manually from **Actions → Showcase PR Auto-Review → Run workflow**.
+
+| Input | Meaning |
+| --- | --- |
+| `pr_numbers` | `all` (every open PR) or a comma-separated list like `97,96,70` |
+| `dry_run` | **Defaults to true.** Prints each review to the job log without posting |
+
+Leave `dry_run` on for the first pass, read the log, then re-run with it off to post.
+A backfill posting to several PRs at once is hard to walk back, so the safe default is
+deliberate.
+
+Backfill behaviour worth knowing:
+
+- PRs are processed **sequentially** — readable logs, no rate-limit surprises.
+- One bad PR (deleted fork, force-push) is reported and skipped; the rest continue.
+  The job only fails if *nothing* succeeded.
+- A PR that already has a bot comment gets that comment **updated**, not duplicated —
+  so re-running a backfill is safe.
+
 ## Pipeline
 
 | Stage | File | What it does |
@@ -63,19 +88,20 @@ cannot change how its own review behaves.
 
 ## Local dry run
 
-Prints the comment instead of posting it:
+Prints the comment instead of posting it. Each PR's head commit is resolved from the
+API, so you only need the PR number:
 
 ```bash
 GEMINI_API_KEY=... \
 GITHUB_TOKEN=$(gh auth token) \
 RUBRIC_PATH=/path/to/devrel/skills/review-showcase-pr/SKILL.md \
 BASE_REPO=Virtual-Protocol/acp-cli-demos \
-PR_NUMBER=97 \
-HEAD_REPO=$(gh pr view 97 --json headRepositoryOwner,headRepository \
-  --jq '.headRepositoryOwner.login + "/" + .headRepository.name') \
-HEAD_SHA=$(gh pr view 97 --json headRefOid --jq .headRefOid) \
+PR_NUMBERS=97,96 \
 DRY_RUN=1 node scripts/showcase-review/run.mjs
 ```
+
+`PR_NUMBERS` accepts `all` too. `PR_NUMBER` (singular) is what the event-driven
+workflow sets; either works.
 
 ## Known limits
 
@@ -84,6 +110,8 @@ DRY_RUN=1 node scripts/showcase-review/run.mjs
 - **Inline suggestions are posted once**, on the first pass. Reviews can't be edited
   in place, so re-posting them per push would stack duplicates — later passes refresh
   the overview comment and fold the suggestions into a collapsed section instead.
-- Caps: 60 files read, 120KB per file, 40 URLs checked. Anything dropped is logged.
+- Caps: 60 files read, 120KB per file, 40 URLs checked. Anything dropped is logged
+  **and stated in the prompt**, so a partial review says it's partial instead of
+  implying full coverage (a 404-file PR is reviewed on 60 files).
 - Runs on every push to a showcase PR. The comment is updated in place rather than
   duplicated, but each push does spend an API call.

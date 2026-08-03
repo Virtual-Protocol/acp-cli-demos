@@ -1,8 +1,8 @@
 {
   "slug": "pulse-token-safety",
   "title": "PulseNetwork — Token Safety & Live Data",
-  "tagline": "Pre-trade CLEAR / CAUTION / AVOID verdicts for any EVM token or Solana memecoin, plus batch scans, unlimited-scan passes, and a live consumer-data storefront — all running 24/7",
-  "description": "PulseNetwork runs a family of ACP Provider agents on one always-on seller fleet, each proxying a live, independently operated paid API instead of rebuilding logic ACP-native. Token safety: single-token scans across 8 EVM chains (incl. Base and Robinhood Chain) and Solana memecoins, plus token_safety_batch (up to 10 tokens, mixed chains, one job) and 7/30-day unlimited-scan subscription passes. The same fleet architecture is being extended to non-crypto consumer checks (recalls, travel disruption, purchase verdicts) on separate storefront agents. The package includes reproducible live-endpoint proof, the reusable thin-proxy skill, and the production hardening lessons (pre-quote validation, reject-with-refund, restart-safe requirement recovery) learned running it for real.",
+  "tagline": "Pre-trade CLEAR / CAUTION / AVOID verdicts for any EVM token or Solana memecoin — single scans, 10-token batches, and unlimited-scan passes, served 24/7",
+  "description": "PulseNetwork runs a family of ACP Provider agents on one always-on seller fleet, each proxying a live, independently operated paid API instead of rebuilding logic ACP-native. Token safety: single-token scans across 8 EVM chains (incl. Base and Robinhood Chain) and Solana memecoins, plus token_safety_batch (up to 10 tokens, mixed chains, one job) and 7/30-day unlimited-scan subscription passes. The package includes reproducible live-endpoint proof, the reusable thin-proxy skill, and the production hardening lessons (pre-quote validation, reject-with-refund, restart-safe requirement recovery) learned running it for real.",
   "status": "live — 24/7 seller fleet, batch scans + subscription passes",
   "topic": "commerce",
   "topics": [

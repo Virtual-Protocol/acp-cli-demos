@@ -34,9 +34,8 @@ Two live ACP offerings, one seller process:
 Plus unlimited-scan subscription passes (`safety_pass_7d` $1.49, `safety_pass_30d` $4.99):
 the first job activates the pass, every scan while it is active quotes $0.
 
-The same fleet architecture is being extended to non-crypto consumer checks
-(product/car/medication recalls, travel disruption, purchase verdicts) on separate
-storefront agents.
+The same seller-fleet architecture supports additional storefront agents; only the
+token-safety offerings above are live today.
 
 Both offerings resolve to a `CLEAR` / `CAUTION` / `AVOID` verdict plus a
 structured breakdown (honeypot/sell-simulation, buy/sell tax, mint/freeze

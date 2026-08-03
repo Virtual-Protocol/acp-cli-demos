@@ -1,0 +1,20 @@
+{
+  "name": "acp-sovereign-connectivity",
+  "version": "0.1.0",
+  "description": "Sovegent Nomad — an ACP provider that sells agents a sovereign network passage (bring-your-own VPN or a managed exit) and returns signed proof of egress. Robinhood Chain + $NMD.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "provider": "tsx src/provider.ts",
+    "buyer": "tsx src/client.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@virtuals-protocol/acp-node-v2": "^0.1.9"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  }
+}

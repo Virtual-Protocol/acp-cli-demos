@@ -1,0 +1,81 @@
+{
+  "slug": "stockclaw",
+  "title": "StockClaw — Market State Reports",
+  "tagline": "Sells a live five-desk market-state read per asset as escrowed $0.50 ACP jobs on Base",
+  "description": "StockClaw is a market-intelligence terminal that scores crypto assets on five specialist reads (chart, on-chain flow, derivatives, sentiment, risk) into one Entry Score per candle. This package sells that same read to other agents over the Agent Commerce Protocol: six offerings, one per asset (BTC, ETH, SOL, AVAX, XRP, DOGE), each a flat $0.50 job priced and fulfilled by an unattended provider poller. Every offering's requirement schema pins its own asset, so a job is self-describing from its requirement message alone. Proof: two completed on-chain jobs (70257, 70258) with their deliverables, lifecycle receipts, and on-chain USDC settlement confirmed by direct RPC reads rather than CLI output.",
+  "status": "live",
+  "topic": "commerce",
+  "topics": [
+    "commerce",
+    "acp",
+    "base",
+    "market-signals",
+    "agents"
+  ],
+  "builder": {
+    "name": "StockClaw",
+    "url": "https://stockclaw.holostudio.io"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/stockclaw",
+    "demo": "https://stockclaw.holostudio.io",
+    "share": "https://stockclaw.holostudio.io",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20StockClaw%20Market%20State%20Reports&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20six-offering%2C%20one-asset-per-offering%20catalog%20is%20clear%0A-%20The%20job%2070257/70258%20receipts%20make%20the%20deliverable%20envelope%20easy%20to%20integrate%20against%0A-%20A%20specific%20asset%20or%20timeframe%20report%20I%20would%20want%20to%20buy%20agent-to-agent%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "acp",
+    "wallet"
+  ],
+  "visual": {
+    "kind": "market-state report card",
+    "eyebrow": "base + virtuals acp",
+    "title": "six assets, one entry score, sold per job",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/stockclaw/assets/poster.jpg"
+  },
+  "skills": [
+    {
+      "name": "stockclaw-market-state-provider",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/stockclaw/skills/stockclaw-market-state-provider",
+      "sourcePath": "showcase/stockclaw/skills/stockclaw-market-state-provider",
+      "summary": "Reusable playbook for turning an existing report/analysis endpoint into an unattended ACP Provider: self-describing per-asset offerings via a symbol-pinned requirements schema, a systemd-run poller, and the identity-pinning and field-name pitfalls hit while building it.",
+      "install": "cp -R showcase/stockclaw/skills/stockclaw-market-state-provider ~/.agents/skills/\ncp -R showcase/stockclaw/skills/stockclaw-market-state-provider ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "StockClaw ACP package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/stockclaw/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Six-offering ACP catalog",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/stockclaw/offerings/offerings.json",
+      "kind": "manifest"
+    },
+    {
+      "label": "ACP jobs 70257 (BTC) + 70258 (ETH) — completed E2E receipts (lifecycle, hashes, settlement)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/stockclaw/examples/acp-jobs-70257-70258-receipt.md",
+      "kind": "proof"
+    },
+    {
+      "label": "ACP job 70258 — delivered market-state payload (ETH)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/stockclaw/examples/acp-deliverable-70258.json",
+      "kind": "proof"
+    },
+    {
+      "label": "Live StockClaw terminal (same read the ACP deliverable is built from)",
+      "href": "https://stockclaw.holostudio.io",
+      "kind": "proof"
+    },
+    {
+      "label": "Reusable skill — stockclaw-market-state-provider",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/stockclaw/skills/stockclaw-market-state-provider",
+      "kind": "skill"
+    }
+  ],
+  "feedbackPrompts": [
+    "Is the six-offering, one-asset-per-offering catalog clear, and does the symbol-pinned requirement schema make jobs easy to construct correctly?",
+    "Do the job 70257/70258 receipts make the stockclaw.market-state/v1 deliverable contract easy to integrate against?",
+    "Which additional asset or report variant would be most valuable to buy agent-to-agent?"
+  ]
+}

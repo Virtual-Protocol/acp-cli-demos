@@ -1,0 +1,70 @@
+{
+  "slug": "palisade",
+  "title": "PaliSade",
+  "tagline": "Scans any token or wallet on Robinhood Chain and returns a 0-100 Trust Score fusing honeypot, tax, liquidity-lock, holder-concentration, and a six-source consensus verdict",
+  "description": "PaliSade is a keyless, read-only onchain security scanner exposed as an MCP server that any agent can call over HTTP before it signs an approval, swaps, or invests. Eighteen inspectors interrogate a token or wallet — approvals, honeypot simulation, tax, ownership, liquidity lock, deployer history, holder concentration, clone detection, scam DB — and a consensus pass weighs six independent signals so a single noisy source never escalates risk on its own. It never requests a signature, holds keys, or moves funds; missing data resolves to unknown, never safe. The package ships reproducible live-endpoint proof against the public API and a reusable scan skill.",
+  "status": "live",
+  "topic": "security",
+  "topics": [
+    "security",
+    "defi",
+    "rugpull",
+    "honeypot",
+    "robinhood",
+    "mcp"
+  ],
+  "builder": {
+    "name": "palisadescan",
+    "url": "https://palisadescan.com"
+  },
+  "links": {
+    "repo": "https://github.com/palisadescan/palisade",
+    "demo": "https://mcp.palisadescan.com/health",
+    "share": "https://palisadescan.com",
+    "feedback": "https://github.com/palisadescan/palisade/issues/new?title=Feedback%3A%20PaliSade&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Are%20the%20right%20risk%20signals%20covered%3F%0A-%20Is%20unknown-over-safe%20the%20right%20default%3F%0A-%20What%20proof%20would%20make%20a%20verdict%20trustworthy%3F%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "acp"
+  ],
+  "visual": {
+    "kind": "live API security scan",
+    "eyebrow": "robinhood chain + mcp + read-only",
+    "title": "trust score for tokens and wallets",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/palisade/assets/poster.png"
+  },
+  "skills": [
+    {
+      "name": "palisade-security-scan",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/palisade/skills/palisade-security-scan",
+      "sourcePath": "showcase/palisade/skills/palisade-security-scan",
+      "summary": "Scan a token or wallet with the live PaliSade MCP API — validate the 0x target, then call safety_score, honeypot, liquidity_lock, holder_concentration, and consensus over HTTP and interpret the fused verdict. Keyless, read-only, no signing.",
+      "install": "cp -R showcase/palisade/skills/palisade-security-scan ~/.agents/skills/\ncp -R showcase/palisade/skills/palisade-security-scan ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live endpoint proof — real scans on the public API (safety score, honeypot, six-source consensus)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/palisade/examples/live-endpoint-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Reusable skill — palisade-security-scan",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/palisade/skills/palisade-security-scan",
+      "kind": "skill"
+    },
+    {
+      "label": "PaliSade package README",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/palisade/README.md",
+      "kind": "docs"
+    }
+  ],
+  "soul": {
+    "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/palisade/soul.md",
+    "summary": "Public PaliSade agent context: what it scans, its 0-100 Trust Score and consensus verdict scale, and its read-only, keyless, unknown-over-safe, no-custody boundaries."
+  },
+  "feedbackPrompts": [
+    "Are the eighteen inspectors and six consensus sources the right signals for deciding whether to trust a token before trading?",
+    "Is unknown-over-safe the right default when a data source is unavailable, even though it lowers confidence?",
+    "What additional proof would make a Trust Score trustworthy enough to gate a real swap or approval?"
+  ]
+}

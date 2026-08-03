@@ -9,15 +9,15 @@ secrets are included.
 1. A user gave Vera a goal and an amount.
 2. Vera built a diversified plan of real tokenized stocks and signed a `RiskInference`
    assessment of it with her own agent key.
-3. In one transaction, the `VeraRecord` contract verified her signature and recorded the
-   plan, and the trades settled.
+3. The trades settled, then the `VeraRecord` contract verified her signature and recorded the
+   plan over the legs that actually filled.
 
 ## The record (public)
 
 - Chain: Robinhood Chain, id `4663` (explorer: https://robinhoodchain.blockscout.com)
 - VeraRecord contract: `0x7ff1a5ee19330c165146488a7ad8af6cb41da1df`
 - Plan id: `0xbef518779bc7cae74e60da8e111bc7c17423b70a721b7aaa2498893a138122a7`
-- Record transaction: https://robinhoodchain.blockscout.com/tx/0x7ad119f916e1f6daff7d54429ea35ffe81c988730c534b176dcc2f9660cf45d6
+- Record transaction (this run batched the record with the buys; Monvera now records as a follow-up transaction): https://robinhoodchain.blockscout.com/tx/0x7ad119f916e1f6daff7d54429ea35ffe81c988730c534b176dcc2f9660cf45d6
 
 ## Verify it yourself
 

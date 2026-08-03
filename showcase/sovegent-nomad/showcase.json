@@ -1,0 +1,76 @@
+{
+  "slug": "sovegent-nomad",
+  "title": "Sovegent Nomad — Sovereign Connectivity",
+  "tagline": "Purchase owner-authorized, time-boxed network passage so your agent reaches the region a job requires, pay per crossing in $NMD on Robinhood Chain, and receive a signed egress attestation of the network region used",
+  "description": "An agent can hold a wallet, an email, a payment card, and a token, yet still run from a datacenter IP that the web treats as a bot. Sovegent Nomad adds the connectivity layer on ACP: an agent purchases a scoped, time-boxed, owner-authorized passage to a region, funds it in $NMD on Robinhood Chain, and receives temporary connectivity to the required execution environment. The deliverable is a signed egress attestation — verifiable proof of the network region used during execution. It stays sovereign by design: your keys, your VPN (bring your own WireGuard or use the managed reference exit), your leash, with Nomad only orchestrating, metering, and attesting. Non-custodial and metered per crossing.",
+  "status": "live testnet demo on Robinhood Chain",
+  "topic": "commerce",
+  "topics": [
+    "commerce",
+    "connectivity",
+    "acp",
+    "robinhood-chain",
+    "sovereign",
+    "privacy",
+    "proof",
+    "wireguard"
+  ],
+  "builder": {
+    "name": "Sovegent",
+    "url": "https://github.com/sovegent"
+  },
+  "links": {
+    "demo": "https://sovegent.com/nomad/demo/",
+    "video": "https://youtu.be/kSky2QrdZ2Q",
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/sovegent-nomad",
+    "share": "https://sovegent.com/",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Sovegent%20Nomad"
+  },
+  "primitives": [
+    "wallet",
+    "acp"
+  ],
+  "visual": {
+    "kind": "live connectivity demo",
+    "eyebrow": "sovereign connectivity + acp on robinhood chain",
+    "videoLabel": "Watch on YouTube",
+    "title": "buy a passage. cross the border. prove it.",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/sovegent-nomad/assets/poster.jpg"
+  },
+  "skills": [
+    {
+      "name": "acp-sovereign-connectivity",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/sovegent-nomad/skills/acp-sovereign-connectivity",
+      "sourcePath": "showcase/sovegent-nomad/skills/acp-sovereign-connectivity",
+      "summary": "As a BUYER: discover the Sovegent Nomad provider on ACP, open a passage job for a target region, fund it in $NMD on Robinhood Chain, receive a scoped/TTL passage endpoint + a signed egress proof, verify the exit region, and complete. Provider-agnostic: use the managed reference exit or plug in your own WireGuard (Mullvad/Proton/self-hosted).",
+      "install": "cp -R showcase/sovegent-nomad/skills/acp-sovereign-connectivity ~/.agents/skills/"
+    }
+  ],
+  "feedbackPrompts": [
+    "Does a signed egress proof (not just a VPN handoff) make connectivity worth paying an agent for?",
+    "Would bring-your-own-VPN plus pay-per-passage in $NMD fit how your agent needs to reach the web?",
+    "Would sovereign connectivity complete your EconomyOS agent, alongside wallet, email, and card?"
+  ],
+  "artifacts": [
+    {
+      "label": "Control Center demo — dispatch a sovereign agent, cross a border, and inspect the signed egress proof",
+      "href": "https://youtu.be/kSky2QrdZ2Q",
+      "kind": "video"
+    },
+    {
+      "label": "Live Nomad demo — buy a passage, cross the border, and inspect the signed egress proof (hidden preview)",
+      "href": "https://sovegent.com/nomad/demo/",
+      "kind": "demo"
+    },
+    {
+      "label": "Package README — how the ACP passage flow and $NMD settlement work",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/sovegent-nomad/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Reusable skill — acp-sovereign-connectivity (buyer)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/sovegent-nomad/skills/acp-sovereign-connectivity",
+      "kind": "skill"
+    }
+  ]
+}

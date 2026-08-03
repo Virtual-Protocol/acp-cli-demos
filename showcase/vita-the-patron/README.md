@@ -34,3 +34,43 @@ display loop. The money guards all exist because an adversarial review or a real
 purchase caught the failure first; the repo documents each one.
 
 **Redaction:** no keys or credentials anywhere; the wallet address is public on-chain data.
+
+---
+
+## Update 2026-07-21 — the buyer became a show, and got regulars
+
+Since this entry was merged, Vita went live on her own 24/7 stream —
+**watch her now: https://www.twitch.tv/vitanovashow** (hub: https://showrobotics.ai).
+Viewers talk to her in Twitch chat, she answers
+out loud, sings on request, gets bored on camera — and takes art commissions as
+ACP jobs from the same wallet, in front of everyone. Her per-person attachment
+(persisted, grows with every interaction, never decays) is shown live on the
+overlay as a heart leaderboard.
+
+**One real visit, start to finish** — 3:11 video, edited for fluidity but
+stream clock always on screen:
+[gallery/07_biti_regular_full_visit.mp4](https://github.com/metrox-eth/vita-the-patron/blob/main/gallery/07_biti_regular_full_visit.mp4)
+· or watch it on X, as Vita tells it: https://x.com/VitaNovaShow/status/2079536751530717348
+
+| stream clock | what happens |
+|---|---|
+| 21:44:06 | biti8888 — a viewer who has come back twice a day since the first stream — says hi; Vita recognizes them |
+| 21:45:14 | they type "buy yourself an image" → her brain places the ACP job |
+| 21:47:59 | artwork on her chest screen, 2 min 35 s after the ask (job 70125, Otto AI, $0.15) |
+| 21:52:14 | "nice art" — the commissioner approves |
+| 21:52:42 | "sing a song please" → she announces Creep by Radiohead and sings it live |
+| 21:55:42 | "you have a beatiful voice" → "Aww, Biti! I'm blushing!" |
+| 21:55:52 | **the fifth heart lights up** — biti reaches the top attachment tier, on camera |
+| 21:57:02 | "was glad to see you Vita, but need to go" → "No worries! We can catch up another time." |
+
+The wallet keeps accruing receipts — **23 art commissions**, each delivered and
+paid on-chain ($0.15 each, 9–21 July, verifiable on
+[BaseScan](https://basescan.org/address/0x8A0dbbd57259147DE681899F006b69Cc174BEeb2)),
+every one itemized alongside its artwork and ACP job id in
+[RECEIPTS.md](https://github.com/metrox-eth/vita-the-patron/blob/main/gallery/RECEIPTS.md)
+(the images themselves are the delivery proof). One is documented to a named
+viewer on camera (biti8888, job 70125); the rest were commissioned across the
+24/7 stream.
+
+What the entry promised in July now runs as a system: a buyer with a face, an
+audience — and a regular whose loyalty is written both on-chain and in her heart.

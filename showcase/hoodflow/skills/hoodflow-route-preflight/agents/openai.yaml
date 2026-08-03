@@ -1,0 +1,4 @@
+interface:
+  display_name: "HoodFlow Route Preflight"
+  short_description: "Inspect a bounded HoodFlow token route"
+  default_prompt: "Use $hoodflow-route-preflight to inspect a reviewed HoodFlow market and prepare a non-custodial quote handoff."

@@ -1,0 +1,94 @@
+{
+  "schema": "stockclaw.market-state/v1",
+  "symbol": "ETHUSDT",
+  "timeframe": "1h",
+  "generated_at": "2026-07-22T19:39:33Z",
+  "source": "stockclaw.holostudio.io",
+  "entry_score": {
+    "value": 56,
+    "band": "NEUTRAL",
+    "meaning": "Weighted confluence of the rule set over the indicators computed this cycle. Describes the CURRENT market state, not a price forecast.",
+    "rules_evaluated": 28,
+    "rules_supporting": 7,
+    "rules_opposing": 3,
+    "rules_neutral": 18
+  },
+  "indicator_summary": {
+    "computed": 28,
+    "trend": {
+      "stance": "neutral",
+      "agreement": 0.41
+    },
+    "momentum": {
+      "stance": "neutral",
+      "agreement": 0.33
+    },
+    "volatility": {
+      "stance": "neutral",
+      "agreement": 0.2
+    },
+    "volume": {
+      "stance": "neutral",
+      "agreement": 0.34
+    }
+  },
+  "desk_notes": {
+    "chart": "Strong bullish Supertrend (3.5% above); Bearish MACD crossover",
+    "onchain": "Price 2.2% above VWAP (bullish); Decreasing volume (VROC=-61%)",
+    "derivatives": "OI $4.62B, funding +0.006%, top-trader long 58%",
+    "sentiment": "Fear & Greed 33/100 (Fear); news 7 bull / 18 bear (48h)",
+    "risk": "no extreme risk flags; Price in middle of BB; No ATR data"
+  },
+  "live_model_reference": {
+    "note": "Separate model trained specifically on this asset (4H bars), the same one driving an autonomous trader on company capital only. A reference, never an override.",
+    "direction": "BUY",
+    "class_probabilities": {
+      "BUY": 0.5492,
+      "HOLD": 0.1977,
+      "SELL": 0.253
+    },
+    "submodel_agreement": {
+      "agree": 3,
+      "total": 3
+    },
+    "execution_threshold": 0.45,
+    "would_trader_act": true,
+    "top_drivers": [
+      {
+        "name": "Momentum score",
+        "direction": "opposes",
+        "relative_weight": 0.141
+      },
+      {
+        "name": "RSI (6)",
+        "direction": "supports",
+        "relative_weight": 0.125
+      },
+      {
+        "name": "Ease of Movement",
+        "direction": "supports",
+        "relative_weight": 0.1195
+      },
+      {
+        "name": "Williams %R",
+        "direction": "supports",
+        "relative_weight": 0.0948
+      },
+      {
+        "name": "Aroon oscillator",
+        "direction": "opposes",
+        "relative_weight": 0.0883
+      }
+    ]
+  },
+  "price_zone": {
+    "zone": "S1_TO_PIVOT",
+    "description": "price $1,927.20 is between S1 ($1,922.59) and the pivot ($1,931.30)"
+  },
+  "data_snapshot": {
+    "candles_through": "2026-07-22T19:00:00Z",
+    "futures": "live at generation",
+    "sentiment_source": "alternative.me, updated 2026-07-22T00:00:00Z"
+  },
+  "disclaimer": "Informational only. Not financial advice. Read-only: nothing in this deliverable moves funds or places an order. Model weights, rule thresholds, and feature definitions are not included."
+}

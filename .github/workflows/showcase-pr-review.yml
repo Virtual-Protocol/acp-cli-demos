@@ -1,4 +1,4 @@
-name: Showcase PR Auto-Review
+name: Showcase PR Review
 
 # Advisory pre-review for showcase contribution PRs. Posts (or updates) a single
 # comment so a human reviewer starts from a first pass instead of a blank page.
@@ -42,7 +42,7 @@ concurrency:
 
 jobs:
   review:
-    name: Draft advisory review
+    name: Review
     runs-on: ubuntu-latest
 
     steps:

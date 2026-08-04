@@ -14,7 +14,6 @@
     "repo": "https://github.com/devclone20/cloneframe_app_executable",
     "demo": "https://github.com/devclone20/cloneframe_app_executable/releases/latest",
     "share": "https://cloneframe.io",
-    "video": "https://raw.githubusercontent.com/devclone20/cloneframe_app_executable/main/docs/media/CLONE_FRAME_TOUR.mp4",
     "feedback": "https://github.com/devclone20/cloneframe_app_executable/issues/new?title=Feedback%3A%20CLONE%20FRAME%20HUB&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20I%20want%20to%20run%20it%20as%20my%20daily%20driver%0A-%20I%20want%20the%20resident%20agent%20to%20drive%20more%20tools%0A-%20I%20want%20to%20plug%20in%20a%20different%20model%0A%0ANotes%3A%0A"
   },
   "primitives": ["wallet", "acp"],
@@ -23,8 +22,7 @@
     "eyebrow": "desktop · one file + local daemon",
     "title": "a desktop body for agents",
     "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/clone-frame/assets/poster.jpg",
-    "videoUrl": "https://raw.githubusercontent.com/devclone20/cloneframe_app_executable/main/docs/media/CLONE_FRAME_TOUR.mp4",
-    "videoLabel": "Watch the 1:21 demo"
+    "videoUrl": "https://raw.githubusercontent.com/devclone20/cloneframe_app_executable/main/docs/media/CLONE_FRAME_TOUR.mp4"
   },
   "skills": [],
   "artifacts": [

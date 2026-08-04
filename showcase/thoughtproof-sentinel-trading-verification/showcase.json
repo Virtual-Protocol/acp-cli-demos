@@ -1,7 +1,7 @@
 {
   "slug": "thoughtproof-sentinel-trading-verification",
   "title": "ThoughtProof Sentinel \u2014 Decision Validation on ACP",
-  "tagline": "Before capital moves: independent ALLOW / BLOCK / UNCERTAIN on mandate + evidence \u2014 not wallet policy, not a reputation score",
+  "tagline": "Get an independent ALLOW / BLOCK / UNCERTAIN verdict on agent decisions before they execute",
   "description": "ThoughtproofSentinel is a live ACP evaluator for decision validation at the agent exit. A buyer sends a proposed action (claim) plus mandate and evidence; Sentinel returns ALLOW, BLOCK, or UNCERTAIN with confidence, objections, verification id, and attestation hashes. Wallet approval and spend caps answer what may execute under policy. This agent answers whether this decision is justified by the package supplied. Packaged proof includes the original three Base ACP jobs (2026-07-21: ALLOW / BLOCK / UNCERTAIN) and a 2026-08 boundary pack (policy-looking trade BLOCK, clean handoff ALLOW, unlimited-approval BLOCK). Verifies decisions only \u2014 no custody, no execution, no financial advice. Receipts describe one decision (do_not_convert_to_reputation).",
   "status": "validated demo",
   "topic": "security",

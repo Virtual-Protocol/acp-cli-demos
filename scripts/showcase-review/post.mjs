@@ -144,7 +144,7 @@ function find_undelivered_findings({ review, has_inline }) {
   return has_inline ? missing.filter((entry) => entry.label === 'Blocker') : missing
 }
 
-function build_body({ review, model, head_sha, is_refresh, unapplyable, has_inline }) {
+function build_body({ review, is_refresh, unapplyable, has_inline }) {
   const parts = [MARKER, review.overview_comment.trim()]
 
   const undelivered = find_undelivered_findings({ review, has_inline })
@@ -170,18 +170,13 @@ function build_body({ review, model, head_sha, is_refresh, unapplyable, has_inli
     )
   }
 
-  const footer = [
-    '---',
-    `*Automated pre-review (${model}) against commit \`${head_sha.slice(0, 7)}\`. ` +
-      'Advisory only — it can\'t approve, block, or merge, and a human maintainer still reviews this PR. ' +
-      'Anything it flags may be wrong; push back freely.*',
-  ]
+  // No bot-disclosure footer, per maintainer preference — the comment reads as a
+  // plain review. The HTML marker above still identifies it for idempotent updates.
   if (is_refresh) {
-    footer.push(
-      '*This comment was refreshed after a new push. Any inline suggestions from the first pass may now be stale.*',
+    parts.push(
+      '---\n*Refreshed after a new push. Any inline suggestions from the first pass may now be stale.*',
     )
   }
-  parts.push(footer.join('\n'))
 
   return parts.join('\n\n')
 }
@@ -241,8 +236,6 @@ export function preview_body({ review, model, head_sha, package_files = [], base
   })
   return build_body({
     review,
-    model,
-    head_sha,
     is_refresh: false,
     unapplyable: [],
     has_inline: kept.length > 0,
@@ -288,8 +281,6 @@ export async function post_review({
 
   const body = build_body({
     review,
-    model,
-    head_sha,
     is_refresh: Boolean(existing),
     unapplyable,
     // Suggestions that fell back into the body still count as delivered feedback.

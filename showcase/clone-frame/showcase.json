@@ -5,7 +5,7 @@
   "description": "CLONE FRAME HUB is a local-first desktop app for working with AI agents: a single-file index.html plus a local Node bridge daemon, installed by double-click, strictly BYOK and model-agnostic — Virtuals EconomyOS Compute works as a drop-in provider. The resident pi coding agent gets a body inside the app: PTY terminals, an in-app browser, panel and file control, a wallet with iNFT support, and bundled skills for acp-cli and on-chain work. Everything is inspectable: public source, a v0.4.1 release with SHA-256 sums, and a 1:21 tour video captured from the running app.",
   "status": "live",
   "topic": "agents",
-  "topics": ["desktop", "byok", "developer-tools", "terminal", "inft"],
+  "topics": ["agents", "developer-tools", "skills", "desktop", "byok"],
   "builder": {
     "name": "devclone20",
     "url": "https://github.com/devclone20"

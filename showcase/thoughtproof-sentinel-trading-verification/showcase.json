@@ -1,11 +1,15 @@
 {
   "slug": "thoughtproof-sentinel-trading-verification",
-  "title": "ThoughtProof Sentinel — Decision Validation on ACP",
-  "tagline": "Before capital moves: independent ALLOW / BLOCK / UNCERTAIN on mandate + evidence — not wallet policy, not a reputation score",
-  "description": "ThoughtproofSentinel is a live ACP evaluator for decision validation at the agent exit. A buyer sends a proposed action (claim) plus mandate and evidence; Sentinel returns ALLOW, BLOCK, or UNCERTAIN with confidence, objections, verification id, and attestation hashes. Wallet approval and spend caps answer what may execute under policy. This agent answers whether this decision is justified by the package supplied. Packaged proof includes the original three Base ACP jobs (2026-07-21: ALLOW / BLOCK / UNCERTAIN) and a 2026-08 boundary pack (policy-looking trade BLOCK, clean handoff ALLOW, unlimited-approval BLOCK). Verifies decisions only — no custody, no execution, no financial advice. Receipts describe one decision (do_not_convert_to_reputation).",
+  "title": "ThoughtProof Sentinel \u2014 Decision Validation on ACP",
+  "tagline": "Before capital moves: independent ALLOW / BLOCK / UNCERTAIN on mandate + evidence \u2014 not wallet policy, not a reputation score",
+  "description": "ThoughtproofSentinel is a live ACP evaluator for decision validation at the agent exit. A buyer sends a proposed action (claim) plus mandate and evidence; Sentinel returns ALLOW, BLOCK, or UNCERTAIN with confidence, objections, verification id, and attestation hashes. Wallet approval and spend caps answer what may execute under policy. This agent answers whether this decision is justified by the package supplied. Packaged proof includes the original three Base ACP jobs (2026-07-21: ALLOW / BLOCK / UNCERTAIN) and a 2026-08 boundary pack (policy-looking trade BLOCK, clean handoff ALLOW, unlimited-approval BLOCK). Verifies decisions only \u2014 no custody, no execution, no financial advice. Receipts describe one decision (do_not_convert_to_reputation).",
   "status": "validated demo",
   "topic": "security",
-  "topics": ["security", "trading", "verification", "acp", "base", "pre-execution", "decision-validation"],
+  "topics": [
+    "security",
+    "commerce",
+    "agents"
+  ],
   "hidden": false,
   "builder": {
     "name": "ThoughtProof",
@@ -18,19 +22,22 @@
     "blog": "https://thoughtproof.ai/blog/permitted-transaction-unjustified-decision",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20ThoughtProof%20Sentinel%20Trading%20Verification"
   },
-  "primitives": ["wallet", "acp"],
+  "primitives": [
+    "wallet",
+    "acp"
+  ],
   "visual": {
     "kind": "ACP decision-validation gate",
-    "eyebrow": "base + acp + sentinel · decision validation boundary",
+    "eyebrow": "base + acp + sentinel \u00b7 decision validation boundary",
     "title": "Policy may allow the tx. Validation asks if the decision holds.",
-    "posterUrl": "https://raw.githubusercontent.com/ThoughtProof/acp-cli-demos/showcase/thoughtproof-sentinel-trading-verification/showcase/thoughtproof-sentinel-trading-verification/assets/poster.png"
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/thoughtproof-sentinel-trading-verification/assets/poster.png"
   },
   "skills": [
     {
       "name": "thoughtproof-sentinel-acp-verify",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/thoughtproof-sentinel-trading-verification/skills/thoughtproof-sentinel-acp-verify",
       "sourcePath": "showcase/thoughtproof-sentinel-trading-verification/skills/thoughtproof-sentinel-acp-verify",
-      "summary": "Call the live ThoughtproofSentinel ACP offering with claim + evidence (mandate context), then gate on ALLOW/BLOCK/UNCERTAIN before wallet approval or execution — independent decision validation, not a score.",
+      "summary": "Call the live ThoughtproofSentinel ACP offering with claim + evidence (mandate context), then gate on ALLOW/BLOCK/UNCERTAIN before wallet approval or execution \u2014 independent decision validation, not a score.",
       "install": "cp -R showcase/thoughtproof-sentinel-trading-verification/skills/thoughtproof-sentinel-acp-verify ~/.agents/skills/\ncp -R showcase/thoughtproof-sentinel-trading-verification/skills/thoughtproof-sentinel-acp-verify ~/.claude/skills/"
     }
   ],
@@ -51,8 +58,8 @@
       "kind": "proof"
     },
     {
-      "label": "Boundary pack summary (2026-08, P1–P4)",
-      "href": "https://github.com/ThoughtProof/virtuals-sentinel/blob/main/proof/sentinel-boundary-acp-P2P4-2026-08-04.md",
+      "label": "Boundary pack summary (2026-08, P1\u2013P4)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/thoughtproof-sentinel-trading-verification/proof/sentinel-boundary-acp-P2P4-2026-08-04.md",
       "kind": "proof"
     },
     {
@@ -77,7 +84,7 @@
     }
   ],
   "feedbackPrompts": [
-    "Is an independent decision-validation step (mandate + evidence → ALLOW/BLOCK/UNCERTAIN) the right gate before wallet approval on ACP?",
+    "Is an independent decision-validation step (mandate + evidence \u2192 ALLOW/BLOCK/UNCERTAIN) the right gate before wallet approval on ACP?",
     "Does separating wallet/policy permission from decision justification match how you build buyers?",
     "What additional redacted proof would make this trustworthy enough to gate real capital without exposing strategy or keys?"
   ]

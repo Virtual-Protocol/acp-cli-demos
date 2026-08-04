@@ -42,7 +42,7 @@ Note: jobs 70169/70170/70171 are the three packaged baseline demo jobs. Lifetime
 
 ### Boundary pack (2026-08) — policy vs justification
 
-Full write-up (repo): [ThoughtProof/virtuals-sentinel boundary P2P4](https://github.com/ThoughtProof/virtuals-sentinel/blob/main/proof/sentinel-boundary-acp-P2P4-2026-08-04.md)
+Full write-up: [`proof/sentinel-boundary-acp-P2P4-2026-08-04.md`](./proof/sentinel-boundary-acp-P2P4-2026-08-04.md)
 
 | Case | ACP job | Expected | Actual | Match |
 |---|---:|---|---|---|

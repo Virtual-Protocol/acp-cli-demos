@@ -1,0 +1,37 @@
+{
+  "slug": "e2e-auto-merge-test",
+  "title": "E2E Auto-Merge Test (Temporary)",
+  "tagline": "Temporary fixture for validating the Showcase add-and-remove automation",
+  "description": "This deliberately temporary entry validates the full Showcase synchronization path: source discovery, generated data, bot-authored pull request, guarded approval, automatic merge, and subsequent removal. It is not a real product or community submission.",
+  "status": "temporary automation test; remove after validation",
+  "topic": "testing",
+  "topics": ["testing", "automation", "e2e"],
+  "builder": {
+    "name": "Virtuals Protocol Automation",
+    "url": "https://github.com/Virtual-Protocol/acp-cli-demos"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/chore/showcase-auto-merge-e2e/showcase/e2e-auto-merge-test",
+    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/chore/showcase-auto-merge-e2e/showcase/e2e-auto-merge-test",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues"
+  },
+  "primitives": ["acp"],
+  "visual": {
+    "kind": "temporary automation fixture",
+    "eyebrow": "e2e + temporary",
+    "title": "add, merge, remove"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "Temporary fixture manifest",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/chore/showcase-auto-merge-e2e/showcase/e2e-auto-merge-test/showcase.json",
+      "kind": "test"
+    }
+  ],
+  "feedbackPrompts": [
+    "Did the generated Showcase PR open automatically?",
+    "Did the guarded approval and merge complete automatically?",
+    "Did the cleanup sync remove this temporary entry completely?"
+  ]
+}

@@ -42,7 +42,11 @@ export function normalizeInput(input) {
   if (!Number.isFinite(amountUsd) || amountUsd < 0) stop("amountUsd policy input must be finite");
   const lamports = solToLamports(input.amountSol);
   if (lamports <= 0 || lamports > MAX_LAMPORTS) stop("amount must be greater than 0 and at most 0.001 SOL");
-  if (typeof input.compassUrl !== "string" || !input.compassUrl.startsWith("https://")) stop("Compass HTTPS URL is required");
+  let compassParsed;
+  try { compassParsed = new URL(input.compassUrl); } catch { stop("Compass HTTPS URL is required"); }
+  if (compassParsed.protocol !== "https:") stop("Compass HTTPS URL is required");
+  const compassHost = compassParsed.hostname;
+  if (/^(localhost|.*\.local)$/i.test(compassHost) || /^(127\.|10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.|169\.254\.|0\.)/.test(compassHost) || compassHost === "[::1]") stop("Compass URL hostname is not allowed");
   return { recipient: input.recipient, amountSol: String(input.amountSol), lamports, amountUsd, cluster: "devnet", compassUrl: input.compassUrl.replace(/\/$/, ""), apiKey: input.apiKey };
 }
 

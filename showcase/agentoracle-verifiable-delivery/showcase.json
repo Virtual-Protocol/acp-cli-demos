@@ -29,7 +29,7 @@
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt",
       "sourcePath": "showcase/agentoracle-verifiable-delivery/skills/agentoracle-signed-receipt",
       "summary": "Reusable ACP-outcome evidence workflow: caller computes a v_gate result, AgentOracle signs a JWS composed envelope binding claim_hash + skill_hash + v_gate + mapping_hash, downstream verifiers verify offline against the published JWKS. Ed25519 + RFC 8785 JCS + RFC 7515 JWS.",
-      "install": "# Verify a received receipt (any language)\npip install agentoracle-receipt-verify\n\n# Issue a new receipt (requires paid AgentOracle key)\nexport AO_API_KEY=<your $99/mo key from https://agentoracle.co/register>"
+      "install": "# Verify a received receipt (any language)\npip install agentoracle-receipt-verify\n\n# Issue a new receipt (requires an AgentOracle API key)\nexport AO_API_KEY=<your key>"
     }
   ],
   "artifacts": [

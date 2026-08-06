@@ -108,7 +108,8 @@ exact byte order at that exact decision point.
   https://github.com/TKCollective/agentoracle-receipt-spec/pull/5
 - PyPI reference verifier:
   https://pypi.org/project/agentoracle-receipt-verify/
-- AgentOracle product:
-  https://agentoracle.co (self-serve $99/month, x402 pay-per-call
-  at $0.09/verification)
 - Whitepaper: https://agentoracle.co/whitepaper
+
+## Learn more
+
+https://agentoracle.co

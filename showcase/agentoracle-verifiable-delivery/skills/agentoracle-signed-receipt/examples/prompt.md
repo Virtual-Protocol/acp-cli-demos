@@ -73,19 +73,16 @@ curl -X POST https://agentoracle-gateway-main-39fa17e.zuplo.app/v1/compose \
   --data @compose_request.json
 ```
 
-`$AO_API_KEY` is a live production API key issued at
-https://agentoracle.co/register on the $99/month self-serve tier.
-Every self-serve subscriber gets their own key; keys gate access to
-the composition endpoint at 100 requests/hour per key.
+`$AO_API_KEY` is a live production API key issued by AgentOracle.
+Keys gate access to the composition endpoint at 100 requests/hour
+per key.
 
 The response is the file at `receipt.json` in this folder.
 
 ## Reproducing on your own key
 
-1. Sign up at https://agentoracle.co/register with a real card
-   ($99/month, real charge). Copy the `zpka_...` key from the
-   post-checkout page (available for 1 hour, retrievable in the
-   Zuplo Dashboard afterward).
+1. Obtain an AgentOracle API key. The `zpka_...` value is what
+   `$AO_API_KEY` expects.
 2. Change the `claim` and `skill` inputs to describe your own ACP
    transaction. Recompute the SHA-256 of each and update
    `compose_request.json`.

@@ -44,8 +44,7 @@ Adversarial evidence handling is a separate flow.
 
 - `POST https://agentoracle-gateway-main-39fa17e.zuplo.app/v1/compose`
   — issue the signed receipt. API key required
-  (`Authorization: Bearer <key>`), $99/month self-serve at
-  https://agentoracle.co/register, 100 requests/hour/key.
+  (`Authorization: Bearer <key>`), 100 requests/hour/key.
 - `pip install agentoracle-receipt-verify` — offline reference
   verifier. Zero dependencies beyond stdlib and `cryptography`.
 - The public JWKS at https://agentoracle.co/.well-known/jwks.json
@@ -53,9 +52,9 @@ Adversarial evidence handling is a separate flow.
 
 **Credentials:**
 
-- AgentOracle API key for the paid issuance rail
-  (`$99/mo self-serve` or `x402 pay-per-call` at $0.09 per verification
-  through `POST /evaluate`).
+- AgentOracle API key for the issuance rail (`POST /v1/compose`).
+  An alternate `POST /evaluate` endpoint on the same base URL runs
+  the underlying check and signs in one call.
 - No credential needed for verification — verifiers verify offline
   against the published public keys.
 
@@ -67,12 +66,13 @@ Adversarial evidence handling is a separate flow.
 
 ## Approval gates
 
-- **Spending gate:** issuing a receipt through `POST /v1/compose`
-  requires a paid API key. Verification is free (offline).
+- **Issuance gate:** issuing a receipt through `POST /v1/compose`
+  requires an API key. Verification is offline and requires no
+  credential.
 - **Posting gate:** none — issued receipts are private to the caller
   until the caller chooses to share.
-- **Deployment gate:** production keys are minted by Stripe webhook
-  on `checkout.session.completed`. Rotate via Stripe Dashboard.
+- **Key issuance gate:** production keys are minted server-side by a
+  provisioning webhook; rotation is handled externally by the issuer.
 
 ## Stop conditions and handoff rules
 

@@ -27,8 +27,15 @@ Two live ACP offerings, one seller process:
 
 | Offering | Chain | Input | Price |
 | --- | --- | --- | --- |
-| `evmtoken_safety` | Base / EVM | `{ tokenAddress, chain }` | $0.05 USDC |
+| `evmtoken_safety` | 8 EVM chains (Base, Ethereum, BSC, Arbitrum, Polygon, Optimism, Avalanche, Robinhood Chain) | `{ tokenAddress, chain }` | $0.05 USDC |
 | `memecoin_safety` | Solana | `{ mint }` | $0.05 USDC |
+| `token_safety_batch` | any mix of the above | `{ tokens: [...] }` (1–10) | $0.35 USDC |
+
+Plus unlimited-scan subscription passes (`safety_pass_7d` $1.49, `safety_pass_30d` $4.99):
+the first job activates the pass, every scan while it is active quotes $0.
+
+The same seller-fleet architecture supports additional storefront agents; only the
+token-safety offerings above are live today.
 
 Both offerings resolve to a `CLEAR` / `CAUTION` / `AVOID` verdict plus a
 structured breakdown (honeypot/sell-simulation, buy/sell tax, mint/freeze
@@ -48,11 +55,30 @@ API as an ACP offering, not just this one.
 
 ## Status
 
-Sandbox-validated across both offerings (20+ completed jobs, including a
-run of 5 consecutive successes and one demonstrated rejection of an incomplete request);
-graduation request submitted to the Virtuals team and pending manual review
-as of this writing. See
-[`examples/sandbox-grind-summary.md`](examples/sandbox-grind-summary.md).
+**Live and serving 24/7.** The seller fleet runs as a single always-on service
+(one supervisor process, one child per agent, auto-restart with backoff) so the
+agents stay connected and never miss a funded job.
+
+`PulseNetwork Safety` and `Pulse Token Safety` run on the fleet today (token safety,
+batch scans, subscription passes); additional storefront agents share the same
+supervisor.
+
+### Production lessons baked into this package
+
+Running this for real surfaced failure modes worth sharing, all now fixed in the
+reference implementation and described in the skill:
+
+- **Validate before quoting.** Anything the upstream API would reject (bad chain
+  name, malformed address) is rejected *free*, pre-quote, with a message listing
+  what is accepted — never after the buyer has funded.
+- **Reject to refund.** If delivery fails after funding, reject the job so escrow
+  refunds immediately instead of stranding the buyer's funds until expiry.
+- **Survive restarts.** Recover the job requirement from the job room's own
+  message history, so a process restart between quote and funding does not
+  force a rejection.
+- **Batch honestly.** Per-token error isolation means one bad token never sinks a
+  batch — but if *every* token fails, the job is rejected and refunded rather
+  than delivering an empty result.
 
 ## Builder
 

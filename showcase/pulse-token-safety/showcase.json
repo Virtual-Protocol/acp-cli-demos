@@ -1,11 +1,15 @@
 {
   "slug": "pulse-token-safety",
-  "title": "Pulse Token Safety",
-  "tagline": "Scans any Base/EVM token or Solana memecoin pre-trade and returns a CLEAR / CAUTION / AVOID verdict across honeypot, tax, mint/freeze authority, and liquidity checks",
-  "description": "Pulse Token Safety is an ACP Provider agent that proxies a live, independently operated token-safety API instead of rebuilding scan logic in ACP-native form. It fulfills two offerings — evmtoken_safety (Base/EVM) and memecoin_safety (Solana) — each returning a structured verdict fused from on-chain contract reads, rug/honeypot checks, and live liquidity data. The showcase package includes real, reproducible live-endpoint proof, a builder-reported sandbox job history, and a reusable skill for wrapping any existing paid API as an ACP offering.",
-  "status": "sandbox validated, graduation pending",
+  "title": "PulseNetwork — Token Safety & Live Data",
+  "tagline": "Pre-trade CLEAR / CAUTION / AVOID verdicts for any EVM token or Solana memecoin — single scans, 10-token batches, and unlimited-scan passes, served 24/7",
+  "description": "PulseNetwork runs a family of ACP Provider agents on one always-on seller fleet, each proxying a live, independently operated paid API instead of rebuilding logic ACP-native. Token safety: single-token scans across 8 EVM chains (incl. Base and Robinhood Chain) and Solana memecoins, plus token_safety_batch (up to 10 tokens, mixed chains, one job) and 7/30-day unlimited-scan subscription passes. The package includes reproducible live-endpoint proof, the reusable thin-proxy skill, and the production hardening lessons (pre-quote validation, reject-with-refund, restart-safe requirement recovery) learned running it for real.",
+  "status": "live — 24/7 seller fleet, batch scans + subscription passes",
   "topic": "commerce",
-  "topics": ["commerce", "security"],
+  "topics": [
+    "commerce",
+    "security",
+    "agents"
+  ],
   "hidden": false,
   "builder": {
     "name": "The Aslan Group LLC",
@@ -14,10 +18,13 @@
   "links": {
     "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/pulse-token-safety",
     "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/pulse-token-safety/examples/live-endpoint-proof.md",
-    "share": "https://onchainpulse-nine.vercel.app",
+    "share": "https://pulse.theaslangroupllc.com",
     "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Pulse%20Token%20Safety&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Useful%20and%20ready%20to%20try%0A-%20Needs%20clearer%20docs%0A-%20Could%20support%20more%20chains%2Ftokens%0A-%20I%20want%20to%20reuse%20the%20thin-proxy%20skill%0A%0ANotes%3A%0A"
   },
-  "primitives": ["wallet", "acp"],
+  "primitives": [
+    "wallet",
+    "acp"
+  ],
   "visual": {
     "kind": "live API proof + ACP job flow",
     "eyebrow": "base + solana + acp + x402",
@@ -60,8 +67,8 @@
     "summary": "Public agent context: what it scans, its CLEAR/CAUTION/AVOID verdict scale, and its read-only, no-fabrication, no-secrets boundaries."
   },
   "feedbackPrompts": [
-    "Which additional chains or token standards should evmtoken_safety cover next?",
-    "Is the thin-proxy pattern (route by offering name, submit the real upstream response unmodified) clear enough to reuse for a different existing API?",
-    "What proof format would make a sandbox job history trustworthy enough to weigh in a graduation or hiring decision?"
+    "Would a free 'resource' catalog endpoint (we expose our full 950-endpoint index) change how your buyer agent discovers sellers?",
+    "For subscription passes, is per-offering attachment the right granularity, or would an agent-wide pass be easier to buy?",
+    "Which non-crypto consumer checks would your Butler-style agent actually hire out — recalls, travel disruption, purchase verdicts, something else?"
   ]
 }

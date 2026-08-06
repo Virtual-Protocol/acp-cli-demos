@@ -1,0 +1,61 @@
+#!/bin/bash
+# Single controlled trade: VEGETA hires iCLONE ($0.10), funds, iCLONE delivers, VEGETA completes.
+#   demo-trade            -> "check" (pre-flight only, NO funds move)      [default = safe]
+#   demo-trade run        -> launch the real single trade, DETACHED        [returns in ~1s]
+#   demo-trade run new    -> same, bypassing the 10-min duplicate cooldown (owner re-takes)
+#   demo-trade status     -> instant snapshot: state + last trade log lines
+# The trade runs in a transient systemd unit (demo-trade-run) so ssh callers
+# never block on the 2-4 min phase cycle. State is derived from the log file:
+# a caller that lost its connection can always recover the truth via status.
+set -uo pipefail
+UNIT=demo-trade-run
+LOG=/var/log/iclone/trade.log
+CORE=/opt/iclone/ops/demo_trade_core.sh
+COOLDOWN=600
+
+strip_ansi(){ sed $'s/\033\\[[0-9;]*m//g'; }
+
+state(){
+  if systemctl is-active --quiet "$UNIT"; then echo RUNNING
+  elif [ -s "$LOG" ] && grep -aq 'TRADE COMPLETE' "$LOG"; then echo COMPLETE
+  elif [ -s "$LOG" ]; then echo FAILED
+  else echo IDLE; fi
+}
+
+case "${1:-check}" in
+  check)
+    exec su -l iclone -s /bin/bash -c "dbus-run-session -- bash $CORE check";;
+  status)
+    st=$(state)
+    echo "TRADE $st"
+    if [ -s "$LOG" ]; then tail -n 12 "$LOG"; fi
+    ;;
+  run)
+    if systemctl is-active --quiet "$UNIT"; then
+      echo "⛔ a trade is already in flight — follow it with: demo-trade status"; exit 3
+    fi
+    st=$(state)
+    if [ "$st" = FAILED ] && grep -aq 'escrow holds' "$LOG"; then
+      # Funds moved and the run did not finish — a relaunch could double-spend.
+      echo "⛔ previous trade FAILED AFTER FUNDING — no relaunch allowed."
+      echo "   Owner must inspect (demo-trade status); after resolving, clear $LOG"
+      exit 5
+    fi
+    if [ "${2:-}" != new ] && [ "$st" = COMPLETE ]; then
+      age=$(( $(date +%s) - $(stat -c %Y "$LOG") ))
+      if [ "$age" -lt "$COOLDOWN" ]; then
+        echo "⛔ last trade completed $((age/60))m ago — refusing a duplicate."
+        grep -a 'TRADE COMPLETE' "$LOG" | head -1 | strip_ansi | sed 's/^/   /'
+        echo "   fresh take on purpose? -> demo-trade run new"
+        exit 4
+      fi
+    fi
+    systemctl reset-failed "$UNIT" 2>/dev/null || true
+    mkdir -p /var/log/iclone
+    : > "$LOG"
+    systemd-run --unit="$UNIT" --quiet /bin/bash -c \
+      "exec >> $LOG 2>&1; exec su -l iclone -s /bin/bash -c 'dbus-run-session -- bash $CORE run'"
+    echo "◢ trade launched (detached) — follow with: demo-trade status"
+    ;;
+  *) echo "usage: demo-trade {check|run [new]|status}"; exit 2;;
+esac

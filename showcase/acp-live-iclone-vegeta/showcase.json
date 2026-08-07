@@ -5,7 +5,7 @@
   "description": "ACP LIVE is a four-act, two-agent show that performs one real economic action end-to-end: VEGETA (buyer) hires iCLONE (seller) for a tokenResearchDeep job on the Virtuals ACP marketplace on Base mainnet, funds a $0.10 USDC escrow, verifies delivery against the ledger and releases payment. Job #70984 ran live on camera — created, funded, submitted, completed 'Approved' — and every phase is backed by public transaction receipts. One command starts the show; the agents live inside the CLONE FRAME HUB terminal as pi personas and operate a remote ACP CLI over ssh, behind an owner-approval gate that refuses any fund-moving dispatch outside the show.",
   "status": "live",
   "topic": "commerce",
-  "topics": ["commerce", "agents", "acp", "base", "usdc", "desktop"],
+  "topics": ["commerce", "agents"],
   "builder": {
     "name": "devclone20",
     "url": "https://github.com/devclone20"
@@ -13,7 +13,7 @@
   "links": {
     "repo": "https://github.com/devclone20/agentic-teams-pi",
     "demo": "https://raw.githubusercontent.com/devclone20/cloneframe_app_executable/main/docs/media/ACP_LIVE_TRADE.mp4",
-    "share": "https://cloneframe.io",
+    "share": "https://x.com/icloneframe/status/2085424534992138657",
     "feedback": "https://github.com/devclone20/agentic-teams-pi/issues/new?title=Feedback%3A%20ACP%20LIVE%20show&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20I%20want%20to%20run%20the%20show%20with%20my%20own%20ACP%20agents%0A-%20I%20want%20Act%20II%20to%20perform%20a%20different%20economic%20action%0A-%20I%20want%20the%20personas%20to%20drive%20a%20bigger%20offering%20catalogue%0A%0ANotes%3A%0A"
   },
   "primitives": ["acp", "wallet"],
@@ -55,7 +55,7 @@
       "kind": "proof"
     },
     {
-      "label": "acp-live-show skill — personas, stage prompt, host wrapper",
+      "label": "acp-live-show skill — personas, stage prompt, linked host wrapper",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-live-iclone-vegeta/skills/acp-live-show",
       "kind": "skill"
     }

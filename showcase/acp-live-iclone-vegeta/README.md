@@ -52,8 +52,10 @@ trade runs on**.
 ## Reproduce it
 
 The [`skills/acp-live-show`](skills/acp-live-show) folder contains the two
-personas, the four-act stage prompt and the host-side wrapper, with install
-notes — point them at your own pair of ACP agents and run your own show.
+personas and the four-act stage prompt, with install notes; the host-side
+[`demo-trade` wrapper](https://github.com/devclone20/agentic-teams-pi/tree/main/examples/acp-live-show)
+lives in the builder's repo. Point them at your own pair of ACP agents and
+run your own show.
 
 ## Proof
 

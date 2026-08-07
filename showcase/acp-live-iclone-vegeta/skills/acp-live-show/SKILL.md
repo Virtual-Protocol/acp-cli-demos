@@ -12,8 +12,12 @@ agents/iclone.md    seller persona — brings the marketplace servers online,
 agents/vegeta.md    buyer persona — preflight, the single gated trade,
                     on-chain verification; the GATE law lives here
 prompts/acp-live.md the four-act stage prompt the dispatcher follows
-host/demo-trade     host-side wrapper: check / run (detached) / status
 ```
+
+The host-side implementation lives in the builder's repo:
+[`demo-trade`](https://github.com/devclone20/agentic-teams-pi/tree/main/examples/acp-live-show)
+— the wrapper that launches the trade detached and answers instant status
+snapshots (check / run / status).
 
 ## Requirements
 
@@ -24,10 +28,11 @@ host/demo-trade     host-side wrapper: check / run (detached) / status
   agents — a provider with a published offering and a funded client — plus
   passwordless sudo for the wrapper. The personas reach it via the ssh alias
   `acp-host`; add it to your `~/.ssh/config`.
-- The `host/demo-trade` wrapper installed on that host (adjust the two paths
-  at the top: the trade core script and the log location). Its job: launch
-  the trade **detached** in a transient systemd unit and answer instant
-  `status` snapshots, so no agent ever blocks on a long ssh call.
+- The [`demo-trade` wrapper](https://github.com/devclone20/agentic-teams-pi/tree/main/examples/acp-live-show)
+  installed on that host (adjust the two paths at the top: the trade core
+  script and the log location). Its job: launch the trade **detached** in a
+  transient systemd unit and answer instant `status` snapshots, so no agent
+  ever blocks on a long ssh call.
 
 ## Install
 

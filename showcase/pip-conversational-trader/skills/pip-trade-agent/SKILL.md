@@ -177,13 +177,14 @@ There is no anonymous trade endpoint. Reads and dry quotes are open to any agent
 
 ## Runnable Example
 
-`scripts/pip-quote.mjs` does the whole read-only flow in one file: resolve two `assetId`s from `/api/tokens`, convert a human amount to base units using the real `decimals`, run the public sell check, then quote. No auth, no signing, nothing moves.
+[`pip-quote.mjs`](https://piptradedex.xyz/agent/pip-quote.mjs) does the whole read-only flow in one file: resolve two `assetId`s from `/api/tokens`, convert a human amount to base units using the real `decimals`, run the public sell check, then quote. No auth, no signing, nothing moves.
 
 ```bash
-node scripts/pip-quote.mjs 5 USDC base ETH base
+curl -sO https://piptradedex.xyz/agent/pip-quote.mjs
+node pip-quote.mjs 5 USDC base ETH base
 ```
 
-Read it before writing your own client. It encodes the base-units conversion and the error branching that this API actually requires.
+Read it before writing your own client. It encodes the exact base-units conversion and the error branching this API requires, both of which are easy to get wrong.
 
 ## Safety Invariants
 

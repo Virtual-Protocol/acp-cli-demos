@@ -1,7 +1,7 @@
 {
   "slug": "acp-live-iclone-vegeta",
   "title": "ACP LIVE — iCLONE × VEGETA",
-  "tagline": "Two resident agents stage one real $0.10 ACP trade on Base — seller and buyer cards ticking every phase, receipts on-chain",
+  "tagline": "Stage one real $0.10 ACP trade on Base — two resident agents, seller and buyer cards ticking every phase, receipts on-chain",
   "description": "ACP LIVE is a four-act, two-agent show that performs one real economic action end-to-end: VEGETA (buyer) hires iCLONE (seller) for a tokenResearchDeep job on the Virtuals ACP marketplace on Base mainnet, funds a $0.10 USDC escrow, verifies delivery against the ledger and releases payment. Job #70984 ran live on camera — created, funded, submitted, completed 'Approved' — and every phase is backed by public transaction receipts. One command starts the show; the agents live inside the CLONE FRAME HUB terminal as pi personas and operate a remote ACP CLI over ssh, behind an owner-approval gate that refuses any fund-moving dispatch outside the show.",
   "status": "live",
   "topic": "commerce",

@@ -5,7 +5,7 @@
   "description": "This showcase packages a live AgentOracle receipt against an ACP-shaped delivery claim: the exact request sent to the live production gateway, the JWS General Serialization envelope returned, and a reference verifier that runs offline against the published JWKS. The receipt is content-addressed (RFC 8785 JCS + Ed25519), so two agents who later disagree about what happened — or any neutral auditor with no AgentOracle account — can independently confirm the settlement at the byte level.",
   "status": "validated demo",
   "topic": "commerce",
-  "topics": ["commerce", "acp", "verification", "receipts", "settlement", "security"],
+  "topics": ["commerce", "security"],
   "builder": {
     "name": "TK Collective",
     "url": "https://github.com/TKCollective"

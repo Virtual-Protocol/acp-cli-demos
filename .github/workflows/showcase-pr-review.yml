@@ -46,13 +46,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Base commit only. Never `ref: pull_request.head.sha` here — that would put
-      # contributor-controlled code in a job that holds secrets and write access.
-      # A manual backfill has no PR payload, so it checks out the default branch.
+      # Trusted base-branch commit only. `github.sha` is the base branch tip selected
+      # for this workflow run. Do not use `pull_request.base.sha`: it can stay pinned
+      # to a commit from before the review scripts existed on long-lived PRs. Never
+      # use `pull_request.head.sha` here — that would execute contributor-controlled
+      # code in a job that holds secrets and write access.
       - name: Checkout base commit
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.sha || github.ref }}
+          ref: ${{ github.sha }}
           persist-credentials: false
 
       - name: Setup Node

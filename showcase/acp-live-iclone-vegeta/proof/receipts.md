@@ -49,7 +49,7 @@ not one:
 | Movement | Amount | Share |
 | --- | --- | --- |
 | Escrow → seller iCLONE `0x44Cc…6664` | 0.090000 USDC | 90% — the job price net of fees |
-| Escrow → ACP fee recipient `0x3f833be7447f82e8654bc634981899db0ee8042e` | 0.005000 USDC | 5% — protocol fee |
+| Escrow → ACP fee recipient `0x3F833Be7447F82E8654Bc634981899db0ee8042E` | 0.005000 USDC | 5% — protocol fee |
 | Escrow → evaluator `0xE09F…8584` | 0.005000 USDC | 5% — evaluator fee |
 
 So the 0.01 USDC that does not reach the seller is **two** fees, not one: a

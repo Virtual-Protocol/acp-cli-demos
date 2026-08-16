@@ -16,7 +16,7 @@ public.
 | --- | --- | --- |
 | I — LIGHTS | Marketplace servers come online; buyer preflight says FUNDABLE; the bill is shown ($0.10, tokenResearchDeep, Base) | iCLONE + VEGETA |
 | II — THE TRADE | Buyer launches the single gated trade (detached on the host) and follows it with short status polls; the job is created, funded, executed and submitted while both agent cards tick live | VEGETA pays, iCLONE delivers |
-| III — RECEIPTS | Buyer reads the chain ledger: phase trail, deliverable hash, verdict CLEAN | VEGETA |
+| III — RECEIPTS | Buyer reads the chain ledger: phase trail, deliverable hash, on-chain verdict `Approved` | VEGETA |
 | IV — CURTAIN | Closing status card; the agents stay online for the next show | iCLONE |
 
 The deliverable itself is a nice touch of dogfooding: the buyer paid the seller

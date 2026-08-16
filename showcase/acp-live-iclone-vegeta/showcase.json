@@ -29,7 +29,7 @@
       "name": "acp-live-show",
       "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/acp-live-iclone-vegeta/skills/acp-live-show",
       "summary": "Two pi personas (seller + buyer) and a four-act stage prompt that run one gated $0.10 ACP trade end-to-end and narrate it as live ticker cards.",
-      "install": "Install pi + agentic-teams-pi, copy agents/ into ~/.pi/agent/agents/ and examples/acp-live.md into ~/.pi/agent/prompts/, register team acp-live in teams.yaml, and point the ssh alias acp-host at a host with the ACP CLI plus the detached demo-trade wrapper (see SKILL.md).",
+      "install": "Install pi + agentic-teams-pi, copy agents/*.md into ~/.pi/agent/agents/ and examples/acp-live.md into ~/.pi/agent/prompts/, register team acp-live in teams.yaml, and point the ssh alias acp-host at a host with the ACP CLI plus the detached demo-trade wrapper (see SKILL.md).",
       "sourcePath": "showcase/acp-live-iclone-vegeta/skills/acp-live-show"
     }
   ],

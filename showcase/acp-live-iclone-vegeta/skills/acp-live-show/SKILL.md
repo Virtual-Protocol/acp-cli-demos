@@ -35,9 +35,10 @@ Do not use it to retry or "finish" a trade that already moved funds — see
 *Stop conditions*. Re-running after a post-funding failure risks paying twice
 for one job.
 
-Do not use it on a machine that holds the operator's own keys. The personas are
-written to work only against a remote ACP host over ssh; running the ACP CLI
-locally is explicitly refused by both agents.
+Do not use it to run the ACP CLI on the operator's own machine. Both personas
+refuse that outright: the remote host reached over ssh is their only body, and
+the agent keys stay there. Only the personas and the stage prompt are installed
+locally.
 
 Do not use it as a general "call the ACP CLI" skill. For ordinary buying and
 selling, drive the CLI directly — this skill's value is the staged narration
@@ -63,8 +64,9 @@ snapshots (check / run / status).
 **Inputs required:**
 
 - `offering` and `price` — the provider's published offering id and its fixed
-  price. The shipped personas are wired for `tokenResearchDeep` at $0.10 USDC;
-  change both in `agents/vegeta.md` and in the stage prompt if yours differ.
+  price. The shipped set is wired for `tokenResearchDeep` at $0.10 USDC: the
+  offering id lives in `examples/acp-live.md`, the price in both that file and
+  `agents/vegeta.md`. Change them there if yours differ.
 - `task text` for the buyer's trade dispatch — must carry the literal token
   `OWNER-APPROVED`. The stage prompt supplies it; nothing else may.
 - `ssh alias` — `acp-host`, resolved from the operator's `~/.ssh/config` to the
@@ -96,10 +98,11 @@ snapshots (check / run / status).
 
 1. Both marketplace servers report `active` (Act I, seller).
 2. `demo-trade check` reports a **FUNDABLE** verdict, with the client's USDC
-   balance at or above the offering price and gas available (Act I, buyer).
-   This preflight moves no funds.
-3. No trade is in flight and no cooldown is pending — the wrapper answers this
-   in the same `check`.
+   balance at or above the offering price (Act I, buyer). This preflight moves
+   no funds.
+3. No trade is in flight and no cooldown is pending. The wrapper enforces this
+   at `demo-trade run`, which refuses a duplicate; the buyer reports the
+   refusal verbatim and holds rather than working around it.
 4. The operator has launched the show. That launch **is** the approval.
 
 ## Approval gates
@@ -155,11 +158,14 @@ snapshots (check / run / status).
 3. **Verdict** — the on-chain completion reason must decode to `Approved`, and
    the job must carry a non-empty deliverable hash. Any other reason is
    reported as-is and the show stops at Act III.
-4. **Settlement arithmetic** — the escrowed amount must equal the sum of the
-   payout transfers. For a single-evaluator ACP v2 job the split is 90% to the
-   seller, 5% protocol fee, 5% evaluator fee; when the buyer is also the
-   evaluator, that last 5% returns to the buyer. See
-   [`proof/receipts.md`](../../proof/receipts.md) for the worked example.
+**Check a reviewer can run afterwards, which the show does not run itself:**
+
+- **Settlement arithmetic** — the escrowed amount must equal the sum of the
+  payout transfers read from the ERC-20 `Transfer` logs. On job #70984 that was
+  0.09 to the seller, 0.005 protocol fee and 0.005 evaluator fee returned to
+  the buyer, who was also the evaluator. The agents never read those logs;
+  [`proof/receipts.md`](../../proof/receipts.md) is the worked example, and it
+  is offline evidence, not part of the run.
 
 **Output contract:**
 
@@ -169,18 +175,22 @@ snapshots (check / run / status).
 - **Act III closing card** — exactly three lines: job id · amount paid ·
   escrow released to the seller ✓.
 - **Final summary** — at most four lines: what ran, what it cost, where the
-  proof lives, and that the agents remain online.
+  proof lives. The curtain card, not the summary, states that the agents stay
+  online.
 - **Failure output** — the last status lines verbatim, the curtain card, and an
   explicit statement of which act stopped the show. Never a claim of success
   that the phase trail does not support.
-- **Machine-readable trail** — everything above is derived from public data:
-  the job id, the two transaction hashes and the deliverable hash are the
-  artifacts a reviewer can verify without the operator's cooperation.
+- **What leaves the stage** — the cards carry the job id and the phase trail,
+  and nothing longer: a ticker line is capped at 60 characters, so a 66-hex
+  transaction hash cannot appear on one by design. The transaction hashes and
+  the deliverable hash come from the ledger afterwards — that is what
+  [`proof/receipts.md`](../../proof/receipts.md) is for, and it is what lets a
+  reviewer verify the run without the operator's cooperation.
 
 ## Install
 
 ```bash
-cp -r agents/ ~/.pi/agent/agents/
+cp agents/*.md ~/.pi/agent/agents/
 cp examples/acp-live.md ~/.pi/agent/prompts/
 # teams.yaml (global or workspace):
 #   acp-live: [iclone, vegeta]

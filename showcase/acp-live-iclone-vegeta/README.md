@@ -7,7 +7,7 @@ Virtuals ACP marketplace on **Base mainnet**: a `tokenResearchDeep` job for
 verification and payout. Job **#70984** ran live on camera; the receipts are
 public.
 
-▶ **[Watch the show (0:50)](https://raw.githubusercontent.com/devclone20/cloneframe_app_executable/main/docs/media/ACP_LIVE_TRADE.mp4)** ·
+▶ **[Watch the show (0:50)](assets/acp-live-trade.mp4)** ·
 🧾 **[On-chain receipts](proof/receipts.md)**
 
 ## The four acts

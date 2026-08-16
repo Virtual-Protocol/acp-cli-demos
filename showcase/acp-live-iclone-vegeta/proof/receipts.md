@@ -35,14 +35,40 @@ Virtuals ACP marketplace. Network: **Base mainnet (chain 8453)**, protocol
 
 ## The money
 
-| Movement | Amount | Tx |
-| --- | --- | --- |
-| Buyer → ACP escrow (funding) | 0.10 USDC | [`0x7d0bf86a…3722`](https://basescan.org/tx/0x7d0bf86a99292862dcf972e06e968198d1770bf918cd62a172f8e76c6c413722) — 17:02:57 UTC |
-| Escrow → seller (release after Approved) | 0.09 USDC | [`0x132ad43f…fcc9`](https://basescan.org/tx/0x132ad43f7f1533aab8a7c2e16eaa78ead4d2f84110caf446c66c6a3cb460fcc9) — 17:04:03 UTC |
+**Funding** — [`0x7d0bf86a…3722`](https://basescan.org/tx/0x7d0bf86a99292862dcf972e06e968198d1770bf918cd62a172f8e76c6c413722),
+block 49623215, 17:02:57 UTC. One USDC transfer:
 
-The 0.01 USDC difference is the ACP protocol fee taken at settlement.
-Escrow contract (Base): `0x238E541BfefD…` — visible as the counterparty in
-both transactions.
+| Movement | Amount |
+| --- | --- |
+| Buyer `0xE09F…8584` → ACP escrow `0x238E…32E0` | 0.100000 USDC |
+
+**Settlement** — [`0x132ad43f…fcc9`](https://basescan.org/tx/0x132ad43f7f1533aab8a7c2e16eaa78ead4d2f84110caf446c66c6a3cb460fcc9),
+block 49623248, 17:04:03 UTC. The escrow pays out in **three** USDC transfers,
+not one:
+
+| Movement | Amount | Share |
+| --- | --- | --- |
+| Escrow → seller iCLONE `0x44Cc…6664` | 0.090000 USDC | 90% — the job price net of fees |
+| Escrow → ACP fee recipient `0x3f833be7447f82e8654bc634981899db0ee8042e` | 0.005000 USDC | 5% — protocol fee |
+| Escrow → evaluator `0xE09F…8584` | 0.005000 USDC | 5% — evaluator fee |
+
+So the 0.01 USDC that does not reach the seller is **two** fees, not one: a
+0.005 protocol fee and a 0.005 evaluator fee. On this job VEGETA is both the
+buyer and the evaluator, so the evaluator fee returns to the buyer's own
+wallet — that third transfer goes back to `0xE09F…8584`. The three amounts sum
+to exactly the 0.10 USDC that was escrowed; nothing is left in the escrow for
+this job.
+
+Escrow contract (Base): `0x238E541BfefD82238730d00a2208E5497f1832E0` — the
+counterparty in both transactions.
+
+Both transactions are ERC-4337 UserOperations, so the transaction-level `to`
+is the EntryPoint v0.7 contract `0x0000000071727De22E5e9d8BAf0edAc6f37da032`
+rather than USDC. To reproduce the table above, read the ERC-20 `Transfer`
+logs emitted by USDC (`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`) in each
+receipt — for example
+`cast receipt 0x132ad43f7f1533aab8a7c2e16eaa78ead4d2f84110caf446c66c6a3cb460fcc9 --rpc-url https://mainnet.base.org`,
+or the **Tokens Transferred** rows on BaseScan.
 
 Note the timestamps: the funding transfer lands at the exact second of the
 `job.funded` phase, and the payout lands at the exact second of

@@ -28,6 +28,12 @@ harness-neutral integration. It preserves decisions, evidence, and outcomes
 across sessions, then retrieves a small task-scoped context under explicit
 latency and token bounds.
 
+It is measured on **BEAM 100K** — ten memory abilities over conversations from
+100K tokens up — through an
+[open-source evaluation suite](https://github.com/kleos-research/kaleidoscope-benchmarks)
+that shells out to the real `kscope` binary rather than reimplementing it, so
+what gets measured is what ships.
+
 Held-out results are published in
 [Optimising for memory recall](https://kleosresearch.xyz/research/optimising-for-memory-recall.pdf):
 
@@ -38,6 +44,25 @@ Held-out results are published in
 Caveats travel with the numbers: the encoder results are configured on a train
 split and reported on held-out test over externally-authored corpora, and the
 timing is one machine — the ratios travel, the absolute milliseconds do not.
+
+## The skill
+
+[`skills/0xcopilot-local-workspace`](skills/0xcopilot-local-workspace) — stand up
+a local agent workspace and point it at Virtuals compute, so work runs on
+EconomyOS credits with per-Mtok pricing visible before a task is spent.
+
+It is deliberately a workspace skill and not a task-runner: the CLI is a
+launcher and installer with no `copilot run "<task>"` verb, and the skill says so
+under "when NOT to use this" rather than implying a pipeline that does not exist.
+Two steps are marked as human-only handoffs — signing in, and entering the
+provider key — because an agent should not be typing an operator's credential.
+
+**There is no Kaleidoscope skill, and that is not an oversight.** The evaluation
+suite is open source, but it requires the `kscope` binary on `PATH`, and
+Kaleidoscope itself is not yet published. A skill whose first step no reader can
+perform is worse than no skill. (Note also that the `kscope` package on PyPI is
+an unrelated project by another author — it is not this one.) When Kaleidoscope
+ships publicly, a memory skill belongs here.
 
 ## Why the proof is shaped like this
 
@@ -67,6 +92,7 @@ Claims that survive replication are the ones on the card.
 | | |
 | --- | --- |
 | Harness source | https://github.com/0x-copilot-dev/0x-copilot |
+| CLI | https://www.npmjs.com/package/@0x-copilot/cli |
 | Desktop app | https://copilot.kleosresearch.xyz |
 | Kaleidoscope | https://memory.kleosresearch.xyz |
 | Evaluation suite | https://github.com/kleos-research/kaleidoscope-benchmarks |

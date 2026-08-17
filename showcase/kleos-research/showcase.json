@@ -1,0 +1,89 @@
+{
+  "slug": "kleos-research",
+  "title": "Kleos Research",
+  "tagline": "Runs agents locally on your own keys or Virtuals compute, meters what every run actually costs, and gives them a filesystem-native memory that outlives the session",
+  "description": "Kleos Research builds the layer between agents and the models they run on. 0xCopilot is the local-first desktop harness: bring your own key, or a Virtuals ACP key, and pick from a catalogue carrying live per-Mtok pricing so the cost of a task is visible before you spend it. Kaleidoscope is filesystem-native memory for agents — harness-agnostic, user-owned files, no database server and no memory-owned model — which scans 100,000 memories in 3.04 ms with no index, and holds 99.7% of its retrieval quality at 32 bytes per memory. Both publish their measurements in the open, retractions included: the harness benchmark records a step-ceiling fix worth 3-of-4 to 4-of-4 task completion for +0.1% tokens, and prints the claims it has withdrawn beside the ones that held.",
+  "status": "live",
+  "topic": "agents",
+  "topics": [
+    "agents",
+    "memory",
+    "local-first",
+    "byok",
+    "virtuals-compute",
+    "benchmarks"
+  ],
+  "builder": {
+    "name": "Kleos Research",
+    "url": "https://kleosresearch.xyz"
+  },
+  "links": {
+    "repo": "https://github.com/0x-copilot-dev/0x-copilot",
+    "share": "https://x.com/Copilot0x",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Kleos%20Research",
+    "demo": "https://copilot.kleosresearch.xyz"
+  },
+  "primitives": [
+    "acp",
+    "token"
+  ],
+  "visual": {
+    "kind": "local-first agent harness with metered runs and portable memory",
+    "eyebrow": "local · byok · virtuals compute",
+    "title": "the layer between agents and models",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kleos-research/assets/hero-card.png"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "Harness benchmark findings — a measured completion win, the real cost structure, and two published retractions",
+      "href": "https://github.com/0x-copilot-dev/0x-copilot/blob/main/tools/harness-bench/FINDINGS.md",
+      "kind": "proof"
+    },
+    {
+      "label": "0xCopilot source — Electron desktop app supervising an embedded Postgres and three Python services on localhost",
+      "href": "https://github.com/0x-copilot-dev/0x-copilot",
+      "kind": "repo"
+    },
+    {
+      "label": "Virtuals compute integration — catalog discovery against compute.virtuals.io with live per-Mtok pricing",
+      "href": "https://github.com/0x-copilot-dev/0x-copilot/blob/main/services/ai-backend/src/agent_runtime/api/virtuals_model_source.py",
+      "kind": "proof"
+    },
+    {
+      "label": "0xCopilot CLI releases — install the desktop app from npm",
+      "href": "https://github.com/0x-copilot-dev/0x-copilot/releases",
+      "kind": "demo"
+    },
+    {
+      "label": "Optimising for memory recall — held-out results behind the 3.04 ms scan and the 32-byte memory (PDF)",
+      "href": "https://kleosresearch.xyz/research/optimising-for-memory-recall.pdf",
+      "kind": "proof"
+    },
+    {
+      "label": "Kaleidoscope — filesystem-native, continually adapting memory for agent harnesses",
+      "href": "https://memory.kleosresearch.xyz",
+      "kind": "docs"
+    },
+    {
+      "label": "Kaleidoscope BEAM evaluation suite — the offline benchmark harness behind the memory results",
+      "href": "https://github.com/kleos-research/kaleidoscope-benchmarks",
+      "kind": "repo"
+    },
+    {
+      "label": "Kleos Research — the lab behind 0xCopilot and Kaleidoscope",
+      "href": "https://kleosresearch.xyz",
+      "kind": "docs"
+    },
+    {
+      "label": "$CPILOT on Virtuals — the live listing",
+      "href": "https://app.virtuals.io/virtuals/113720",
+      "kind": "demo"
+    }
+  ],
+  "feedbackPrompts": [
+    "Does live per-Mtok pricing in the model picker change which model you would pick for a task?",
+    "What would you need to see before trusting an agent memory that lives as plain files on your own disk?",
+    "Which matters more in a harness you pay for: a lower cost per task, or a higher share of tasks that actually finish?"
+  ]
+}

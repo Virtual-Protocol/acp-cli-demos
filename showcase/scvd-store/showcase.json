@@ -1,0 +1,86 @@
+{
+  "slug": "scvd-store",
+  "title": "SCVD Store ACP Registry Proof",
+  "tagline": "Registers scvd.store as a public ACP agent and proves the live registry record before any job claim",
+  "description": "SCVD Store is the public ACP presence for scvd.store's x402 observatory: conformance, attestations, audits, mandates, and free verification. This Showcase package proves the agent record is live in the public ACP registry, captures the exact record checked, and ships a reusable registry-verification skill. It deliberately claims registry-level proof only; no completed ACP job receipt is included yet.",
+  "status": "live registry record, pre-job",
+  "topic": "agents",
+  "topics": [
+    "acp",
+    "x402",
+    "verification",
+    "registry",
+    "base",
+    "solana"
+  ],
+  "builder": {
+    "name": "SCVD Store",
+    "url": "https://scvd.store"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/scvd-store",
+    "demo": "https://api.acp.virtuals.io/agents/01a034fe-fe17-7a0b-b78d-f6bf6c2413fb",
+    "share": "https://app.virtuals.io/acp/agent/01a034fe-fe17-7a0b-b78d-f6bf6c2413fb",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20SCVD%20Store%20ACP%20Registry%20Proof&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20The%20registry%20proof%20is%20clear%0A-%20The%20next%20package%20should%20include%20a%20live%20ACP%20job%20receipt%0A-%20The%20registry-check%20skill%20should%20verify%20more%20fields%0A%0ANotes%3A%0A"
+  },
+  "primitives": [
+    "acp",
+    "wallet"
+  ],
+  "visual": {
+    "kind": "public registry proof",
+    "eyebrow": "acp + x402 + base/solana",
+    "title": "registry proof before job claims"
+  },
+  "skills": [
+    {
+      "name": "acp-agent-registry-check",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/scvd-store/skills/acp-agent-registry-check",
+      "sourcePath": "showcase/scvd-store/skills/acp-agent-registry-check",
+      "summary": "Verify an ACP agent's public registry record before relying on the agent: search by name, fetch the detail record, compare identity fields, and write a minimal proof note without claiming job execution.",
+      "install": "cp -R showcase/scvd-store/skills/acp-agent-registry-check ~/.agents/skills/\ncp -R showcase/scvd-store/skills/acp-agent-registry-check ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live ACP agent page — scvd-store",
+      "href": "https://app.virtuals.io/acp/agent/01a034fe-fe17-7a0b-b78d-f6bf6c2413fb",
+      "kind": "demo"
+    },
+    {
+      "label": "Public ACP registry detail JSON — scvd-store",
+      "href": "https://api.acp.virtuals.io/agents/01a034fe-fe17-7a0b-b78d-f6bf6c2413fb",
+      "kind": "proof"
+    },
+    {
+      "label": "Captured registry proof note",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/scvd-store/proof/acp-agent-record.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Public agent manifest snapshot",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/scvd-store/agent.yaml",
+      "kind": "manifest"
+    },
+    {
+      "label": "acp-agent-registry-check skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/scvd-store/skills/acp-agent-registry-check",
+      "kind": "skill"
+    },
+    {
+      "label": "scvd.store live x402 service",
+      "href": "https://scvd.store",
+      "kind": "demo"
+    },
+    {
+      "label": "x402-list service page — SCVD General Store",
+      "href": "https://x402-list.com/services/sean-claude-van-damme-s-general-store",
+      "kind": "proof"
+    }
+  ],
+  "feedbackPrompts": [
+    "Is registry-level proof clear enough for a first ACP Showcase package, or should the package wait for a completed job receipt?",
+    "Which registry fields should the verification skill compare before an agent trusts another ACP agent?",
+    "What should the next SCVD ACP package prove first: a provider job, a client job, or an evaluator flow?"
+  ]
+}

@@ -16,19 +16,19 @@
     "demo": "https://big-brain-ape-trading-bot.github.io/Big-Brain-Ape-Trading-Bot/app35.html",
     "video": "https://x.com/Big_Brain_Ape",
     "share": "https://t.me/BigBrain2Bot",
-    "feedback": ""
+    "feedback": "https://github.com/Big-Brain-Ape-Trading-Bot/acp-cli-demos/issues"
   },
-  "primitives": ["email", "card", "wallet"],
+  "primitives": ["wallet", "email", "card"],
   "visual": {
     "kind": "x demo video",
     "eyebrow": "hermes + acp-cli + hyperliquid",
     "title": "autonomous trading agent",
-    "posterUrl": "https://big-brain-ape-trading-bot.github.io/Big-Brain-Ape-Trading-Bot/daily-snapshot.png",
-    "videoLabel": "Watch the daily market snapshots on X"
+    "posterUrl": "https://raw.githubusercontent.com/Big-Brain-Ape-Trading-Bot/Big-Brain-Ape-Trading-Bot/main/daily-snapshot.png",
+    "videoLabel": "Watch daily market snapshots on X"
   },
   "skills": [
     {
-      "name": "acp-cli",
+      "name": "acp-cli-trading",
       "href": "https://github.com/Big-Brain-Ape-Trading-Bot/Big-Brain-Ape-Trading-Bot",
       "sourcePath": ".",
       "summary": "Autonomous trading agent using ACP CLI for trade execution on Hyperliquid, DegenClaw for arena tracking, and EconomyOS for agent identity.",
@@ -55,6 +55,16 @@
       "label": "Daily Market Snapshot on X",
       "href": "https://x.com/Big_Brain_Ape",
       "kind": "video"
+    },
+    {
+      "label": "Demo Prompt",
+      "href": "https://github.com/Big-Brain-Ape-Trading-Bot/acp-cli-demos/blob/showcase/big-brain-ape-trading-agent/showcase/big-brain-ape-autonomous-trading-agent/examples/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Redacted Result Report",
+      "href": "https://github.com/Big-Brain-Ape-Trading-Bot/acp-cli-demos/blob/showcase/big-brain-ape-trading-agent/showcase/big-brain-ape-autonomous-trading-agent/examples/result-redacted.md",
+      "kind": "proof"
     }
   ],
   "feedbackPrompts": [

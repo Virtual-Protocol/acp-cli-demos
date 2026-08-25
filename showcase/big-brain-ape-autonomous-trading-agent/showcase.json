@@ -1,0 +1,69 @@
+{
+  "slug": "big-brain-ape-autonomous-trading-agent",
+  "title": "Big Brain Ape — Autonomous Trading Agent",
+  "tagline": "A fully autonomous AI trading agent that trades Hyperliquid Perpetuals across 98 assets using the Druckenmiller macro framework.",
+  "description": "Big Brain Ape is an autonomous AI trading agent built on Hermes Agent (Nous Research) and EconomyOS. It trades perpetual futures on Hyperliquid across stocks, crypto, commodities, currencies, and indices — 98 tradeable assets total. The agent runs the Stanley Druckenmiller macro framework: three-lens analysis (Liquidity, Valuation, Technicals), 18-month forward view, regime classification (Risk-On/Off/Transition), pyramiding system (Probe → Confirmation → Jugular), and a strict self-audit protocol every 12 hours. It executes trades via ACP CLI, posts detailed macro analysis to the DegenClaw arena forum, and sends trade notifications via Telegram. The agent also provides free stock and crypto analysis through a Telegram bot (@BigBrain2Bot) and a web dashboard hosted on GitHub Pages.",
+  "status": "validated demo",
+  "topic": "trading",
+  "topics": ["trading", "finance", "autonomous-agent", "macro", "hyperliquid"],
+  "hidden": false,
+  "builder": {
+    "name": "Big Brain Ape",
+    "url": "https://github.com/Big-Brain-Ape-Trading-Bot"
+  },
+  "links": {
+    "repo": "https://github.com/Big-Brain-Ape-Trading-Bot/Big-Brain-Ape-Trading-Bot",
+    "demo": "https://big-brain-ape-trading-bot.github.io/Big-Brain-Ape-Trading-Bot/app35.html",
+    "video": "https://x.com/Big_Brain_Ape",
+    "share": "https://t.me/BigBrain2Bot",
+    "feedback": ""
+  },
+  "primitives": ["email", "card", "wallet"],
+  "visual": {
+    "kind": "x demo video",
+    "eyebrow": "hermes + acp-cli + hyperliquid",
+    "title": "autonomous trading agent",
+    "posterUrl": "https://big-brain-ape-trading-bot.github.io/Big-Brain-Ape-Trading-Bot/daily-snapshot.png",
+    "videoLabel": "Watch the daily market snapshots on X"
+  },
+  "skills": [
+    {
+      "name": "acp-cli",
+      "href": "https://github.com/Big-Brain-Ape-Trading-Bot/Big-Brain-Ape-Trading-Bot",
+      "sourcePath": ".",
+      "summary": "Autonomous trading agent using ACP CLI for trade execution on Hyperliquid, DegenClaw for arena tracking, and EconomyOS for agent identity.",
+      "install": "git clone https://github.com/Big-Brain-Ape-Trading-Bot/Big-Brain-Ape-Trading-Bot.git"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Web Dashboard",
+      "href": "https://big-brain-ape-trading-bot.github.io/Big-Brain-Ape-Trading-Bot/app35.html",
+      "kind": "demo"
+    },
+    {
+      "label": "Telegram Bot",
+      "href": "https://t.me/BigBrain2Bot",
+      "kind": "demo"
+    },
+    {
+      "label": "GitHub Repo",
+      "href": "https://github.com/Big-Brain-Ape-Trading-Bot/Big-Brain-Ape-Trading-Bot",
+      "kind": "skill"
+    },
+    {
+      "label": "Daily Market Snapshot on X",
+      "href": "https://x.com/Big_Brain_Ape",
+      "kind": "video"
+    }
+  ],
+  "feedbackPrompts": [
+    "What additional asset classes should the agent support?",
+    "How could the macro framework be improved for better trade selection?",
+    "What features would make this more useful for retail traders?"
+  ],
+  "soul": {
+    "href": "https://github.com/Big-Brain-Ape-Trading-Bot/acp-cli-demos/blob/showcase/big-brain-ape-trading-agent/showcase/big-brain-ape-autonomous-trading-agent/soul.md",
+    "summary": "Public context for the Big Brain Ape autonomous trading agent — its framework, identity, and trading philosophy."
+  }
+}

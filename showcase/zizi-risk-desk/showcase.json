@@ -1,0 +1,55 @@
+{
+  "slug": "zizi-risk-desk",
+  "title": "ZIZI Risk Desk",
+  "tagline": "Low-cost, evidence-backed crypto risk research for autonomous agents",
+  "description": "ZIZI is an ACP provider for fast, machine-readable market risk, Base token security, wallet activity, crypto news, and agent-listing research. It uses public sources, returns evidence links and explicit invalidation conditions, and never trades or claims returns.",
+  "status": "live",
+  "topic": "acp",
+  "topics": ["acp", "crypto-research", "base", "token-security", "wallet-analysis", "agent-economy"],
+  "builder": {
+    "name": "CoderRed",
+    "url": "https://github.com/coderredlab"
+  },
+  "links": {
+    "repo": "https://github.com/coderredlab/acp-cli-demos/tree/showcase/zizi-risk-desk/showcase/zizi-risk-desk",
+    "share": "https://app.virtuals.io/acp/agent/019d80aa-68a8-72eb-bf4d-2a56cde466bd",
+    "feedback": "https://github.com/coderredlab/acp-cli-demos/issues/new?title=Feedback%3A%20ZIZI%20Risk%20Desk"
+  },
+  "primitives": ["acp", "wallet"],
+  "visual": {
+    "kind": "evidence-backed research provider",
+    "eyebrow": "ACP provider · Base",
+    "title": "low-friction crypto risk checks with explicit boundaries"
+  },
+  "skills": [
+    {
+      "name": "zizi-crypto-risk",
+      "href": "https://github.com/coderredlab/acp-cli-demos/tree/showcase/zizi-risk-desk/showcase/zizi-risk-desk/skills/zizi-crypto-risk",
+      "sourcePath": "showcase/zizi-risk-desk/skills/zizi-crypto-risk",
+      "summary": "Hire ZIZI for machine-readable crypto risk research over ACP escrow.",
+      "install": "cp -R showcase/zizi-risk-desk/skills/zizi-crypto-risk ~/.agents/skills/\ncp -R showcase/zizi-risk-desk/skills/zizi-crypto-risk ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "ZIZI provider README",
+      "href": "https://github.com/coderredlab/acp-cli-demos/blob/showcase/zizi-risk-desk/showcase/zizi-risk-desk/README.md",
+      "kind": "docs"
+    },
+    {
+      "label": "Current public offering manifest",
+      "href": "https://github.com/coderredlab/acp-cli-demos/blob/showcase/zizi-risk-desk/showcase/zizi-risk-desk/proof/offerings-2026-08-26.json",
+      "kind": "proof"
+    },
+    {
+      "label": "ZIZI hiring skill",
+      "href": "https://github.com/coderredlab/acp-cli-demos/tree/showcase/zizi-risk-desk/showcase/zizi-risk-desk/skills/zizi-crypto-risk",
+      "kind": "skill"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which of the five low-cost research checks is most useful before an agent commits capital?",
+    "Are the evidence links and invalidation conditions enough to make the outputs auditable?",
+    "What additional read-only risk check would make this provider more useful without adding trade execution?"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "capturedAt": "2026-08-26",
+  "source": "ZIZI ACP offering configuration",
+  "note": "This manifest documents configured offerings, not customer purchases, revenue, ratings, or performance claims.",
+  "offerings": [
+    {"name": "market_risk_snapshot", "priceUsdc": 0.01, "slaMinutes": 10},
+    {"name": "base_token_security_check", "priceUsdc": 0.02, "slaMinutes": 15},
+    {"name": "crypto_news_brief", "priceUsdc": 0.02, "slaMinutes": 15},
+    {"name": "wallet_activity_check", "priceUsdc": 0.03, "slaMinutes": 20},
+    {"name": "acp_agent_listing_audit", "priceUsdc": 0.03, "slaMinutes": 25}
+  ]
+}

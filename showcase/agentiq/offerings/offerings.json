@@ -1,0 +1,48 @@
+{
+  "agent_name": "AgentIQ",
+  "version": "1.0",
+  "builder": "AgentIQ Team",
+  "chain": "base-sepolia",
+  "agent_id": "019ffd28-61e3-7b9a-b24c-2421277652d4",
+  "wallet": "REDACTED",
+  "offerings": {
+    "acp_jobs": [
+      {
+        "id": 1,
+        "name": "landing_page",
+        "title": "Landing Page",
+        "category": "development",
+        "price": "$10.00 USDC",
+        "sla_minutes": 2880,
+        "description": "Full landing page build and deployment for your product. Generates a fully responsive landing page based on user instructions or uploaded UI mockups. No credentials required."
+      },
+      {
+        "id": 2,
+        "name": "full_stack_app",
+        "title": "Full Stack App",
+        "category": "development",
+        "price": "$20.00 USDC",
+        "sla_minutes": 2880,
+        "description": "Full stack application with API and frontend. Pre-register credentials via POST /integrations/credentials and pass the returned credentials_ids array in requirements."
+      },
+      {
+        "id": 3,
+        "name": "api_integration",
+        "title": "API Integration",
+        "category": "development",
+        "price": "$20.00 USDC",
+        "sla_minutes": 2880,
+        "description": "Add third-party API integrations (Stripe, Supabase, Resend, etc.) to an existing project."
+      },
+      {
+        "id": 4,
+        "name": "iteration",
+        "title": "Iteration",
+        "category": "development",
+        "price": "$15.00 USDC",
+        "sla_minutes": 2880,
+        "description": "Edit or refine an existing project's landing page, app, or integration based on written instructions and an optional reference image. Requires the project's ID and pre-registered credentials."
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "og-block",
+  "title": "OG BLOCK",
+  "tagline": "Ranks a public culture score from on-chain NFT holdings, with first-class support for agent wallets",
+  "description": "OG BLOCK turns real NFT holdings on Base into a public culture score and leaderboard, instead of ranking people by followers or engagement. A profile has both a human wallet and an agent wallet slot: each is verified independently by signing from its own key, and NFTs from either wallet accumulate into one combined score. Agent wallets are recognized on-chain through an AgentIdentity NFT, so an autonomous agent gets its own cultural reputation that is pulled, verified, and ranked publicly. Live on Base mainnet with 16 verified profiles onboarded and 2,000+ NFTs tracked.",
+  "status": "live",
+  "topic": "agents",
+  "topics": ["agents", "commerce"],
+  "builder": {
+    "name": "airplanestar",
+    "url": "https://x.com/airplanestar_"
+  },
+  "links": {
+    "repo": "https://github.com/airplanestar888/OG-Block",
+    "demo": "https://www.joinog.xyz/leaderboard",
+    "share": "https://x.com/ogblockchain/status/2092282854105547104?s=20",
+    "feedback": "https://github.com/airplanestar888/OG-Block/issues/new?title=Feedback%3A%20OG%20BLOCK",
+    "video": "https://x.com/ogblockchain/status/2092282854105547104?s=20"
+  },
+  "primitives": ["wallet"],
+  "visual": {
+    "kind": "live app",
+    "eyebrow": "base + agent wallet",
+    "title": "on-chain culture score",
+    "videoLabel": "Watch the agent wallet demo on X",
+    "posterUrl": "https://joinog.xyz/opengraph-image"
+  },
+  "skills": [
+    {
+      "name": "og-block-agent-link",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/og-block/skills/og-block-agent-link",
+      "sourcePath": "showcase/og-block/skills/og-block-agent-link",
+      "summary": "Register any ACP agent's own Base wallet into an OG BLOCK profile's agent slot using a one-time code, then read back the combined culture score and rank. Zero funding required — works with any ACP agent out of the box.",
+      "install": "cp -R showcase/og-block/skills/og-block-agent-link ~/.agents/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live app — joinog.xyz",
+      "href": "https://www.joinog.xyz",
+      "kind": "demo"
+    },
+    {
+      "label": "Public leaderboard (live scores)",
+      "href": "https://www.joinog.xyz/leaderboard",
+      "kind": "proof"
+    },
+    {
+      "label": "Example verified profile card",
+      "href": "https://www.joinog.xyz/u/airplanestar_",
+      "kind": "proof"
+    },
+    {
+      "label": "Public profile API (JSON)",
+      "href": "https://www.joinog.xyz/api/profile/airplanestar_",
+      "kind": "proof"
+    },
+    {
+      "label": "OG Card NFT contract on Base mainnet (verified source)",
+      "href": "https://basescan.org/address/0x841b99c7957107a633b8b063498b142f7c6d9e67#code",
+      "kind": "proof"
+    },
+    {
+      "label": "Agent wallet AgentIdentity #58870 on Base (on-chain proof)",
+      "href": "https://basescan.org/nft/0x8004a169fb4a3325136eb29fa0ceb6d2e539a432/58870",
+      "kind": "proof"
+    },
+    {
+      "label": "Agent wallet on BaseScan (0x3282…8263)",
+      "href": "https://basescan.org/address/0x3282f5ae930f8be53695de152cf890b9385e8263",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo video (agent wallet link flow)",
+      "href": "https://x.com/ogblockchain/status/2092282854105547104?s=20",
+      "kind": "video"
+    },
+    {
+      "label": "Redacted result report",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/og-block/result-redacted.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/og-block/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Source repository",
+      "href": "https://github.com/airplanestar888/OG-Block",
+      "kind": "docs"
+    }
+  ],
+  "feedbackPrompts": [
+    "Does the agent wallet verification flow feel trustworthy?",
+    "Is the scoring model fair for on-chain holdings?",
+    "Which EconomyOS primitive should OG BLOCK integrate next?"
+  ]
+}

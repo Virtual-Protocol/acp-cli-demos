@@ -1,11 +1,11 @@
 {
   "slug": "kairune-verifiable-trust",
   "title": "Kairune — Verifiable Agent Trust Layer",
-  "tagline": "Every agent gets a verifiable, cryptographically-signed trust score — then scoped spend by tier.",
-  "description": "Kairune is the trust layer for AI agents that spend. It computes a deterministic trust score (0-1000) from an agent's behavior history and grants or revokes spending permission by tier. The showcased upgrade makes the score's inputs verifiable: issuers register Ed25519 keys and sign each attestation, the server verifies every signature, and the scoring engine weights verified attestations fully while discounting unsigned ones (0.25x). Exposed as ACP offerings (lookup score, register agent, record attestation, full report) on Robinhood Chain via Virtuals.",
+  "tagline": "Earn a budget with signed attestations, a proven wallet, and a spend ceiling it can't cross",
+  "description": "Kairune is a trust layer for AI agents that spend. It's self-serve end to end: an agent earns a trust score from signed attestations, proves wallet control via EIP-191, and is granted a spend budget based on its tier — no admin key required. Below EMERGING the grant is refused (409 tier_too_low); over-ceiling charges are blocked and every decision fires an HMAC-SHA256 signed webhook. An operator can lock an agent to its wallet: mutating routes then demand a fresh single-use X-Owner-Proof and return 401 without one, which @kairune/sdk@0.4.0 mints on the caller's behalf. Exposed as live APIs, paid ACP offerings on Robinhood Chain via Virtuals, and the SDK.",
   "status": "live",
   "topic": "commerce",
-  "topics": ["identity", "commerce", "acp"],
+  "topics": ["agents", "commerce", "security"],
   "hidden": false,
   "builder": {
     "name": "Kairune",
@@ -16,16 +16,16 @@
     "demo": "https://kairune.online/app",
     "video": "https://x.com/usekairune/status/2075911860516528241",
     "share": "https://x.com/usekairune/status/2075911860516528241",
-    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Kairune%20Verifiable%20Agent%20Trust%20Layer&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Issuer%20identity%20should%20be%20verified%20on-chain%0A-%20Attestation%20kinds%20for%20agent-to-agent%20commerce%0A-%20Replay-protection%20window%20worth%20the%20friction%3F%0A%0ANotes%3A%0A"
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=Feedback%3A%20Kairune%20Verifiable%20Agent%20Trust%20Layer&body=Which%20feedback%20prompt%20fits%3F%0A%0A-%20Should%20issuer%20identities%20be%20verified%20on-chain%20rather%20than%20by%20API%20key%3F%0A-%20Is%20EMERGING%20(score%20250)%20the%20right%20floor%20before%20an%20agent%20may%20hold%20any%20budget%2C%20or%20should%20tier%200%20get%20a%20probationary%20micro-ceiling%3F%0A-%20Should%20a%20proven%20wallet%20(EIP-191)%20be%20required%20before%20an%20agent%20can%20receive%20a%20budget%2C%20not%20just%20recorded%20alongside%20it%3F%0A%0ANotes%3A%0A"
   },
   "primitives": ["acp", "token", "wallet"],
   "visual": {
     "kind": "animated demo",
     "eyebrow": "live api + acp",
-    "title": "verifiable attestations",
-    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kairune-verifiable-trust/assets/poster.png",
-    "videoUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kairune-verifiable-trust/assets/kairune-verify-demo.mp4",
-    "videoLabel": "Watch the 0:06 demo on X"
+    "title": "refused at tier 0, then it earns the budget",
+    "posterUrl": "https://kairune.online/assets/video/kairune-self-serve.jpg",
+    "videoUrl": "https://kairune.online/assets/video/kairune-self-serve.mp4",
+    "videoLabel": "Watch the 0:13 demo on X"
   },
   "skills": [
     {
@@ -48,6 +48,11 @@
       "kind": "skill"
     },
     {
+      "label": "Self-serve film (0:13) — grant refused at 409 tier_too_low, then earned",
+      "href": "https://kairune.online/assets/video/kairune-self-serve.mp4",
+      "kind": "video"
+    },
+    {
       "label": "Animated demo (mp4)",
       "href": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/kairune-verifiable-trust/assets/kairune-verify-demo.mp4",
       "kind": "video"
@@ -58,14 +63,29 @@
       "kind": "proof"
     },
     {
-      "label": "API meta (signature_algorithm: ed25519, unverified_weight_factor: 0.25)",
+      "label": "API meta — wallet_proof: eip191-personal-sign, signature_algorithm: ed25519, unverified_weight_factor: 0.25",
       "href": "https://kairune.online/api/meta",
+      "kind": "proof"
+    },
+    {
+      "label": "ERC-8126 derived adapter (not compliant) — 0-100 risk + per-type breakdown, EIP-191 WV partial",
+      "href": "https://kairune.online/api/agents/voyager-07/erc8126",
       "kind": "proof"
     },
     {
       "label": "Example public trust card",
       "href": "https://kairune.online/a/voyager-07",
       "kind": "proof"
+    },
+    {
+      "label": "API docs — wallet proof, self-serve permissions, spend enforcement, signed webhooks",
+      "href": "https://kairune.online/docs",
+      "kind": "docs"
+    },
+    {
+      "label": "SDK on npm — @kairune/sdk@0.4.0, zero dependencies, lockAgent() plus auto-proof retry on 401",
+      "href": "https://www.npmjs.com/package/@kairune/sdk",
+      "kind": "docs"
     },
     {
       "label": "Public repo",
@@ -76,11 +96,16 @@
       "label": "Verifiable attestations PR",
       "href": "https://github.com/kairunedev/Kairune/pull/1",
       "kind": "proof"
+    },
+    {
+      "label": "Wallet proof + self-serve permissions PR — EIP-191 challenge, tier gate replaces the admin key",
+      "href": "https://github.com/kairunedev/Kairune/pull/7",
+      "kind": "proof"
     }
   ],
   "feedbackPrompts": [
     "Should issuer identities be verified on-chain rather than by API key?",
-    "What attestation kinds matter most for agent-to-agent commerce?",
-    "Would a replay-protection window on signed submissions be worth the added friction?"
+    "Is EMERGING (score 250) the right floor before an agent may hold any budget, or should tier 0 get a probationary micro-ceiling?",
+    "Should a proven wallet (EIP-191) be required before an agent can receive a budget, not just recorded alongside it?"
   ]
 }

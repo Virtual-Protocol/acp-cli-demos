@@ -21,7 +21,7 @@
     "kind": "reproducible cli output",
     "eyebrow": "deterministic core",
     "title": "mandate hash to plan hash",
-    "posterUrl": "https://raw.githubusercontent.com/fiduciaindex/acp-cli-demos/showcase-fiducia/showcase/fiducia-deterministic-rebalance/assets/poster.png"
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/fiducia-deterministic-rebalance/assets/poster.png"
   },
   "skills": [],
   "artifacts": [
@@ -32,7 +32,7 @@
     },
     {
       "label": "Recorded output of that demo (planHash 0x07061e2f…3e30e, 100 rebuilds identical)",
-      "href": "https://github.com/fiduciaindex/acp-cli-demos/blob/showcase-fiducia/showcase/fiducia-deterministic-rebalance/PROOF.md",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/fiducia-deterministic-rebalance/PROOF.md",
       "kind": "proof"
     },
     {

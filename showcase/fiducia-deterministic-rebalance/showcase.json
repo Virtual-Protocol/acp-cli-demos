@@ -1,0 +1,69 @@
+{
+  "slug": "fiducia-deterministic-rebalance",
+  "title": "Fiducia — Deterministic Index Rebalance Planner",
+  "tagline": "Turns an index mandate into a hash-committed rebalance plan, so the trades an agent is allowed to execute are fixed before it touches a router",
+  "description": "Fiducia plans rebalances for tokenised-equity index vaults. A mandate is canonicalised to bytes and hashed, target weights are solved in integer basis points, and the resulting leg sequence is hashed into a single planHash that an executor can be checked against — an agent cannot widen slippage, resize a leg, or swap the calldata without changing the hash. The core is pure computation with no RPC or keys, so anyone can clone the repo and reproduce the same mandateHash and planHash byte-for-byte. Writing the test suite found a real bug: the weight solver returned allocations summing to 130% when a cap and a floor bound at once, which is fixed and now covered by 46 passing tests plus a 4000-case randomised sweep.",
+  "status": "deterministic core running, contracts not deployed",
+  "topic": "agents",
+  "topics": ["rwa", "index", "determinism", "risk", "tokenised-equities"],
+  "builder": {
+    "name": "Fiducia",
+    "url": "https://x.com/fiduciaindex"
+  },
+  "links": {
+    "repo": "https://github.com/fiduciaindex/fiducia",
+    "demo": "https://fiduciaindex.com/",
+    "share": "https://x.com/fiduciaindex",
+    "feedback": "https://github.com/fiduciaindex/fiducia/issues/new?title=Showcase%20feedback%3A%20deterministic%20rebalance%20planner&body=Which%20prompt%20fits%3F%0A%0A-%20Should%20planHash%20cover%20execution%20deadline%20and%20gas%20ceiling%3F%0A-%20Is%20largest-remainder%20the%20right%20rounding%20rule%20for%20weights%3F%0A-%20Should%20a%20stale%20NAV%20oracle%20block%20or%20only%20warn%3F%0A%0ANotes%3A%0A"
+  },
+  "primitives": ["token"],
+  "visual": {
+    "kind": "reproducible cli output",
+    "eyebrow": "deterministic core",
+    "title": "mandate hash to plan hash",
+    "posterUrl": "https://raw.githubusercontent.com/fiduciaindex/acp-cli-demos/showcase-fiducia/showcase/fiducia-deterministic-rebalance/assets/poster.png"
+  },
+  "skills": [],
+  "artifacts": [
+    {
+      "label": "Reproducible demo — mandateHash, weights, plan, planHash, tamper check",
+      "href": "https://github.com/fiduciaindex/fiducia/blob/main/packages/mandate/examples/deterministic-plan.ts",
+      "kind": "proof"
+    },
+    {
+      "label": "Recorded output of that demo (planHash 0x07061e2f…3e30e, 100 rebuilds identical)",
+      "href": "https://github.com/fiduciaindex/acp-cli-demos/blob/showcase-fiducia/showcase/fiducia-deterministic-rebalance/PROOF.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Test suite — 46 tests over canonicalisation, weights, and plan hashing",
+      "href": "https://github.com/fiduciaindex/fiducia/tree/main/packages/mandate/test",
+      "kind": "proof"
+    },
+    {
+      "label": "The 130% weight bug and its fix",
+      "href": "https://github.com/fiduciaindex/fiducia/blob/main/packages/mandate/src/weights.ts",
+      "kind": "proof"
+    },
+    {
+      "label": "Public repo, with a README stating which components run and which do not",
+      "href": "https://github.com/fiduciaindex/fiducia",
+      "kind": "proof"
+    },
+    {
+      "label": "$FIDUCIA agent token on Virtuals",
+      "href": "https://app.virtuals.io/virtuals/139254",
+      "kind": "proof"
+    },
+    {
+      "label": "Project site",
+      "href": "https://fiduciaindex.com/",
+      "kind": "proof"
+    }
+  ],
+  "feedbackPrompts": [
+    "Should planHash also commit to an execution deadline and a gas ceiling, not just the legs?",
+    "Is largest-remainder the right rounding rule when weights must sum to exactly 10000 bps?",
+    "Should a stale NAV oracle block a rebalance outright, or only warn and let it proceed?"
+  ]
+}

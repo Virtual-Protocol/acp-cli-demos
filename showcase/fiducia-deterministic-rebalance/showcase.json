@@ -5,7 +5,7 @@
   "description": "Fiducia plans rebalances for tokenised-equity index vaults. A mandate is canonicalised to bytes and hashed, target weights are solved in integer basis points, and the resulting leg sequence is hashed into a single planHash that an executor can be checked against — an agent cannot widen slippage, resize a leg, or swap the calldata without changing the hash. The core is pure computation with no RPC or keys, so anyone can clone the repo and reproduce the same mandateHash and planHash byte-for-byte. Writing the test suite found a real bug: the weight solver returned allocations summing to 130% when a cap and a floor bound at once, which is fixed and now covered by 46 passing tests plus a 4000-case randomised sweep.",
   "status": "deterministic core running, contracts not deployed",
   "topic": "agents",
-  "topics": ["rwa", "index", "determinism", "risk", "tokenised-equities"],
+  "topics": ["agents", "security", "robinhood-chain", "tokenized-stocks", "rwa", "determinism", "risk"],
   "builder": {
     "name": "Fiducia",
     "url": "https://x.com/fiduciaindex"

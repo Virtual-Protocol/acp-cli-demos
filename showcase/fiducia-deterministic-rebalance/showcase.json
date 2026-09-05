@@ -13,7 +13,7 @@
   "links": {
     "repo": "https://github.com/fiduciaindex/fiducia",
     "demo": "https://fiduciaindex.com/",
-    "share": "https://x.com/fiduciaindex",
+    "share": "https://x.com/fiduciaindex/status/2096257736510160916",
     "feedback": "https://github.com/fiduciaindex/fiducia/issues/new?title=Showcase%20feedback%3A%20deterministic%20rebalance%20planner&body=Which%20prompt%20fits%3F%0A%0A-%20Should%20planHash%20cover%20execution%20deadline%20and%20gas%20ceiling%3F%0A-%20Is%20largest-remainder%20the%20right%20rounding%20rule%20for%20weights%3F%0A-%20Should%20a%20stale%20NAV%20oracle%20block%20or%20only%20warn%3F%0A%0ANotes%3A%0A"
   },
   "primitives": ["token"],

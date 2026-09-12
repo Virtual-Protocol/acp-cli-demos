@@ -1,0 +1,78 @@
+{
+  "slug": "aiworker-trade-gate",
+  "title": "aiworker trade gate",
+  "tagline": "Gates a Base token before any swap with a pass / caution / block verdict from fixed rules and every reason listed, and scans an agent wallet for airdrop spam",
+  "description": "trade_gate answers pass, caution or block for one Base token from fixed rules over public data: the Honeypot.is buy/sell simulation and taxes, pool liquidity and age, holder concentration, contract verification and ownership, and a Unicode lookalike-name rule, with every reason listed. airdrop_scan marks each ERC-20 a wallet holds as honeypot, dust, batch-airdropped, name-spoofed, ok or unknown, so an agent never approves or trades the spam that reaches every wallet on Base. Both are sold by the live ACP seller aiworker-data and over x402, and the proof is on-chain: four x402 payments and four ACP sandbox jobs with transaction hashes, plus the live scan that found a honeypot and a lookalike in the seller's own wallet. The skill teaches a coding agent to call the gate before a swap and to act on the verdict.",
+  "status": "live",
+  "topic": "security",
+  "topics": [
+    "security",
+    "token-safety",
+    "honeypot",
+    "defi",
+    "real-data"
+  ],
+  "hidden": false,
+  "builder": {
+    "name": "aiworker-data",
+    "url": "https://github.com/ai-worker227"
+  },
+  "links": {
+    "repo": "https://github.com/ai-worker227/aiworker-examples",
+    "demo": "https://aiworker.duckdns.org/base/airdrop-spam-watch",
+    "feedback": "https://github.com/ai-worker227/aiworker-examples/issues",
+    "share": "https://aiworker.duckdns.org/base/airdrop-spam-watch"
+  },
+  "primitives": [
+    "acp",
+    "wallet",
+    "email"
+  ],
+  "visual": {
+    "kind": "live page",
+    "eyebrow": "base + x402 + acp",
+    "title": "pre-trade gate for base tokens",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/aiworker-trade-gate/assets/poster.png"
+  },
+  "skills": [
+    {
+      "name": "aiworker-trade-gate",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/aiworker-trade-gate/skills/aiworker-trade-gate",
+      "sourcePath": "showcase/aiworker-trade-gate/skills/aiworker-trade-gate",
+      "summary": "Check a Base token with the trade gate before any swap, act on pass / caution / block with the listed reasons, and scan the agent's own wallet for airdrop spam \u2014 over x402 (a thirty-line script in the aiworker-examples repo) or as an ACP job.",
+      "install": "cp -R showcase/aiworker-trade-gate/skills/aiworker-trade-gate ~/.agents/skills/\ncp -R showcase/aiworker-trade-gate/skills/aiworker-trade-gate ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live proof: four x402 payments and four ACP sandbox jobs, with transaction hashes and the delivered documents",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aiworker-trade-gate/examples/proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "Free page: Base airdrop-spam watch (rebuilt every six hours)",
+      "href": "https://aiworker.duckdns.org/base/airdrop-spam-watch",
+      "kind": "demo"
+    },
+    {
+      "label": "Demo prompt",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/aiworker-trade-gate/prompt.md",
+      "kind": "prompt"
+    },
+    {
+      "label": "Skill source",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/aiworker-trade-gate/skills/aiworker-trade-gate",
+      "kind": "skill"
+    },
+    {
+      "label": "Seller catalogue (every route, price and schema)",
+      "href": "https://aiworker.duckdns.org/llms.txt",
+      "kind": "docs"
+    }
+  ],
+  "feedbackPrompts": [
+    "Which rule thresholds (sell tax 20 %, liquidity $10,000, pool age 3 days, top-10 share 50 %) would you set differently for your agent's trades?",
+    "Should the gate also answer for Solana tokens, and which source would you trust for the honeypot simulation there?",
+    "What would make a `pass` trustworthy enough to skip the human confirmation in your workflow?"
+  ]
+}

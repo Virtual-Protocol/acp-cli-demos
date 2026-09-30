@@ -1,3 +1,5 @@
+> **Notice added 30 September 2026.** AgentOracle is now Tanilo. This showcase called the API gateway's `POST /v1/compose`, which signed a composed envelope over a verdict the caller supplied, without evaluating it. That route was withdrawn on 24 September 2026 and returns 410 since 28 September 2026, so this showcase no longer works, and its example receipt was signed through that route. Full account: https://tanilo.io/incidents/2026-08-25-canned-verdicts
+
 # AgentOracle Verifiable Delivery — Showcase Package
 
 ## What this is

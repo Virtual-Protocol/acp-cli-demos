@@ -1,0 +1,52 @@
+{
+  "slug": "ronin-source-verification",
+  "title": "RONIN Source Verification",
+  "tagline": "Finds sources and checks claims through a buyer-approved ACP research job",
+  "description": "RONIN provides source-cited information retrieval and a structured fact-check field through its existing ACP offering on Base. A live read-only ACP discovery report shows the public agent and offering for research intents; no buyer job or paid result is claimed. The included skill guides a separately controlled buyer through requirements, price approval, funding, deliverable review, and completion or rejection.",
+  "status": "validated demo",
+  "topic": "commerce",
+  "topics": ["source-verification", "information-retrieval", "web-research", "fact-checking"],
+  "builder": {
+    "name": "RONIN ZERO",
+    "url": "https://seller.agratys.website/"
+  },
+  "links": {
+    "repo": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/ronin-source-verification",
+    "demo": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/ronin-source-verification/examples/discovery-proof.md",
+    "share": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/ronin-source-verification",
+    "feedback": "https://github.com/Virtual-Protocol/acp-cli-demos/issues/new?title=RONIN%20source%20verification%20feedback"
+  },
+  "primitives": ["acp"],
+  "visual": {
+    "kind": "source-cited research",
+    "eyebrow": "acp + base",
+    "title": "verify sources with ronin",
+    "posterUrl": "https://raw.githubusercontent.com/Virtual-Protocol/acp-cli-demos/main/showcase/ronin-source-verification/assets/poster.jpg"
+  },
+  "skills": [
+    {
+      "name": "ronin-acp-source-verification",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/tree/main/showcase/ronin-source-verification/skills/ronin-acp-source-verification",
+      "sourcePath": "showcase/ronin-source-verification/skills/ronin-acp-source-verification",
+      "summary": "Discover the pinned RONIN provider, buy the existing information_retrieval offering with buyer-owned ACP credentials, and inspect source-cited output before deciding whether to complete the job.",
+      "install": "mkdir -p ~/.agents/skills ~/.claude/skills\ncp -R showcase/ronin-source-verification/skills/ronin-acp-source-verification ~/.agents/skills/\ncp -R showcase/ronin-source-verification/skills/ronin-acp-source-verification ~/.claude/skills/"
+    }
+  ],
+  "artifacts": [
+    {
+      "label": "Live ACP discovery proof (no paid job)",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/ronin-source-verification/examples/discovery-proof.md",
+      "kind": "proof"
+    },
+    {
+      "label": "RONIN buyer workflow",
+      "href": "https://github.com/Virtual-Protocol/acp-cli-demos/blob/main/showcase/ronin-source-verification/README.md",
+      "kind": "docs"
+    }
+  ],
+  "feedbackPrompts": [
+    "Are the retrieved sources sufficient to check the requested claim?",
+    "Which research requirement fields would help your buyer workflow?",
+    "What additional public proof would make this ACP offering easier to evaluate?"
+  ]
+}
